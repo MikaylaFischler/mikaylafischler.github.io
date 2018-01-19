@@ -1,0 +1,96 @@
+\hypertarget{class_analog_output}{}\section{Analog\+Output Class Reference}
+\label{class_analog_output}\index{Analog\+Output@{Analog\+Output}}
+
+
+{\ttfamily \#include $<$Analog\+Output.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_analog_output_a5bbdf0548ba8a18d090071f1cb447238}{Analog\+Output} (int port)
+\item 
+\hyperlink{class_analog_output_a7848a6b7b7c15bba5c75f0f82f3c1d53}{$\sim$\+Analog\+Output} ()
+\item 
+int \hyperlink{class_analog_output_a0a4146612660e06c9d2edfac9b51b6ef}{get\+\_\+port} ()
+\item 
+void \hyperlink{class_analog_output_aa67e2c25c9377517a72346fc9402afad}{write} (int val)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_analog_output_8h}{Analog\+Output.\+h} -\/ Wraps around analog write. Writes analog data to data pin. Written by Mikayla Fischler 
+
+Definition at line 12 of file Analog\+Output.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_analog_output_a5bbdf0548ba8a18d090071f1cb447238}\label{class_analog_output_a5bbdf0548ba8a18d090071f1cb447238}} 
+\index{Analog\+Output@{Analog\+Output}!Analog\+Output@{Analog\+Output}}
+\index{Analog\+Output@{Analog\+Output}!Analog\+Output@{Analog\+Output}}
+\subsubsection{\texorpdfstring{Analog\+Output()}{AnalogOutput()}}
+{\footnotesize\ttfamily Analog\+Output\+::\+Analog\+Output (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+\hyperlink{_analog_output_8cpp}{Analog\+Output.\+cpp} -\/ Analog Output Source Code Written by Mikayla Fischler 
+
+Definition at line 11 of file Analog\+Output.\+cpp.
+
+
+\begin{DoxyCode}
+11                                    \{
+12     this->port = port;
+13 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_analog_output_a7848a6b7b7c15bba5c75f0f82f3c1d53}\label{class_analog_output_a7848a6b7b7c15bba5c75f0f82f3c1d53}} 
+\index{Analog\+Output@{Analog\+Output}!````~Analog\+Output@{$\sim$\+Analog\+Output}}
+\index{````~Analog\+Output@{$\sim$\+Analog\+Output}!Analog\+Output@{Analog\+Output}}
+\subsubsection{\texorpdfstring{$\sim$\+Analog\+Output()}{~AnalogOutput()}}
+{\footnotesize\ttfamily Analog\+Output\+::$\sim$\+Analog\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file Analog\+Output.\+cpp.
+
+
+\begin{DoxyCode}
+16 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_analog_output_a0a4146612660e06c9d2edfac9b51b6ef}\label{class_analog_output_a0a4146612660e06c9d2edfac9b51b6ef}} 
+\index{Analog\+Output@{Analog\+Output}!get\+\_\+port@{get\+\_\+port}}
+\index{get\+\_\+port@{get\+\_\+port}!Analog\+Output@{Analog\+Output}}
+\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
+{\footnotesize\ttfamily int Analog\+Output\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file Analog\+Output.\+cpp.
+
+
+\begin{DoxyCode}
+19 \{ \textcolor{keywordflow}{return} this->port; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_analog_output_aa67e2c25c9377517a72346fc9402afad}\label{class_analog_output_aa67e2c25c9377517a72346fc9402afad}} 
+\index{Analog\+Output@{Analog\+Output}!write@{write}}
+\index{write@{write}!Analog\+Output@{Analog\+Output}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Analog\+Output\+::write (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file Analog\+Output.\+cpp.
+
+
+\begin{DoxyCode}
+22                                 \{
+23     analogWrite(this->port, val);
+24 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/devices/io/\hyperlink{_analog_output_8h}{Analog\+Output.\+h}\item 
+rbe2001/devices/io/\hyperlink{_analog_output_8cpp}{Analog\+Output.\+cpp}\end{DoxyCompactItemize}

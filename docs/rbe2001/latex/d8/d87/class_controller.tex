@@ -1,0 +1,318 @@
+\hypertarget{class_controller}{}\section{Controller Class Reference}
+\label{class_controller}\index{Controller@{Controller}}
+
+
+{\ttfamily \#include $<$Controller.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_controller_aab64b54728b3f5d68bd2320605bdc51d}{Controller} (int debugpin)
+\item 
+\hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{$\sim$\+Controller} ()
+\item 
+void \hyperlink{class_controller_a1cc0b87ab9e07d21ab47d294aa5bf607}{begin} ()
+\item 
+void \hyperlink{class_controller_a7d04c17913f04f99429aa29fa8505484}{update} ()
+\item 
+void \hyperlink{class_controller_aaa374c56ef024a31888ab048baf0219c}{end} ()
+\item 
+int $\ast$ \hyperlink{class_controller_a1f02ff9e9853dd53232df37f6676b0dc}{joystick\+\_\+right} ()
+\item 
+int $\ast$ \hyperlink{class_controller_a2d21a10299aaacdcdb571b10f6436270}{joystick\+\_\+left} ()
+\item 
+bool \hyperlink{class_controller_a3710226224d7d95b1495bcac853abbe8}{joystick\+\_\+btn\+\_\+right} ()
+\item 
+bool \hyperlink{class_controller_a0bd70e25e112c655ba578f147af9ce11}{joystick\+\_\+btn\+\_\+left} ()
+\item 
+bool \hyperlink{class_controller_acde5cc2b40d1cc9e451a704ec1811b53}{start\+\_\+btn} ()
+\item 
+bool \hyperlink{class_controller_aa94980f9d72b8b3d61f05641e82710ba}{select\+\_\+btn} ()
+\item 
+bool $\ast$ \hyperlink{class_controller_a590216b5d6e1fc904c62e8ed213c2767}{get\+\_\+num\+\_\+pad} ()
+\item 
+bool $\ast$ \hyperlink{class_controller_a4162841dc8e34bffaff972c725f162cc}{get\+\_\+arrow\+\_\+pad} ()
+\item 
+bool $\ast$ \hyperlink{class_controller_abeab6704d15e871e16beaf2c82d8c1f2}{get\+\_\+left\+\_\+triggers} ()
+\item 
+bool $\ast$ \hyperlink{class_controller_a074d3c80ec11e8e64a7d5d0bb7ff06db}{get\+\_\+right\+\_\+triggers} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_controller_8h}{Controller.\+h} -\/ Wraps around the D\+FW library. Wraps the D\+FW controller. Written by Mikayla Fischler 
+
+Definition at line 13 of file Controller.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_aab64b54728b3f5d68bd2320605bdc51d}\label{class_controller_aab64b54728b3f5d68bd2320605bdc51d}} 
+\index{Controller@{Controller}!Controller@{Controller}}
+\index{Controller@{Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{Controller()}{Controller()}}
+{\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{int}]{debugpin }\end{DoxyParamCaption})}
+
+\hyperlink{_controller_8cpp}{Controller.\+cpp} -\/ Wrapper Class for D\+FW class Written by Mikayla Fischler 
+
+Definition at line 12 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+12                                    \{
+13     \textcolor{comment}{// The debug pin will be set high if no communication is seen after 2 seconds}
+14     this->dfw = \textcolor{keyword}{new} DFW(debugpin);
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}\label{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}} 
+\index{Controller@{Controller}!````~Controller@{$\sim$\+Controller}}
+\index{````~Controller@{$\sim$\+Controller}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{$\sim$\+Controller()}{~Controller()}}
+{\footnotesize\ttfamily Controller\+::$\sim$\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+17                         \{
+18     \hyperlink{class_controller_aaa374c56ef024a31888ab048baf0219c}{end}();
+19     \textcolor{keyword}{delete} dfw;
+20 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_a1cc0b87ab9e07d21ab47d294aa5bf607}\label{class_controller_a1cc0b87ab9e07d21ab47d294aa5bf607}} 
+\index{Controller@{Controller}!begin@{begin}}
+\index{begin@{begin}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily void Controller\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+22                        \{
+23     \textcolor{comment}{// begin with 9600 baud and port 1}
+24     this->dfw->begin(9600, 1);
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_aaa374c56ef024a31888ab048baf0219c}\label{class_controller_aaa374c56ef024a31888ab048baf0219c}} 
+\index{Controller@{Controller}!end@{end}}
+\index{end@{end}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily void Controller\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+32                      \{
+33     this->dfw->end();
+34 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a4162841dc8e34bffaff972c725f162cc}\label{class_controller_a4162841dc8e34bffaff972c725f162cc}} 
+\index{Controller@{Controller}!get\+\_\+arrow\+\_\+pad@{get\+\_\+arrow\+\_\+pad}}
+\index{get\+\_\+arrow\+\_\+pad@{get\+\_\+arrow\+\_\+pad}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+\_\+arrow\+\_\+pad()}{get\_arrow\_pad()}}
+{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+\_\+arrow\+\_\+pad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 74 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+74                                 \{
+75     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[4];
+76     \textcolor{comment}{// go around the pad clockwise}
+77     data[0] = this->dfw->up() == 0;
+78     data[1] = this->dfw->right() == 0;
+79     data[2] = this->dfw->down() == 0;
+80     data[3] = this->dfw->left() == 0;
+81     \textcolor{keywordflow}{return} data;
+82 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_abeab6704d15e871e16beaf2c82d8c1f2}\label{class_controller_abeab6704d15e871e16beaf2c82d8c1f2}} 
+\index{Controller@{Controller}!get\+\_\+left\+\_\+triggers@{get\+\_\+left\+\_\+triggers}}
+\index{get\+\_\+left\+\_\+triggers@{get\+\_\+left\+\_\+triggers}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+\_\+left\+\_\+triggers()}{get\_left\_triggers()}}
+{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+\_\+left\+\_\+triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+84                                     \{
+85     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[2];
+86     data[0] = this->dfw->l1() == 0;
+87     data[1] = this->dfw->l2() == 0;
+88     \textcolor{keywordflow}{return} data;
+89 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a590216b5d6e1fc904c62e8ed213c2767}\label{class_controller_a590216b5d6e1fc904c62e8ed213c2767}} 
+\index{Controller@{Controller}!get\+\_\+num\+\_\+pad@{get\+\_\+num\+\_\+pad}}
+\index{get\+\_\+num\+\_\+pad@{get\+\_\+num\+\_\+pad}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+\_\+num\+\_\+pad()}{get\_num\_pad()}}
+{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+\_\+num\+\_\+pad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 64 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+64                               \{
+65     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[4];
+66     \textcolor{comment}{// go around the pad clockwise}
+67     data[0] = this->dfw->one() == 0;
+68     data[1] = this->dfw->two() == 0;
+69     data[2] = this->dfw->three() == 0;
+70     data[3] = this->dfw->four() == 0;
+71     \textcolor{keywordflow}{return} data;
+72 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a074d3c80ec11e8e64a7d5d0bb7ff06db}\label{class_controller_a074d3c80ec11e8e64a7d5d0bb7ff06db}} 
+\index{Controller@{Controller}!get\+\_\+right\+\_\+triggers@{get\+\_\+right\+\_\+triggers}}
+\index{get\+\_\+right\+\_\+triggers@{get\+\_\+right\+\_\+triggers}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+\_\+right\+\_\+triggers()}{get\_right\_triggers()}}
+{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+\_\+right\+\_\+triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+91                                      \{
+92     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[2];
+93     data[0] = this->dfw->r1() == 0;
+94     data[1] = this->dfw->r2() == 0;
+95     \textcolor{keywordflow}{return} data;
+96 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a0bd70e25e112c655ba578f147af9ce11}\label{class_controller_a0bd70e25e112c655ba578f147af9ce11}} 
+\index{Controller@{Controller}!joystick\+\_\+btn\+\_\+left@{joystick\+\_\+btn\+\_\+left}}
+\index{joystick\+\_\+btn\+\_\+left@{joystick\+\_\+btn\+\_\+left}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{joystick\+\_\+btn\+\_\+left()}{joystick\_btn\_left()}}
+{\footnotesize\ttfamily bool Controller\+::joystick\+\_\+btn\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 57 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+57 \{ \textcolor{keywordflow}{return} this->dfw->jl() == 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a3710226224d7d95b1495bcac853abbe8}\label{class_controller_a3710226224d7d95b1495bcac853abbe8}} 
+\index{Controller@{Controller}!joystick\+\_\+btn\+\_\+right@{joystick\+\_\+btn\+\_\+right}}
+\index{joystick\+\_\+btn\+\_\+right@{joystick\+\_\+btn\+\_\+right}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{joystick\+\_\+btn\+\_\+right()}{joystick\_btn\_right()}}
+{\footnotesize\ttfamily bool Controller\+::joystick\+\_\+btn\+\_\+right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+56 \{ \textcolor{keywordflow}{return} this->dfw->jr() == 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a2d21a10299aaacdcdb571b10f6436270}\label{class_controller_a2d21a10299aaacdcdb571b10f6436270}} 
+\index{Controller@{Controller}!joystick\+\_\+left@{joystick\+\_\+left}}
+\index{joystick\+\_\+left@{joystick\+\_\+left}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{joystick\+\_\+left()}{joystick\_left()}}
+{\footnotesize\ttfamily int $\ast$ Controller\+::joystick\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+47                                \{
+48     \textcolor{keyword}{static} \textcolor{keywordtype}{int} data[2];
+49     data[0] = this->dfw->joysticklv() - 90;
+50     data[1] = this->dfw->joysticklh() - 90;
+51     \textcolor{keywordflow}{return} data;
+52 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a1f02ff9e9853dd53232df37f6676b0dc}\label{class_controller_a1f02ff9e9853dd53232df37f6676b0dc}} 
+\index{Controller@{Controller}!joystick\+\_\+right@{joystick\+\_\+right}}
+\index{joystick\+\_\+right@{joystick\+\_\+right}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{joystick\+\_\+right()}{joystick\_right()}}
+{\footnotesize\ttfamily int $\ast$ Controller\+::joystick\+\_\+right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+39                                 \{
+40     \textcolor{keyword}{static} \textcolor{keywordtype}{int} data[2];
+41     data[0] = this->dfw->joystickrv() - 90;
+42     data[1] = this->dfw->joystickrh() - 90;
+43     \textcolor{keywordflow}{return} data;
+44 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_aa94980f9d72b8b3d61f05641e82710ba}\label{class_controller_aa94980f9d72b8b3d61f05641e82710ba}} 
+\index{Controller@{Controller}!select\+\_\+btn@{select\+\_\+btn}}
+\index{select\+\_\+btn@{select\+\_\+btn}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{select\+\_\+btn()}{select\_btn()}}
+{\footnotesize\ttfamily bool Controller\+::select\+\_\+btn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 62 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+62 \{ \textcolor{keywordflow}{return} this->dfw->select() == 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_acde5cc2b40d1cc9e451a704ec1811b53}\label{class_controller_acde5cc2b40d1cc9e451a704ec1811b53}} 
+\index{Controller@{Controller}!start\+\_\+btn@{start\+\_\+btn}}
+\index{start\+\_\+btn@{start\+\_\+btn}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{start\+\_\+btn()}{start\_btn()}}
+{\footnotesize\ttfamily bool Controller\+::start\+\_\+btn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+61 \{ \textcolor{keywordflow}{return} this->dfw->start() == 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a7d04c17913f04f99429aa29fa8505484}\label{class_controller_a7d04c17913f04f99429aa29fa8505484}} 
+\index{Controller@{Controller}!update@{update}}
+\index{update@{update}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void Controller\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+27                         \{
+28     \textcolor{comment}{// Called to update the controllers output. Do not call faster than every 15ms.}
+29     this->dfw->update();
+30 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/devices/controller/\hyperlink{_controller_8h}{Controller.\+h}\item 
+rbe2001/devices/controller/\hyperlink{_controller_8cpp}{Controller.\+cpp}\end{DoxyCompactItemize}

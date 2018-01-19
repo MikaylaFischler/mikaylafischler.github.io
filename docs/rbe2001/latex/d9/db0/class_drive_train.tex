@@ -1,0 +1,250 @@
+\hypertarget{class_drive_train}{}\section{Drive\+Train Class Reference}
+\label{class_drive_train}\index{Drive\+Train@{Drive\+Train}}
+
+
+{\ttfamily \#include $<$Drive\+Train.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_drive_train_a7c4f19e864e8be8bce01466ee876ad83}{Drive\+Train} (int port\+\_\+left, int port\+\_\+right)
+\item 
+\hyperlink{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}{$\sim$\+Drive\+Train} ()
+\item 
+int $\ast$ \hyperlink{class_drive_train_a79742e748af105aa28332142fdc529f7}{get\+\_\+ports} ()
+\item 
+int $\ast$ \hyperlink{class_drive_train_a50bf393e1ecd61225c78b43e6ffd5fc3}{get\+\_\+speeds} ()
+\item 
+void \hyperlink{class_drive_train_aaaa020990153f43209fe1114296cc9d5}{tank\+\_\+drive} (\hyperlink{class_controller}{Controller} $\ast$controller)
+\item 
+void \hyperlink{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}{tank\+\_\+drive} (int \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}, int \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right})
+\item 
+\hyperlink{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}{$\sim$\+Drive\+Train} ()
+\item 
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_drive_train_aee8c9a065107209a264b93a7254ca3ee}{get\+\_\+left\+\_\+motor} (int index)
+\item 
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_drive_train_a8e2201be0bd64a6ad6215ceed213bcbc}{get\+\_\+right\+\_\+motor} (int index)
+\item 
+\hyperlink{class_motor_group}{Motor\+Group} \& \hyperlink{class_drive_train_aebe8b0afce2b9b929d90dfbb9f19e311}{get\+\_\+left} ()
+\item 
+\hyperlink{class_motor_group}{Motor\+Group} \& \hyperlink{class_drive_train_ae07aafb05b73ef4db6952c16f58436ea}{get\+\_\+right} ()
+\item 
+void \hyperlink{class_drive_train_aaaa020990153f43209fe1114296cc9d5}{tank\+\_\+drive} (\hyperlink{class_controller}{Controller} $\ast$controller)
+\item 
+void \hyperlink{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}{tank\+\_\+drive} (int \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}, int \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right})
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_drive_train_a82ca6f487a43e353aea5ee1ff49952da}{Drive\+Train} (\hyperlink{class_motor_group}{Motor\+Group} $\ast$\hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}, \hyperlink{class_motor_group}{Motor\+Group} $\ast$\hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_motor_group}{Motor\+Group} $\ast$ \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}
+\item 
+\hyperlink{class_motor_group}{Motor\+Group} $\ast$ \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_drive_train_8h}{Drive\+Train.\+h} -\/ Drive Train Header File Holds two motors and controls them together as a single body. Written by Mikayla Fischler
+
+Drive\+Train.\+hpp -\/ Drive Train Class Header File Contains general code for tank drive to run on motor groups Written by Mikayla Fischler 
+
+Definition at line 14 of file Drive\+Train.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_drive_train_a7c4f19e864e8be8bce01466ee876ad83}\label{class_drive_train_a7c4f19e864e8be8bce01466ee876ad83}} 
+\index{Drive\+Train@{Drive\+Train}!Drive\+Train@{Drive\+Train}}
+\index{Drive\+Train@{Drive\+Train}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Drive\+Train()}{DriveTrain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Drive\+Train\+::\+Drive\+Train (\begin{DoxyParamCaption}\item[{int}]{port\+\_\+left,  }\item[{int}]{port\+\_\+right }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}\label{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}} 
+\index{Drive\+Train@{Drive\+Train}!````~Drive\+Train@{$\sim$\+Drive\+Train}}
+\index{````~Drive\+Train@{$\sim$\+Drive\+Train}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{$\sim$\+Drive\+Train()}{~DriveTrain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Drive\+Train\+::$\sim$\+Drive\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+20 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a82ca6f487a43e353aea5ee1ff49952da}\label{class_drive_train_a82ca6f487a43e353aea5ee1ff49952da}} 
+\index{Drive\+Train@{Drive\+Train}!Drive\+Train@{Drive\+Train}}
+\index{Drive\+Train@{Drive\+Train}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Drive\+Train()}{DriveTrain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Drive\+Train\+::\+Drive\+Train (\begin{DoxyParamCaption}\item[{\hyperlink{class_motor_group}{Motor\+Group} $\ast$}]{left,  }\item[{\hyperlink{class_motor_group}{Motor\+Group} $\ast$}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Drive\+Train.\+cpp -\/ Drive Train Class Source Code Written by Mikayla Fischler 
+
+Definition at line 11 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+11                                                           \{
+12     \textcolor{comment}{// create motor groups}
+13     this->left = \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left};
+14     this->right = \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right};
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}\label{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}} 
+\index{Drive\+Train@{Drive\+Train}!````~Drive\+Train@{$\sim$\+Drive\+Train}}
+\index{````~Drive\+Train@{$\sim$\+Drive\+Train}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{$\sim$\+Drive\+Train()}{~DriveTrain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Drive\+Train\+::$\sim$\+Drive\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_drive_train_aebe8b0afce2b9b929d90dfbb9f19e311}\label{class_drive_train_aebe8b0afce2b9b929d90dfbb9f19e311}} 
+\index{Drive\+Train@{Drive\+Train}!get\+\_\+left@{get\+\_\+left}}
+\index{get\+\_\+left@{get\+\_\+left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+\_\+left()}{get\_left()}}
+{\footnotesize\ttfamily \hyperlink{class_motor_group}{Motor\+Group} $\ast$ Drive\+Train\+::get\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+29 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_aee8c9a065107209a264b93a7254ca3ee}\label{class_drive_train_aee8c9a065107209a264b93a7254ca3ee}} 
+\index{Drive\+Train@{Drive\+Train}!get\+\_\+left\+\_\+motor@{get\+\_\+left\+\_\+motor}}
+\index{get\+\_\+left\+\_\+motor@{get\+\_\+left\+\_\+motor}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+\_\+left\+\_\+motor()}{get\_left\_motor()}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ Drive\+Train\+::get\+\_\+left\+\_\+motor (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}->\hyperlink{class_motor_group_a5bb7e87231ada3770df40783a2c6afda}{get}(index); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a79742e748af105aa28332142fdc529f7}\label{class_drive_train_a79742e748af105aa28332142fdc529f7}} 
+\index{Drive\+Train@{Drive\+Train}!get\+\_\+ports@{get\+\_\+ports}}
+\index{get\+\_\+ports@{get\+\_\+ports}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+\_\+ports()}{get\_ports()}}
+{\footnotesize\ttfamily int$\ast$ Drive\+Train\+::get\+\_\+ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_train_ae07aafb05b73ef4db6952c16f58436ea}\label{class_drive_train_ae07aafb05b73ef4db6952c16f58436ea}} 
+\index{Drive\+Train@{Drive\+Train}!get\+\_\+right@{get\+\_\+right}}
+\index{get\+\_\+right@{get\+\_\+right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+\_\+right()}{get\_right()}}
+{\footnotesize\ttfamily \hyperlink{class_motor_group}{Motor\+Group} $\ast$ Drive\+Train\+::get\+\_\+right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+32 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a8e2201be0bd64a6ad6215ceed213bcbc}\label{class_drive_train_a8e2201be0bd64a6ad6215ceed213bcbc}} 
+\index{Drive\+Train@{Drive\+Train}!get\+\_\+right\+\_\+motor@{get\+\_\+right\+\_\+motor}}
+\index{get\+\_\+right\+\_\+motor@{get\+\_\+right\+\_\+motor}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+\_\+right\+\_\+motor()}{get\_right\_motor()}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ Drive\+Train\+::get\+\_\+right\+\_\+motor (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right}->\hyperlink{class_motor_group_a5bb7e87231ada3770df40783a2c6afda}{get}(index); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a50bf393e1ecd61225c78b43e6ffd5fc3}\label{class_drive_train_a50bf393e1ecd61225c78b43e6ffd5fc3}} 
+\index{Drive\+Train@{Drive\+Train}!get\+\_\+speeds@{get\+\_\+speeds}}
+\index{get\+\_\+speeds@{get\+\_\+speeds}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+\_\+speeds()}{get\_speeds()}}
+{\footnotesize\ttfamily int$\ast$ Drive\+Train\+::get\+\_\+speeds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_train_aaaa020990153f43209fe1114296cc9d5}\label{class_drive_train_aaaa020990153f43209fe1114296cc9d5}} 
+\index{Drive\+Train@{Drive\+Train}!tank\+\_\+drive@{tank\+\_\+drive}}
+\index{tank\+\_\+drive@{tank\+\_\+drive}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{tank\+\_\+drive()}{tank\_drive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily void Drive\+Train\+::tank\+\_\+drive (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+35                                                   \{
+36     this->\hyperlink{class_drive_train_aaaa020990153f43209fe1114296cc9d5}{tank\_drive}(controller->\hyperlink{class_controller_a2d21a10299aaacdcdb571b10f6436270}{joystick\_left}()[0], controller->
+      \hyperlink{class_controller_a1f02ff9e9853dd53232df37f6676b0dc}{joystick\_right}()[0]);
+37 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}\label{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}} 
+\index{Drive\+Train@{Drive\+Train}!tank\+\_\+drive@{tank\+\_\+drive}}
+\index{tank\+\_\+drive@{tank\+\_\+drive}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{tank\+\_\+drive()}{tank\_drive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily void Drive\+Train\+::tank\+\_\+drive (\begin{DoxyParamCaption}\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+40                                                \{
+41     this->\hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}->\hyperlink{class_motor_group_a0c2302784f8226542ded59b6812720ac}{drive}(\hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left});
+42     this->\hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right}->\hyperlink{class_motor_group_a0c2302784f8226542ded59b6812720ac}{drive}(\hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right});
+43 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_aaaa020990153f43209fe1114296cc9d5}\label{class_drive_train_aaaa020990153f43209fe1114296cc9d5}} 
+\index{Drive\+Train@{Drive\+Train}!tank\+\_\+drive@{tank\+\_\+drive}}
+\index{tank\+\_\+drive@{tank\+\_\+drive}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{tank\+\_\+drive()}{tank\_drive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily void Drive\+Train\+::tank\+\_\+drive (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}\label{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}} 
+\index{Drive\+Train@{Drive\+Train}!tank\+\_\+drive@{tank\+\_\+drive}}
+\index{tank\+\_\+drive@{tank\+\_\+drive}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{tank\+\_\+drive()}{tank\_drive()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily void Drive\+Train\+::tank\+\_\+drive (\begin{DoxyParamCaption}\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}\label{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}} 
+\index{Drive\+Train@{Drive\+Train}!left@{left}}
+\index{left@{left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily \hyperlink{class_motor_group}{Motor\+Group}$\ast$ Drive\+Train\+::left\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 20 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}\label{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}} 
+\index{Drive\+Train@{Drive\+Train}!right@{right}}
+\index{right@{right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily \hyperlink{class_motor_group}{Motor\+Group}$\ast$ Drive\+Train\+::right\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 21 of file Drive\+Train.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/devices/motor/\hyperlink{_drive_train_8h}{Drive\+Train.\+h}\item 
+rbe2001/devices/motor/\hyperlink{devices_2motor_2_drive_train_8hpp}{Drive\+Train.\+hpp}\item 
+rbe2001/devices/motor/\hyperlink{devices_2motor_2_drive_train_8cpp}{Drive\+Train.\+cpp}\end{DoxyCompactItemize}

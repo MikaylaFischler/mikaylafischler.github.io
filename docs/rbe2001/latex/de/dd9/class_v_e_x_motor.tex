@@ -1,0 +1,233 @@
+\hypertarget{class_v_e_x_motor}{}\section{V\+E\+X\+Motor Class Reference}
+\label{class_v_e_x_motor}\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+
+
+{\ttfamily \#include $<$V\+E\+X\+Motor.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_e_x_motor_ad8962ee0dee1654ed846df974c36e848}{V\+E\+X\+Motor} ()
+\item 
+\hyperlink{class_v_e_x_motor_a580907c6cae0d4f8c525c5ce5916c9f8}{V\+E\+X\+Motor} (int port)
+\item 
+\hyperlink{class_v_e_x_motor_a7de15da93ffb3034b3dc34d106b68ac6}{V\+E\+X\+Motor} (int port, bool \hyperlink{class_v_e_x_motor_a2c4c51b0b9c1c6747e0a8f1cee9f39e3}{invert})
+\item 
+\hyperlink{class_v_e_x_motor_a1f0c73e1feb9f1bbe6bcc1216e8de430}{$\sim$\+V\+E\+X\+Motor} ()
+\item 
+void \hyperlink{class_v_e_x_motor_a67dc328fafe4cd889b40a1147a0d4326}{init} (int port, bool \hyperlink{class_v_e_x_motor_a2c4c51b0b9c1c6747e0a8f1cee9f39e3}{invert})
+\item 
+void \hyperlink{class_v_e_x_motor_a2c4c51b0b9c1c6747e0a8f1cee9f39e3}{invert} (bool invert)
+\item 
+bool \hyperlink{class_v_e_x_motor_a426abe40a80c506b6f7297c070f109e2}{is\+\_\+initialzied} ()
+\item 
+int \hyperlink{class_v_e_x_motor_a3f4844099f5aff566f26645fd20bf8b2}{get\+\_\+port} ()
+\item 
+int \hyperlink{class_v_e_x_motor_af2e32fe5adc71a85977a728ba3531a96}{get\+\_\+speed} ()
+\item 
+void \hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive} (int val)
+\item 
+void \hyperlink{class_v_e_x_motor_abb2dd7163f613f47b4c9e000b8214d6b}{stop} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{_v_e_x_motor_8hpp}{V\+E\+X\+Motor.\+hpp} -\/ \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} Header File (Wraps Servo.\+h) Allows for improved control of the robot\textquotesingle{}s motors. Written by Mikayla Fischler 
+
+Definition at line 13 of file V\+E\+X\+Motor.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_v_e_x_motor_ad8962ee0dee1654ed846df974c36e848}\label{class_v_e_x_motor_ad8962ee0dee1654ed846df974c36e848}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{V\+E\+X\+Motor()}{VEXMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily V\+E\+X\+Motor\+::\+V\+E\+X\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\hyperlink{_v_e_x_motor_8cpp}{V\+E\+X\+Motor.\+cpp} -\/ \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} Source Code Written by Mikayla Fischler 
+
+Definition at line 11 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+11 : initialized(\textcolor{keyword}{false}), speed(0) \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_a580907c6cae0d4f8c525c5ce5916c9f8}\label{class_v_e_x_motor_a580907c6cae0d4f8c525c5ce5916c9f8}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{V\+E\+X\+Motor()}{VEXMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily V\+E\+X\+Motor\+::\+V\+E\+X\+Motor (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+14                            : initialized(\textcolor{keyword}{false}), speed(0)  \{
+15     this->\hyperlink{class_v_e_x_motor_a67dc328fafe4cd889b40a1147a0d4326}{init}(port, \textcolor{keyword}{false});
+16 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_a7de15da93ffb3034b3dc34d106b68ac6}\label{class_v_e_x_motor_a7de15da93ffb3034b3dc34d106b68ac6}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{V\+E\+X\+Motor()}{VEXMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily V\+E\+X\+Motor\+::\+V\+E\+X\+Motor (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{bool}]{invert }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+19                                         : initialized(\textcolor{keyword}{false}), speed(0)  \{
+20     this->\hyperlink{class_v_e_x_motor_a67dc328fafe4cd889b40a1147a0d4326}{init}(port, \hyperlink{class_v_e_x_motor_a2c4c51b0b9c1c6747e0a8f1cee9f39e3}{invert});
+21 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_a1f0c73e1feb9f1bbe6bcc1216e8de430}\label{class_v_e_x_motor_a1f0c73e1feb9f1bbe6bcc1216e8de430}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!````~V\+E\+X\+Motor@{$\sim$\+V\+E\+X\+Motor}}
+\index{````~V\+E\+X\+Motor@{$\sim$\+V\+E\+X\+Motor}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{$\sim$\+V\+E\+X\+Motor()}{~VEXMotor()}}
+{\footnotesize\ttfamily V\+E\+X\+Motor\+::$\sim$\+V\+E\+X\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+24 \{ this->motor.detach(); \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}\label{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!drive@{drive}}
+\index{drive@{drive}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{drive()}{drive()}}
+{\footnotesize\ttfamily void V\+E\+X\+Motor\+::drive (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+49                             \{
+50     \textcolor{comment}{// range safety}
+51     \textcolor{keywordflow}{if} (val > 90) \{
+52         val = 90;
+53     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (val < -90) \{
+54         val = -90;
+55     \}
+56 
+57     \textcolor{comment}{// set motor speed (invert if applicable)}
+58     \textcolor{keywordflow}{if} (initialized) \{
+59         \textcolor{keywordflow}{if} (this->inverted) \{
+60             this->motor.write(90 - val);
+61         \} \textcolor{keywordflow}{else} \{
+62             this->motor.write(90 + val);
+63         \}
+64 
+65         this->speed = val;
+66     \}
+67 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_a3f4844099f5aff566f26645fd20bf8b2}\label{class_v_e_x_motor_a3f4844099f5aff566f26645fd20bf8b2}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!get\+\_\+port@{get\+\_\+port}}
+\index{get\+\_\+port@{get\+\_\+port}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
+{\footnotesize\ttfamily int V\+E\+X\+Motor\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+43 \{ \textcolor{keywordflow}{return} this->port; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_af2e32fe5adc71a85977a728ba3531a96}\label{class_v_e_x_motor_af2e32fe5adc71a85977a728ba3531a96}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!get\+\_\+speed@{get\+\_\+speed}}
+\index{get\+\_\+speed@{get\+\_\+speed}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{get\+\_\+speed()}{get\_speed()}}
+{\footnotesize\ttfamily int V\+E\+X\+Motor\+::get\+\_\+speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{ \textcolor{keywordflow}{return} this->speed; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_a67dc328fafe4cd889b40a1147a0d4326}\label{class_v_e_x_motor_a67dc328fafe4cd889b40a1147a0d4326}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!init@{init}}
+\index{init@{init}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void V\+E\+X\+Motor\+::init (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{bool}]{invert }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+27                                          \{
+28     \textcolor{keywordflow}{if} (!this->initialized) \{
+29         this->port = port;
+30         this->motor.attach(port, RBE\_MIN\_PULSE\_WIDTH, RBE\_MAX\_PULSE\_WIDTH);
+31         this->inverted = \hyperlink{class_v_e_x_motor_a2c4c51b0b9c1c6747e0a8f1cee9f39e3}{invert};
+32         this->initialized = \textcolor{keyword}{true};
+33     \}
+34 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_a2c4c51b0b9c1c6747e0a8f1cee9f39e3}\label{class_v_e_x_motor_a2c4c51b0b9c1c6747e0a8f1cee9f39e3}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!invert@{invert}}
+\index{invert@{invert}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily void V\+E\+X\+Motor\+::invert (\begin{DoxyParamCaption}\item[{bool}]{invert }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+40 \{ this->inverted = \hyperlink{class_v_e_x_motor_a2c4c51b0b9c1c6747e0a8f1cee9f39e3}{invert}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_a426abe40a80c506b6f7297c070f109e2}\label{class_v_e_x_motor_a426abe40a80c506b6f7297c070f109e2}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!is\+\_\+initialzied@{is\+\_\+initialzied}}
+\index{is\+\_\+initialzied@{is\+\_\+initialzied}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{is\+\_\+initialzied()}{is\_initialzied()}}
+{\footnotesize\ttfamily bool V\+E\+X\+Motor\+::is\+\_\+initialzied (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+37 \{ \textcolor{keywordflow}{return} this->initialized; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_v_e_x_motor_abb2dd7163f613f47b4c9e000b8214d6b}\label{class_v_e_x_motor_abb2dd7163f613f47b4c9e000b8214d6b}} 
+\index{V\+E\+X\+Motor@{V\+E\+X\+Motor}!stop@{stop}}
+\index{stop@{stop}!V\+E\+X\+Motor@{V\+E\+X\+Motor}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void V\+E\+X\+Motor\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file V\+E\+X\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+70 \{ \textcolor{keywordflow}{if} (initialized) \{ this->motor.write(90); \} \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/devices/motor/\hyperlink{_v_e_x_motor_8hpp}{V\+E\+X\+Motor.\+hpp}\item 
+rbe2001/devices/motor/\hyperlink{_v_e_x_motor_8cpp}{V\+E\+X\+Motor.\+cpp}\end{DoxyCompactItemize}
