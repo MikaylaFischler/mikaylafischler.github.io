@@ -1,4 +1,62 @@
-h1 {
+body {
+	font-family: Raleway;
+}
+
+h1.title {
 	font-family: Raleway;
 	font-weight: 100;
+	border-bottom: 1px solid dimgray;
+}
+
+h3.sidebar {
+	font-weight: 300;
+	border-bottom: 1px solid dimgray;
+}
+
+a.link:link {
+	color: #FFB300;
+
+	-webkit-transition: 300ms ease;
+	-moz-transition: 300ms ease;
+	-ms-transition: 300ms ease;
+	-o-transition: 300ms ease;
+	transition: 300ms ease;
+
+	text-decoration: none;
+}
+
+a.link:visited {
+	color: #FFB300;
+
+	-webkit-transition: 300ms ease;
+	-moz-transition: 300ms ease;
+	-ms-transition: 300ms ease;
+	-o-transition: 300ms ease;
+	transition: 300ms ease;
+
+	text-decoration: none;
+}
+
+a.link:hover {
+    color: #FF9800;
+
+	-webkit-transition: 300ms ease;
+	-moz-transition: 300ms ease;
+	-ms-transition: 300ms ease;
+	-o-transition: 300ms ease;
+	transition: 300ms ease;
+
+	text-decoration: underline;
+}
+
+a.link:active {
+    color: #046dfb; /* #8BC34A greenish */
+
+	-webkit-transition: 300ms ease;
+	-moz-transition: 300ms ease;
+	-ms-transition: 300ms ease;
+	-o-transition: 300ms ease;
+	transition: 300ms ease;
+
+	text-decoration: underline;
 }
