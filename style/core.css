@@ -14,11 +14,12 @@ h3.sidebar {
 }
 
 #sidebar {
-	width: 400px;
+	width: 300px;
+	border: 1px solid dimgray;
 }
 
 a.link:link {
-	color: #FFB300;
+	color: #cc99ff;
 
 	-webkit-transition: 300ms ease;
 	-moz-transition: 300ms ease;
@@ -30,7 +31,7 @@ a.link:link {
 }
 
 a.link:visited {
-	color: #FFB300;
+	color: #cc99ff;
 
 	-webkit-transition: 300ms ease;
 	-moz-transition: 300ms ease;
@@ -42,7 +43,7 @@ a.link:visited {
 }
 
 a.link:hover {
-    color: #FF9800;
+    color: #cc66ff;
 
 	-webkit-transition: 300ms ease;
 	-moz-transition: 300ms ease;
