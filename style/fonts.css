@@ -1,0 +1,535 @@
+/* Font Faces */
+
+/* Open Sans */
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-BoldItalic.ttf);
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-ExtraBold.ttf);
+	font-weight: 800;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-ExtraBoldItalic.ttf);
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-Italic.ttf);
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-Light.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-LightItalic.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-Semibold.ttf);
+	font-weight: 600;
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url(/fonts/Open_Sans/OpenSans-SemiboldItalic.ttf);
+	font-weight: 600;
+	font-style: italic;
+}
+
+/* Open Sans Condensed */
+
+@font-face {
+    font-family: "Open Sans Condensed";
+    src: url(/fonts/Open_Sans_Condensed/OpenSans-CondBold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Open Sans Condensed";
+    src: url(/fonts/Open_Sans_Condensed/OpenSans-CondLight.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: "Open Sans Condensed";
+    src: url(/fonts/Open_Sans_Condensed/OpenSans-CondLightItalic.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+/* Roboto */
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-Black.ttf);
+	font-weight: 900;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-BlackItalic.ttf);
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-ExtraBold.ttf);
+	font-weight: 800;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-ExtraBoldItalic.ttf);
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-BoldItalic.ttf);
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-SemiBold.ttf);
+	font-weight: 600;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-SemiBoldItalic.ttf);
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-Medium.ttf);
+	font-weight: 500;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-MediumItalic.ttf);
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-Italic.ttf);
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-Light.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-LightItalic.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-ExtraLight.ttf);
+	font-weight: 200;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-ExtraLightItalic.ttf);
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-Thin.ttf);
+	font-weight: 100;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url(/fonts/Raleway/Raleway-ThinItalic.ttf);
+	font-weight: 100;
+	font-style: italic;
+}
+
+/* Roboto */
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-Black.ttf);
+	font-weight: 900;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-BlackItalic.ttf);
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-BoldItalic.ttf);
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-Italic.ttf);
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-Light.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-LightItalic.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-Medium.ttf);
+	font-weight: 500;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-MediumItalic.ttf);
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-Thin.ttf);
+	font-weight: 100;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/fonts/Roboto/Roboto-ThinItalic.ttf);
+	font-weight: 100;
+	font-style: italic;
+}
+
+/* Roboto Condensed */
+
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(/fonts/Roboto_Condensed/RobotoCondensed-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(/fonts/Roboto_Condensed/RobotoCondensed-BoldItalic.ttf);
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(/fonts/Roboto_Condensed/RobotoCondensed-Italic.ttf);
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(/fonts/Roboto_Condensed/RobotoCondensed-Light.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(/fonts/Roboto_Condensed/RobotoCondensed-LightItalic.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(/fonts/Roboto_Condensed/RobotoCondensed-Regular.ttf);
+	font-weight: 400;
+}
+
+/* Roboto Slab */
+
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(/fonts/Roboto_Slab/RobotoSlab-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(/fonts/Roboto_Slab/RobotoSlab-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(/fonts/Roboto_Slab/RobotoSlab-Thin.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(/fonts/Roboto_Slab/RobotoSlab-Light.ttf);
+	font-weight: 100;
+}
+
+/* Ropa Sans */
+
+@font-face {
+    font-family: "Ropa Sans";
+    src: url(/fonts/Ropa_Sans/RopaSans-Italic.ttf);
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Ropa Sans";
+    src: url(/fonts/Ropa_Sans/RopaSans-Regular.ttf);
+}
+
+/* Ubuntu */
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(/fonts/Ubuntu/Ubuntu-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(/fonts/Ubuntu/Ubuntu-BoldItalic.ttf);
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(/fonts/Ubuntu/Ubuntu-Italic.ttf);
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(/fonts/Ubuntu/Ubuntu-Light.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(/fonts/Ubuntu/Ubuntu-LightItalic.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(/fonts/Ubuntu/Ubuntu-Medium.ttf);
+	font-weight: 500;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(/fonts/Ubuntu/Ubuntu-MediumItalic.ttf);
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Ubuntu";
+    src: url(/fonts/Ubuntu/Ubuntu-Regular.ttf);
+	font-weight: 400;
+}
+
+/* Maven Pro */
+
+@font-face {
+    font-family: "Maven Pro";
+    src: url(/fonts/Maven_Pro/MavenPro-Regular.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+    font-family: "Maven Pro";
+    src: url(/fonts/Maven_Pro/MavenPro-Medium.ttf);
+	font-weight: 500;
+}
+
+@font-face {
+    font-family: "Maven Pro";
+    src: url(/fonts/Maven_Pro/MavenPro-Bold.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Maven Pro";
+    src: url(/fonts/Maven_Pro/MavenPro-Black.ttf);
+	font-weight: 900;
+}
+
+/* Segoe UI; Designed by: Microsoft/Windows */
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/segoeuibl.ttf);
+	font-weight: 900;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/segoeuibli.ttf);
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/segoeuib.ttf);
+	font-weight: 700;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/segoeuiz.ttf);
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/seguibl.ttf);
+	font-weight: 500;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/seguibli.ttf);
+	font-weight: 500;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/segoeui.ttf);
+	font-weight: 400;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/segoeuii.ttf);
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/segoeuisl.ttf);
+	font-weight: 300;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/seguisli.ttf);
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/segoeuil.ttf);
+	font-weight: 100;
+}
+
+@font-face {
+    font-family: "Segoe UI";
+    src: url(/fonts/Segoe_UI/seguili.ttf);
+	font-weight: 100;
+	font-style: italic;
+}
+
+/* Slabo 27px by John Hudson */
+
+@font-face {
+    font-family: "Slabo 27px";
+    src: url(/fonts/Slabo_27px/Slabo27px-Regular.ttf);
+	font-weight: 400;
+}
