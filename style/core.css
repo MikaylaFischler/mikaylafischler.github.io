@@ -16,6 +16,8 @@ h3.sidebar {
 #sidebar {
 	width: 300px;
 	border: 1px solid dimgray;
+	border-radius: 2px;
+	padding: 10px;
 }
 
 a.link:link {
