@@ -2,101 +2,120 @@
 \label{class_digital_sensor}\index{Digital\+Sensor@{Digital\+Sensor}}
 
 
-{\ttfamily \#include $<$Digital\+Sensor.\+h$>$}
+{\ttfamily \#include $<$Digital\+Sensor.\+hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_digital_sensor_a3b8daf63e0d82c25146c651cda0adc13}{Digital\+Sensor} (int port)
+\hyperlink{class_digital_sensor_a79aab132baece8ea00664aa75be64b84}{Digital\+Sensor} (int p, bool pullup)
 \item 
-\hyperlink{class_digital_sensor_aaccd3ee6cb96375888f4d6ebe5ef47b4}{Digital\+Sensor} (int port, bool \hyperlink{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}{invert})
+\hyperlink{class_digital_sensor_a98182af6590bee5570857439b7fda908}{Digital\+Sensor} (int p, bool pullup, bool \hyperlink{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}{invert})
 \item 
 \hyperlink{class_digital_sensor_ab74d9e7e77b4ea505cd42a364017ded0}{$\sim$\+Digital\+Sensor} ()
 \item 
 void \hyperlink{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}{invert} (bool invert)
+\begin{DoxyCompactList}\small\item\em Invert the sensor (useful for pulled-\/up signals) \end{DoxyCompactList}\item 
+int \hyperlink{class_digital_sensor_a621247d2f977e6560c5282a867cc24dc}{get\+Port} (void) const
+\begin{DoxyCompactList}\small\item\em Get port being used. \end{DoxyCompactList}\item 
+bool \hyperlink{class_digital_sensor_a79dba881f434e5271d30c8e606994c9a}{read} (void) const
+\begin{DoxyCompactList}\small\item\em Read the current status of the port (properly corrected for inversion setting). \end{DoxyCompactList}\item 
+int \hyperlink{class_digital_sensor_a22943d64a79b47263f677c5a6dd5d682}{read\+\_\+raw} (void) const
+\begin{DoxyCompactList}\small\item\em Get un-\/inverted port status. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{class_digital_sensor_a9957b8be49aaa4dc417db3ccbcdf3956}{get\+\_\+port} ()
+int \hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}
 \item 
-bool \hyperlink{class_digital_sensor_a0b182fe8c229aaa0ea850889193f28f9}{read} ()
-\item 
-int \hyperlink{class_digital_sensor_a8cbcce6b1e7929c24ddf5992ec2c7537}{read\+\_\+raw} ()
+bool \hyperlink{class_digital_sensor_a0458d9c3e2f781a776742a080d7b7e81}{inverted}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{_digital_sensor_8h}{Digital\+Sensor.\+h} -\/ Wraps around digital read. Written by Mikayla Fischler 
 
-Definition at line 11 of file Digital\+Sensor.\+h.
+
+Definition at line 12 of file Digital\+Sensor.\+hpp.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_digital_sensor_a3b8daf63e0d82c25146c651cda0adc13}\label{class_digital_sensor_a3b8daf63e0d82c25146c651cda0adc13}} 
+\mbox{\Hypertarget{class_digital_sensor_a79aab132baece8ea00664aa75be64b84}\label{class_digital_sensor_a79aab132baece8ea00664aa75be64b84}} 
 \index{Digital\+Sensor@{Digital\+Sensor}!Digital\+Sensor@{Digital\+Sensor}}
 \index{Digital\+Sensor@{Digital\+Sensor}!Digital\+Sensor@{Digital\+Sensor}}
 \subsubsection{\texorpdfstring{Digital\+Sensor()}{DigitalSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Digital\+Sensor\+::\+Digital\+Sensor (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Digital\+Sensor\+::\+Digital\+Sensor (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{bool}]{pullup }\end{DoxyParamCaption})}
 
-\hyperlink{_digital_sensor_8cpp}{Digital\+Sensor.\+cpp} -\/ Digtal Sensor Source Code Written by Mikayla Fischler 
+
 
 Definition at line 11 of file Digital\+Sensor.\+cpp.
 
 
 \begin{DoxyCode}
-11                                      \{
-12     pinMode(port, INPUT);
-13     this->port = port;
-14     this->inverted = \textcolor{keyword}{false};
-15 \}
+11                                                : \hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}(p), \hyperlink{class_digital_sensor_a0458d9c3e2f781a776742a080d7b7e81}{inverted}(\textcolor{keyword}{false}) \{
+12     \textcolor{keywordflow}{if} (pullup) \{
+13         pinMode(\hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}, INPUT\_PULLUP);
+14     \} \textcolor{keywordflow}{else} \{
+15         pinMode(\hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}, INPUT);
+16     \}
+17 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_digital_sensor_aaccd3ee6cb96375888f4d6ebe5ef47b4}\label{class_digital_sensor_aaccd3ee6cb96375888f4d6ebe5ef47b4}} 
+\mbox{\Hypertarget{class_digital_sensor_a98182af6590bee5570857439b7fda908}\label{class_digital_sensor_a98182af6590bee5570857439b7fda908}} 
 \index{Digital\+Sensor@{Digital\+Sensor}!Digital\+Sensor@{Digital\+Sensor}}
 \index{Digital\+Sensor@{Digital\+Sensor}!Digital\+Sensor@{Digital\+Sensor}}
 \subsubsection{\texorpdfstring{Digital\+Sensor()}{DigitalSensor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Digital\+Sensor\+::\+Digital\+Sensor (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{bool}]{invert }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Digital\+Sensor\+::\+Digital\+Sensor (\begin{DoxyParamCaption}\item[{int}]{p,  }\item[{bool}]{pullup,  }\item[{bool}]{invert }\end{DoxyParamCaption})}
 
 
 
-Definition at line 18 of file Digital\+Sensor.\+cpp.
+Definition at line 20 of file Digital\+Sensor.\+cpp.
 
 
 \begin{DoxyCode}
-18                                                   \{
-19     pinMode(port, INPUT);
-20     this->port = port;
-21     this->inverted = \hyperlink{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}{invert};
-22 \}
+20                                                             : \hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}(p), 
+      \hyperlink{class_digital_sensor_a0458d9c3e2f781a776742a080d7b7e81}{inverted}(\hyperlink{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}{invert}) \{
+21     \textcolor{keywordflow}{if} (pullup) \{
+22         pinMode(\hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}, INPUT\_PULLUP);
+23     \} \textcolor{keywordflow}{else} \{
+24         pinMode(\hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}, INPUT);
+25     \}
+26 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_digital_sensor_ab74d9e7e77b4ea505cd42a364017ded0}\label{class_digital_sensor_ab74d9e7e77b4ea505cd42a364017ded0}} 
 \index{Digital\+Sensor@{Digital\+Sensor}!````~Digital\+Sensor@{$\sim$\+Digital\+Sensor}}
 \index{````~Digital\+Sensor@{$\sim$\+Digital\+Sensor}!Digital\+Sensor@{Digital\+Sensor}}
 \subsubsection{\texorpdfstring{$\sim$\+Digital\+Sensor()}{~DigitalSensor()}}
-{\footnotesize\ttfamily Digital\+Sensor\+::$\sim$\+Digital\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Digital\+Sensor\+::$\sim$\+Digital\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 25 of file Digital\+Sensor.\+cpp.
+Definition at line 19 of file Digital\+Sensor.\+hpp.
 
 
 \begin{DoxyCode}
-25 \{\}
+19 \{\};
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_digital_sensor_a9957b8be49aaa4dc417db3ccbcdf3956}\label{class_digital_sensor_a9957b8be49aaa4dc417db3ccbcdf3956}} 
-\index{Digital\+Sensor@{Digital\+Sensor}!get\+\_\+port@{get\+\_\+port}}
-\index{get\+\_\+port@{get\+\_\+port}!Digital\+Sensor@{Digital\+Sensor}}
-\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
-{\footnotesize\ttfamily int Digital\+Sensor\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_digital_sensor_a621247d2f977e6560c5282a867cc24dc}\label{class_digital_sensor_a621247d2f977e6560c5282a867cc24dc}} 
+\index{Digital\+Sensor@{Digital\+Sensor}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!Digital\+Sensor@{Digital\+Sensor}}
+\subsubsection{\texorpdfstring{get\+Port()}{getPort()}}
+{\footnotesize\ttfamily int Digital\+Sensor\+::get\+Port (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 28 of file Digital\+Sensor.\+cpp.
+Get port being used. 
+
+\begin{DoxyReturn}{Returns}
+Associated port 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Digital\+Sensor.\+cpp.
 
 
 \begin{DoxyCode}
-28 \{ \textcolor{keywordflow}{return} this->port; \}
+32 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}\label{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}} 
 \index{Digital\+Sensor@{Digital\+Sensor}!invert@{invert}}
@@ -106,61 +125,105 @@ Definition at line 28 of file Digital\+Sensor.\+cpp.
 
 
 
-Definition at line 31 of file Digital\+Sensor.\+cpp.
+Invert the sensor (useful for pulled-\/up signals) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em invert} & 1 if inverting read, 0 if not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 38 of file Digital\+Sensor.\+cpp.
 
 
 \begin{DoxyCode}
-31 \{ this->inverted = \hyperlink{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}{invert}; \}
+38 \{ this->\hyperlink{class_digital_sensor_a0458d9c3e2f781a776742a080d7b7e81}{inverted} = \hyperlink{class_digital_sensor_a1e6784022a127dd543bbfcc4f69c4802}{invert}; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_digital_sensor_a0b182fe8c229aaa0ea850889193f28f9}\label{class_digital_sensor_a0b182fe8c229aaa0ea850889193f28f9}} 
+\mbox{\Hypertarget{class_digital_sensor_a79dba881f434e5271d30c8e606994c9a}\label{class_digital_sensor_a79dba881f434e5271d30c8e606994c9a}} 
 \index{Digital\+Sensor@{Digital\+Sensor}!read@{read}}
 \index{read@{read}!Digital\+Sensor@{Digital\+Sensor}}
 \subsubsection{\texorpdfstring{read()}{read()}}
-{\footnotesize\ttfamily bool Digital\+Sensor\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Digital\+Sensor\+::read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 34 of file Digital\+Sensor.\+cpp.
+Read the current status of the port (properly corrected for inversion setting). 
+
+\begin{DoxyReturn}{Returns}
+H\+I\+GH or L\+OW based on port status and inversion settings. 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Digital\+Sensor.\+cpp.
 
 
 \begin{DoxyCode}
-34                          \{
-35     \textcolor{keywordtype}{int} raw = \hyperlink{class_digital_sensor_a8cbcce6b1e7929c24ddf5992ec2c7537}{read\_raw}();
-36 
-37     \textcolor{keywordflow}{if} (raw == HIGH) \{
-38         \textcolor{keywordflow}{if} (this->inverted) \{
-39             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-40         \} \textcolor{keywordflow}{else} \{
-41             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-42         \}
-43     \} \textcolor{keywordflow}{else} \{
-44         \textcolor{keywordflow}{if} (this->inverted) \{
-45             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-46         \} \textcolor{keywordflow}{else} \{
-47             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-48         \}
-49     \}
-50 \}
+44                                    \{
+45     \textcolor{keywordtype}{int} raw = \hyperlink{class_digital_sensor_a22943d64a79b47263f677c5a6dd5d682}{read\_raw}();
+46 
+47     \textcolor{keywordflow}{if} (raw == HIGH) \{
+48         \textcolor{keywordflow}{if} (this->\hyperlink{class_digital_sensor_a0458d9c3e2f781a776742a080d7b7e81}{inverted}) \{
+49             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+50         \} \textcolor{keywordflow}{else} \{
+51             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+52         \}
+53     \} \textcolor{keywordflow}{else} \{
+54         \textcolor{keywordflow}{if} (this->\hyperlink{class_digital_sensor_a0458d9c3e2f781a776742a080d7b7e81}{inverted}) \{
+55             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+56         \} \textcolor{keywordflow}{else} \{
+57             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+58         \}
+59     \}
+60 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_digital_sensor_a8cbcce6b1e7929c24ddf5992ec2c7537}\label{class_digital_sensor_a8cbcce6b1e7929c24ddf5992ec2c7537}} 
+\mbox{\Hypertarget{class_digital_sensor_a22943d64a79b47263f677c5a6dd5d682}\label{class_digital_sensor_a22943d64a79b47263f677c5a6dd5d682}} 
 \index{Digital\+Sensor@{Digital\+Sensor}!read\+\_\+raw@{read\+\_\+raw}}
 \index{read\+\_\+raw@{read\+\_\+raw}!Digital\+Sensor@{Digital\+Sensor}}
 \subsubsection{\texorpdfstring{read\+\_\+raw()}{read\_raw()}}
-{\footnotesize\ttfamily int Digital\+Sensor\+::read\+\_\+raw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int Digital\+Sensor\+::read\+\_\+raw (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 53 of file Digital\+Sensor.\+cpp.
+Get un-\/inverted port status. 
+
+\begin{DoxyReturn}{Returns}
+Raw port status (H\+I\+GH or L\+OW) 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file Digital\+Sensor.\+cpp.
 
 
 \begin{DoxyCode}
-53                             \{
-54     \textcolor{keywordflow}{return} digitalRead(this->port);
-55 \}
+66 \{ \textcolor{keywordflow}{return} digitalRead(this->\hyperlink{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}{port}); \}
 \end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_digital_sensor_a0458d9c3e2f781a776742a080d7b7e81}\label{class_digital_sensor_a0458d9c3e2f781a776742a080d7b7e81}} 
+\index{Digital\+Sensor@{Digital\+Sensor}!inverted@{inverted}}
+\index{inverted@{inverted}!Digital\+Sensor@{Digital\+Sensor}}
+\subsubsection{\texorpdfstring{inverted}{inverted}}
+{\footnotesize\ttfamily bool Digital\+Sensor\+::inverted\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file Digital\+Sensor.\+hpp.
+
+\mbox{\Hypertarget{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}\label{class_digital_sensor_a5d6d5b9d33670b7f2d8b745b175ce023}} 
+\index{Digital\+Sensor@{Digital\+Sensor}!port@{port}}
+\index{port@{port}!Digital\+Sensor@{Digital\+Sensor}}
+\subsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily int Digital\+Sensor\+::port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file Digital\+Sensor.\+hpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-rbe2001/devices/io/\hyperlink{_digital_sensor_8h}{Digital\+Sensor.\+h}\item 
+rbe2001/devices/io/\hyperlink{_digital_sensor_8hpp}{Digital\+Sensor.\+hpp}\item 
 rbe2001/devices/io/\hyperlink{_digital_sensor_8cpp}{Digital\+Sensor.\+cpp}\end{DoxyCompactItemize}

@@ -7,88 +7,93 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_v_e_x_servo_a476b7bdb0ba79753347ed3bb9303be77}{V\+E\+X\+Servo} ()
-\item 
-\hyperlink{class_v_e_x_servo_ade28b71edfd878f947a63bbec722036b}{V\+E\+X\+Servo} (int port)
-\item 
-\hyperlink{class_v_e_x_servo_a50cbd7885996e04d3c77b61b76d2ed91}{V\+E\+X\+Servo} (int port, bool \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert})
-\item 
+\hyperlink{class_v_e_x_servo_ade28b71edfd878f947a63bbec722036b}{V\+E\+X\+Servo} (int \hyperlink{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}{port})
+\begin{DoxyCompactList}\small\item\em Initializes the servo on the given port with no inversion. \end{DoxyCompactList}\item 
+\hyperlink{class_v_e_x_servo_a50cbd7885996e04d3c77b61b76d2ed91}{V\+E\+X\+Servo} (int \hyperlink{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}{port}, bool \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert})
+\begin{DoxyCompactList}\small\item\em Initializes the servo on the given port with specified inversion. \end{DoxyCompactList}\item 
 \hyperlink{class_v_e_x_servo_a9a25c4d4400daadf45b19b1fa47710ab}{$\sim$\+V\+E\+X\+Servo} ()
-\item 
-void \hyperlink{class_v_e_x_servo_aebc9e0de41cfb129168f5687a92c618e}{init} (int port, bool \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert})
-\item 
+\begin{DoxyCompactList}\small\item\em Detaches the servo object. \end{DoxyCompactList}\item 
 void \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert} (bool invert)
-\item 
-bool \hyperlink{class_v_e_x_servo_ad9d2b11efe6ae96287482b0557ea4368}{is\+\_\+initialzied} ()
-\item 
-int \hyperlink{class_v_e_x_servo_a4db14049d3fc91aa7774a402238df12a}{get\+\_\+port} ()
-\item 
-int \hyperlink{class_v_e_x_servo_ae51e5e842689c31c795870019dccec58}{get\+\_\+position} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Invert the servo output. \end{DoxyCompactList}\item 
+int \hyperlink{class_v_e_x_servo_ab3759e3c166068f8c512420b588efacd}{get\+Port} (void) const
+\begin{DoxyCompactList}\small\item\em Get the port the servo is attached to. \end{DoxyCompactList}\item 
+int \hyperlink{class_v_e_x_servo_ab8e68afd09a6c67cf71182543f24eb21}{get\+Position} (void) const
+\begin{DoxyCompactList}\small\item\em Get the last set position of the servo. \end{DoxyCompactList}\item 
 void \hyperlink{class_v_e_x_servo_a2de6039ce58da12f9649fe1e04dc8ea9}{turn} (int val)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set the servo position and drive it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}{port}
+\begin{DoxyCompactList}\small\item\em Servo port. \end{DoxyCompactList}\item 
+bool \hyperlink{class_v_e_x_servo_a660e5b8a09906d86a4c7b6c7d88042c5}{inverted}
+\begin{DoxyCompactList}\small\item\em Inversion setting. \end{DoxyCompactList}\item 
+int \hyperlink{class_v_e_x_servo_aa277013ab5c085b050b9a28f61e11e8b}{position}
+\begin{DoxyCompactList}\small\item\em Last set servo position. \end{DoxyCompactList}\item 
+Servo \hyperlink{class_v_e_x_servo_ab82f78aa9ea59ca24cec69e3e7563c3f}{servo}
+\begin{DoxyCompactList}\small\item\em Wrapped servo object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{_v_e_x_servo_8hpp}{V\+E\+X\+Servo.\+hpp} -\/ \hyperlink{class_v_e_x_servo}{V\+E\+X\+Servo} Header File (Wraps Arduino Servo.\+h) Allows for improved control of the robot\textquotesingle{}s servos. Written by Mikayla Fischler 
+
 
 Definition at line 13 of file V\+E\+X\+Servo.\+hpp.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_v_e_x_servo_a476b7bdb0ba79753347ed3bb9303be77}\label{class_v_e_x_servo_a476b7bdb0ba79753347ed3bb9303be77}} 
-\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
-\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
-\subsubsection{\texorpdfstring{V\+E\+X\+Servo()}{VEXServo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily V\+E\+X\+Servo\+::\+V\+E\+X\+Servo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\hyperlink{_v_e_x_servo_8cpp}{V\+E\+X\+Servo.\+cpp} -\/ \hyperlink{class_v_e_x_servo}{V\+E\+X\+Servo} Source Code Written by Mikayla Fischler 
-
-Definition at line 11 of file V\+E\+X\+Servo.\+cpp.
-
-
-\begin{DoxyCode}
-11                    \{
-12     initialized = \textcolor{keyword}{false};
-13     this->position = 0;
-14 \}
-\end{DoxyCode}
 \mbox{\Hypertarget{class_v_e_x_servo_ade28b71edfd878f947a63bbec722036b}\label{class_v_e_x_servo_ade28b71edfd878f947a63bbec722036b}} 
 \index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
 \index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
-\subsubsection{\texorpdfstring{V\+E\+X\+Servo()}{VEXServo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily V\+E\+X\+Servo\+::\+V\+E\+X\+Servo (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{V\+E\+X\+Servo()}{VEXServo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily V\+E\+X\+Servo\+::\+V\+E\+X\+Servo (\begin{DoxyParamCaption}\item[{int}]{\+\_\+port }\end{DoxyParamCaption})}
 
 
 
-Definition at line 17 of file V\+E\+X\+Servo.\+cpp.
+Initializes the servo on the given port with no inversion. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+port} & The P\+WM port to use \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file V\+E\+X\+Servo.\+cpp.
 
 
 \begin{DoxyCode}
-17                            \{
-18     initialized = \textcolor{keyword}{false};
-19     this->\hyperlink{class_v_e_x_servo_aebc9e0de41cfb129168f5687a92c618e}{init}(port, \textcolor{keyword}{false});
-20     this->position = 0;
-21 \}
+14                             : \hyperlink{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}{port}(\_port), \hyperlink{class_v_e_x_servo_a660e5b8a09906d86a4c7b6c7d88042c5}{inverted}(\textcolor{keyword}{false}), \hyperlink{class_v_e_x_servo_aa277013ab5c085b050b9a28f61e11e8b}{position}(0) \{
+15     this->\hyperlink{class_v_e_x_servo_ab82f78aa9ea59ca24cec69e3e7563c3f}{servo}.attach(\hyperlink{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}{port});
+16 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_v_e_x_servo_a50cbd7885996e04d3c77b61b76d2ed91}\label{class_v_e_x_servo_a50cbd7885996e04d3c77b61b76d2ed91}} 
 \index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
 \index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
-\subsubsection{\texorpdfstring{V\+E\+X\+Servo()}{VEXServo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily V\+E\+X\+Servo\+::\+V\+E\+X\+Servo (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{bool}]{invert }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{V\+E\+X\+Servo()}{VEXServo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily V\+E\+X\+Servo\+::\+V\+E\+X\+Servo (\begin{DoxyParamCaption}\item[{int}]{\+\_\+port,  }\item[{bool}]{invert }\end{DoxyParamCaption})}
 
 
 
-Definition at line 24 of file V\+E\+X\+Servo.\+cpp.
+Initializes the servo on the given port with specified inversion. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+port} & The P\+WM port to use \\
+\hline
+\mbox{\tt in}  & {\em invert} & Whether to invert motor output or not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 23 of file V\+E\+X\+Servo.\+cpp.
 
 
 \begin{DoxyCode}
-24                                         \{
-25     initialized = \textcolor{keyword}{false};
-26     this->\hyperlink{class_v_e_x_servo_aebc9e0de41cfb129168f5687a92c618e}{init}(port, \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert});
-27     this->position = 0;
-28 \}
+23                                          : \hyperlink{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}{port}(\_port), \hyperlink{class_v_e_x_servo_a660e5b8a09906d86a4c7b6c7d88042c5}{inverted}(
+      \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert}), \hyperlink{class_v_e_x_servo_aa277013ab5c085b050b9a28f61e11e8b}{position}(0) \{
+24     this->\hyperlink{class_v_e_x_servo_ab82f78aa9ea59ca24cec69e3e7563c3f}{servo}.attach(\hyperlink{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}{port});
+25 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_v_e_x_servo_a9a25c4d4400daadf45b19b1fa47710ab}\label{class_v_e_x_servo_a9a25c4d4400daadf45b19b1fa47710ab}} 
 \index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!````~V\+E\+X\+Servo@{$\sim$\+V\+E\+X\+Servo}}
@@ -98,63 +103,60 @@ Definition at line 24 of file V\+E\+X\+Servo.\+cpp.
 
 
 
-Definition at line 31 of file V\+E\+X\+Servo.\+cpp.
+Detaches the servo object. 
+
+
+
+Definition at line 30 of file V\+E\+X\+Servo.\+cpp.
 
 
 \begin{DoxyCode}
-31 \{ this->servo.detach(); \}
+30 \{ this->\hyperlink{class_v_e_x_servo_ab82f78aa9ea59ca24cec69e3e7563c3f}{servo}.detach(); \}
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_v_e_x_servo_a4db14049d3fc91aa7774a402238df12a}\label{class_v_e_x_servo_a4db14049d3fc91aa7774a402238df12a}} 
-\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!get\+\_\+port@{get\+\_\+port}}
-\index{get\+\_\+port@{get\+\_\+port}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
-\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
-{\footnotesize\ttfamily int V\+E\+X\+Servo\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_v_e_x_servo_ab3759e3c166068f8c512420b588efacd}\label{class_v_e_x_servo_ab3759e3c166068f8c512420b588efacd}} 
+\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
+\subsubsection{\texorpdfstring{get\+Port()}{getPort()}}
+{\footnotesize\ttfamily int V\+E\+X\+Servo\+::get\+Port (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 50 of file V\+E\+X\+Servo.\+cpp.
+Get the port the servo is attached to. 
+
+\begin{DoxyReturn}{Returns}
+servo port 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file V\+E\+X\+Servo.\+cpp.
 
 
 \begin{DoxyCode}
-50 \{ \textcolor{keywordflow}{return} this->port; \}
+41 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}{port}; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_v_e_x_servo_ae51e5e842689c31c795870019dccec58}\label{class_v_e_x_servo_ae51e5e842689c31c795870019dccec58}} 
-\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!get\+\_\+position@{get\+\_\+position}}
-\index{get\+\_\+position@{get\+\_\+position}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
-\subsubsection{\texorpdfstring{get\+\_\+position()}{get\_position()}}
-{\footnotesize\ttfamily int V\+E\+X\+Servo\+::get\+\_\+position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_v_e_x_servo_ab8e68afd09a6c67cf71182543f24eb21}\label{class_v_e_x_servo_ab8e68afd09a6c67cf71182543f24eb21}} 
+\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
+\subsubsection{\texorpdfstring{get\+Position()}{getPosition()}}
+{\footnotesize\ttfamily int V\+E\+X\+Servo\+::get\+Position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 53 of file V\+E\+X\+Servo.\+cpp.
+Get the last set position of the servo. 
+
+\begin{DoxyReturn}{Returns}
+speed in range of 0 to 180 
+\end{DoxyReturn}
 
 
-\begin{DoxyCode}
-53 \{ \textcolor{keywordflow}{return} this->position; \}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_v_e_x_servo_aebc9e0de41cfb129168f5687a92c618e}\label{class_v_e_x_servo_aebc9e0de41cfb129168f5687a92c618e}} 
-\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!init@{init}}
-\index{init@{init}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
-\subsubsection{\texorpdfstring{init()}{init()}}
-{\footnotesize\ttfamily void V\+E\+X\+Servo\+::init (\begin{DoxyParamCaption}\item[{int}]{port,  }\item[{bool}]{invert }\end{DoxyParamCaption})}
-
-
-
-Definition at line 34 of file V\+E\+X\+Servo.\+cpp.
+Definition at line 47 of file V\+E\+X\+Servo.\+cpp.
 
 
 \begin{DoxyCode}
-34                                          \{
-35     \textcolor{keywordflow}{if} (!initialized) \{
-36         this->port = port;
-37         this->servo.attach(port);
-38         this->inverted = \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert};
-39         initialized = \textcolor{keyword}{true};
-40     \}
-41 \}
+47 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_v_e_x_servo_aa277013ab5c085b050b9a28f61e11e8b}{position}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}\label{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}} 
 \index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!invert@{invert}}
@@ -164,25 +166,15 @@ Definition at line 34 of file V\+E\+X\+Servo.\+cpp.
 
 
 
-Definition at line 47 of file V\+E\+X\+Servo.\+cpp.
+Invert the servo output. 
+
+
+
+Definition at line 35 of file V\+E\+X\+Servo.\+cpp.
 
 
 \begin{DoxyCode}
-47 \{ this->inverted = \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert}; \}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_v_e_x_servo_ad9d2b11efe6ae96287482b0557ea4368}\label{class_v_e_x_servo_ad9d2b11efe6ae96287482b0557ea4368}} 
-\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!is\+\_\+initialzied@{is\+\_\+initialzied}}
-\index{is\+\_\+initialzied@{is\+\_\+initialzied}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
-\subsubsection{\texorpdfstring{is\+\_\+initialzied()}{is\_initialzied()}}
-{\footnotesize\ttfamily bool V\+E\+X\+Servo\+::is\+\_\+initialzied (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 44 of file V\+E\+X\+Servo.\+cpp.
-
-
-\begin{DoxyCode}
-44 \{ \textcolor{keywordflow}{return} this->initialized; \}
+35 \{ this->\hyperlink{class_v_e_x_servo_a660e5b8a09906d86a4c7b6c7d88042c5}{inverted} = \hyperlink{class_v_e_x_servo_a9bd31afec53e4c45d264c2480b0c0e5e}{invert}; \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_v_e_x_servo_a2de6039ce58da12f9649fe1e04dc8ea9}\label{class_v_e_x_servo_a2de6039ce58da12f9649fe1e04dc8ea9}} 
 \index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!turn@{turn}}
@@ -192,33 +184,99 @@ Definition at line 44 of file V\+E\+X\+Servo.\+cpp.
 
 
 
-Definition at line 56 of file V\+E\+X\+Servo.\+cpp.
+Set the servo position and drive it. 
+
+Range 0 to 180 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em val} & The servo position in the aforementioned range \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 54 of file V\+E\+X\+Servo.\+cpp.
 
 
 \begin{DoxyCode}
-56                            \{
-57     \textcolor{comment}{// range safety}
-58     \textcolor{keywordflow}{if} (val > 180) \{
-59         val = 180;
-60     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (val < 0) \{
-61         val = 0;
-62     \}
-63 
-64     \textcolor{comment}{// set position (invert if applicable)}
-65     \textcolor{keywordflow}{if} (initialized) \{
-66         \textcolor{keywordflow}{if} (this->inverted) \{
-67             this->servo.write(0 - val);
-68         \} \textcolor{keywordflow}{else} \{
-69             this->servo.write(val);
-70         \}
-71 
-72         this->position = val;
-73     \}
-74 \}
+54                            \{
+55     \textcolor{comment}{// range safety}
+56     \textcolor{keywordflow}{if} (val > 180) \{
+57         val = 180;
+58     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (val < 0) \{
+59         val = 0;
+60     \}
+61 
+62     \textcolor{comment}{// set position (invert if applicable)}
+63     \textcolor{keywordflow}{if} (this->\hyperlink{class_v_e_x_servo_a660e5b8a09906d86a4c7b6c7d88042c5}{inverted}) \{
+64         this->\hyperlink{class_v_e_x_servo_ab82f78aa9ea59ca24cec69e3e7563c3f}{servo}.write(0 - val);
+65     \} \textcolor{keywordflow}{else} \{
+66         this->\hyperlink{class_v_e_x_servo_ab82f78aa9ea59ca24cec69e3e7563c3f}{servo}.write(val);
+67     \}
+68 
+69     this->\hyperlink{class_v_e_x_servo_aa277013ab5c085b050b9a28f61e11e8b}{position} = val;
+70 \}
 \end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_v_e_x_servo_a660e5b8a09906d86a4c7b6c7d88042c5}\label{class_v_e_x_servo_a660e5b8a09906d86a4c7b6c7d88042c5}} 
+\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!inverted@{inverted}}
+\index{inverted@{inverted}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
+\subsubsection{\texorpdfstring{inverted}{inverted}}
+{\footnotesize\ttfamily bool V\+E\+X\+Servo\+::inverted\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Inversion setting. 
+
+
+
+Definition at line 16 of file V\+E\+X\+Servo.\+hpp.
+
+\mbox{\Hypertarget{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}\label{class_v_e_x_servo_a34333ff9091be5124f25597c95593291}} 
+\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!port@{port}}
+\index{port@{port}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
+\subsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily int V\+E\+X\+Servo\+::port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Servo port. 
+
+
+
+Definition at line 15 of file V\+E\+X\+Servo.\+hpp.
+
+\mbox{\Hypertarget{class_v_e_x_servo_aa277013ab5c085b050b9a28f61e11e8b}\label{class_v_e_x_servo_aa277013ab5c085b050b9a28f61e11e8b}} 
+\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!position@{position}}
+\index{position@{position}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily int V\+E\+X\+Servo\+::position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Last set servo position. 
+
+
+
+Definition at line 17 of file V\+E\+X\+Servo.\+hpp.
+
+\mbox{\Hypertarget{class_v_e_x_servo_ab82f78aa9ea59ca24cec69e3e7563c3f}\label{class_v_e_x_servo_ab82f78aa9ea59ca24cec69e3e7563c3f}} 
+\index{V\+E\+X\+Servo@{V\+E\+X\+Servo}!servo@{servo}}
+\index{servo@{servo}!V\+E\+X\+Servo@{V\+E\+X\+Servo}}
+\subsubsection{\texorpdfstring{servo}{servo}}
+{\footnotesize\ttfamily Servo V\+E\+X\+Servo\+::servo\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wrapped servo object. 
+
+
+
+Definition at line 19 of file V\+E\+X\+Servo.\+hpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-rbe2001/devices/motor/\hyperlink{_v_e_x_servo_8hpp}{V\+E\+X\+Servo.\+hpp}\item 
-rbe2001/devices/motor/\hyperlink{_v_e_x_servo_8cpp}{V\+E\+X\+Servo.\+cpp}\end{DoxyCompactItemize}
+rbe2001/devices/motion/\hyperlink{_v_e_x_servo_8hpp}{V\+E\+X\+Servo.\+hpp}\item 
+rbe2001/devices/motion/\hyperlink{_v_e_x_servo_8cpp}{V\+E\+X\+Servo.\+cpp}\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['analogoutput',['AnalogOutput',['../df/de2/class_analog_output.html',1,'']]],
-  ['analogsensor',['AnalogSensor',['../dc/d60/class_analog_sensor.html',1,'']]]
+  ['accelerometer',['Accelerometer',['../d9/d1c/class_accelerometer.html',1,'']]],
+  ['arm',['Arm',['../d4/d47/class_arm.html',1,'']]]
 ];

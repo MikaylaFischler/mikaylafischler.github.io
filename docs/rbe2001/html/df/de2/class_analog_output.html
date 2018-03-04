@@ -82,49 +82,73 @@ $(document).ready(function(){initNavTree('df/de2/class_analog_output.html','../.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../dc/ddd/class_analog_output-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AnalogOutput Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../da/dc4/_analog_output_8h_source.html">AnalogOutput.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../db/dc0/_analog_output_8hpp_source.html">AnalogOutput.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5bbdf0548ba8a18d090071f1cb447238"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de2/class_analog_output.html#a5bbdf0548ba8a18d090071f1cb447238">AnalogOutput</a> (int port)</td></tr>
-<tr class="separator:a5bbdf0548ba8a18d090071f1cb447238"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab92457661db417a929abe3ebff3e8e60"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de2/class_analog_output.html#ab92457661db417a929abe3ebff3e8e60">AnalogOutput</a> (int p)</td></tr>
+<tr class="memdesc:ab92457661db417a929abe3ebff3e8e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalize on the given port.  <a href="#ab92457661db417a929abe3ebff3e8e60">More...</a><br /></td></tr>
+<tr class="separator:ab92457661db417a929abe3ebff3e8e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7848a6b7b7c15bba5c75f0f82f3c1d53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de2/class_analog_output.html#a7848a6b7b7c15bba5c75f0f82f3c1d53">~AnalogOutput</a> ()</td></tr>
 <tr class="separator:a7848a6b7b7c15bba5c75f0f82f3c1d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a4146612660e06c9d2edfac9b51b6ef"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de2/class_analog_output.html#a0a4146612660e06c9d2edfac9b51b6ef">get_port</a> ()</td></tr>
-<tr class="separator:a0a4146612660e06c9d2edfac9b51b6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa67e2c25c9377517a72346fc9402afad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de2/class_analog_output.html#aa67e2c25c9377517a72346fc9402afad">write</a> (int val)</td></tr>
-<tr class="separator:aa67e2c25c9377517a72346fc9402afad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc1f7308376f4b0f0cb7bb34802ce9e3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de2/class_analog_output.html#abc1f7308376f4b0f0cb7bb34802ce9e3">getPort</a> (void) const</td></tr>
+<tr class="memdesc:abc1f7308376f4b0f0cb7bb34802ce9e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get port being used.  <a href="#abc1f7308376f4b0f0cb7bb34802ce9e3">More...</a><br /></td></tr>
+<tr class="separator:abc1f7308376f4b0f0cb7bb34802ce9e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16fc372acf8e7d7525d119804b374406"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de2/class_analog_output.html#a16fc372acf8e7d7525d119804b374406">write</a> (int val) const</td></tr>
+<tr class="memdesc:a16fc372acf8e7d7525d119804b374406"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write pwm value to output.  <a href="#a16fc372acf8e7d7525d119804b374406">More...</a><br /></td></tr>
+<tr class="separator:a16fc372acf8e7d7525d119804b374406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a52a084ec21b0e7f4cf9eb29af2fd103c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/de2/class_analog_output.html#a52a084ec21b0e7f4cf9eb29af2fd103c">port</a></td></tr>
+<tr class="separator:a52a084ec21b0e7f4cf9eb29af2fd103c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="../../da/dc4/_analog_output_8h.html">AnalogOutput.h</a> - Wraps around analog write. Writes analog data to data pin. Written by Mikayla Fischler </p>
-
-<p class="definition">Definition at line <a class="el" href="../../da/dc4/_analog_output_8h_source.html#l00012">12</a> of file <a class="el" href="../../da/dc4/_analog_output_8h_source.html">AnalogOutput.h</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../db/dc0/_analog_output_8hpp_source.html#l00012">12</a> of file <a class="el" href="../../db/dc0/_analog_output_8hpp_source.html">AnalogOutput.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5bbdf0548ba8a18d090071f1cb447238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bbdf0548ba8a18d090071f1cb447238">&#9670;&nbsp;</a></span>AnalogOutput()</h2>
+<a id="ab92457661db417a929abe3ebff3e8e60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab92457661db417a929abe3ebff3e8e60">&#9670;&nbsp;</a></span>AnalogOutput()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">AnalogOutput::AnalogOutput </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em></td><td>)</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p><a class="el" href="../../df/dc0/_analog_output_8cpp.html">AnalogOutput.cpp</a> - Analog Output Source Code Written by Mikayla Fischler </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html#l00011">11</a> of file <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html">AnalogOutput.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                   {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    this-&gt;port = port;</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div></div><!-- fragment -->
+<p>Initalize on the given port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>Digital pwm port </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../db/dc0/_analog_output_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../db/dc0/_analog_output_8hpp_source.html">AnalogOutput.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;: <a class="code" href="../../df/de2/class_analog_output.html#a52a084ec21b0e7f4cf9eb29af2fd103c">port</a>(p) {};</div><div class="ttc" id="class_analog_output_html_a52a084ec21b0e7f4cf9eb29af2fd103c"><div class="ttname"><a href="../../df/de2/class_analog_output.html#a52a084ec21b0e7f4cf9eb29af2fd103c">AnalogOutput::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dc0/_analog_output_8hpp_source.html#l00014">AnalogOutput.hpp:14</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a7848a6b7b7c15bba5c75f0f82f3c1d53"></a>
@@ -132,6 +156,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">AnalogOutput::~AnalogOutput </td>
@@ -140,34 +167,44 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html#l00016">16</a> of file <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html">AnalogOutput.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{}</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../db/dc0/_analog_output_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../db/dc0/_analog_output_8hpp_source.html">AnalogOutput.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{};</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0a4146612660e06c9d2edfac9b51b6ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a4146612660e06c9d2edfac9b51b6ef">&#9670;&nbsp;</a></span>get_port()</h2>
+<a id="abc1f7308376f4b0f0cb7bb34802ce9e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc1f7308376f4b0f0cb7bb34802ce9e3">&#9670;&nbsp;</a></span>getPort()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int AnalogOutput::get_port </td>
+          <td class="memname">int AnalogOutput::getPort </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html#l00019">19</a> of file <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html">AnalogOutput.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{ <span class="keywordflow">return</span> this-&gt;port; }</div></div><!-- fragment -->
+<p>Get port being used. </p>
+<dl class="section return"><dt>Returns</dt><dd>Associated port </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html">AnalogOutput.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../df/de2/class_analog_output.html#a52a084ec21b0e7f4cf9eb29af2fd103c">port</a>; }</div><div class="ttc" id="class_analog_output_html_a52a084ec21b0e7f4cf9eb29af2fd103c"><div class="ttname"><a href="../../df/de2/class_analog_output.html#a52a084ec21b0e7f4cf9eb29af2fd103c">AnalogOutput::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dc0/_analog_output_8hpp_source.html#l00014">AnalogOutput.hpp:14</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="aa67e2c25c9377517a72346fc9402afad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa67e2c25c9377517a72346fc9402afad">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a16fc372acf8e7d7525d119804b374406"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16fc372acf8e7d7525d119804b374406">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,17 +214,51 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>val</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html#l00022">22</a> of file <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html">AnalogOutput.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                                {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    analogWrite(this-&gt;port, val);</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div></div><!-- fragment -->
+<p>Write pwm value to output. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">val</td><td>The value to output </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html#l00020">20</a> of file <a class="el" href="../../df/dc0/_analog_output_8cpp_source.html">AnalogOutput.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ analogWrite(this-&gt;<a class="code" href="../../df/de2/class_analog_output.html#a52a084ec21b0e7f4cf9eb29af2fd103c">port</a>, val); }</div><div class="ttc" id="class_analog_output_html_a52a084ec21b0e7f4cf9eb29af2fd103c"><div class="ttname"><a href="../../df/de2/class_analog_output.html#a52a084ec21b0e7f4cf9eb29af2fd103c">AnalogOutput::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="../../db/dc0/_analog_output_8hpp_source.html#l00014">AnalogOutput.hpp:14</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a52a084ec21b0e7f4cf9eb29af2fd103c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52a084ec21b0e7f4cf9eb29af2fd103c">&#9670;&nbsp;</a></span>port</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AnalogOutput::port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../db/dc0/_analog_output_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../db/dc0/_analog_output_8hpp_source.html">AnalogOutput.hpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>rbe2001/devices/io/<a class="el" href="../../da/dc4/_analog_output_8h_source.html">AnalogOutput.h</a></li>
+<li>rbe2001/devices/io/<a class="el" href="../../db/dc0/_analog_output_8hpp_source.html">AnalogOutput.hpp</a></li>
 <li>rbe2001/devices/io/<a class="el" href="../../df/dc0/_analog_output_8cpp_source.html">AnalogOutput.cpp</a></li>
 </ul>
 </div><!-- contents -->

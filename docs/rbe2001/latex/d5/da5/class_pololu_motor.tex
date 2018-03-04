@@ -1,0 +1,417 @@
+\hypertarget{class_pololu_motor}{}\section{Pololu\+Motor Class Reference}
+\label{class_pololu_motor}\index{Pololu\+Motor@{Pololu\+Motor}}
+
+
+{\ttfamily \#include $<$Pololu\+Motor.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pololu_motor_ac90c6552daaf283815ec7c8de8e8529d}{Pololu\+Motor} (int pwm\+\_\+fwd, int pwm\+\_\+rev)
+\begin{DoxyCompactList}\small\item\em Initialize a pololu motor with the given forward and reverse output pins. \end{DoxyCompactList}\item 
+\hyperlink{class_pololu_motor_a4b8a56dd118701c115379c2aa6188d01}{Pololu\+Motor} (int pwm\+\_\+fwd, int pwm\+\_\+rev, bool s\+\_\+invert)
+\begin{DoxyCompactList}\small\item\em Initialize a pololu motor with the given forward and reverse output pins. \end{DoxyCompactList}\item 
+\hyperlink{class_pololu_motor_a2b2d1bc93d88941bafe6ae08852c1c1a}{Pololu\+Motor} (int pwm\+\_\+fwd, int pwm\+\_\+rev, int current\+\_\+p, int fault\+\_\+p)
+\begin{DoxyCompactList}\small\item\em Full-\/feature constructor. Initializes a pololu motor with the given forward and reverse output pins. \end{DoxyCompactList}\item 
+\hyperlink{class_pololu_motor_ae84b8115030a9ab26be0144906ea38e5}{Pololu\+Motor} (int pwm\+\_\+fwd, int pwm\+\_\+rev, int current\+\_\+p, int fault\+\_\+p, bool s\+\_\+invert)
+\begin{DoxyCompactList}\small\item\em Full-\/feature constructor. Initializes a pololu motor with the given forward and reverse output pins. \end{DoxyCompactList}\item 
+\hyperlink{class_pololu_motor_a75d5d8a575dbbb8bac7b76896b3d9957}{$\sim$\+Pololu\+Motor} ()
+\item 
+void \hyperlink{class_pololu_motor_a775d61d3b864ba6ffd4fb9195ccb26b3}{invert} (bool inv)
+\begin{DoxyCompactList}\small\item\em Update the software inversion. \end{DoxyCompactList}\item 
+void \hyperlink{class_pololu_motor_abcece838332aaf501b6ae63fa371422e}{drive} (double output)
+\begin{DoxyCompactList}\small\item\em Drive the motor at the given output (-\/1.\+0 to 1.\+0) \end{DoxyCompactList}\item 
+void \hyperlink{class_pololu_motor_a57c4465fe5791b4a57c42fcca3579ea4}{stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop the motor (coast) \end{DoxyCompactList}\item 
+double \hyperlink{class_pololu_motor_aa839e55cf769cbdec066e82f148fbd1d}{get\+Current} (void) const
+\begin{DoxyCompactList}\small\item\em Get the current draw measured by the motor controller in amps. \end{DoxyCompactList}\item 
+bool \hyperlink{class_pololu_motor_a677969e5e4b72a502508e9a152059064}{get\+Fault} (void) const
+\begin{DoxyCompactList}\small\item\em Check if a motor driver fault has occured. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}{pwm\+\_\+fwd\+\_\+port}
+\begin{DoxyCompactList}\small\item\em port for forward P\+WM signal \end{DoxyCompactList}\item 
+int \hyperlink{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}{pwm\+\_\+rev\+\_\+port}
+\begin{DoxyCompactList}\small\item\em port for reverse P\+WM signal \end{DoxyCompactList}\item 
+int \hyperlink{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}{current\+\_\+port}
+\begin{DoxyCompactList}\small\item\em port for current measurement (approximately 525 mV per amp) \end{DoxyCompactList}\item 
+int \hyperlink{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}{fault\+\_\+port}
+\begin{DoxyCompactList}\small\item\em port of motor driver fault (L\+OW if fault) \end{DoxyCompactList}\item 
+bool \hyperlink{class_pololu_motor_af729e682597489cad35fd8a109ab9e5f}{soft\+\_\+invert}
+\begin{DoxyCompactList}\small\item\em software inversion (hardware inversion available with jumper) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Pololu\+Motor.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pololu_motor_ac90c6552daaf283815ec7c8de8e8529d}\label{class_pololu_motor_ac90c6552daaf283815ec7c8de8e8529d}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\index{Pololu\+Motor@{Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{Pololu\+Motor()}{PololuMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily Pololu\+Motor\+::\+Pololu\+Motor (\begin{DoxyParamCaption}\item[{int}]{pwm\+\_\+fwd,  }\item[{int}]{pwm\+\_\+rev }\end{DoxyParamCaption})}
+
+
+
+Initialize a pololu motor with the given forward and reverse output pins. 
+
+This instantiation will not be able to read current or fault status.~\newline
+ Soft inversion defaults to off. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pwm\+\_\+fwd} & Forward P\+WM port (digital) \\
+\hline
+\mbox{\tt in}  & {\em pwm\+\_\+rev} & Reverse P\+WM port (digital) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+17                                                  :
+18     \hyperlink{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}{pwm\_fwd\_port}(pwm\_fwd), \hyperlink{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}{pwm\_rev\_port}(pwm\_rev), 
+      \hyperlink{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}{current\_port}(-1), \hyperlink{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}{fault\_port}(-1), \hyperlink{class_pololu_motor_af729e682597489cad35fd8a109ab9e5f}{soft\_invert}(\textcolor{keyword}{false}) \{
+19     pinMode(pwm\_fwd, OUTPUT);
+20     pinMode(pwm\_rev, OUTPUT);
+21 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_pololu_motor_a4b8a56dd118701c115379c2aa6188d01}\label{class_pololu_motor_a4b8a56dd118701c115379c2aa6188d01}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\index{Pololu\+Motor@{Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{Pololu\+Motor()}{PololuMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily Pololu\+Motor\+::\+Pololu\+Motor (\begin{DoxyParamCaption}\item[{int}]{pwm\+\_\+fwd,  }\item[{int}]{pwm\+\_\+rev,  }\item[{bool}]{s\+\_\+invert }\end{DoxyParamCaption})}
+
+
+
+Initialize a pololu motor with the given forward and reverse output pins. 
+
+This instantiation will not be able to read current or fault status.~\newline
+ Soft inversion set as given. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pwm\+\_\+fwd} & Forward P\+WM port (digital) \\
+\hline
+\mbox{\tt in}  & {\em pwm\+\_\+rev} & Reverse P\+WM port (digital) \\
+\hline
+\mbox{\tt in}  & {\em s\+\_\+invert} & Software inversion enable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 31 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+31                                                                 :
+32     \hyperlink{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}{pwm\_fwd\_port}(pwm\_fwd), \hyperlink{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}{pwm\_rev\_port}(pwm\_rev), 
+      \hyperlink{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}{current\_port}(-1), \hyperlink{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}{fault\_port}(-1), \hyperlink{class_pololu_motor_af729e682597489cad35fd8a109ab9e5f}{soft\_invert}(s\_invert) \{
+33     pinMode(pwm\_fwd, OUTPUT);
+34     pinMode(pwm\_rev, OUTPUT);
+35 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_pololu_motor_a2b2d1bc93d88941bafe6ae08852c1c1a}\label{class_pololu_motor_a2b2d1bc93d88941bafe6ae08852c1c1a}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\index{Pololu\+Motor@{Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{Pololu\+Motor()}{PololuMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily Pololu\+Motor\+::\+Pololu\+Motor (\begin{DoxyParamCaption}\item[{int}]{pwm\+\_\+fwd,  }\item[{int}]{pwm\+\_\+rev,  }\item[{int}]{current\+\_\+p,  }\item[{int}]{fault\+\_\+p }\end{DoxyParamCaption})}
+
+
+
+Full-\/feature constructor. Initializes a pololu motor with the given forward and reverse output pins. 
+
+This instantiation will not be able to read current or fault status.~\newline
+ Soft inversion defaults to off. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pwm\+\_\+fwd} & Forward P\+WM port (digital) \\
+\hline
+\mbox{\tt in}  & {\em pwm\+\_\+rev} & Reverse P\+WM port (digital) \\
+\hline
+\mbox{\tt in}  & {\em current\+\_\+p} & Port to read current (analog) \\
+\hline
+\mbox{\tt in}  & {\em fault\+\_\+p} & Port to check for fault (digital) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 46 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+46                                                                              :
+47     \hyperlink{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}{pwm\_fwd\_port}(pwm\_fwd), \hyperlink{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}{pwm\_rev\_port}(pwm\_rev), 
+      \hyperlink{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}{current\_port}(current\_p), \hyperlink{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}{fault\_port}(fault\_p), \hyperlink{class_pololu_motor_af729e682597489cad35fd8a109ab9e5f}{soft\_invert}(\textcolor{keyword}{false}) \{
+48     pinMode(pwm\_fwd, OUTPUT);
+49     pinMode(pwm\_rev, OUTPUT);
+50     pinMode(fault\_p, INPUT);
+51 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_pololu_motor_ae84b8115030a9ab26be0144906ea38e5}\label{class_pololu_motor_ae84b8115030a9ab26be0144906ea38e5}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\index{Pololu\+Motor@{Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{Pololu\+Motor()}{PololuMotor()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily Pololu\+Motor\+::\+Pololu\+Motor (\begin{DoxyParamCaption}\item[{int}]{pwm\+\_\+fwd,  }\item[{int}]{pwm\+\_\+rev,  }\item[{int}]{current\+\_\+p,  }\item[{int}]{fault\+\_\+p,  }\item[{bool}]{s\+\_\+invert }\end{DoxyParamCaption})}
+
+
+
+Full-\/feature constructor. Initializes a pololu motor with the given forward and reverse output pins. 
+
+This instantiation will not be able to read current or fault status.~\newline
+ Soft inversion set as given. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em pwm\+\_\+fwd} & Forward P\+WM port (digital) \\
+\hline
+\mbox{\tt in}  & {\em pwm\+\_\+rev} & Reverse P\+WM port (digital) \\
+\hline
+\mbox{\tt in}  & {\em current\+\_\+p} & Port to read current (analog) \\
+\hline
+\mbox{\tt in}  & {\em fault\+\_\+p} & Port to check for fault (digital) \\
+\hline
+\mbox{\tt in}  & {\em s\+\_\+invert} & Software inversion enable \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+63                                                                                             :
+64     \hyperlink{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}{pwm\_fwd\_port}(pwm\_fwd), \hyperlink{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}{pwm\_rev\_port}(pwm\_rev), 
+      \hyperlink{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}{current\_port}(current\_p), \hyperlink{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}{fault\_port}(fault\_p), \hyperlink{class_pololu_motor_af729e682597489cad35fd8a109ab9e5f}{soft\_invert}(s\_invert) \{
+65     pinMode(pwm\_fwd, OUTPUT);
+66     pinMode(pwm\_rev, OUTPUT);
+67     pinMode(fault\_p, INPUT);
+68 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_pololu_motor_a75d5d8a575dbbb8bac7b76896b3d9957}\label{class_pololu_motor_a75d5d8a575dbbb8bac7b76896b3d9957}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!````~Pololu\+Motor@{$\sim$\+Pololu\+Motor}}
+\index{````~Pololu\+Motor@{$\sim$\+Pololu\+Motor}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{$\sim$\+Pololu\+Motor()}{~PololuMotor()}}
+{\footnotesize\ttfamily Pololu\+Motor\+::$\sim$\+Pololu\+Motor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 24 of file Pololu\+Motor.\+hpp.
+
+
+\begin{DoxyCode}
+24 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pololu_motor_abcece838332aaf501b6ae63fa371422e}\label{class_pololu_motor_abcece838332aaf501b6ae63fa371422e}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!drive@{drive}}
+\index{drive@{drive}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{drive()}{drive()}}
+{\footnotesize\ttfamily void Pololu\+Motor\+::drive (\begin{DoxyParamCaption}\item[{double}]{output }\end{DoxyParamCaption})}
+
+
+
+Drive the motor at the given output (-\/1.\+0 to 1.\+0) 
+
+-\/1 is full reverse, 0 is stop, 1 is full forward 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em output} & The desired output speed between -\/1.\+0 and 1.\+0 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 81 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+81                                      \{
+82     \textcolor{keywordtype}{int} out = constrain(round(output * 255), -255, 255);
+83 
+84     \textcolor{comment}{// output the given value (send to proper PWM ports)}
+85     \textcolor{keywordflow}{if} (out >= 0) \{
+86         analogWrite(\hyperlink{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}{pwm\_fwd\_port}, out);
+87         analogWrite(\hyperlink{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}{pwm\_rev\_port}, 0);
+88     \} \textcolor{keywordflow}{else} \{
+89         analogWrite(\hyperlink{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}{pwm\_fwd\_port}, 0);
+90         analogWrite(\hyperlink{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}{pwm\_rev\_port}, -out);
+91     \}
+92 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_pololu_motor_aa839e55cf769cbdec066e82f148fbd1d}\label{class_pololu_motor_aa839e55cf769cbdec066e82f148fbd1d}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!get\+Current@{get\+Current}}
+\index{get\+Current@{get\+Current}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{get\+Current()}{getCurrent()}}
+{\footnotesize\ttfamily double Pololu\+Motor\+::get\+Current (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the current draw measured by the motor controller in amps. 
+
+525mV per amp as per spec sheet.~\newline
+ If no current sensor was configured (stored as -\/1 in the port), function returns 0. \begin{DoxyReturn}{Returns}
+floating point representation of current in amps 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+106                                          \{
+107     \textcolor{keywordflow}{if} (\hyperlink{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}{current\_port} != -1) \{
+108         \textcolor{comment}{// 0 to 1023 for 0v to 5v}
+109         \textcolor{keywordtype}{int} reading = analogRead(\hyperlink{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}{current\_port});
+110         
+111         \textcolor{comment}{// the next uncommented line is equivalent to the next commented line but has one less operation}
+112         \textcolor{comment}{// float voltage = (reading / 1023.0) * 5.0;0.004887585532746823069403714565}
+113         \textcolor{keywordtype}{double} voltage = ((double)reading / 1023.0) * 5.0;
+114 
+115         \textcolor{comment}{// convert to current (0.525 volts = 1.0 amps)}
+116         \textcolor{keywordflow}{return} voltage / 0.525;
+117     \} \textcolor{keywordflow}{else} \{ \textcolor{keywordflow}{return} 0; \}
+118 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_pololu_motor_a677969e5e4b72a502508e9a152059064}\label{class_pololu_motor_a677969e5e4b72a502508e9a152059064}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!get\+Fault@{get\+Fault}}
+\index{get\+Fault@{get\+Fault}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{get\+Fault()}{getFault()}}
+{\footnotesize\ttfamily bool Pololu\+Motor\+::get\+Fault (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if a motor driver fault has occured. 
+
+Sensor is pulled low when there is a fault, so we invert it.~\newline
+ If no fault sensor was configured (stored as -\/1 in the port), function returns 0. \begin{DoxyReturn}{Returns}
+1 if fault, 0 if no fault 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+126 \{ \textcolor{keywordflow}{return} (\hyperlink{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}{fault\_port} != -1) ? !digitalRead(\hyperlink{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}{fault\_port}) : 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_pololu_motor_a775d61d3b864ba6ffd4fb9195ccb26b3}\label{class_pololu_motor_a775d61d3b864ba6ffd4fb9195ccb26b3}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!invert@{invert}}
+\index{invert@{invert}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{invert()}{invert()}}
+{\footnotesize\ttfamily void Pololu\+Motor\+::invert (\begin{DoxyParamCaption}\item[{bool}]{inv }\end{DoxyParamCaption})}
+
+
+
+Update the software inversion. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em inv} & True to invert, false to not \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 74 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+74 \{ \hyperlink{class_pololu_motor_af729e682597489cad35fd8a109ab9e5f}{soft\_invert} = inv; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_pololu_motor_a57c4465fe5791b4a57c42fcca3579ea4}\label{class_pololu_motor_a57c4465fe5791b4a57c42fcca3579ea4}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!stop@{stop}}
+\index{stop@{stop}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Pololu\+Motor\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the motor (coast) 
+
+Equivalent to drive(0) 
+
+Definition at line 98 of file Pololu\+Motor.\+cpp.
+
+
+\begin{DoxyCode}
+98 \{ \hyperlink{class_pololu_motor_abcece838332aaf501b6ae63fa371422e}{drive}(0); \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}\label{class_pololu_motor_a6b58fc42cb55c835b966f20092aee79b}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!current\+\_\+port@{current\+\_\+port}}
+\index{current\+\_\+port@{current\+\_\+port}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{current\+\_\+port}{current\_port}}
+{\footnotesize\ttfamily int Pololu\+Motor\+::current\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+port for current measurement (approximately 525 mV per amp) 
+
+
+
+Definition at line 16 of file Pololu\+Motor.\+hpp.
+
+\mbox{\Hypertarget{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}\label{class_pololu_motor_aa1c771561c7c483216aec3415aa6ec9d}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!fault\+\_\+port@{fault\+\_\+port}}
+\index{fault\+\_\+port@{fault\+\_\+port}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{fault\+\_\+port}{fault\_port}}
+{\footnotesize\ttfamily int Pololu\+Motor\+::fault\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+port of motor driver fault (L\+OW if fault) 
+
+
+
+Definition at line 17 of file Pololu\+Motor.\+hpp.
+
+\mbox{\Hypertarget{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}\label{class_pololu_motor_a0685d77c55b5ff024ca26b959e26285f}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!pwm\+\_\+fwd\+\_\+port@{pwm\+\_\+fwd\+\_\+port}}
+\index{pwm\+\_\+fwd\+\_\+port@{pwm\+\_\+fwd\+\_\+port}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{pwm\+\_\+fwd\+\_\+port}{pwm\_fwd\_port}}
+{\footnotesize\ttfamily int Pololu\+Motor\+::pwm\+\_\+fwd\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+port for forward P\+WM signal 
+
+
+
+Definition at line 14 of file Pololu\+Motor.\+hpp.
+
+\mbox{\Hypertarget{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}\label{class_pololu_motor_a6ad3e14d6c3e1c8806bce32f794d5ec9}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!pwm\+\_\+rev\+\_\+port@{pwm\+\_\+rev\+\_\+port}}
+\index{pwm\+\_\+rev\+\_\+port@{pwm\+\_\+rev\+\_\+port}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{pwm\+\_\+rev\+\_\+port}{pwm\_rev\_port}}
+{\footnotesize\ttfamily int Pololu\+Motor\+::pwm\+\_\+rev\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+port for reverse P\+WM signal 
+
+
+
+Definition at line 15 of file Pololu\+Motor.\+hpp.
+
+\mbox{\Hypertarget{class_pololu_motor_af729e682597489cad35fd8a109ab9e5f}\label{class_pololu_motor_af729e682597489cad35fd8a109ab9e5f}} 
+\index{Pololu\+Motor@{Pololu\+Motor}!soft\+\_\+invert@{soft\+\_\+invert}}
+\index{soft\+\_\+invert@{soft\+\_\+invert}!Pololu\+Motor@{Pololu\+Motor}}
+\subsubsection{\texorpdfstring{soft\+\_\+invert}{soft\_invert}}
+{\footnotesize\ttfamily bool Pololu\+Motor\+::soft\+\_\+invert\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+software inversion (hardware inversion available with jumper) 
+
+
+
+Definition at line 18 of file Pololu\+Motor.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/devices/motion/\hyperlink{_pololu_motor_8hpp}{Pololu\+Motor.\+hpp}\item 
+rbe2001/devices/motion/\hyperlink{_pololu_motor_8cpp}{Pololu\+Motor.\+cpp}\end{DoxyCompactItemize}

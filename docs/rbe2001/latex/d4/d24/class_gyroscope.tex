@@ -1,0 +1,308 @@
+\hypertarget{class_gyroscope}{}\section{Gyroscope Class Reference}
+\label{class_gyroscope}\index{Gyroscope@{Gyroscope}}
+
+
+{\ttfamily \#include $<$Gyroscope.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_gyroscope_a4bf061fd610528721de8c2e58827f590}{Gyroscope} (Adafruit\+\_\+\+B\+N\+O055 $\ast$s)
+\begin{DoxyCompactList}\small\item\em Construct the gyroscope object based off an adafruit sensor object. \end{DoxyCompactList}\item 
+\hyperlink{class_gyroscope_aa0e544848270a58f8c9466eb43910dd0}{$\sim$\+Gyroscope} ()
+\item 
+double \hyperlink{class_gyroscope_a3dc93cb932fd98ce7e129100680887d5}{get\+Rotation} (void)
+\begin{DoxyCompactList}\small\item\em Get the rotation (0 to 359.\+999.... degrees) \end{DoxyCompactList}\item 
+void \hyperlink{class_gyroscope_a121afa879781ade47d27903f3d5d31e5}{home\+Continuous} (void)
+\begin{DoxyCompactList}\small\item\em Home the continuous rotation counter to 0. \end{DoxyCompactList}\item 
+double \hyperlink{class_gyroscope_a019f1512ef009051ca2a899759321a9e}{get\+Continuous\+Rotation} (void)
+\begin{DoxyCompactList}\small\item\em Get the rotation from start-\/up, but continuous; no jumps in value. \end{DoxyCompactList}\item 
+void \hyperlink{class_gyroscope_aa785de79696a6ce67e2b2b48b05e6020}{maintain\+Continuous\+Rotation} (void)
+\begin{DoxyCompactList}\small\item\em Call this every iteration as to detect jumps in the gyro in order to keep an accurate absolute angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_gyroscope_abd15bf5d98f1d4b6ee3aff051812972e}{\+\_\+get\+\_\+event} (void)
+\begin{DoxyCompactList}\small\item\em Update the internally recored last event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}{current\+\_\+angle}
+\begin{DoxyCompactList}\small\item\em The current angle. \end{DoxyCompactList}\item 
+double \hyperlink{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}{prev\+\_\+angle}
+\begin{DoxyCompactList}\small\item\em The last measured angle. \end{DoxyCompactList}\item 
+double \hyperlink{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}{cont\+\_\+angle}
+\begin{DoxyCompactList}\small\item\em The calculated continuous angle. \end{DoxyCompactList}\item 
+sensors\+\_\+event\+\_\+t \hyperlink{class_gyroscope_a6c8b9e319b379c2f1582afbe25e68c76}{event\+\_\+cache}
+\begin{DoxyCompactList}\small\item\em Cache of last recorded event. \end{DoxyCompactList}\item 
+long unsigned int \hyperlink{class_gyroscope_a8a6c3d747717b3bede6400c17a4696b6}{last\+\_\+event\+\_\+recorded}
+\begin{DoxyCompactList}\small\item\em Time of last recording. \end{DoxyCompactList}\item 
+Adafruit\+\_\+\+B\+N\+O055 $\ast$ \hyperlink{class_gyroscope_a7a8dacdbe6d1fcd8004fa62b0997e2bf}{sensor}
+\begin{DoxyCompactList}\small\item\em Pointer to Adafruit B\+N\+O055 sensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file Gyroscope.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_gyroscope_a4bf061fd610528721de8c2e58827f590}\label{class_gyroscope_a4bf061fd610528721de8c2e58827f590}} 
+\index{Gyroscope@{Gyroscope}!Gyroscope@{Gyroscope}}
+\index{Gyroscope@{Gyroscope}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{Gyroscope()}{Gyroscope()}}
+{\footnotesize\ttfamily Gyroscope\+::\+Gyroscope (\begin{DoxyParamCaption}\item[{Adafruit\+\_\+\+B\+N\+O055 $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct the gyroscope object based off an adafruit sensor object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s} & Pointer to an instantiated sensor. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Gyroscope.\+hpp.
+
+
+\begin{DoxyCode}
+32 : \hyperlink{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}{current\_angle}(0.0), \hyperlink{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}{prev\_angle}(0.0), \hyperlink{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}{cont\_angle}(0.0), 
+      \hyperlink{class_gyroscope_a8a6c3d747717b3bede6400c17a4696b6}{last\_event\_recorded}(0), \hyperlink{class_gyroscope_a7a8dacdbe6d1fcd8004fa62b0997e2bf}{sensor}(s) \{\};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_gyroscope_aa0e544848270a58f8c9466eb43910dd0}\label{class_gyroscope_aa0e544848270a58f8c9466eb43910dd0}} 
+\index{Gyroscope@{Gyroscope}!````~Gyroscope@{$\sim$\+Gyroscope}}
+\index{````~Gyroscope@{$\sim$\+Gyroscope}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{$\sim$\+Gyroscope()}{~Gyroscope()}}
+{\footnotesize\ttfamily Gyroscope\+::$\sim$\+Gyroscope (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 33 of file Gyroscope.\+hpp.
+
+
+\begin{DoxyCode}
+33 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_gyroscope_abd15bf5d98f1d4b6ee3aff051812972e}\label{class_gyroscope_abd15bf5d98f1d4b6ee3aff051812972e}} 
+\index{Gyroscope@{Gyroscope}!\+\_\+get\+\_\+event@{\+\_\+get\+\_\+event}}
+\index{\+\_\+get\+\_\+event@{\+\_\+get\+\_\+event}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{\+\_\+get\+\_\+event()}{\_get\_event()}}
+{\footnotesize\ttfamily void Gyroscope\+::\+\_\+get\+\_\+event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the internally recored last event. 
+
+We only want to poll every 20ms 
+
+Definition at line 55 of file Gyroscope.\+cpp.
+
+
+\begin{DoxyCode}
+55                                \{
+56     \textcolor{comment}{// update every 20ms}
+57     \textcolor{keywordflow}{if} (\hyperlink{class_gyroscope_a8a6c3d747717b3bede6400c17a4696b6}{last\_event\_recorded} == 0 || (millis() - 
+      \hyperlink{class_gyroscope_a8a6c3d747717b3bede6400c17a4696b6}{last\_event\_recorded} >= 20)) \{
+58         \hyperlink{class_gyroscope_a8a6c3d747717b3bede6400c17a4696b6}{last\_event\_recorded} = millis();
+59         \hyperlink{class_gyroscope_a7a8dacdbe6d1fcd8004fa62b0997e2bf}{sensor}->getEvent(&\hyperlink{class_gyroscope_a6c8b9e319b379c2f1582afbe25e68c76}{event\_cache});
+60     \}
+61 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_gyroscope_a019f1512ef009051ca2a899759321a9e}\label{class_gyroscope_a019f1512ef009051ca2a899759321a9e}} 
+\index{Gyroscope@{Gyroscope}!get\+Continuous\+Rotation@{get\+Continuous\+Rotation}}
+\index{get\+Continuous\+Rotation@{get\+Continuous\+Rotation}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{get\+Continuous\+Rotation()}{getContinuousRotation()}}
+{\footnotesize\ttfamily double Gyroscope\+::get\+Continuous\+Rotation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the rotation from start-\/up, but continuous; no jumps in value. 
+
+\begin{DoxyReturn}{Returns}
+Robot angle relative to start-\/up 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Gyroscope.\+cpp.
+
+
+\begin{DoxyCode}
+29 \{ \textcolor{keywordflow}{return} \hyperlink{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}{cont\_angle}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_gyroscope_a3dc93cb932fd98ce7e129100680887d5}\label{class_gyroscope_a3dc93cb932fd98ce7e129100680887d5}} 
+\index{Gyroscope@{Gyroscope}!get\+Rotation@{get\+Rotation}}
+\index{get\+Rotation@{get\+Rotation}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{get\+Rotation()}{getRotation()}}
+{\footnotesize\ttfamily double Gyroscope\+::get\+Rotation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the rotation (0 to 359.\+999.... degrees) 
+
+Loops between max and min angles, not continuous \begin{DoxyReturn}{Returns}
+Robot angle relative to start-\/up 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file Gyroscope.\+cpp.
+
+
+\begin{DoxyCode}
+15                                   \{
+16     \hyperlink{class_gyroscope_abd15bf5d98f1d4b6ee3aff051812972e}{\_get\_event}();
+17     \textcolor{keywordflow}{return} \hyperlink{class_gyroscope_a6c8b9e319b379c2f1582afbe25e68c76}{event\_cache}.orientation.x;
+18 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_gyroscope_a121afa879781ade47d27903f3d5d31e5}\label{class_gyroscope_a121afa879781ade47d27903f3d5d31e5}} 
+\index{Gyroscope@{Gyroscope}!home\+Continuous@{home\+Continuous}}
+\index{home\+Continuous@{home\+Continuous}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{home\+Continuous()}{homeContinuous()}}
+{\footnotesize\ttfamily void Gyroscope\+::home\+Continuous (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Home the continuous rotation counter to 0. 
+
+
+
+Definition at line 23 of file Gyroscope.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{ \hyperlink{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}{cont\_angle} = \hyperlink{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}{prev\_angle} = 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_gyroscope_aa785de79696a6ce67e2b2b48b05e6020}\label{class_gyroscope_aa785de79696a6ce67e2b2b48b05e6020}} 
+\index{Gyroscope@{Gyroscope}!maintain\+Continuous\+Rotation@{maintain\+Continuous\+Rotation}}
+\index{maintain\+Continuous\+Rotation@{maintain\+Continuous\+Rotation}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{maintain\+Continuous\+Rotation()}{maintainContinuousRotation()}}
+{\footnotesize\ttfamily void Gyroscope\+::maintain\+Continuous\+Rotation (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Call this every iteration as to detect jumps in the gyro in order to keep an accurate absolute angle. 
+
+\begin{DoxyWarning}{Warning}
+Will fail to update if change across iterations is $>$= 30 degrees 
+\end{DoxyWarning}
+
+
+Definition at line 35 of file Gyroscope.\+cpp.
+
+
+\begin{DoxyCode}
+35                                                \{
+36     \hyperlink{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}{current\_angle} = \hyperlink{class_gyroscope_a3dc93cb932fd98ce7e129100680887d5}{getRotation}();
+37 
+38     \textcolor{keywordflow}{if} (current\_angle < 30.0 && prev\_angle > 330.0) \{
+39         \textcolor{comment}{// we jumped a positive angle, add full circle offset and our calculated delta}
+40         \hyperlink{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}{cont\_angle} += (\hyperlink{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}{current\_angle} + 360 - \hyperlink{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}{prev\_angle});
+41     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}{current\_angle} > 330.0 && \hyperlink{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}{prev\_angle} < 30.0) \{
+42         \textcolor{comment}{// we jumped a negative angle, add full circle offset and our calculated delta}
+43         \hyperlink{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}{cont\_angle} += (\hyperlink{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}{current\_angle} - 360 + \hyperlink{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}{prev\_angle});
+44     \} \textcolor{keywordflow}{else} \{
+45         \hyperlink{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}{cont\_angle} += \hyperlink{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}{current\_angle} - \hyperlink{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}{prev\_angle};
+46     \}
+47 
+48     \hyperlink{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}{prev\_angle} = \hyperlink{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}{current\_angle};
+49 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}\label{class_gyroscope_a1ed017e1e0767f70dfda902b858e04bc}} 
+\index{Gyroscope@{Gyroscope}!cont\+\_\+angle@{cont\+\_\+angle}}
+\index{cont\+\_\+angle@{cont\+\_\+angle}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{cont\+\_\+angle}{cont\_angle}}
+{\footnotesize\ttfamily double Gyroscope\+::cont\+\_\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The calculated continuous angle. 
+
+
+
+Definition at line 19 of file Gyroscope.\+hpp.
+
+\mbox{\Hypertarget{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}\label{class_gyroscope_a6da1957aa183ed0f0aabc6cd1ad85bf1}} 
+\index{Gyroscope@{Gyroscope}!current\+\_\+angle@{current\+\_\+angle}}
+\index{current\+\_\+angle@{current\+\_\+angle}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{current\+\_\+angle}{current\_angle}}
+{\footnotesize\ttfamily double Gyroscope\+::current\+\_\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The current angle. 
+
+
+
+Definition at line 17 of file Gyroscope.\+hpp.
+
+\mbox{\Hypertarget{class_gyroscope_a6c8b9e319b379c2f1582afbe25e68c76}\label{class_gyroscope_a6c8b9e319b379c2f1582afbe25e68c76}} 
+\index{Gyroscope@{Gyroscope}!event\+\_\+cache@{event\+\_\+cache}}
+\index{event\+\_\+cache@{event\+\_\+cache}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{event\+\_\+cache}{event\_cache}}
+{\footnotesize\ttfamily sensors\+\_\+event\+\_\+t Gyroscope\+::event\+\_\+cache\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cache of last recorded event. 
+
+
+
+Definition at line 21 of file Gyroscope.\+hpp.
+
+\mbox{\Hypertarget{class_gyroscope_a8a6c3d747717b3bede6400c17a4696b6}\label{class_gyroscope_a8a6c3d747717b3bede6400c17a4696b6}} 
+\index{Gyroscope@{Gyroscope}!last\+\_\+event\+\_\+recorded@{last\+\_\+event\+\_\+recorded}}
+\index{last\+\_\+event\+\_\+recorded@{last\+\_\+event\+\_\+recorded}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{last\+\_\+event\+\_\+recorded}{last\_event\_recorded}}
+{\footnotesize\ttfamily long unsigned int Gyroscope\+::last\+\_\+event\+\_\+recorded\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time of last recording. 
+
+
+
+Definition at line 22 of file Gyroscope.\+hpp.
+
+\mbox{\Hypertarget{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}\label{class_gyroscope_a05294072cbb0e362975d3f0ad626b716}} 
+\index{Gyroscope@{Gyroscope}!prev\+\_\+angle@{prev\+\_\+angle}}
+\index{prev\+\_\+angle@{prev\+\_\+angle}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{prev\+\_\+angle}{prev\_angle}}
+{\footnotesize\ttfamily double Gyroscope\+::prev\+\_\+angle\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The last measured angle. 
+
+
+
+Definition at line 18 of file Gyroscope.\+hpp.
+
+\mbox{\Hypertarget{class_gyroscope_a7a8dacdbe6d1fcd8004fa62b0997e2bf}\label{class_gyroscope_a7a8dacdbe6d1fcd8004fa62b0997e2bf}} 
+\index{Gyroscope@{Gyroscope}!sensor@{sensor}}
+\index{sensor@{sensor}!Gyroscope@{Gyroscope}}
+\subsubsection{\texorpdfstring{sensor}{sensor}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+B\+N\+O055$\ast$ Gyroscope\+::sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to Adafruit B\+N\+O055 sensor. 
+
+
+
+Definition at line 24 of file Gyroscope.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/devices/io/\hyperlink{_gyroscope_8hpp}{Gyroscope.\+hpp}\item 
+rbe2001/devices/io/\hyperlink{_gyroscope_8cpp}{Gyroscope.\+cpp}\end{DoxyCompactItemize}

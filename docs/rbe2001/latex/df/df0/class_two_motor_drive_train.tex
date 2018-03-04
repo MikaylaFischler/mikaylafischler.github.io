@@ -1,0 +1,261 @@
+\hypertarget{class_two_motor_drive_train}{}\section{Two\+Motor\+Drive\+Train Class Reference}
+\label{class_two_motor_drive_train}\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+
+
+{\ttfamily \#include $<$Two\+Motor\+Drive\+Train.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_two_motor_drive_train_a9ae44c21661482476a71f4a2e9ea0c97}{Two\+Motor\+Drive\+Train} (int port\+\_\+left, bool left\+\_\+invert, int port\+\_\+right, bool right\+\_\+invert)
+\begin{DoxyCompactList}\small\item\em Create a two motor drive train (left and right motors). \end{DoxyCompactList}\item 
+\hyperlink{class_two_motor_drive_train_adc187042a28ad463e50e47f04e386db1}{$\sim$\+Two\+Motor\+Drive\+Train} ()
+\item 
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_two_motor_drive_train_a416c665218391af6cf398a9a195ec23b}{get\+Left} (void) const
+\begin{DoxyCompactList}\small\item\em Get the left motor. \end{DoxyCompactList}\item 
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_two_motor_drive_train_a327a9691e057a60f06a9740cd4ef8c4c}{get\+Right} (void) const
+\begin{DoxyCompactList}\small\item\em Get the right motor. \end{DoxyCompactList}\item 
+void \hyperlink{class_two_motor_drive_train_a1ae95f1e06274435304783c9a4ec7820}{arcade\+Drive} (\hyperlink{class_controller}{Controller} $\ast$controller, bool left)
+\begin{DoxyCompactList}\small\item\em Arcade drive using the just one joystick axes on the controller. \end{DoxyCompactList}\item 
+void \hyperlink{class_two_motor_drive_train_a6a94c7396365b9ce4c09519a967f6111}{tank\+Drive} (\hyperlink{class_controller}{Controller} $\ast$controller)
+\begin{DoxyCompactList}\small\item\em Tank drive using the left and right Y joystick axes on the controller. \end{DoxyCompactList}\item 
+void \hyperlink{class_two_motor_drive_train_ad9bb9cd0e5841e7f3b6d8284b613d97f}{tank\+Drive} (int left, int right)
+\begin{DoxyCompactList}\small\item\em Tank drive (left motor and right motor directly controlled). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_two_motor_drive_train_a134c95e1f45a5156924208cddaa3661f}{left\+\_\+motor}
+\begin{DoxyCompactList}\small\item\em left motor object \end{DoxyCompactList}\item 
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_two_motor_drive_train_a0bdefa7c731c2407ad4a4dad0902bbd3}{right\+\_\+motor}
+\begin{DoxyCompactList}\small\item\em right motor object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file Two\+Motor\+Drive\+Train.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_two_motor_drive_train_a9ae44c21661482476a71f4a2e9ea0c97}\label{class_two_motor_drive_train_a9ae44c21661482476a71f4a2e9ea0c97}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{Two\+Motor\+Drive\+Train()}{TwoMotorDriveTrain()}}
+{\footnotesize\ttfamily Two\+Motor\+Drive\+Train\+::\+Two\+Motor\+Drive\+Train (\begin{DoxyParamCaption}\item[{int}]{port\+\_\+left,  }\item[{bool}]{left\+\_\+invert,  }\item[{int}]{port\+\_\+right,  }\item[{bool}]{right\+\_\+invert }\end{DoxyParamCaption})}
+
+
+
+Create a two motor drive train (left and right motors). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em port\+\_\+left} & The port for the left motor \\
+\hline
+\mbox{\tt in}  & {\em left\+\_\+invert} & Invert the left motor \\
+\hline
+\mbox{\tt in}  & {\em port\+\_\+right} & The port for the right motor \\
+\hline
+\mbox{\tt in}  & {\em right\+\_\+invert} & Invert the right motor \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Two\+Motor\+Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+17                                                                                                          \{
+18     this->\hyperlink{class_two_motor_drive_train_a134c95e1f45a5156924208cddaa3661f}{left\_motor} = \textcolor{keyword}{new} \hyperlink{class_v_e_x_motor}{VEXMotor}(port\_left, left\_invert);
+19     this->\hyperlink{class_two_motor_drive_train_a0bdefa7c731c2407ad4a4dad0902bbd3}{right\_motor} = \textcolor{keyword}{new} \hyperlink{class_v_e_x_motor}{VEXMotor}(port\_right, right\_invert);
+20 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_two_motor_drive_train_adc187042a28ad463e50e47f04e386db1}\label{class_two_motor_drive_train_adc187042a28ad463e50e47f04e386db1}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!````~Two\+Motor\+Drive\+Train@{$\sim$\+Two\+Motor\+Drive\+Train}}
+\index{````~Two\+Motor\+Drive\+Train@{$\sim$\+Two\+Motor\+Drive\+Train}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{$\sim$\+Two\+Motor\+Drive\+Train()}{~TwoMotorDriveTrain()}}
+{\footnotesize\ttfamily Two\+Motor\+Drive\+Train\+::$\sim$\+Two\+Motor\+Drive\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 20 of file Two\+Motor\+Drive\+Train.\+hpp.
+
+
+\begin{DoxyCode}
+20 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_two_motor_drive_train_a1ae95f1e06274435304783c9a4ec7820}\label{class_two_motor_drive_train_a1ae95f1e06274435304783c9a4ec7820}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!arcade\+Drive@{arcade\+Drive}}
+\index{arcade\+Drive@{arcade\+Drive}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{arcade\+Drive()}{arcadeDrive()}}
+{\footnotesize\ttfamily void Two\+Motor\+Drive\+Train\+::arcade\+Drive (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller,  }\item[{bool}]{left }\end{DoxyParamCaption})}
+
+
+
+Arcade drive using the just one joystick axes on the controller. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em controller} & Pointer to a controller object \\
+\hline
+\mbox{\tt in}  & {\em left} & 1 if using left stick, 0 if using right stick \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Two\+Motor\+Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+39                                                                       \{
+40     \textcolor{keywordtype}{int} drive = 0;
+41     \textcolor{keywordtype}{int} turn = 0;
+42 
+43     \textcolor{keywordflow}{if} (left) \{
+44         drive = controller->\hyperlink{class_controller_a98b5d8b11463780ac75d90fed3bd627d}{joystickLeft}()[0];
+45         turn = controller->\hyperlink{class_controller_a98b5d8b11463780ac75d90fed3bd627d}{joystickLeft}()[1];
+46     \} \textcolor{keywordflow}{else} \{
+47         drive = controller->\hyperlink{class_controller_a99b39f4782ef2164dc3d3d1b512330bd}{joystickRight}()[0];
+48         turn = controller->\hyperlink{class_controller_a99b39f4782ef2164dc3d3d1b512330bd}{joystickRight}()[1];
+49     \}
+50 
+51     this->\hyperlink{class_two_motor_drive_train_a134c95e1f45a5156924208cddaa3661f}{left\_motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(drive + turn); \textcolor{comment}{// function does its own range checking}
+52     this->\hyperlink{class_two_motor_drive_train_a0bdefa7c731c2407ad4a4dad0902bbd3}{right\_motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(drive - turn); \textcolor{comment}{// function does its own range checking}
+53 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_two_motor_drive_train_a416c665218391af6cf398a9a195ec23b}\label{class_two_motor_drive_train_a416c665218391af6cf398a9a195ec23b}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!get\+Left@{get\+Left}}
+\index{get\+Left@{get\+Left}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+Left()}{getLeft()}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ Two\+Motor\+Drive\+Train\+::get\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the left motor. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the left \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file Two\+Motor\+Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_two_motor_drive_train_a134c95e1f45a5156924208cddaa3661f}{left\_motor}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_two_motor_drive_train_a327a9691e057a60f06a9740cd4ef8c4c}\label{class_two_motor_drive_train_a327a9691e057a60f06a9740cd4ef8c4c}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!get\+Right@{get\+Right}}
+\index{get\+Right@{get\+Right}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+Right()}{getRight()}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ Two\+Motor\+Drive\+Train\+::get\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the right motor. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the right \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} 
+\end{DoxyReturn}
+
+
+Definition at line 32 of file Two\+Motor\+Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+32 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_two_motor_drive_train_a0bdefa7c731c2407ad4a4dad0902bbd3}{right\_motor}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_two_motor_drive_train_a6a94c7396365b9ce4c09519a967f6111}\label{class_two_motor_drive_train_a6a94c7396365b9ce4c09519a967f6111}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!tank\+Drive@{tank\+Drive}}
+\index{tank\+Drive@{tank\+Drive}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{tank\+Drive()}{tankDrive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Two\+Motor\+Drive\+Train\+::tank\+Drive (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})}
+
+
+
+Tank drive using the left and right Y joystick axes on the controller. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em controller} & Pointer to a controller object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file Two\+Motor\+Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+59                                                          \{
+60     this->\hyperlink{class_two_motor_drive_train_a6a94c7396365b9ce4c09519a967f6111}{tankDrive}(controller->\hyperlink{class_controller_a98b5d8b11463780ac75d90fed3bd627d}{joystickLeft}()[0], controller->
+      \hyperlink{class_controller_a99b39f4782ef2164dc3d3d1b512330bd}{joystickRight}()[0]);
+61 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_two_motor_drive_train_ad9bb9cd0e5841e7f3b6d8284b613d97f}\label{class_two_motor_drive_train_ad9bb9cd0e5841e7f3b6d8284b613d97f}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!tank\+Drive@{tank\+Drive}}
+\index{tank\+Drive@{tank\+Drive}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{tank\+Drive()}{tankDrive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Two\+Motor\+Drive\+Train\+::tank\+Drive (\begin{DoxyParamCaption}\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})}
+
+
+
+Tank drive (left motor and right motor directly controlled). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em left} & Left drive speed (-\/90 to 90, 0 is stop) \\
+\hline
+\mbox{\tt in}  & {\em right} & Right drive speed (-\/90 to 90, 0 is stop) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Two\+Motor\+Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+68                                                       \{
+69     this->\hyperlink{class_two_motor_drive_train_a134c95e1f45a5156924208cddaa3661f}{left\_motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(left);
+70     this->\hyperlink{class_two_motor_drive_train_a0bdefa7c731c2407ad4a4dad0902bbd3}{right\_motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(right);
+71 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_two_motor_drive_train_a134c95e1f45a5156924208cddaa3661f}\label{class_two_motor_drive_train_a134c95e1f45a5156924208cddaa3661f}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!left\+\_\+motor@{left\+\_\+motor}}
+\index{left\+\_\+motor@{left\+\_\+motor}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{left\+\_\+motor}{left\_motor}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor}$\ast$ Two\+Motor\+Drive\+Train\+::left\+\_\+motor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+left motor object 
+
+
+
+Definition at line 16 of file Two\+Motor\+Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_two_motor_drive_train_a0bdefa7c731c2407ad4a4dad0902bbd3}\label{class_two_motor_drive_train_a0bdefa7c731c2407ad4a4dad0902bbd3}} 
+\index{Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}!right\+\_\+motor@{right\+\_\+motor}}
+\index{right\+\_\+motor@{right\+\_\+motor}!Two\+Motor\+Drive\+Train@{Two\+Motor\+Drive\+Train}}
+\subsubsection{\texorpdfstring{right\+\_\+motor}{right\_motor}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor}$\ast$ Two\+Motor\+Drive\+Train\+::right\+\_\+motor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+right motor object 
+
+
+
+Definition at line 17 of file Two\+Motor\+Drive\+Train.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/mechanisms/\hyperlink{_two_motor_drive_train_8hpp}{Two\+Motor\+Drive\+Train.\+hpp}\item 
+rbe2001/mechanisms/\hyperlink{_two_motor_drive_train_8cpp}{Two\+Motor\+Drive\+Train.\+cpp}\end{DoxyCompactItemize}

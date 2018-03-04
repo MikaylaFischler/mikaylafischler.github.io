@@ -1,0 +1,430 @@
+\hypertarget{class_bluetooth_client}{}\section{Bluetooth\+Client Class Reference}
+\label{class_bluetooth_client}\index{Bluetooth\+Client@{Bluetooth\+Client}}
+
+
+{\ttfamily \#include $<$Bluetooth\+Client.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_bluetooth_client_a5ee534b5d9823be1e297f037c50beaf6}{Bluetooth\+Client} ()
+\item 
+\hyperlink{class_bluetooth_client_a9332d63f912766c70754b5eeb52800bf}{$\sim$\+Bluetooth\+Client} ()
+\item 
+void \hyperlink{class_bluetooth_client_ac054e730dd69d8e323781305ea1a610f}{init} (void) const
+\begin{DoxyCompactList}\small\item\em Initalizes bluetooth connction. \end{DoxyCompactList}\item 
+void \hyperlink{class_bluetooth_client_a0f0d9b99f80c2eab9d9d33d8aca91bf6}{send} (\hyperlink{class_packet}{Packet} $\ast$pkt)
+\begin{DoxyCompactList}\small\item\em Sends packet over bluetooth. \end{DoxyCompactList}\item 
+bool \hyperlink{class_bluetooth_client_a938b0f547b483ff7d0ac5e64260a9c37}{recv} (void)
+\begin{DoxyCompactList}\small\item\em Attempts to read a byte from the bluetooth connection until a full packet is recieved. \end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} $\ast$ \hyperlink{class_bluetooth_client_ad009775f3bd7e30c53f2e1544bc83828}{get\+Last\+Packet} (void)
+\begin{DoxyCompactList}\small\item\em Returns the last packet recieved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_bluetooth_client_a916ad4b917618bcc23dab0d258fe77d9}{buf\+\_\+checksum} (void) const
+\begin{DoxyCompactList}\small\item\em Calculate checksum of data in the buffer. \end{DoxyCompactList}\item 
+void \hyperlink{class_bluetooth_client_a52ed2098b5525a6aef38af5af5c74a91}{update\+\_\+last\+\_\+packet} (void)
+\begin{DoxyCompactList}\small\item\em Updates the last packet from the buffer. \end{DoxyCompactList}\item 
+void \hyperlink{class_bluetooth_client_ab43fcdea20009df8150e096e82a52ae6}{print\+\_\+buf} (void)
+\begin{DoxyCompactList}\small\item\em Debugging utility function to print out the current buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\+\_\+buf} \mbox{[}\hyperlink{class_bluetooth_client_a88edb272fc00fb3c65b9e95281cae00b}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}\mbox{]}
+\item 
+uint8\+\_\+t \hyperlink{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}{\+\_\+recv\+\_\+state}
+\item 
+uint8\+\_\+t \hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\+\_\+recv\+\_\+msg\+\_\+len}
+\item 
+uint8\+\_\+t \hyperlink{class_bluetooth_client_a0edb43a0aa23b2b4a9f5a1b94d568ed0}{\+\_\+recv\+\_\+msg\+\_\+index}
+\item 
+\hyperlink{class_packet}{Packet} $\ast$ \hyperlink{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}{last\+Packet}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const uint8\+\_\+t \hyperlink{class_bluetooth_client_a88edb272fc00fb3c65b9e95281cae00b}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE} = 20
+\item 
+static const uint8\+\_\+t \hyperlink{class_bluetooth_client_a4a33990a75d3b22f329fa8fcab00ab03}{P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT} = 0x5F
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file Bluetooth\+Client.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_bluetooth_client_a5ee534b5d9823be1e297f037c50beaf6}\label{class_bluetooth_client_a5ee534b5d9823be1e297f037c50beaf6}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!Bluetooth\+Client@{Bluetooth\+Client}}
+\index{Bluetooth\+Client@{Bluetooth\+Client}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{Bluetooth\+Client()}{BluetoothClient()}}
+{\footnotesize\ttfamily Bluetooth\+Client\+::\+Bluetooth\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 37 of file Bluetooth\+Client.\+hpp.
+
+
+\begin{DoxyCode}
+37 : \hyperlink{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}{\_recv\_state}(0), \hyperlink{class_bluetooth_client_a0edb43a0aa23b2b4a9f5a1b94d568ed0}{\_recv\_msg\_index}(0), \hyperlink{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}{lastPacket}(NULL) \{\};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_bluetooth_client_a9332d63f912766c70754b5eeb52800bf}\label{class_bluetooth_client_a9332d63f912766c70754b5eeb52800bf}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!````~Bluetooth\+Client@{$\sim$\+Bluetooth\+Client}}
+\index{````~Bluetooth\+Client@{$\sim$\+Bluetooth\+Client}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{$\sim$\+Bluetooth\+Client()}{~BluetoothClient()}}
+{\footnotesize\ttfamily Bluetooth\+Client\+::$\sim$\+Bluetooth\+Client (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 38 of file Bluetooth\+Client.\+hpp.
+
+
+\begin{DoxyCode}
+38 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bluetooth_client_a916ad4b917618bcc23dab0d258fe77d9}\label{class_bluetooth_client_a916ad4b917618bcc23dab0d258fe77d9}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!buf\+\_\+checksum@{buf\+\_\+checksum}}
+\index{buf\+\_\+checksum@{buf\+\_\+checksum}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{buf\+\_\+checksum()}{buf\_checksum()}}
+{\footnotesize\ttfamily uint8\+\_\+t Bluetooth\+Client\+::buf\+\_\+checksum (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Calculate checksum of data in the buffer. 
+
+Sums up all data in the buffer of indexes 0 to size -\/ 1. Since size
+\begin{DoxyItemize}
+\item 1 is the checksum itself, we do size -\/ 2 (which is length -\/ 1 -\/ 1) \begin{DoxyReturn}{Returns}
+unsigned char checksum 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Definition at line 17 of file Bluetooth\+Client.\+cpp.
+
+
+\begin{DoxyCode}
+17                                                 \{
+18     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} sum = 0;
+19     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i = 0;
+20 
+21     \textcolor{keywordflow}{for} (; i < this->\hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len} - 1; i++) \{ sum += this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[i]; \}
+22 
+23     \textcolor{keywordflow}{return} 0xFF - (sum + (this->\_recv\_msg\_len + 1));
+24 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_bluetooth_client_ad009775f3bd7e30c53f2e1544bc83828}\label{class_bluetooth_client_ad009775f3bd7e30c53f2e1544bc83828}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!get\+Last\+Packet@{get\+Last\+Packet}}
+\index{get\+Last\+Packet@{get\+Last\+Packet}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{get\+Last\+Packet()}{getLastPacket()}}
+{\footnotesize\ttfamily \hyperlink{class_packet}{Packet} $\ast$ Bluetooth\+Client\+::get\+Last\+Packet (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns the last packet recieved. 
+
+This is only reliable after recv has returned true at least once. \begin{DoxyReturn}{Returns}
+the last packet recieved 
+\end{DoxyReturn}
+
+
+Definition at line 167 of file Bluetooth\+Client.\+cpp.
+
+
+\begin{DoxyCode}
+167 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}{lastPacket}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_bluetooth_client_ac054e730dd69d8e323781305ea1a610f}\label{class_bluetooth_client_ac054e730dd69d8e323781305ea1a610f}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!init@{init}}
+\index{init@{init}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Bluetooth\+Client\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Initalizes bluetooth connction. 
+
+Begins Serial3 at 115,200 baud 
+
+Definition at line 60 of file Bluetooth\+Client.\+cpp.
+
+
+\begin{DoxyCode}
+60 \{ Serial3.begin(115200); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_bluetooth_client_ab43fcdea20009df8150e096e82a52ae6}\label{class_bluetooth_client_ab43fcdea20009df8150e096e82a52ae6}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!print\+\_\+buf@{print\+\_\+buf}}
+\index{print\+\_\+buf@{print\+\_\+buf}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{print\+\_\+buf()}{print\_buf()}}
+{\footnotesize\ttfamily void Bluetooth\+Client\+::print\+\_\+buf (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Debugging utility function to print out the current buffer. 
+
+
+
+Definition at line 29 of file Bluetooth\+Client.\+cpp.
+
+
+\begin{DoxyCode}
+29                                     \{
+30     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i = 0;
+31 
+32     \textcolor{keywordflow}{for} (; i < this->\hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len}; i++) \{
+33         Serial.print(this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[i]);
+34         Serial.print(\textcolor{stringliteral}{" "});
+35     \}
+36 
+37     Serial.println(\textcolor{stringliteral}{""});
+38 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_bluetooth_client_a938b0f547b483ff7d0ac5e64260a9c37}\label{class_bluetooth_client_a938b0f547b483ff7d0ac5e64260a9c37}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!recv@{recv}}
+\index{recv@{recv}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{recv()}{recv()}}
+{\footnotesize\ttfamily bool Bluetooth\+Client\+::recv (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Attempts to read a byte from the bluetooth connection until a full packet is recieved. 
+
+This must be called repeatedly until it returns true. \hyperlink{class_packet}{Packet} data will not start being stored until P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT is read, at which point the buffer will begin to be populated. Once the full packet is recieved and the checksum is valid, this function will overwrite last\+Packet (\hyperlink{class_bluetooth_client_ad009775f3bd7e30c53f2e1544bc83828}{get\+Last\+Packet()}) and return 1 O\+N\+CE. If you call it again, it will try looking for another packet B\+UT W\+I\+LL N\+OT overwrite the last packet until a full new packet is found and validated. \begin{DoxyReturn}{Returns}
+1 if a full packet has been read and checked, 0 otherwise 
+\end{DoxyReturn}
+$<$ looking for P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT
+
+$<$ get packet length
+
+$<$ read the packet 
+
+Definition at line 118 of file Bluetooth\+Client.\+cpp.
+
+
+\begin{DoxyCode}
+118                                \{
+119     \textcolor{keywordflow}{if} (Serial3.available()) \{
+120         \textcolor{keywordtype}{unsigned} input\_byte = Serial3.read();
+121 
+122         \textcolor{keywordflow}{switch} (this->\hyperlink{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}{\_recv\_state}) \{
+123             \textcolor{keywordflow}{case} 0: \textcolor{comment}{///< looking for PACKET\_START}
+124 \textcolor{comment}{}                \textcolor{keywordflow}{if} (input\_byte == \hyperlink{class_bluetooth_client_a4a33990a75d3b22f329fa8fcab00ab03}{PACKET\_START}) \{ this->\hyperlink{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}{\_recv\_state}++; \}
+125                 \textcolor{keywordflow}{break};
+126             \textcolor{keywordflow}{case} 1: \textcolor{comment}{///< get packet length}
+127 \textcolor{comment}{}                this->\hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len} = input\_byte - 1;
+128 
+129                 \textcolor{keywordflow}{if} (this->\hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len} >= \hyperlink{class_bluetooth_client_a88edb272fc00fb3c65b9e95281cae00b}{BUFFER\_SIZE}) \{
+130                     Serial.println(\textcolor{stringliteral}{"BluetoothClient.cpp:56 - Invalid message length. Aborting recv
+       progress."});
+131                     this->\hyperlink{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}{\_recv\_state} = 0;
+132                     \textcolor{keywordflow}{break};
+133                 \}
+134 
+135                 this->\hyperlink{class_bluetooth_client_a0edb43a0aa23b2b4a9f5a1b94d568ed0}{\_recv\_msg\_index} = 0;
+136                 this->\hyperlink{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}{\_recv\_state}++;
+137                 \textcolor{keywordflow}{break};
+138             \textcolor{keywordflow}{case} 2: \textcolor{comment}{///< read the packet}
+139 \textcolor{comment}{}                this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[this->\hyperlink{class_bluetooth_client_a0edb43a0aa23b2b4a9f5a1b94d568ed0}{\_recv\_msg\_index}++] = input\_byte;
+140 
+141                 \textcolor{keywordflow}{if} (this->\hyperlink{class_bluetooth_client_a0edb43a0aa23b2b4a9f5a1b94d568ed0}{\_recv\_msg\_index} >= this->\hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len}) \{
+142                     this->\hyperlink{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}{\_recv\_state} = 0;
+143 
+144                     \textcolor{keywordflow}{if} (\hyperlink{class_bluetooth_client_a916ad4b917618bcc23dab0d258fe77d9}{buf\_checksum}() != this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[this->
+      \hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len} - 1]) \{
+145                         Serial.println(\textcolor{stringliteral}{"BluetoothClient.cpp:70 - Bad checksum. Aborting recv progress."});
+146                         \textcolor{keywordflow}{break};
+147                     \}
+148 
+149                     \hyperlink{class_bluetooth_client_a52ed2098b5525a6aef38af5af5c74a91}{update\_last\_packet}();
+150                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+151                 \}
+152 
+153                 \textcolor{keywordflow}{break};
+154             \textcolor{keywordflow}{default}:
+155                 Serial.println(\textcolor{stringliteral}{"BluetoothClient.cpp:81 - Fatal Broken State Machine"});
+156         \}
+157     \}
+158 
+159     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+160 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_bluetooth_client_a0f0d9b99f80c2eab9d9d33d8aca91bf6}\label{class_bluetooth_client_a0f0d9b99f80c2eab9d9d33d8aca91bf6}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!send@{send}}
+\index{send@{send}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{send()}{send()}}
+{\footnotesize\ttfamily void Bluetooth\+Client\+::send (\begin{DoxyParamCaption}\item[{\hyperlink{class_packet}{Packet} $\ast$}]{pkt }\end{DoxyParamCaption})}
+
+
+
+Sends packet over bluetooth. 
+
+Sends packet elements over Serial3 
+
+Definition at line 66 of file Bluetooth\+Client.\+cpp.
+
+
+\begin{DoxyCode}
+66                                       \{
+67     \textcolor{keywordflow}{if} (pkt) \{
+68         Serial3.write(\hyperlink{class_bluetooth_client_a4a33990a75d3b22f329fa8fcab00ab03}{PACKET\_START});
+69         Serial3.write(pkt->\hyperlink{class_packet_ac267547cf152cec25d0db301e5286aa7}{getLength}());
+70         Serial3.write(pkt->\hyperlink{class_packet_affb425d99c0ff69cd5aa42cc0e22de2b}{getType}());
+71         Serial3.write(pkt->\hyperlink{class_packet_a89ecf51f7edbf2677df7a5961f080b78}{getSrc}());
+72         Serial3.write(pkt->\hyperlink{class_packet_ad60638eee5913cc40ac737d1bdeb216b}{getDest}());
+73 
+74         \textcolor{keywordflow}{if} (pkt->\hyperlink{class_packet_ac267547cf152cec25d0db301e5286aa7}{getLength}() == 8) \{
+75             \textcolor{comment}{// normal 5 + 3 data for robot status}
+76             Serial3.write((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}) (pkt->\hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}() & 0xFF));
+77             Serial3.write((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}) ((pkt->\hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}() >> 8) & 0xFF));
+78             Serial3.write((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}) ((pkt->\hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}() >> 16) & 0xFF));
+79         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (pkt->\hyperlink{class_packet_ac267547cf152cec25d0db301e5286aa7}{getLength}() == 6)\{
+80             Serial3.write((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}) (pkt->\hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}() & 0xFF));
+81         \}
+82 
+83         Serial3.write(pkt->\hyperlink{class_packet_aa529856197fdd79e6ca8cc86966cec10}{getChecksum}());
+84 
+85 \textcolor{preprocessor}{        #ifdef DEBUG}
+86         Serial.print(\hyperlink{class_bluetooth_client_a4a33990a75d3b22f329fa8fcab00ab03}{PACKET\_START}, HEX);
+87         Serial.print(\textcolor{stringliteral}{" "});
+88         Serial.print(pkt->\hyperlink{class_packet_ac267547cf152cec25d0db301e5286aa7}{getLength}(), HEX);
+89         Serial.print(\textcolor{stringliteral}{" "});
+90         Serial.print(pkt->\hyperlink{class_packet_affb425d99c0ff69cd5aa42cc0e22de2b}{getType}(), HEX);
+91         Serial.print(\textcolor{stringliteral}{" "});
+92         Serial.print(pkt->\hyperlink{class_packet_a89ecf51f7edbf2677df7a5961f080b78}{getSrc}(), HEX);
+93         Serial.print(\textcolor{stringliteral}{" "});
+94         Serial.print(pkt->\hyperlink{class_packet_ad60638eee5913cc40ac737d1bdeb216b}{getDest}(), HEX);
+95         Serial.print(\textcolor{stringliteral}{" "});
+96         \textcolor{keywordflow}{if} (pkt->\hyperlink{class_packet_ac267547cf152cec25d0db301e5286aa7}{getLength}() > 5) \{ Serial.print(pkt->\hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}(), HEX); \}
+97         Serial.print(\textcolor{stringliteral}{" "});
+98         Serial.print(pkt->\hyperlink{class_packet_aa529856197fdd79e6ca8cc86966cec10}{getChecksum}(), HEX);
+99         Serial.println(\textcolor{stringliteral}{""});
+100 \textcolor{preprocessor}{        #endif}
+101 
+102         \textcolor{keyword}{delete} pkt;
+103     \}
+104 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_bluetooth_client_a52ed2098b5525a6aef38af5af5c74a91}\label{class_bluetooth_client_a52ed2098b5525a6aef38af5af5c74a91}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!update\+\_\+last\+\_\+packet@{update\+\_\+last\+\_\+packet}}
+\index{update\+\_\+last\+\_\+packet@{update\+\_\+last\+\_\+packet}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{update\+\_\+last\+\_\+packet()}{update\_last\_packet()}}
+{\footnotesize\ttfamily void Bluetooth\+Client\+::update\+\_\+last\+\_\+packet (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Updates the last packet from the buffer. 
+
+
+
+Definition at line 43 of file Bluetooth\+Client.\+cpp.
+
+
+\begin{DoxyCode}
+43                                              \{
+44     \textcolor{keywordflow}{if} (this->\hyperlink{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}{lastPacket}) \{ \textcolor{keyword}{delete} this->\hyperlink{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}{lastPacket}; \}
+45 
+46     \textcolor{keywordflow}{if} (this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[0] == 0x06) \{
+47         uint32\_t \_data = (uint32\_t) this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[3] + ((uint32\_t) this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[4] << 8) + ((uint32\_t) this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[5] << 16);
+48         this->\hyperlink{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}{lastPacket} = \textcolor{keyword}{new} \hyperlink{class_packet}{Packet}(this->\hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len} + 1, this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[0], this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[1], this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[2], \_data, this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[6]);
+49     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[0] == 0x04 || this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[0] == 0x05 || this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[0] == 0x07)\{
+50         this->\hyperlink{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}{lastPacket} = \textcolor{keyword}{new} \hyperlink{class_packet}{Packet}(this->\hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len} + 1, this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[0], this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[1], this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[2], 0, this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[3]);
+51     \} \textcolor{keywordflow}{else} \{
+52         this->\hyperlink{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}{lastPacket} = \textcolor{keyword}{new} \hyperlink{class_packet}{Packet}(this->\hyperlink{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}{\_recv\_msg\_len} + 1, this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[0], this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[1], this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[2], this->
+      \hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[3], this->\hyperlink{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}{recv\_buf}[4]);
+53     \}
+54 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_bluetooth_client_a0edb43a0aa23b2b4a9f5a1b94d568ed0}\label{class_bluetooth_client_a0edb43a0aa23b2b4a9f5a1b94d568ed0}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!\+\_\+recv\+\_\+msg\+\_\+index@{\+\_\+recv\+\_\+msg\+\_\+index}}
+\index{\+\_\+recv\+\_\+msg\+\_\+index@{\+\_\+recv\+\_\+msg\+\_\+index}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+recv\+\_\+msg\+\_\+index}{\_recv\_msg\_index}}
+{\footnotesize\ttfamily uint8\+\_\+t Bluetooth\+Client\+::\+\_\+recv\+\_\+msg\+\_\+index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file Bluetooth\+Client.\+hpp.
+
+\mbox{\Hypertarget{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}\label{class_bluetooth_client_a30e47aa21808bd60b99cf5778e67c059}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!\+\_\+recv\+\_\+msg\+\_\+len@{\+\_\+recv\+\_\+msg\+\_\+len}}
+\index{\+\_\+recv\+\_\+msg\+\_\+len@{\+\_\+recv\+\_\+msg\+\_\+len}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+recv\+\_\+msg\+\_\+len}{\_recv\_msg\_len}}
+{\footnotesize\ttfamily uint8\+\_\+t Bluetooth\+Client\+::\+\_\+recv\+\_\+msg\+\_\+len\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file Bluetooth\+Client.\+hpp.
+
+\mbox{\Hypertarget{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}\label{class_bluetooth_client_a84f2227913ec4eaf68fe3ccfaaf29d9e}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!\+\_\+recv\+\_\+state@{\+\_\+recv\+\_\+state}}
+\index{\+\_\+recv\+\_\+state@{\+\_\+recv\+\_\+state}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{\+\_\+recv\+\_\+state}{\_recv\_state}}
+{\footnotesize\ttfamily uint8\+\_\+t Bluetooth\+Client\+::\+\_\+recv\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 25 of file Bluetooth\+Client.\+hpp.
+
+\mbox{\Hypertarget{class_bluetooth_client_a88edb272fc00fb3c65b9e95281cae00b}\label{class_bluetooth_client_a88edb272fc00fb3c65b9e95281cae00b}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE@{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}{BUFFER\_SIZE}}
+{\footnotesize\ttfamily const uint8\+\_\+t Bluetooth\+Client\+::\+B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE = 20\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 20 of file Bluetooth\+Client.\+hpp.
+
+\mbox{\Hypertarget{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}\label{class_bluetooth_client_aedcb6766e3a877b5e468ed1347caf483}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!last\+Packet@{last\+Packet}}
+\index{last\+Packet@{last\+Packet}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{last\+Packet}{lastPacket}}
+{\footnotesize\ttfamily \hyperlink{class_packet}{Packet}$\ast$ Bluetooth\+Client\+::last\+Packet\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Bluetooth\+Client.\+hpp.
+
+\mbox{\Hypertarget{class_bluetooth_client_a4a33990a75d3b22f329fa8fcab00ab03}\label{class_bluetooth_client_a4a33990a75d3b22f329fa8fcab00ab03}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT@{P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT}}
+\index{P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT@{P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT}{PACKET\_START}}
+{\footnotesize\ttfamily const uint8\+\_\+t Bluetooth\+Client\+::\+P\+A\+C\+K\+E\+T\+\_\+\+S\+T\+A\+RT = 0x5F\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 21 of file Bluetooth\+Client.\+hpp.
+
+\mbox{\Hypertarget{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}\label{class_bluetooth_client_a83675b45ddf8021663ecd6200a22b1cb}} 
+\index{Bluetooth\+Client@{Bluetooth\+Client}!recv\+\_\+buf@{recv\+\_\+buf}}
+\index{recv\+\_\+buf@{recv\+\_\+buf}!Bluetooth\+Client@{Bluetooth\+Client}}
+\subsubsection{\texorpdfstring{recv\+\_\+buf}{recv\_buf}}
+{\footnotesize\ttfamily uint8\+\_\+t Bluetooth\+Client\+::recv\+\_\+buf\mbox{[}\hyperlink{class_bluetooth_client_a88edb272fc00fb3c65b9e95281cae00b}{B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+ZE}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file Bluetooth\+Client.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/subsystems/\hyperlink{_bluetooth_client_8hpp}{Bluetooth\+Client.\+hpp}\item 
+rbe2001/subsystems/\hyperlink{_bluetooth_client_8cpp}{Bluetooth\+Client.\+cpp}\end{DoxyCompactItemize}

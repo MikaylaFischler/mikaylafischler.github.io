@@ -1,0 +1,600 @@
+\hypertarget{_threaded_robot_8hpp}{}\section{rbe2001/subsystems/\+Threaded\+Robot.hpp File Reference}
+\label{_threaded_robot_8hpp}\index{rbe2001/subsystems/\+Threaded\+Robot.\+hpp@{rbe2001/subsystems/\+Threaded\+Robot.\+hpp}}
+
+
+Threaded Robot Header.  
+
+
+{\ttfamily \#include $<$inttypes.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Messenger.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mechanisms/\+Drive\+Train.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mechanisms/\+Arm.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../mechanisms/\+Intake.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../devices/io/\+Reflectance\+Sensor.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../devices/io/\+Gyroscope.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../devices/io/\+Accelerometer.\+hpp\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_threaded_robot}{Threaded\+Robot}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}{S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC}~0x10
+\begin{DoxyCompactList}\small\item\em First call of drive state. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}{S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC}~0x20
+\begin{DoxyCompactList}\small\item\em First call of arm state. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC}~0x40
+\begin{DoxyCompactList}\small\item\em First call of intake state. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_aec119baf235144dbcf93f18dee9371d5}{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+FC}~0x80
+\begin{DoxyCompactList}\small\item\em First call of global state. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a9ba1d31706f568992789685278b59c6b}{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+I\+T\+I\+AL}~\hyperlink{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}{S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC} $\vert$ \hyperlink{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}{S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC} $\vert$ \hyperlink{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC}
+\item 
+\#define \hyperlink{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+OP}~0
+\begin{DoxyCompactList}\small\item\em Stop the drive motors (then do nothing) \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_ad8059005f360a46de99b00ca40801fec}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+OR}~1
+\begin{DoxyCompactList}\small\item\em Drive to reactor. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a4f6a6e6b703f8b80f5d02968d9595267}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+T\+O\+R\+A\+GE}~2
+\begin{DoxyCompactList}\small\item\em Drive to storage tubes. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a736b22dbab4c41abd3670d0613e9b7b2}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+U\+P\+P\+LY}~3
+\begin{DoxyCompactList}\small\item\em Drive to supply tubes. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+D\+E\+P\+O\+S\+I\+T\+\_\+\+R\+E\+T\+R\+I\+E\+VE}~4
+\begin{DoxyCompactList}\small\item\em Drive to tubes to deposit or retrieve. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_aabc19201dab2e84504bcafcbb24015ab}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+W\+A\+L\+L\+\_\+\+R\+E\+T\+R\+E\+AT}~5
+\begin{DoxyCompactList}\small\item\em Retreat back from the wall. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a59b73e9a00ed2ca9fbfc22a25281ab9f}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+L\+O\+A\+D\+\_\+\+R\+E\+T\+R\+E\+AT}~6
+\begin{DoxyCompactList}\small\item\em Retreat back after loading/unloading the reactor. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_adac605b3f05fb0b3166eddf6bffeaae2}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+F\+R\+O\+M\+\_\+\+R\+E\+A\+C\+T\+OR}~7
+\begin{DoxyCompactList}\small\item\em Turn away from the reactor after completion of removing/inserting fuel. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a0dfd6ccb0681319880cf03a62262aa43}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+L\+E\+FT}~8
+\begin{DoxyCompactList}\small\item\em Turn left 90 degrees. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a065168c9946205caff716032d3f26d1b}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+R\+I\+G\+HT}~9
+\begin{DoxyCompactList}\small\item\em Turn right 90 degrees. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_aac0c6c5f2a3a9106b067d6964c467a1e}{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+180}~10
+\begin{DoxyCompactList}\small\item\em Turn right 180 degrees. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a96fec3d4c162b9ffe5c1c5847c58f1d9}{S\+M\+\_\+\+A\+R\+M\+\_\+\+I\+D\+LE}~0
+\begin{DoxyCompactList}\small\item\em Idle the arm (do nothing) \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a17eb65c231c0816f2929a40e1af28a8a}{S\+M\+\_\+\+A\+R\+M\+\_\+\+H\+O\+LD}~1
+\begin{DoxyCompactList}\small\item\em Hold the arm in its current setpoint with the PD controller. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_ab81e7b2b3227c0de1b76dcfdddb78f75}{S\+M\+\_\+\+A\+R\+M\+\_\+\+UP}~2
+\begin{DoxyCompactList}\small\item\em Set the arm to its upward position and drive there. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a696681018aa36726b057d6b82573d620}{S\+M\+\_\+\+A\+R\+M\+\_\+\+D\+O\+WN}~3
+\begin{DoxyCompactList}\small\item\em Set the arm to one of its lower positions and drive there. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a1ccedfbf469636f5afc2c68499f826a9}{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+I\+D\+LE}~0
+\begin{DoxyCompactList}\small\item\em Idle the intake (do nothing) \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_afbbce27f2ad74e23a17117134f66f94f}{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+H\+O\+LD}~1
+\begin{DoxyCompactList}\small\item\em Hold the rod in the intake (run inwards if sensor thinks we lost the rod) \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a8e869bc75311ab5b24a7dcd53163d9f5}{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+IN}~2
+\begin{DoxyCompactList}\small\item\em Drive the intake inwards until the rod is sensed. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a533e726e2969b8474ca1cf9b697cb0b8}{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN}~3
+\begin{DoxyCompactList}\small\item\em Slowly run the intake inwards until the rod is sensed. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_aee99598bb6301112885aebf03222896f}{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+E\+J\+E\+CT}~4
+\begin{DoxyCompactList}\small\item\em Eject the rod (run intake outwards) \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a388ca9e0532aeb38988df56f8226b6f9}{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+OR}~0
+\begin{DoxyCompactList}\small\item\em Get to the current reactor. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a303b885262b38d61b183b975a31fa9f5}{S\+T\+E\+P\+\_\+\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+R\+O\+U\+T\+I\+NE}~1
+\begin{DoxyCompactList}\small\item\em Extract from the current reactor. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+T\+O\+R\+A\+GE}~2
+\begin{DoxyCompactList}\small\item\em Head to storage. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a26c2a122486872fb524e51b3040a6dc5}{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+L\+Y\+\_\+\+N\+AV}~3
+\begin{DoxyCompactList}\small\item\em Head to supply. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+LY}~4
+\begin{DoxyCompactList}\small\item\em Head to supply. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+R\+E\+T\+U\+RN}~5
+\begin{DoxyCompactList}\small\item\em Return to reactor from supply. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_aa746f89a7ab4e61cfe763ca6ad8a2e22}{S\+T\+E\+P\+\_\+\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+R\+O\+U\+T\+I\+NE}~6
+\begin{DoxyCompactList}\small\item\em Insert new rod into reactor. \end{DoxyCompactList}\item 
+\#define \hyperlink{_threaded_robot_8hpp_a599e63384671b0b789ac2ea2ba1fd255}{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+T\+WO}~7
+\begin{DoxyCompactList}\small\item\em Head to second reactor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{_threaded_robot_8hpp_a0710cfb77cd7024b3c712061f1349443}{robot\+\_\+disabled} = 0
+\begin{DoxyCompactList}\small\item\em True if the robot is disabled. \end{DoxyCompactList}\item 
+bool \hyperlink{_threaded_robot_8hpp_a90bb1c48eba85e2acf136982fcfd628e}{horiz\+\_\+line}
+\begin{DoxyCompactList}\small\item\em If the main code detected a horizontal line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Threaded Robot Header. 
+
+Threaded Robot Class
+
+Manages running all robot functions in a virtual multithreaded environment. \begin{DoxyAuthor}{Author}
+Mikayla Fischler 
+\end{DoxyAuthor}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_threaded_robot_8hpp_a696681018aa36726b057d6b82573d620}\label{_threaded_robot_8hpp_a696681018aa36726b057d6b82573d620}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+A\+R\+M\+\_\+\+D\+O\+WN@{S\+M\+\_\+\+A\+R\+M\+\_\+\+D\+O\+WN}}
+\index{S\+M\+\_\+\+A\+R\+M\+\_\+\+D\+O\+WN@{S\+M\+\_\+\+A\+R\+M\+\_\+\+D\+O\+WN}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+A\+R\+M\+\_\+\+D\+O\+WN}{SM\_ARM\_DOWN}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+A\+R\+M\+\_\+\+D\+O\+WN~3}
+
+
+
+Set the arm to one of its lower positions and drive there. 
+
+
+
+Definition at line 40 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a17eb65c231c0816f2929a40e1af28a8a}\label{_threaded_robot_8hpp_a17eb65c231c0816f2929a40e1af28a8a}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+A\+R\+M\+\_\+\+H\+O\+LD@{S\+M\+\_\+\+A\+R\+M\+\_\+\+H\+O\+LD}}
+\index{S\+M\+\_\+\+A\+R\+M\+\_\+\+H\+O\+LD@{S\+M\+\_\+\+A\+R\+M\+\_\+\+H\+O\+LD}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+A\+R\+M\+\_\+\+H\+O\+LD}{SM\_ARM\_HOLD}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+A\+R\+M\+\_\+\+H\+O\+LD~1}
+
+
+
+Hold the arm in its current setpoint with the PD controller. 
+
+
+
+Definition at line 38 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a96fec3d4c162b9ffe5c1c5847c58f1d9}\label{_threaded_robot_8hpp_a96fec3d4c162b9ffe5c1c5847c58f1d9}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+A\+R\+M\+\_\+\+I\+D\+LE@{S\+M\+\_\+\+A\+R\+M\+\_\+\+I\+D\+LE}}
+\index{S\+M\+\_\+\+A\+R\+M\+\_\+\+I\+D\+LE@{S\+M\+\_\+\+A\+R\+M\+\_\+\+I\+D\+LE}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+A\+R\+M\+\_\+\+I\+D\+LE}{SM\_ARM\_IDLE}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+A\+R\+M\+\_\+\+I\+D\+LE~0}
+
+
+
+Idle the arm (do nothing) 
+
+
+
+Definition at line 37 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_ab81e7b2b3227c0de1b76dcfdddb78f75}\label{_threaded_robot_8hpp_ab81e7b2b3227c0de1b76dcfdddb78f75}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+A\+R\+M\+\_\+\+UP@{S\+M\+\_\+\+A\+R\+M\+\_\+\+UP}}
+\index{S\+M\+\_\+\+A\+R\+M\+\_\+\+UP@{S\+M\+\_\+\+A\+R\+M\+\_\+\+UP}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+A\+R\+M\+\_\+\+UP}{SM\_ARM\_UP}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+A\+R\+M\+\_\+\+UP~2}
+
+
+
+Set the arm to its upward position and drive there. 
+
+
+
+Definition at line 39 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}\label{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+D\+E\+P\+O\+S\+I\+T\+\_\+\+R\+E\+T\+R\+I\+E\+VE@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+D\+E\+P\+O\+S\+I\+T\+\_\+\+R\+E\+T\+R\+I\+E\+VE}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+D\+E\+P\+O\+S\+I\+T\+\_\+\+R\+E\+T\+R\+I\+E\+VE@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+D\+E\+P\+O\+S\+I\+T\+\_\+\+R\+E\+T\+R\+I\+E\+VE}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+D\+E\+P\+O\+S\+I\+T\+\_\+\+R\+E\+T\+R\+I\+E\+VE}{SM\_DRIVE\_FUEL\_DEPOSIT\_RETRIEVE}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+D\+E\+P\+O\+S\+I\+T\+\_\+\+R\+E\+T\+R\+I\+E\+VE~4}
+
+
+
+Drive to tubes to deposit or retrieve. 
+
+
+
+Definition at line 29 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a4f6a6e6b703f8b80f5d02968d9595267}\label{_threaded_robot_8hpp_a4f6a6e6b703f8b80f5d02968d9595267}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+T\+O\+R\+A\+GE@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+T\+O\+R\+A\+GE}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+T\+O\+R\+A\+GE@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+T\+O\+R\+A\+GE}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+T\+O\+R\+A\+GE}{SM\_DRIVE\_FUEL\_STORAGE}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+T\+O\+R\+A\+GE~2}
+
+
+
+Drive to storage tubes. 
+
+
+
+Definition at line 27 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a736b22dbab4c41abd3670d0613e9b7b2}\label{_threaded_robot_8hpp_a736b22dbab4c41abd3670d0613e9b7b2}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+U\+P\+P\+LY@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+U\+P\+P\+LY}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+U\+P\+P\+LY@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+U\+P\+P\+LY}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+U\+P\+P\+LY}{SM\_DRIVE\_FUEL\_SUPPLY}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+F\+U\+E\+L\+\_\+\+S\+U\+P\+P\+LY~3}
+
+
+
+Drive to supply tubes. 
+
+
+
+Definition at line 28 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_ad8059005f360a46de99b00ca40801fec}\label{_threaded_robot_8hpp_ad8059005f360a46de99b00ca40801fec}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+OR@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+OR}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+OR@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+OR}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+OR}{SM\_DRIVE\_REACTOR}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+OR~1}
+
+
+
+Drive to reactor. 
+
+
+
+Definition at line 26 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a59b73e9a00ed2ca9fbfc22a25281ab9f}\label{_threaded_robot_8hpp_a59b73e9a00ed2ca9fbfc22a25281ab9f}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+L\+O\+A\+D\+\_\+\+R\+E\+T\+R\+E\+AT@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+L\+O\+A\+D\+\_\+\+R\+E\+T\+R\+E\+AT}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+L\+O\+A\+D\+\_\+\+R\+E\+T\+R\+E\+AT@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+L\+O\+A\+D\+\_\+\+R\+E\+T\+R\+E\+AT}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+L\+O\+A\+D\+\_\+\+R\+E\+T\+R\+E\+AT}{SM\_DRIVE\_REACTOR\_LOAD\_RETREAT}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+L\+O\+A\+D\+\_\+\+R\+E\+T\+R\+E\+AT~6}
+
+
+
+Retreat back after loading/unloading the reactor. 
+
+
+
+Definition at line 31 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}\label{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+OP@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+OP}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+OP@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+OP}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+OP}{SM\_DRIVE\_STOP}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+OP~0}
+
+
+
+Stop the drive motors (then do nothing) 
+
+
+
+Definition at line 25 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_aac0c6c5f2a3a9106b067d6964c467a1e}\label{_threaded_robot_8hpp_aac0c6c5f2a3a9106b067d6964c467a1e}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+180@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+180}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+180@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+180}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+180}{SM\_DRIVE\_TURN\_180}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+180~10}
+
+
+
+Turn right 180 degrees. 
+
+
+
+Definition at line 35 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_adac605b3f05fb0b3166eddf6bffeaae2}\label{_threaded_robot_8hpp_adac605b3f05fb0b3166eddf6bffeaae2}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+F\+R\+O\+M\+\_\+\+R\+E\+A\+C\+T\+OR@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+F\+R\+O\+M\+\_\+\+R\+E\+A\+C\+T\+OR}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+F\+R\+O\+M\+\_\+\+R\+E\+A\+C\+T\+OR@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+F\+R\+O\+M\+\_\+\+R\+E\+A\+C\+T\+OR}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+F\+R\+O\+M\+\_\+\+R\+E\+A\+C\+T\+OR}{SM\_DRIVE\_TURN\_FROM\_REACTOR}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+F\+R\+O\+M\+\_\+\+R\+E\+A\+C\+T\+OR~7}
+
+
+
+Turn away from the reactor after completion of removing/inserting fuel. 
+
+
+
+Definition at line 32 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a0dfd6ccb0681319880cf03a62262aa43}\label{_threaded_robot_8hpp_a0dfd6ccb0681319880cf03a62262aa43}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+L\+E\+FT@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+L\+E\+FT}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+L\+E\+FT@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+L\+E\+FT}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+L\+E\+FT}{SM\_DRIVE\_TURN\_LEFT}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+L\+E\+FT~8}
+
+
+
+Turn left 90 degrees. 
+
+
+
+Definition at line 33 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a065168c9946205caff716032d3f26d1b}\label{_threaded_robot_8hpp_a065168c9946205caff716032d3f26d1b}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+R\+I\+G\+HT@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+R\+I\+G\+HT}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+R\+I\+G\+HT@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+R\+I\+G\+HT}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+R\+I\+G\+HT}{SM\_DRIVE\_TURN\_RIGHT}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+T\+U\+R\+N\+\_\+\+R\+I\+G\+HT~9}
+
+
+
+Turn right 90 degrees. 
+
+
+
+Definition at line 34 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_aabc19201dab2e84504bcafcbb24015ab}\label{_threaded_robot_8hpp_aabc19201dab2e84504bcafcbb24015ab}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+W\+A\+L\+L\+\_\+\+R\+E\+T\+R\+E\+AT@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+W\+A\+L\+L\+\_\+\+R\+E\+T\+R\+E\+AT}}
+\index{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+W\+A\+L\+L\+\_\+\+R\+E\+T\+R\+E\+AT@{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+W\+A\+L\+L\+\_\+\+R\+E\+T\+R\+E\+AT}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+W\+A\+L\+L\+\_\+\+R\+E\+T\+R\+E\+AT}{SM\_DRIVE\_WALL\_RETREAT}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+D\+R\+I\+V\+E\+\_\+\+W\+A\+L\+L\+\_\+\+R\+E\+T\+R\+E\+AT~5}
+
+
+
+Retreat back from the wall. 
+
+
+
+Definition at line 30 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_aee99598bb6301112885aebf03222896f}\label{_threaded_robot_8hpp_aee99598bb6301112885aebf03222896f}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+E\+J\+E\+CT@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+E\+J\+E\+CT}}
+\index{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+E\+J\+E\+CT@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+E\+J\+E\+CT}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+E\+J\+E\+CT}{SM\_INTAKE\_EJECT}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+E\+J\+E\+CT~4}
+
+
+
+Eject the rod (run intake outwards) 
+
+
+
+Definition at line 46 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_afbbce27f2ad74e23a17117134f66f94f}\label{_threaded_robot_8hpp_afbbce27f2ad74e23a17117134f66f94f}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+H\+O\+LD@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+H\+O\+LD}}
+\index{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+H\+O\+LD@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+H\+O\+LD}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+H\+O\+LD}{SM\_INTAKE\_HOLD}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+H\+O\+LD~1}
+
+
+
+Hold the rod in the intake (run inwards if sensor thinks we lost the rod) 
+
+
+
+Definition at line 43 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a1ccedfbf469636f5afc2c68499f826a9}\label{_threaded_robot_8hpp_a1ccedfbf469636f5afc2c68499f826a9}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+I\+D\+LE@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+I\+D\+LE}}
+\index{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+I\+D\+LE@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+I\+D\+LE}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+I\+D\+LE}{SM\_INTAKE\_IDLE}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+I\+D\+LE~0}
+
+
+
+Idle the intake (do nothing) 
+
+
+
+Definition at line 42 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a8e869bc75311ab5b24a7dcd53163d9f5}\label{_threaded_robot_8hpp_a8e869bc75311ab5b24a7dcd53163d9f5}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+IN@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+IN}}
+\index{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+IN@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+IN}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+IN}{SM\_INTAKE\_IN}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+IN~2}
+
+
+
+Drive the intake inwards until the rod is sensed. 
+
+
+
+Definition at line 44 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a533e726e2969b8474ca1cf9b697cb0b8}\label{_threaded_robot_8hpp_a533e726e2969b8474ca1cf9b697cb0b8}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN}}
+\index{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN@{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN}{SM\_INTAKE\_SLOW\_IN}}
+{\footnotesize\ttfamily \#define S\+M\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN~3}
+
+
+
+Slowly run the intake inwards until the rod is sensed. 
+
+
+
+Definition at line 45 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}\label{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC@{S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC@{S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC}{STATUS\_ARM\_FC}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC~0x20}
+
+
+
+First call of arm state. 
+
+
+
+Definition at line 18 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}\label{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC@{S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC@{S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC}{STATUS\_DRIVE\_FC}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC~0x10}
+
+
+
+First call of drive state. 
+
+
+
+Definition at line 17 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a9ba1d31706f568992789685278b59c6b}\label{_threaded_robot_8hpp_a9ba1d31706f568992789685278b59c6b}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+I\+T\+I\+AL@{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+I\+T\+I\+AL}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+I\+T\+I\+AL@{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+I\+T\+I\+AL}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+I\+T\+I\+AL}{STATUS\_INITIAL}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+I\+T\+I\+AL~\hyperlink{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}{S\+T\+A\+T\+U\+S\+\_\+\+D\+R\+I\+V\+E\+\_\+\+FC} $\vert$ \hyperlink{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}{S\+T\+A\+T\+U\+S\+\_\+\+A\+R\+M\+\_\+\+FC} $\vert$ \hyperlink{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC}}
+
+
+
+Definition at line 22 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}\label{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC@{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC@{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC}{STATUS\_INTAKE\_FC}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+I\+N\+T\+A\+K\+E\+\_\+\+FC~0x40}
+
+
+
+First call of intake state. 
+
+
+
+Definition at line 19 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_aec119baf235144dbcf93f18dee9371d5}\label{_threaded_robot_8hpp_aec119baf235144dbcf93f18dee9371d5}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+FC@{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+FC}}
+\index{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+FC@{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+FC}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+FC}{STATUS\_SYSTEM\_FC}}
+{\footnotesize\ttfamily \#define S\+T\+A\+T\+U\+S\+\_\+\+S\+Y\+S\+T\+E\+M\+\_\+\+FC~0x80}
+
+
+
+First call of global state. 
+
+
+
+Definition at line 20 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a303b885262b38d61b183b975a31fa9f5}\label{_threaded_robot_8hpp_a303b885262b38d61b183b975a31fa9f5}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+E\+P\+\_\+\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+R\+O\+U\+T\+I\+NE@{S\+T\+E\+P\+\_\+\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+R\+O\+U\+T\+I\+NE}}
+\index{S\+T\+E\+P\+\_\+\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+R\+O\+U\+T\+I\+NE@{S\+T\+E\+P\+\_\+\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+R\+O\+U\+T\+I\+NE}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+\_\+\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+R\+O\+U\+T\+I\+NE}{STEP\_\_EXTRACT\_ROUTINE}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+\_\+\+\_\+\+E\+X\+T\+R\+A\+C\+T\+\_\+\+R\+O\+U\+T\+I\+NE~1}
+
+
+
+Extract from the current reactor. 
+
+
+
+Definition at line 50 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_aa746f89a7ab4e61cfe763ca6ad8a2e22}\label{_threaded_robot_8hpp_aa746f89a7ab4e61cfe763ca6ad8a2e22}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+E\+P\+\_\+\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+R\+O\+U\+T\+I\+NE@{S\+T\+E\+P\+\_\+\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+R\+O\+U\+T\+I\+NE}}
+\index{S\+T\+E\+P\+\_\+\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+R\+O\+U\+T\+I\+NE@{S\+T\+E\+P\+\_\+\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+R\+O\+U\+T\+I\+NE}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+\_\+\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+R\+O\+U\+T\+I\+NE}{STEP\_\_INSERT\_ROUTINE}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+\_\+\+\_\+\+I\+N\+S\+E\+R\+T\+\_\+\+R\+O\+U\+T\+I\+NE~6}
+
+
+
+Insert new rod into reactor. 
+
+
+
+Definition at line 55 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a388ca9e0532aeb38988df56f8226b6f9}\label{_threaded_robot_8hpp_a388ca9e0532aeb38988df56f8226b6f9}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+OR@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+OR}}
+\index{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+OR@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+OR}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+OR}{STEP\_\_TO\_REACTOR}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+OR~0}
+
+
+
+Get to the current reactor. 
+
+
+
+Definition at line 49 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}\label{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+R\+E\+T\+U\+RN@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+R\+E\+T\+U\+RN}}
+\index{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+R\+E\+T\+U\+RN@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+R\+E\+T\+U\+RN}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+R\+E\+T\+U\+RN}{STEP\_\_TO\_REACTOR\_RETURN}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+R\+E\+T\+U\+RN~5}
+
+
+
+Return to reactor from supply. 
+
+
+
+Definition at line 54 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a599e63384671b0b789ac2ea2ba1fd255}\label{_threaded_robot_8hpp_a599e63384671b0b789ac2ea2ba1fd255}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+T\+WO@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+T\+WO}}
+\index{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+T\+WO@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+T\+WO}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+T\+WO}{STEP\_\_TO\_REACTOR\_TWO}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+R\+E\+A\+C\+T\+O\+R\+\_\+\+T\+WO~7}
+
+
+
+Head to second reactor. 
+
+
+
+Definition at line 56 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}\label{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+T\+O\+R\+A\+GE@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+T\+O\+R\+A\+GE}}
+\index{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+T\+O\+R\+A\+GE@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+T\+O\+R\+A\+GE}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+T\+O\+R\+A\+GE}{STEP\_\_TO\_STORAGE}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+T\+O\+R\+A\+GE~2}
+
+
+
+Head to storage. 
+
+
+
+Definition at line 51 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}\label{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+LY@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+LY}}
+\index{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+LY@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+LY}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+LY}{STEP\_\_TO\_SUPPLY}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+LY~4}
+
+
+
+Head to supply. 
+
+
+
+Definition at line 53 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a26c2a122486872fb524e51b3040a6dc5}\label{_threaded_robot_8hpp_a26c2a122486872fb524e51b3040a6dc5}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+L\+Y\+\_\+\+N\+AV@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+L\+Y\+\_\+\+N\+AV}}
+\index{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+L\+Y\+\_\+\+N\+AV@{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+L\+Y\+\_\+\+N\+AV}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+L\+Y\+\_\+\+N\+AV}{STEP\_\_TO\_SUPPLY\_NAV}}
+{\footnotesize\ttfamily \#define S\+T\+E\+P\+\_\+\+\_\+\+T\+O\+\_\+\+S\+U\+P\+P\+L\+Y\+\_\+\+N\+AV~3}
+
+
+
+Head to supply. 
+
+
+
+Definition at line 52 of file Threaded\+Robot.\+hpp.
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{_threaded_robot_8hpp_a90bb1c48eba85e2acf136982fcfd628e}\label{_threaded_robot_8hpp_a90bb1c48eba85e2acf136982fcfd628e}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!horiz\+\_\+line@{horiz\+\_\+line}}
+\index{horiz\+\_\+line@{horiz\+\_\+line}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{horiz\+\_\+line}{horiz\_line}}
+{\footnotesize\ttfamily bool horiz\+\_\+line}
+
+
+
+If the main code detected a horizontal line. 
+
+
+
+Definition at line 89 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{_threaded_robot_8hpp_a0710cfb77cd7024b3c712061f1349443}\label{_threaded_robot_8hpp_a0710cfb77cd7024b3c712061f1349443}} 
+\index{Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}!robot\+\_\+disabled@{robot\+\_\+disabled}}
+\index{robot\+\_\+disabled@{robot\+\_\+disabled}!Threaded\+Robot.\+hpp@{Threaded\+Robot.\+hpp}}
+\subsubsection{\texorpdfstring{robot\+\_\+disabled}{robot\_disabled}}
+{\footnotesize\ttfamily bool robot\+\_\+disabled = 0}
+
+
+
+True if the robot is disabled. 
+
+
+
+Definition at line 59 of file Threaded\+Robot.\+hpp.
+

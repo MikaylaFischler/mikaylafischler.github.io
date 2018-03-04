@@ -1,0 +1,476 @@
+\hypertarget{class_messenger}{}\section{Messenger Class Reference}
+\label{class_messenger}\index{Messenger@{Messenger}}
+
+
+{\ttfamily \#include $<$Messenger.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_messenger_a6e49006efdfa500349b30bdc492ba2ab}{Messenger} ()
+\item 
+\hyperlink{class_messenger_a9fd6bc17fefe8105c01fc57e8abb5773}{$\sim$\+Messenger} ()
+\item 
+void \hyperlink{class_messenger_a1416b79fce99fd7b1aa13d07113546a7}{register\+\_\+field\+\_\+data} (\hyperlink{class_field_data}{Field\+Data} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Registers a field data object to be updated. \end{DoxyCompactList}\item 
+void \hyperlink{class_messenger_ade23d550433aaa39bd08b4dd092bceeb}{register\+\_\+robot\+\_\+data} (\hyperlink{class_robot_data}{Robot\+Data} $\ast$data)
+\begin{DoxyCompactList}\small\item\em Registers a robot data object to be updated. \end{DoxyCompactList}\item 
+void \hyperlink{class_messenger_a8412ddd8931fa6b49a2ad3a2f52cad31}{register\+\_\+bt\+\_\+client} (\hyperlink{class_bluetooth_client}{Bluetooth\+Client} $\ast$cli)
+\begin{DoxyCompactList}\small\item\em Registers a \hyperlink{class_bluetooth_client}{Bluetooth\+Client} to use for field I/O. \end{DoxyCompactList}\item 
+\hyperlink{class_field_data}{Field\+Data} $\ast$ \hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field} (void)
+\begin{DoxyCompactList}\small\item\em Get the current field data. \end{DoxyCompactList}\item 
+\hyperlink{class_robot_data}{Robot\+Data} $\ast$ \hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot} (void)
+\begin{DoxyCompactList}\small\item\em Get the current robot data. \end{DoxyCompactList}\item 
+void \hyperlink{class_messenger_ad5df7d4bf31502b3aad9f04b5e830e2c}{refresh\+Robot\+Data} (void)
+\begin{DoxyCompactList}\small\item\em Tells the system to re-\/send robot status data (do after updating status) \end{DoxyCompactList}\item 
+void \hyperlink{class_messenger_a6cb2c50700cc4b8824c7f6b07a3216ff}{enable\+Debug} (void)
+\begin{DoxyCompactList}\small\item\em Enables debug prints to Serial. \end{DoxyCompactList}\item 
+void \hyperlink{class_messenger_a31339b4d655cae6e8e7d567554210463}{disable\+Debug} (void)
+\begin{DoxyCompactList}\small\item\em Disables debug prints to Serial. \end{DoxyCompactList}\item 
+void \hyperlink{class_messenger_abdf16b0ba616983f4c4b1895ed937eb2}{step\+\_\+recv} (void)
+\begin{DoxyCompactList}\small\item\em Step this subsystem (handle any recieved data). \end{DoxyCompactList}\item 
+void \hyperlink{class_messenger_a7e37226a7ee3e139fe22e05067e0013b}{step\+\_\+send} (void)
+\begin{DoxyCompactList}\small\item\em Step this subsystem (send data). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_messenger_af47b5f9743fcef4fdb73801ae7c6b023}{next\+\_\+robot\+\_\+data\+\_\+send}
+\begin{DoxyCompactList}\small\item\em 0 when the current call to step\+\_\+send should send robot data \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_messenger_a4da89e69daa6684d63fa02ff64886fe6}{next\+\_\+radiation\+\_\+send}
+\begin{DoxyCompactList}\small\item\em 0 when the current call to step\+\_\+send should send radiation data \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}
+\begin{DoxyCompactList}\small\item\em debug flag to print debug messages \end{DoxyCompactList}\item 
+\hyperlink{class_field_data}{Field\+Data} $\ast$ \hyperlink{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}{field\+\_\+data}
+\begin{DoxyCompactList}\small\item\em field data from field computer \end{DoxyCompactList}\item 
+\hyperlink{class_robot_data}{Robot\+Data} $\ast$ \hyperlink{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}{robot\+\_\+data}
+\begin{DoxyCompactList}\small\item\em robot data to send every 5 seconds if unchanged and every second if changed \end{DoxyCompactList}\item 
+\hyperlink{class_robot_data}{Robot\+Data} $\ast$ \hyperlink{class_messenger_a65277b6683e6c95e15fcf0eddad6df45}{robot\+\_\+data\+\_\+prev}
+\begin{DoxyCompactList}\small\item\em to see if robot status changed (immidiatly send) \end{DoxyCompactList}\item 
+\hyperlink{class_bluetooth_client}{Bluetooth\+Client} $\ast$ \hyperlink{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}{bt\+\_\+cli}
+\begin{DoxyCompactList}\small\item\em a pointer to the active bluetooth client \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Messenger.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_messenger_a6e49006efdfa500349b30bdc492ba2ab}\label{class_messenger_a6e49006efdfa500349b30bdc492ba2ab}} 
+\index{Messenger@{Messenger}!Messenger@{Messenger}}
+\index{Messenger@{Messenger}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{Messenger()}{Messenger()}}
+{\footnotesize\ttfamily Messenger\+::\+Messenger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 29 of file Messenger.\+hpp.
+
+
+\begin{DoxyCode}
+29 : \hyperlink{class_messenger_af47b5f9743fcef4fdb73801ae7c6b023}{next\_robot\_data\_send}(0), \hyperlink{class_messenger_a4da89e69daa6684d63fa02ff64886fe6}{next\_radiation\_send}(0), 
+      \hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}(0) \{\};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_a9fd6bc17fefe8105c01fc57e8abb5773}\label{class_messenger_a9fd6bc17fefe8105c01fc57e8abb5773}} 
+\index{Messenger@{Messenger}!````~Messenger@{$\sim$\+Messenger}}
+\index{````~Messenger@{$\sim$\+Messenger}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{$\sim$\+Messenger()}{~Messenger()}}
+{\footnotesize\ttfamily Messenger\+::$\sim$\+Messenger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 30 of file Messenger.\+hpp.
+
+
+\begin{DoxyCode}
+30 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_messenger_a31339b4d655cae6e8e7d567554210463}\label{class_messenger_a31339b4d655cae6e8e7d567554210463}} 
+\index{Messenger@{Messenger}!disable\+Debug@{disable\+Debug}}
+\index{disable\+Debug@{disable\+Debug}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{disable\+Debug()}{disableDebug()}}
+{\footnotesize\ttfamily void Messenger\+::disable\+Debug (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Disables debug prints to Serial. 
+
+
+
+Definition at line 54 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+54 \{ this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug} = 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_a6cb2c50700cc4b8824c7f6b07a3216ff}\label{class_messenger_a6cb2c50700cc4b8824c7f6b07a3216ff}} 
+\index{Messenger@{Messenger}!enable\+Debug@{enable\+Debug}}
+\index{enable\+Debug@{enable\+Debug}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{enable\+Debug()}{enableDebug()}}
+{\footnotesize\ttfamily void Messenger\+::enable\+Debug (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Enables debug prints to Serial. 
+
+
+
+Definition at line 49 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+49 \{ this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug} = 1; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_a2d8c23fd3eada41d734620a600ceca57}\label{class_messenger_a2d8c23fd3eada41d734620a600ceca57}} 
+\index{Messenger@{Messenger}!field@{field}}
+\index{field@{field}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{field()}{field()}}
+{\footnotesize\ttfamily \hyperlink{class_field_data}{Field\+Data} $\ast$ Messenger\+::field (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the current field data. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_field_data}{Field\+Data} object with most up-\/to-\/date settings. 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}{field\_data}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_ad5df7d4bf31502b3aad9f04b5e830e2c}\label{class_messenger_ad5df7d4bf31502b3aad9f04b5e830e2c}} 
+\index{Messenger@{Messenger}!refresh\+Robot\+Data@{refresh\+Robot\+Data}}
+\index{refresh\+Robot\+Data@{refresh\+Robot\+Data}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{refresh\+Robot\+Data()}{refreshRobotData()}}
+{\footnotesize\ttfamily void Messenger\+::refresh\+Robot\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Tells the system to re-\/send robot status data (do after updating status) 
+
+
+
+Definition at line 44 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+44 \{ this->\hyperlink{class_messenger_af47b5f9743fcef4fdb73801ae7c6b023}{next\_robot\_data\_send} = 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_a8412ddd8931fa6b49a2ad3a2f52cad31}\label{class_messenger_a8412ddd8931fa6b49a2ad3a2f52cad31}} 
+\index{Messenger@{Messenger}!register\+\_\+bt\+\_\+client@{register\+\_\+bt\+\_\+client}}
+\index{register\+\_\+bt\+\_\+client@{register\+\_\+bt\+\_\+client}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{register\+\_\+bt\+\_\+client()}{register\_bt\_client()}}
+{\footnotesize\ttfamily void Messenger\+::register\+\_\+bt\+\_\+client (\begin{DoxyParamCaption}\item[{\hyperlink{class_bluetooth_client}{Bluetooth\+Client} $\ast$}]{cli }\end{DoxyParamCaption})}
+
+
+
+Registers a \hyperlink{class_bluetooth_client}{Bluetooth\+Client} to use for field I/O. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cli} & A pointer to a \hyperlink{class_bluetooth_client}{Bluetooth\+Client} to use to send/recv data. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+27 \{ this->\hyperlink{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}{bt\_cli} = cli; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_a1416b79fce99fd7b1aa13d07113546a7}\label{class_messenger_a1416b79fce99fd7b1aa13d07113546a7}} 
+\index{Messenger@{Messenger}!register\+\_\+field\+\_\+data@{register\+\_\+field\+\_\+data}}
+\index{register\+\_\+field\+\_\+data@{register\+\_\+field\+\_\+data}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{register\+\_\+field\+\_\+data()}{register\_field\_data()}}
+{\footnotesize\ttfamily void Messenger\+::register\+\_\+field\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{class_field_data}{Field\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Registers a field data object to be updated. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & A pointer to a \hyperlink{class_field_data}{Field\+Data} object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+15 \{ this->\hyperlink{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}{field\_data} = data; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_ade23d550433aaa39bd08b4dd092bceeb}\label{class_messenger_ade23d550433aaa39bd08b4dd092bceeb}} 
+\index{Messenger@{Messenger}!register\+\_\+robot\+\_\+data@{register\+\_\+robot\+\_\+data}}
+\index{register\+\_\+robot\+\_\+data@{register\+\_\+robot\+\_\+data}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{register\+\_\+robot\+\_\+data()}{register\_robot\_data()}}
+{\footnotesize\ttfamily void Messenger\+::register\+\_\+robot\+\_\+data (\begin{DoxyParamCaption}\item[{\hyperlink{class_robot_data}{Robot\+Data} $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Registers a robot data object to be updated. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em data} & A pointer to a \hyperlink{class_robot_data}{Robot\+Data} object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{ this->\hyperlink{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}{robot\_data} = data; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}\label{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}} 
+\index{Messenger@{Messenger}!robot@{robot}}
+\index{robot@{robot}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{robot()}{robot()}}
+{\footnotesize\ttfamily \hyperlink{class_robot_data}{Robot\+Data} $\ast$ Messenger\+::robot (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the current robot data. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_robot_data}{Robot\+Data} object with most up-\/to-\/date settings for reading/writing. 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}{robot\_data}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_abdf16b0ba616983f4c4b1895ed937eb2}\label{class_messenger_abdf16b0ba616983f4c4b1895ed937eb2}} 
+\index{Messenger@{Messenger}!step\+\_\+recv@{step\+\_\+recv}}
+\index{step\+\_\+recv@{step\+\_\+recv}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{step\+\_\+recv()}{step\_recv()}}
+{\footnotesize\ttfamily void Messenger\+::step\+\_\+recv (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Step this subsystem (handle any recieved data). 
+
+Should be called each time the main loop iterates. $<$disabled because of mobile app being bad 
+
+Definition at line 60 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+60                               \{
+61     \textcolor{keywordflow}{if} (\hyperlink{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}{bt\_cli}->\hyperlink{class_bluetooth_client_a938b0f547b483ff7d0ac5e64260a9c37}{recv}()) \{
+62         \hyperlink{class_packet}{Packet}* pkt = \hyperlink{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}{bt\_cli}->\hyperlink{class_bluetooth_client_ad009775f3bd7e30c53f2e1544bc83828}{getLastPacket}();
+63 
+64         \textcolor{keywordflow}{if} (\textcolor{comment}{/*pkt->getDest() == TEAM\_NUMBER || pkt->getDest() == 0x0*/} \textcolor{keyword}{true}) \{ \textcolor{comment}{///< @brief disabled because
+       of mobile app being bad}
+65 \textcolor{comment}{}            \textcolor{keywordflow}{switch} (pkt->\hyperlink{class_packet_affb425d99c0ff69cd5aa42cc0e22de2b}{getType}()) \{
+66                 \textcolor{keywordflow}{case} \hyperlink{config_8h_a5dcac12c8b6b60ebf4f5060029af7c8a}{MSG\_T\_STORAGE\_TUBE}:
+67                     \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}) \{
+68                         Serial.print(\textcolor{stringliteral}{"Team 16 recieved storage tube data: "});
+69                         Serial.println(pkt->\hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}(), BIN);
+70                     \}
+71                     this->\hyperlink{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}{field\_data}->\hyperlink{class_field_data_a00f9ea01f43a5d261962df7d87da7a74}{setStorageTubes}(pkt->
+      \hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}());
+72                     \textcolor{keywordflow}{break};
+73                 \textcolor{keywordflow}{case} \hyperlink{config_8h_a1736c03f429274d4d0419f48b3081072}{MSG\_T\_SUPPLY\_TUBE}:
+74                     \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}) \{
+75                         Serial.print(\textcolor{stringliteral}{"Team 16 recieved supply tube data: "});
+76                         Serial.println(pkt->\hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}(), BIN);
+77                     \}
+78                     this->\hyperlink{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}{field\_data}->\hyperlink{class_field_data_a4dcddb152c65524e6c51ec74737f0c66}{setSupplyTubes}(pkt->
+      \hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{getData}());
+79                     \textcolor{keywordflow}{break};
+80                 \textcolor{keywordflow}{case} \hyperlink{config_8h_a3b05ee1368da57f91d17759fc7402d6b}{MSG\_T\_STOP}:
+81                     \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}) \{ Serial.println(\textcolor{stringliteral}{"Team 16 told to stop."}); \}
+82                     this->\hyperlink{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}{field\_data}->\hyperlink{class_field_data_a04b6872f909539d5667adfb584b659ed}{setMovementDisabled}(1);
+83                     \textcolor{keywordflow}{break};
+84                 \textcolor{keywordflow}{case} \hyperlink{config_8h_a1be350e1dba9300cb526a23fcf8fb4be}{MSG\_T\_RESUME}:
+85                     \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}) \{ Serial.println(\textcolor{stringliteral}{"Team 16 told to resume."}); \}
+86                     this->\hyperlink{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}{field\_data}->\hyperlink{class_field_data_a04b6872f909539d5667adfb584b659ed}{setMovementDisabled}(0);
+87                     \textcolor{keywordflow}{break};
+88                 \textcolor{keywordflow}{default}:
+89                     \textcolor{comment}{// we don't care about anything else}
+90                     \textcolor{keywordflow}{break};
+91             \}
+92         \}
+93     \}
+94 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_messenger_a7e37226a7ee3e139fe22e05067e0013b}\label{class_messenger_a7e37226a7ee3e139fe22e05067e0013b}} 
+\index{Messenger@{Messenger}!step\+\_\+send@{step\+\_\+send}}
+\index{step\+\_\+send@{step\+\_\+send}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{step\+\_\+send()}{step\_send()}}
+{\footnotesize\ttfamily void Messenger\+::step\+\_\+send (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Step this subsystem (send data). 
+
+Should be called from a timer interrupt. 
+
+Definition at line 100 of file Messenger.\+cpp.
+
+
+\begin{DoxyCode}
+100                               \{
+101     \textcolor{comment}{// send heartbeat once a second}
+102     \hyperlink{class_packet}{Packet}* heartbeat\_pkt = \textcolor{keyword}{new} \hyperlink{class_packet}{Packet}(\hyperlink{config_8h_af9f709a26a3135b1826aca9a0b85295b}{MSG\_T\_HEARTBEAT}, 
+      \hyperlink{config_8h_a9dd3063be5a2b2a9e053e58f7688b0db}{TEAM\_NUMBER}, 0x00);
+103     \hyperlink{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}{bt\_cli}->\hyperlink{class_bluetooth_client_a0f0d9b99f80c2eab9d9d33d8aca91bf6}{send}(heartbeat\_pkt);
+104     \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}) \{ Serial.println(\textcolor{stringliteral}{"Team 16 sent heartbeat."}); \}
+105 
+106     \textcolor{comment}{// send radiation data}
+107     \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_a4da89e69daa6684d63fa02ff64886fe6}{next\_radiation\_send}-- == 0) \{
+108         uint8\_t radiation = 0x00;
+109         \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}{robot\_data}->\hyperlink{class_robot_data_a8bffbd345dfd74acedd44270133e0477}{getRadiationLevel}() == 1) \{
+110             radiation = 0x2C;
+111         \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}{robot\_data}->\hyperlink{class_robot_data_a8bffbd345dfd74acedd44270133e0477}{getRadiationLevel}() == 2) \{
+112             radiation = 0xFF;
+113         \}
+114 
+115         \hyperlink{class_packet}{Packet}* rad\_pkt = \textcolor{keyword}{new} \hyperlink{class_packet}{Packet}(\hyperlink{config_8h_a1f7b9956933864df7a2f3127cf084bdb}{MSG\_T\_RADIATION}, 
+      \hyperlink{config_8h_a9dd3063be5a2b2a9e053e58f7688b0db}{TEAM\_NUMBER}, 0x00, radiation);
+116         \hyperlink{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}{bt\_cli}->\hyperlink{class_bluetooth_client_a0f0d9b99f80c2eab9d9d33d8aca91bf6}{send}(rad\_pkt);
+117         \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}) \{
+118             Serial.print(\textcolor{stringliteral}{"Team 16 sent radiation data of "});
+119             Serial.println(radiation, HEX);
+120         \}
+121 
+122         this->\hyperlink{class_messenger_a4da89e69daa6684d63fa02ff64886fe6}{next\_radiation\_send} = 2; \textcolor{comment}{// once every 3 seconds}
+123     \}
+124 
+125     \textcolor{comment}{// check if its time to send robot status}
+126     \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_af47b5f9743fcef4fdb73801ae7c6b023}{next\_robot\_data\_send}-- == 0) \{
+127         \hyperlink{class_packet}{Packet}* robotdata\_pkt = \textcolor{keyword}{new} \hyperlink{class_packet}{Packet}(\hyperlink{config_8h_a0a932cd1586d37c8ecefd9ab90f52faf}{MSG\_T\_ROBOT\_STATUS}, 
+      \hyperlink{config_8h_a9dd3063be5a2b2a9e053e58f7688b0db}{TEAM\_NUMBER}, 0x00, this->\hyperlink{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}{robot\_data}->\hyperlink{class_robot_data_a9e8a44387275e115f71713210c8b0841}{getRobotStatusBytes}());
+128         \hyperlink{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}{bt\_cli}->\hyperlink{class_bluetooth_client_a0f0d9b99f80c2eab9d9d33d8aca91bf6}{send}(robotdata\_pkt);
+129         \textcolor{keywordflow}{if} (this->\hyperlink{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}{debug}) \{
+130             Serial.print(\textcolor{stringliteral}{"Team 16 sent robot data of "});
+131             Serial.println(this->\hyperlink{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}{robot\_data}->\hyperlink{class_robot_data_a9e8a44387275e115f71713210c8b0841}{getRobotStatusBytes}(), HEX);
+132         \}
+133 
+134         this->\hyperlink{class_messenger_af47b5f9743fcef4fdb73801ae7c6b023}{next\_robot\_data\_send} = 4; \textcolor{comment}{// once every 5 seconds}
+135     \}
+136 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}\label{class_messenger_a481ed6f0554ddfb8441b7dc073f57ebd}} 
+\index{Messenger@{Messenger}!bt\+\_\+cli@{bt\+\_\+cli}}
+\index{bt\+\_\+cli@{bt\+\_\+cli}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{bt\+\_\+cli}{bt\_cli}}
+{\footnotesize\ttfamily \hyperlink{class_bluetooth_client}{Bluetooth\+Client}$\ast$ Messenger\+::bt\+\_\+cli\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+a pointer to the active bluetooth client 
+
+
+
+Definition at line 27 of file Messenger.\+hpp.
+
+\mbox{\Hypertarget{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}\label{class_messenger_a103d1964b9540a6b6b1c4ea7d79f3af3}} 
+\index{Messenger@{Messenger}!debug@{debug}}
+\index{debug@{debug}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{debug}{debug}}
+{\footnotesize\ttfamily uint8\+\_\+t Messenger\+::debug\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+debug flag to print debug messages 
+
+
+
+Definition at line 22 of file Messenger.\+hpp.
+
+\mbox{\Hypertarget{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}\label{class_messenger_a8e4a16dc0dcfa44af9030a9ad8f69fa2}} 
+\index{Messenger@{Messenger}!field\+\_\+data@{field\+\_\+data}}
+\index{field\+\_\+data@{field\+\_\+data}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{field\+\_\+data}{field\_data}}
+{\footnotesize\ttfamily \hyperlink{class_field_data}{Field\+Data}$\ast$ Messenger\+::field\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+field data from field computer 
+
+
+
+Definition at line 24 of file Messenger.\+hpp.
+
+\mbox{\Hypertarget{class_messenger_a4da89e69daa6684d63fa02ff64886fe6}\label{class_messenger_a4da89e69daa6684d63fa02ff64886fe6}} 
+\index{Messenger@{Messenger}!next\+\_\+radiation\+\_\+send@{next\+\_\+radiation\+\_\+send}}
+\index{next\+\_\+radiation\+\_\+send@{next\+\_\+radiation\+\_\+send}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{next\+\_\+radiation\+\_\+send}{next\_radiation\_send}}
+{\footnotesize\ttfamily uint8\+\_\+t Messenger\+::next\+\_\+radiation\+\_\+send\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+0 when the current call to step\+\_\+send should send radiation data 
+
+
+
+Definition at line 21 of file Messenger.\+hpp.
+
+\mbox{\Hypertarget{class_messenger_af47b5f9743fcef4fdb73801ae7c6b023}\label{class_messenger_af47b5f9743fcef4fdb73801ae7c6b023}} 
+\index{Messenger@{Messenger}!next\+\_\+robot\+\_\+data\+\_\+send@{next\+\_\+robot\+\_\+data\+\_\+send}}
+\index{next\+\_\+robot\+\_\+data\+\_\+send@{next\+\_\+robot\+\_\+data\+\_\+send}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{next\+\_\+robot\+\_\+data\+\_\+send}{next\_robot\_data\_send}}
+{\footnotesize\ttfamily uint8\+\_\+t Messenger\+::next\+\_\+robot\+\_\+data\+\_\+send\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+0 when the current call to step\+\_\+send should send robot data 
+
+
+
+Definition at line 20 of file Messenger.\+hpp.
+
+\mbox{\Hypertarget{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}\label{class_messenger_aaeacb9e9c4aad3b1be628df9ec71c11c}} 
+\index{Messenger@{Messenger}!robot\+\_\+data@{robot\+\_\+data}}
+\index{robot\+\_\+data@{robot\+\_\+data}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{robot\+\_\+data}{robot\_data}}
+{\footnotesize\ttfamily \hyperlink{class_robot_data}{Robot\+Data}$\ast$ Messenger\+::robot\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+robot data to send every 5 seconds if unchanged and every second if changed 
+
+
+
+Definition at line 25 of file Messenger.\+hpp.
+
+\mbox{\Hypertarget{class_messenger_a65277b6683e6c95e15fcf0eddad6df45}\label{class_messenger_a65277b6683e6c95e15fcf0eddad6df45}} 
+\index{Messenger@{Messenger}!robot\+\_\+data\+\_\+prev@{robot\+\_\+data\+\_\+prev}}
+\index{robot\+\_\+data\+\_\+prev@{robot\+\_\+data\+\_\+prev}!Messenger@{Messenger}}
+\subsubsection{\texorpdfstring{robot\+\_\+data\+\_\+prev}{robot\_data\_prev}}
+{\footnotesize\ttfamily \hyperlink{class_robot_data}{Robot\+Data}$\ast$ Messenger\+::robot\+\_\+data\+\_\+prev\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+to see if robot status changed (immidiatly send) 
+
+
+
+Definition at line 26 of file Messenger.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/subsystems/\hyperlink{_messenger_8hpp}{Messenger.\+hpp}\item 
+rbe2001/subsystems/\hyperlink{_messenger_8cpp}{Messenger.\+cpp}\end{DoxyCompactItemize}

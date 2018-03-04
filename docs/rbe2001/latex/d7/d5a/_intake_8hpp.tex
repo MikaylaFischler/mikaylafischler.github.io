@@ -1,0 +1,91 @@
+\hypertarget{_intake_8hpp}{}\section{rbe2001/mechanisms/\+Intake.hpp File Reference}
+\label{_intake_8hpp}\index{rbe2001/mechanisms/\+Intake.\+hpp@{rbe2001/mechanisms/\+Intake.\+hpp}}
+
+
+\hyperlink{class_intake}{Intake} Header.  
+
+
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}../devices/motion/\+V\+E\+X\+Motor.\+hpp\char`\"{}}\newline
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_intake}{Intake}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_intake_8hpp_a1deaa236a445e37471a0ba4490e1f9ed}{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+IN}~-\/60
+\begin{DoxyCompactList}\small\item\em normal intake \end{DoxyCompactList}\item 
+\#define \hyperlink{_intake_8hpp_a216de4996c0f877df3af487015b7e14a}{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN}~-\/25
+\begin{DoxyCompactList}\small\item\em incapble of intake from reactor, but for appraches/holding in \end{DoxyCompactList}\item 
+\#define \hyperlink{_intake_8hpp_a9b5084e3c227f32c6ecefa2ca8d7fd84}{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+O\+UT}~60
+\begin{DoxyCompactList}\small\item\em spit out the rod \end{DoxyCompactList}\item 
+\#define \hyperlink{_intake_8hpp_a4d64b806b8e8a356c3e015add0485d01}{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+O\+UT}~20
+\begin{DoxyCompactList}\small\item\em slowly move out, not for normal ejection \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_intake}{Intake} Header. 
+
+\hyperlink{class_intake}{Intake} Class
+
+Controls the intake mechanism. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_intake_8hpp_a1deaa236a445e37471a0ba4490e1f9ed}\label{_intake_8hpp_a1deaa236a445e37471a0ba4490e1f9ed}} 
+\index{Intake.\+hpp@{Intake.\+hpp}!I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+IN@{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+IN}}
+\index{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+IN@{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+IN}!Intake.\+hpp@{Intake.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+IN}{INTAKE\_FULL\_IN}}
+{\footnotesize\ttfamily \#define I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+IN~-\/60}
+
+
+
+normal intake 
+
+
+
+Definition at line 7 of file Intake.\+hpp.
+
+\mbox{\Hypertarget{_intake_8hpp_a9b5084e3c227f32c6ecefa2ca8d7fd84}\label{_intake_8hpp_a9b5084e3c227f32c6ecefa2ca8d7fd84}} 
+\index{Intake.\+hpp@{Intake.\+hpp}!I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+O\+UT@{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+O\+UT}}
+\index{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+O\+UT@{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+O\+UT}!Intake.\+hpp@{Intake.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+O\+UT}{INTAKE\_FULL\_OUT}}
+{\footnotesize\ttfamily \#define I\+N\+T\+A\+K\+E\+\_\+\+F\+U\+L\+L\+\_\+\+O\+UT~60}
+
+
+
+spit out the rod 
+
+
+
+Definition at line 9 of file Intake.\+hpp.
+
+\mbox{\Hypertarget{_intake_8hpp_a216de4996c0f877df3af487015b7e14a}\label{_intake_8hpp_a216de4996c0f877df3af487015b7e14a}} 
+\index{Intake.\+hpp@{Intake.\+hpp}!I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN@{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN}}
+\index{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN@{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN}!Intake.\+hpp@{Intake.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN}{INTAKE\_SLOW\_IN}}
+{\footnotesize\ttfamily \#define I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+IN~-\/25}
+
+
+
+incapble of intake from reactor, but for appraches/holding in 
+
+
+
+Definition at line 8 of file Intake.\+hpp.
+
+\mbox{\Hypertarget{_intake_8hpp_a4d64b806b8e8a356c3e015add0485d01}\label{_intake_8hpp_a4d64b806b8e8a356c3e015add0485d01}} 
+\index{Intake.\+hpp@{Intake.\+hpp}!I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+O\+UT@{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+O\+UT}}
+\index{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+O\+UT@{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+O\+UT}!Intake.\+hpp@{Intake.\+hpp}}
+\subsubsection{\texorpdfstring{I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+O\+UT}{INTAKE\_SLOW\_OUT}}
+{\footnotesize\ttfamily \#define I\+N\+T\+A\+K\+E\+\_\+\+S\+L\+O\+W\+\_\+\+O\+UT~20}
+
+
+
+slowly move out, not for normal ejection 
+
+
+
+Definition at line 10 of file Intake.\+hpp.
+

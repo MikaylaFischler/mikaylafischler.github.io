@@ -5,18 +5,79 @@
 Main file containing initialization and includes. Runs the scheduler.  
 
 
+{\ttfamily \#include $<$Arduino\+S\+T\+L.\+h$>$}\newline
+{\ttfamily \#include $<$Wire.\+h$>$}\newline
+{\ttfamily \#include $<$Servo.\+h$>$}\newline
 {\ttfamily \#include $<$Encoder.\+h$>$}\newline
+{\ttfamily \#include $<$Q\+T\+R\+Sensors.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+B\+N\+O055.\+h$>$}\newline
+{\ttfamily \#include $<$Adafruit\+\_\+\+Sensor.\+h$>$}\newline
+{\ttfamily \#include $<$utility/imumaths.\+h$>$}\newline
+{\ttfamily \#include $<$Liquid\+Crystal.\+h$>$}\newline
+{\ttfamily \#include $<$Timer\+One.\+h$>$}\newline
+{\ttfamily \#include $<$P\+I\+D\+\_\+v1.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}data/\+Field\+Data.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}data/\+Robot\+Data.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}data/\+Packet.\+cpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}subsystems/\+Bluetooth\+Client.\+cpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}subsystems/\+Message.\+cpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}subsystems/\+Messenger.\+cpp\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}subsystems/\+Scheduler.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}subsystems/\+Threaded\+Robot.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/io/\+Reflectance\+Sensor.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/io/\+Gyroscope.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/io/\+Accelerometer.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/motion/\+V\+E\+X\+Motor.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/motion/\+Pololu\+Motor.\+cpp\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}mechanisms/\+Drive\+Train.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mechanisms/\+Arm.\+cpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}mechanisms/\+Intake.\+cpp\char`\"{}}\newline
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{rbe2001_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+Q\+T\+R\+Sensors\+Analog \hyperlink{rbe2001_8ino_aba1edf1920db9237b941ca0f77abbaae}{qtra} ((unsigned char\mbox{[}$\,$\mbox{]}) \{\hyperlink{config_8h_a78fa539ebb20148cbfcad00742561cf6}{Q\+T\+R\+\_\+1}, \hyperlink{config_8h_a49fbc5f0ba729444355eb9ce3588aa40}{Q\+T\+R\+\_\+2}, \hyperlink{config_8h_ae5dcb2e48b67f90a48eddc8d7f1b44ea}{Q\+T\+R\+\_\+3}, \hyperlink{config_8h_a1e52ef437d8700013af2088d388a1cf3}{Q\+T\+R\+\_\+4}, \hyperlink{config_8h_ad90df5df0b2368d826186652cfbe236a}{Q\+T\+R\+\_\+5}, \hyperlink{config_8h_ab683ec86911bbd120c0623b121046420}{Q\+T\+R\+\_\+6}, \hyperlink{config_8h_a5b8ce3aa53de77253e04c5d0eecf97db}{Q\+T\+R\+\_\+7}, \hyperlink{config_8h_a6eef11bb690916992e7933e0ae8e2047}{Q\+T\+R\+\_\+8}\}, \hyperlink{config_8h_a3564cf3b48686cd6404dd989384a56c4}{Q\+T\+R\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+C\+O\+U\+NT}, 4, \hyperlink{config_8h_a76643b2e251e861bc3a68e1a70d3e795}{Q\+T\+R\+\_\+\+L\+E\+D\+\_\+\+ON})
 \item 
+Liquid\+Crystal \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd} (\hyperlink{config_8h_a4781e073871c6f27f89b9463ad3a4ed1}{L\+C\+D\+\_\+\+RS}, \hyperlink{config_8h_a6ec15b1e813d1f56d2eb644a127e5d49}{L\+C\+D\+\_\+E}, \hyperlink{config_8h_ade7e247311032a474711416da480ed8b}{L\+C\+D\+\_\+\+D4}, \hyperlink{config_8h_a5b91fe480c768d4f246f3890207bfbfc}{L\+C\+D\+\_\+\+D5}, \hyperlink{config_8h_a72e105fcda5fd1c07b5f391379a439d4}{L\+C\+D\+\_\+\+D6}, \hyperlink{config_8h_abd65075e01c7413419581aedee5bcc24}{L\+C\+D\+\_\+\+D7})
+\item 
+void \hyperlink{rbe2001_8ino_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
+\begin{DoxyCompactList}\small\item\em Arduino setup function. \end{DoxyCompactList}\item 
+void \hyperlink{rbe2001_8ino_acb02cd64de9dd91936bfd24d9e1ca769}{send\+\_\+interrupt} ()
+\begin{DoxyCompactList}\small\item\em Timer interrupt function to send bluetooth data. \end{DoxyCompactList}\item 
 void \hyperlink{rbe2001_8ino_afe461d27b9c48d5921c00d521181f12f}{loop} ()
+\begin{DoxyCompactList}\small\item\em Arduino loop function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_bluetooth_client}{Bluetooth\+Client} $\ast$ \hyperlink{rbe2001_8ino_ae2ff51c6b65a5b568253ca01270200bc}{bt\+\_\+cli}
+\item 
+\hyperlink{class_messenger}{Messenger} $\ast$ \hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger}
+\item 
+\hyperlink{class_threaded_robot}{Threaded\+Robot} $\ast$ \hyperlink{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}{t\+\_\+robot}
+\item 
+\hyperlink{class_drive_train}{Drive\+Train} $\ast$ \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}
+\item 
+\hyperlink{class_arm}{Arm} $\ast$ \hyperlink{rbe2001_8ino_a0f9200eb3ef3d09764dc39b137dc9f45}{arm}
+\item 
+\hyperlink{class_intake}{Intake} $\ast$ \hyperlink{rbe2001_8ino_ab0ec7e650c93e5f5c9b4d6490cf9328a}{intake}
+\item 
+Adafruit\+\_\+\+B\+N\+O055 $\ast$ \hyperlink{rbe2001_8ino_ab36eee53161180375c1855b5917ec0f9}{bno055}
+\item 
+\hyperlink{class_gyroscope}{Gyroscope} $\ast$ \hyperlink{rbe2001_8ino_a8b50650397dca0a575b97ce4cbf21e34}{gyro}
+\item 
+\hyperlink{class_accelerometer}{Accelerometer} $\ast$ \hyperlink{rbe2001_8ino_a40e268acbd6a40e1d49f995404b85d0b}{accel}
+\item 
+\hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} $\ast$ \hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor}
+\item 
+unsigned char \hyperlink{rbe2001_8ino_a5b4fcadc7c7d5da32f396d144180a048}{qtra\+\_\+pins} \mbox{[}$\,$\mbox{]} = \{\hyperlink{config_8h_a78fa539ebb20148cbfcad00742561cf6}{Q\+T\+R\+\_\+1},\hyperlink{config_8h_a49fbc5f0ba729444355eb9ce3588aa40}{Q\+T\+R\+\_\+2},\hyperlink{config_8h_ae5dcb2e48b67f90a48eddc8d7f1b44ea}{Q\+T\+R\+\_\+3},\hyperlink{config_8h_a1e52ef437d8700013af2088d388a1cf3}{Q\+T\+R\+\_\+4},\hyperlink{config_8h_ad90df5df0b2368d826186652cfbe236a}{Q\+T\+R\+\_\+5},\hyperlink{config_8h_ab683ec86911bbd120c0623b121046420}{Q\+T\+R\+\_\+6},\hyperlink{config_8h_a5b8ce3aa53de77253e04c5d0eecf97db}{Q\+T\+R\+\_\+7},\hyperlink{config_8h_a6eef11bb690916992e7933e0ae8e2047}{Q\+T\+R\+\_\+8}\}
+\item 
+unsigned int \hyperlink{rbe2001_8ino_a2150bcc72eebb9bb31ae6556b4361ebf}{qtra\+\_\+cache} \mbox{[}8\mbox{]}
+\item 
+bool \hyperlink{rbe2001_8ino_a90bb1c48eba85e2acf136982fcfd628e}{horiz\+\_\+line} = false
+\begin{DoxyCompactList}\small\item\em If the main code detected a horizontal line. \end{DoxyCompactList}\item 
+unsigned long int \hyperlink{rbe2001_8ino_afa841889ef06f65dcaf6465eb3df75a1}{lcd\+\_\+timer} = 0
+\item 
+unsigned long int \hyperlink{rbe2001_8ino_aa06e377d25b7ca134c27aea3e6c46235}{last\+\_\+micros} = 0
+\item 
+int \hyperlink{rbe2001_8ino_a89f234133d3efe315836311cbf21c64b}{state} = -\/1
 \end{DoxyCompactItemize}
 
 
@@ -41,13 +102,19 @@ This project allows a robot, utilizing autonomous and teleoperated control, to c
 \begin{DoxyAuthor}{Author}
 Mikayla Fischler 
 
-Nicole Petilli 
-
 Amanda Goss 
+
+Nicole Petilli 
 \end{DoxyAuthor}
 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}\label{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!lcd@{lcd}}
+\index{lcd@{lcd}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{lcd()}{lcd()}}
+{\footnotesize\ttfamily Liquid\+Crystal lcd (\begin{DoxyParamCaption}\item[{\hyperlink{config_8h_a4781e073871c6f27f89b9463ad3a4ed1}{L\+C\+D\+\_\+\+RS}}]{,  }\item[{\hyperlink{config_8h_a6ec15b1e813d1f56d2eb644a127e5d49}{L\+C\+D\+\_\+E}}]{,  }\item[{\hyperlink{config_8h_ade7e247311032a474711416da480ed8b}{L\+C\+D\+\_\+\+D4}}]{,  }\item[{\hyperlink{config_8h_a5b91fe480c768d4f246f3890207bfbfc}{L\+C\+D\+\_\+\+D5}}]{,  }\item[{\hyperlink{config_8h_a72e105fcda5fd1c07b5f391379a439d4}{L\+C\+D\+\_\+\+D6}}]{,  }\item[{\hyperlink{config_8h_abd65075e01c7413419581aedee5bcc24}{L\+C\+D\+\_\+\+D7}}]{ }\end{DoxyParamCaption})}
+
 \mbox{\Hypertarget{rbe2001_8ino_afe461d27b9c48d5921c00d521181f12f}\label{rbe2001_8ino_afe461d27b9c48d5921c00d521181f12f}} 
 \index{rbe2001.\+ino@{rbe2001.\+ino}!loop@{loop}}
 \index{loop@{loop}!rbe2001.\+ino@{rbe2001.\+ino}}
@@ -56,13 +123,91 @@ Amanda Goss
 
 
 
-Definition at line 43 of file rbe2001.\+ino.
+Arduino loop function. 
+
+Called until system exit. We delay it to not update too fast. 
+
+Definition at line 312 of file rbe2001.\+ino.
 
 
 \begin{DoxyCode}
-43              \{
-44 
-45 \}
+312             \{
+313     \textcolor{comment}{// keep track of gyro's position}
+314     \hyperlink{rbe2001_8ino_a8b50650397dca0a575b97ce4cbf21e34}{gyro}->\hyperlink{class_gyroscope_aa785de79696a6ce67e2b2b48b05e6020}{maintainContinuousRotation}();
+315 
+316     \textcolor{comment}{// only update LCD occasionally}
+317     \textcolor{keywordflow}{if} (\hyperlink{rbe2001_8ino_afa841889ef06f65dcaf6465eb3df75a1}{lcd\_timer} > 50000) \{
+318         \hyperlink{rbe2001_8ino_afa841889ef06f65dcaf6465eb3df75a1}{lcd\_timer} = 0;
+319         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+320         uint16\_t val = analogRead(A2);
+321         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print((\textcolor{keywordtype}{float})val * (5.0/1023.0) * 2.0);  \textcolor{comment}{// disp battery voltage}
+322         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"v Fault: "});
+323         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_acc0d2f2280bfacea903df5d77ee1c5e0}{getLeft}()->\hyperlink{class_pololu_motor_a677969e5e4b72a502508e9a152059064}{getFault}());
+324         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{" "});
+325         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_a9f2a7ed0d2d2b91319a09083a37d236a}{getRight}()->\hyperlink{class_pololu_motor_a677969e5e4b72a502508e9a152059064}{getFault}());
+326 
+327         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0,1);
+328 
+329         \hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor}->\hyperlink{class_reflectance_sensor_a065644d5cf3d71d81ea4f91787c2915d}{printMap}(&\hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd});
+330         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{" "});
+331         \textcolor{keywordflow}{if} (\hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor}->\hyperlink{class_reflectance_sensor_a30b767c95bec679ff638765050c770e2}{onHorizontalLine}()) \{ \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"y"}); \} \textcolor{keywordflow}{else} \{ 
+      \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"n"}); \}
+332         \textcolor{keywordflow}{if} (\hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor}->\hyperlink{class_reflectance_sensor_af24236e10ded862847bb6a626c5cf336}{centered}()) \{ \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"y"}); \} \textcolor{keywordflow}{else} \{ 
+      \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"n"}); \}
+333         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{" "});
+334         \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor}->\hyperlink{class_reflectance_sensor_a1e361d2a9a18b4c9da19bdc4b061a3c7}{getBias}());
+335     \}
+336 
+337     \textcolor{comment}{// testing code}
+338     \textcolor{keywordflow}{if} (digitalRead(\hyperlink{config_8h_ad1b75624b64bd61940398308fbe959de}{USER\_BTN\_0})) \{
+339         \hyperlink{rbe2001_8ino_a89f234133d3efe315836311cbf21c64b}{state} = 1;
+340     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (digitalRead(\hyperlink{config_8h_aaa59272336b5c18e23ce7ca1b9bb4f6e}{USER\_BTN\_1})) \{
+341         \hyperlink{rbe2001_8ino_a89f234133d3efe315836311cbf21c64b}{state} = 0;
+342         \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_a18d4c7b82118a1da8910d09a31f88a38}{stop}();
+343         \hyperlink{rbe2001_8ino_a0f9200eb3ef3d09764dc39b137dc9f45}{arm}->\hyperlink{class_arm_a4a2070a27aecb7129cb89f4c9231278a}{stop}();
+344         \hyperlink{rbe2001_8ino_ab0ec7e650c93e5f5c9b4d6490cf9328a}{intake}->\hyperlink{class_intake_a3780c5eb8a67c524cc793aaa631ce62e}{stop}();
+345     \}
+346 
+347     \textcolor{comment}{// update horizontal line global}
+348     \hyperlink{rbe2001_8ino_a90bb1c48eba85e2acf136982fcfd628e}{horiz\_line} = \hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor}->\hyperlink{class_reflectance_sensor_a30b767c95bec679ff638765050c770e2}{onHorizontalLine}();
+349 
+350     \textcolor{comment}{// update LCD timer}
+351     \hyperlink{rbe2001_8ino_afa841889ef06f65dcaf6465eb3df75a1}{lcd\_timer} += micros() - \hyperlink{rbe2001_8ino_aa06e377d25b7ca134c27aea3e6c46235}{last\_micros};
+352 
+353     \textcolor{comment}{// step through the virtually multithreaded state machine}
+354     \textcolor{keywordflow}{if} (\hyperlink{rbe2001_8ino_a89f234133d3efe315836311cbf21c64b}{state} == 1) \{ \hyperlink{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}{t\_robot}->\hyperlink{class_threaded_robot_ae5545fb683a84aec9bda34a2c9bba228}{stepVirtualThreads}(micros() - 
+      \hyperlink{rbe2001_8ino_aa06e377d25b7ca134c27aea3e6c46235}{last\_micros}); \}
+355 
+356     \textcolor{comment}{// keep track of elapsed time}
+357     \hyperlink{rbe2001_8ino_aa06e377d25b7ca134c27aea3e6c46235}{last\_micros} = micros();
+358 
+359     \textcolor{comment}{// recieve data from bluetooth}
+360     \hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger}->\hyperlink{class_messenger_abdf16b0ba616983f4c4b1895ed937eb2}{step\_recv}();
+361 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{rbe2001_8ino_aba1edf1920db9237b941ca0f77abbaae}\label{rbe2001_8ino_aba1edf1920db9237b941ca0f77abbaae}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!qtra@{qtra}}
+\index{qtra@{qtra}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{qtra()}{qtra()}}
+{\footnotesize\ttfamily Q\+T\+R\+Sensors\+Analog qtra (\begin{DoxyParamCaption}\item[{(unsigned char\mbox{[}$\,$\mbox{]}) \{\hyperlink{config_8h_a78fa539ebb20148cbfcad00742561cf6}{Q\+T\+R\+\_\+1}, \hyperlink{config_8h_a49fbc5f0ba729444355eb9ce3588aa40}{Q\+T\+R\+\_\+2}, \hyperlink{config_8h_ae5dcb2e48b67f90a48eddc8d7f1b44ea}{Q\+T\+R\+\_\+3}, \hyperlink{config_8h_a1e52ef437d8700013af2088d388a1cf3}{Q\+T\+R\+\_\+4}, \hyperlink{config_8h_ad90df5df0b2368d826186652cfbe236a}{Q\+T\+R\+\_\+5}, \hyperlink{config_8h_ab683ec86911bbd120c0623b121046420}{Q\+T\+R\+\_\+6}, \hyperlink{config_8h_a5b8ce3aa53de77253e04c5d0eecf97db}{Q\+T\+R\+\_\+7}, \hyperlink{config_8h_a6eef11bb690916992e7933e0ae8e2047}{Q\+T\+R\+\_\+8}\}}]{,  }\item[{\hyperlink{config_8h_a3564cf3b48686cd6404dd989384a56c4}{Q\+T\+R\+\_\+\+S\+E\+N\+S\+O\+R\+\_\+\+C\+O\+U\+NT}}]{,  }\item[{4}]{,  }\item[{\hyperlink{config_8h_a76643b2e251e861bc3a68e1a70d3e795}{Q\+T\+R\+\_\+\+L\+E\+D\+\_\+\+ON}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{rbe2001_8ino_acb02cd64de9dd91936bfd24d9e1ca769}\label{rbe2001_8ino_acb02cd64de9dd91936bfd24d9e1ca769}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!send\+\_\+interrupt@{send\+\_\+interrupt}}
+\index{send\+\_\+interrupt@{send\+\_\+interrupt}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{send\+\_\+interrupt()}{send\_interrupt()}}
+{\footnotesize\ttfamily void send\+\_\+interrupt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Timer interrupt function to send bluetooth data. 
+
+Sends heartbeat every call, sends radiation data every 3, and robot data every 5. 
+
+Definition at line 306 of file rbe2001.\+ino.
+
+
+\begin{DoxyCode}
+306 \{ \hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger}->\hyperlink{class_messenger_a7e37226a7ee3e139fe22e05067e0013b}{step\_send}(); \}
 \end{DoxyCode}
 \mbox{\Hypertarget{rbe2001_8ino_a4fc01d736fe50cf5b977f755b675f11d}\label{rbe2001_8ino_a4fc01d736fe50cf5b977f755b675f11d}} 
 \index{rbe2001.\+ino@{rbe2001.\+ino}!setup@{setup}}
@@ -72,11 +217,381 @@ Definition at line 43 of file rbe2001.\+ino.
 
 
 
-Definition at line 39 of file rbe2001.\+ino.
+Arduino setup function. 
+
+Instantiates core classes and initiatalizes components. 
+
+Definition at line 102 of file rbe2001.\+ino.
 
 
 \begin{DoxyCode}
-39               \{
-40 
-41 \}
+102              \{
+103     \textcolor{comment}{// begin serial console & lcd output}
+104     Serial.begin(115200);
+105     Serial.println(\textcolor{stringliteral}{"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"});
+106     Serial.println(\textcolor{stringliteral}{"~~~   Team 16 RBE 2001 Robot Code   ~~~"});
+107     Serial.println(\textcolor{stringliteral}{"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"});
+108     Serial.println(\textcolor{stringliteral}{"Beginning setup..."});
+109 
+110     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.begin(16, 2);
+111     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Team 16 Start-Up"});
+112     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(1, 0);
+113     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Just a sec..."});
+114 
+115     \textcolor{comment}{// create core objects}
+116     \hyperlink{rbe2001_8ino_ae2ff51c6b65a5b568253ca01270200bc}{bt\_cli} = \textcolor{keyword}{new} \hyperlink{class_bluetooth_client}{BluetoothClient}();
+117     \hyperlink{class_field_data}{FieldData}* field\_data = \textcolor{keyword}{new} \hyperlink{class_field_data}{FieldData}();
+118     \hyperlink{class_robot_data}{RobotData}* robot\_data = \textcolor{keyword}{new} \hyperlink{class_robot_data}{RobotData}();
+119     \hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger} = \textcolor{keyword}{new} \hyperlink{class_messenger}{Messenger}();
+120 
+121     \textcolor{comment}{// set default robot state}
+122     robot\_data->\hyperlink{class_robot_data_a72b1b729501cd7a0620e83c5d4d9a714}{setMotionStatus}(\hyperlink{config_8h_a819fd042d57965904b3cc073fd216d7f}{MSG\_ROBOT\_MOVEMENT\_STOPPED});
+123     robot\_data->\hyperlink{class_robot_data_aa115713d34966f38642357eba5543f16}{setGripperStatus}(\hyperlink{config_8h_a68ad5b89749245ea52abaa272ab0f9a9}{MSG\_ROBOT\_GRIPPER\_NOROD});
+124     robot\_data->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(\hyperlink{config_8h_aa54e5b55d86637a2f4b6112f73badfc8}{MSG\_ROBOT\_OP\_ATTEMPT\_GRP});
+125     robot\_data->\hyperlink{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}{setRadiationLevel}(0);
+126 
+127     Serial.println(\textcolor{stringliteral}{"Initialized core system objects."});
+128     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+129     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Core ready"});
+130     delay(250);
+131 
+132     \textcolor{comment}{// begin bluetooth serial on serial 3 at 115200 baud}
+133     \hyperlink{rbe2001_8ino_ae2ff51c6b65a5b568253ca01270200bc}{bt\_cli}->\hyperlink{class_bluetooth_client_ac054e730dd69d8e323781305ea1a610f}{init}();
+134 
+135     Serial.println(\textcolor{stringliteral}{"Initialized bluetooth."});
+136     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+137     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Bluetooth ready"});
+138     delay(250);
+139 
+140     \textcolor{comment}{// configure messenger}
+141     \hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger}->\hyperlink{class_messenger_a8412ddd8931fa6b49a2ad3a2f52cad31}{register\_bt\_client}(\hyperlink{rbe2001_8ino_ae2ff51c6b65a5b568253ca01270200bc}{bt\_cli});
+142     \hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger}->\hyperlink{class_messenger_a1416b79fce99fd7b1aa13d07113546a7}{register\_field\_data}(field\_data);
+143     \hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger}->\hyperlink{class_messenger_ade23d550433aaa39bd08b4dd092bceeb}{register\_robot\_data}(robot\_data);
+144 
+145     Serial.println(\textcolor{stringliteral}{"Configured messenger."});
+146     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+147     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Bluetooth ready"});
+148     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+149     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Messenger ready"});
+150     delay(250);
+151 
+152     \textcolor{comment}{// instantiate mechanisms}
+153     \textcolor{comment}{// drivetrain}
+154     \hyperlink{class_pololu_motor}{PololuMotor}* left = \textcolor{keyword}{new} \hyperlink{class_pololu_motor}{PololuMotor}(\hyperlink{config_8h_a6c3954a80d126cf2e223c6237d99e31d}{LEFT\_DRIVE\_FWD}, 
+      \hyperlink{config_8h_a6da1669f3da4ff0bc1e0d3da9320b8e5}{LEFT\_DRIVE\_REV}, \hyperlink{config_8h_abe0c840eaea3f7ff8b2384aa92b2a2bd}{LEFT\_DRIVE\_CURRENT}, 
+      \hyperlink{config_8h_aa66abce5d6ccd9950a72510295c869ff}{LEFT\_DRIVE\_FAULT});
+155     \hyperlink{class_pololu_motor}{PololuMotor}* right = \textcolor{keyword}{new} \hyperlink{class_pololu_motor}{PololuMotor}(\hyperlink{config_8h_afc0e1801893e7709be9b9d4927199f7d}{RIGHT\_DRIVE\_FWD}, 
+      \hyperlink{config_8h_a84fcbc365569d2fc976b700b717ea853}{RIGHT\_DRIVE\_REV}, \hyperlink{config_8h_a52d355f964797442389aad5708607800}{RIGHT\_DRIVE\_CURRENT}, 
+      \hyperlink{config_8h_ae7a58d785aa65cddd4d53582d92dadb8}{RIGHT\_DRIVE\_FAULT});
+156     \hyperlink{rbe2001_8ino_ab36eee53161180375c1855b5917ec0f9}{bno055} = \textcolor{keyword}{new} Adafruit\_BNO055(55);
+157     \hyperlink{rbe2001_8ino_ab36eee53161180375c1855b5917ec0f9}{bno055}->begin();
+158     \hyperlink{rbe2001_8ino_ab36eee53161180375c1855b5917ec0f9}{bno055}->setExtCrystalUse(\textcolor{keyword}{true});
+159     \hyperlink{rbe2001_8ino_a8b50650397dca0a575b97ce4cbf21e34}{gyro} = \textcolor{keyword}{new} \hyperlink{class_gyroscope}{Gyroscope}(\hyperlink{rbe2001_8ino_ab36eee53161180375c1855b5917ec0f9}{bno055});
+160     \hyperlink{rbe2001_8ino_a40e268acbd6a40e1d49f995404b85d0b}{accel} = \textcolor{keyword}{new} \hyperlink{class_accelerometer}{Accelerometer}(\hyperlink{rbe2001_8ino_ab36eee53161180375c1855b5917ec0f9}{bno055});
+161     \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive} = \textcolor{keyword}{new} \hyperlink{class_drive_train}{DriveTrain}();
+162     \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_a874a58662b26684892d2efbce8fde36f}{attachLeft}(left);
+163     \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_aae42a38cca31408dc00a10b45b667da6}{attachRight}(right);
+164     \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_a088f6c9f4d7aafb1e5848a3d15d3e9c5}{attachGyroscope}(\hyperlink{rbe2001_8ino_a8b50650397dca0a575b97ce4cbf21e34}{gyro});
+165     \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_aef0af224da3ee7170ac177f0fb9d54b6}{initEncoders}(\hyperlink{config_8h_a94995f92ccc8122b4984f0f09264bbe7}{ENCODER\_L\_A}, \hyperlink{config_8h_a505f16b6a48345cd0cb38a4f7623e91a}{ENCODER\_L\_B}, 
+      \hyperlink{config_8h_aac4384f95d2d57841b6878a71702e016}{ENCODER\_R\_A}, \hyperlink{config_8h_aa5b93515e6c3cdbd4422375094185a73}{ENCODER\_R\_B});
+166     \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_a2a0d74ee4c5e489de11bb51e6cebf767}{initPDs}();
+167     \textcolor{comment}{// intake & arm}
+168     \hyperlink{rbe2001_8ino_ab0ec7e650c93e5f5c9b4d6490cf9328a}{intake} = \textcolor{keyword}{new} \hyperlink{class_intake}{Intake}(\hyperlink{config_8h_a2badb0c22cf65b0e81743c90de9a3b41}{INTAKE\_MOTOR}, \hyperlink{config_8h_a46069fff185973399f366efb7086b917}{INTAKE\_SWITCH});
+169     \hyperlink{rbe2001_8ino_a0f9200eb3ef3d09764dc39b137dc9f45}{arm} = \textcolor{keyword}{new} \hyperlink{class_arm}{Arm}(\hyperlink{config_8h_aa4b2b0acdccf84914c34be785144ecbb}{ARM\_MOTOR}, \hyperlink{config_8h_ae375a54a008961f08f9972820d7aba85}{ARM\_POT});
+170 
+171     Serial.println(\textcolor{stringliteral}{"Instantiated mechanisms."});
+172     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+173     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Messenger ready"});
+174     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+175     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Mechanisms ready"});
+176     delay(250);
+177 
+178     \textcolor{comment}{// periodic data sending}
+179     Timer1.initialize(\hyperlink{config_8h_a810047cc48c59e1d7a19fe6616f4b1d9}{SEND\_INT}); \textcolor{comment}{// once a second}
+180     Timer1.attachInterrupt(\hyperlink{rbe2001_8ino_acb02cd64de9dd91936bfd24d9e1ca769}{send\_interrupt});
+181 
+182     Serial.println(\textcolor{stringliteral}{"Configured timer."});
+183     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+184     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Mechanisms ready"});
+185     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+186     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Timer ready"});
+187     delay(250);
+188 
+189     \textcolor{comment}{// setup light sensor}
+190     \hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor} = \textcolor{keyword}{new} \hyperlink{class_reflectance_sensor}{ReflectanceSensor}();
+191     \hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor}->\hyperlink{class_reflectance_sensor_a09c734de7ea4c4f3e7279d1d4c020b5d}{attachQTRA}(&\hyperlink{rbe2001_8ino_aba1edf1920db9237b941ca0f77abbaae}{qtra});
+192     \hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor}->\hyperlink{class_reflectance_sensor_a49851d00301cadc84ac53e747e49971b}{setDetectionCutoff}(
+      \hyperlink{config_8h_a82afab2c87004304e62d97fed3b9b61d}{DEFAULT\_REFLECTANCE\_CUTOFF});
+193     \hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive}->\hyperlink{class_drive_train_a0d74765628d030fdd1ef0877a3750e03}{attachReflectanceSensor}(\hyperlink{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}{rsensor});
+194 
+195     Serial.println(\textcolor{stringliteral}{"Created reflectance sensor."});
+196     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+197     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Timer ready"});
+198     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+199     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"QTR-8A ready"});
+200     delay(250);
+201 
+202     \textcolor{comment}{// calibrate light sensor (from pololu example code)}
+203     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+204     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Timer ready"});
+205     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+206     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Calibrating..."});
+207     delay(100);
+208     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+209     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Calibrating..."});
+210     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+211     Serial.print(\textcolor{stringliteral}{"Calibrating light sensor..."});
+212 
+213     \textcolor{comment}{// take ~5 sec to calibrate}
+214     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 200; i++) \{
+215         \textcolor{comment}{// reads all sensors 10 times at 2.5 ms per six sensors (i.e. ~25 ms per call)}
+216         \hyperlink{rbe2001_8ino_aba1edf1920db9237b941ca0f77abbaae}{qtra}.calibrate();
+217 
+218         \textcolor{keywordflow}{if} (i % 12 == 0) \{
+219             \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"#"});
+220         \}
+221     \}
+222 
+223     Serial.println(\textcolor{stringliteral}{"Calibrated."});
+224     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+225     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"################"});
+226     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+227     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Calibrated"});
+228 
+229     Serial.println(\textcolor{stringliteral}{"--- Calibration Results ---"});
+230     Serial.println(\textcolor{stringliteral}{"--- Minimums ---"});
+231     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{config_8h_a3564cf3b48686cd6404dd989384a56c4}{QTR\_SENSOR\_COUNT}; i++) \{
+232         Serial.print(\hyperlink{rbe2001_8ino_aba1edf1920db9237b941ca0f77abbaae}{qtra}.calibratedMinimumOn[i]);
+233         Serial.print(\textcolor{charliteral}{' '});
+234     \}
+235     Serial.println();
+236 
+237     Serial.println(\textcolor{stringliteral}{"--- Maximums ---"});
+238     \textcolor{comment}{// print the calibration maximum values measured when emitters were on}
+239     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{config_8h_a3564cf3b48686cd6404dd989384a56c4}{QTR\_SENSOR\_COUNT}; i++) \{
+240         Serial.print(\hyperlink{rbe2001_8ino_aba1edf1920db9237b941ca0f77abbaae}{qtra}.calibratedMaximumOn[i]);
+241         Serial.print(\textcolor{charliteral}{' '});
+242     \}
+243     Serial.println();
+244     delay(250);
+245 
+246     \textcolor{comment}{// attach components to ThreadedRobot}
+247     \hyperlink{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}{t\_robot} = \textcolor{keyword}{new} \hyperlink{class_threaded_robot}{ThreadedRobot}();
+248     \hyperlink{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}{t\_robot}->\hyperlink{class_threaded_robot_afc27bf260266c249fc7ce2895a20882f}{attachMessenger}(\hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger});
+249     \hyperlink{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}{t\_robot}->\hyperlink{class_threaded_robot_a86ab3f2f83958858e47c50004702bba7}{attachDrive}(\hyperlink{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}{drive});
+250     \hyperlink{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}{t\_robot}->\hyperlink{class_threaded_robot_ab6b42cc3e28dad7823f35afea5ceb4cc}{attachArm}(\hyperlink{rbe2001_8ino_a0f9200eb3ef3d09764dc39b137dc9f45}{arm});
+251     \hyperlink{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}{t\_robot}->\hyperlink{class_threaded_robot_a391a0e982563eaea9dbf60b9d63b72da}{attachIntake}(\hyperlink{rbe2001_8ino_ab0ec7e650c93e5f5c9b4d6490cf9328a}{intake});
+252     \hyperlink{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}{t\_robot}->\hyperlink{class_threaded_robot_a5c9752f8b7d97689f8b5f1c4bf87ad2d}{attachAccelerometer}(\hyperlink{rbe2001_8ino_a40e268acbd6a40e1d49f995404b85d0b}{accel});
+253 
+254     Serial.println(\textcolor{stringliteral}{"Attached ThreadedRobot components."});
+255     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+256     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Calibrated"});
+257     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+258     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Assembled TRobot"});
+259     delay(250);
+260 
+261     \textcolor{comment}{// setup basic I/O}
+262     pinMode(\hyperlink{config_8h_a7ef7bc399facc7d13a89e760d2c22449}{GUIDE\_SWITCH}, INPUT\_PULLUP);
+263     pinMode(\hyperlink{config_8h_ad1b75624b64bd61940398308fbe959de}{USER\_BTN\_0}, INPUT);
+264     pinMode(\hyperlink{config_8h_aaa59272336b5c18e23ce7ca1b9bb4f6e}{USER\_BTN\_1}, INPUT);
+265     pinMode(\hyperlink{config_8h_ae7a4f981c8c2fee871cca8ce6de40436}{RAD\_LED\_0}, OUTPUT);
+266     pinMode(\hyperlink{config_8h_a4fdb8eb7f018736d83447712b34a6438}{RAD\_LED\_1}, OUTPUT);
+267 
+268     \textcolor{comment}{// setup stop/resume}
+269     pinMode(\hyperlink{config_8h_a1ade4e9e2443ae4e04802648cbf634af}{STOP\_BTN}, INPUT\_PULLUP);
+270 
+271     Serial.println(\textcolor{stringliteral}{"Finished configuring pins."});
+272     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+273     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Assembled TRobot"});
+274     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+275     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Config'd Pins"});
+276     delay(250);
+277 
+278     \textcolor{comment}{// if debug flag set, increase output verbosity}
+279     \textcolor{keywordflow}{if} (\hyperlink{config_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}) \{
+280         \hyperlink{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}{messenger}->\hyperlink{class_messenger_a6cb2c50700cc4b8824c7f6b07a3216ff}{enableDebug}();
+281         Serial.println(\textcolor{stringliteral}{"Starting in bluetooth debugging mode..."});
+282     \}
+283 
+284     Serial.println(\textcolor{stringliteral}{"Completed setup."});
+285     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.clear();
+286     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Config'd Pins"});
+287     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.setCursor(0, 1);
+288     \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}.print(\textcolor{stringliteral}{"Setup complete."});
+289     delay(500);
+290 
+291     \textcolor{comment}{// show robot ready}
+292     digitalWrite(\hyperlink{config_8h_ae7a4f981c8c2fee871cca8ce6de40436}{RAD\_LED\_0}, HIGH);
+293     digitalWrite(\hyperlink{config_8h_a4fdb8eb7f018736d83447712b34a6438}{RAD\_LED\_1}, HIGH);
+294 
+295     \textcolor{comment}{// store last time}
+296     \hyperlink{rbe2001_8ino_aa06e377d25b7ca134c27aea3e6c46235}{last\_micros} = micros();
+297 \}
 \end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{rbe2001_8ino_a40e268acbd6a40e1d49f995404b85d0b}\label{rbe2001_8ino_a40e268acbd6a40e1d49f995404b85d0b}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!accel@{accel}}
+\index{accel@{accel}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{accel}{accel}}
+{\footnotesize\ttfamily \hyperlink{class_accelerometer}{Accelerometer}$\ast$ accel}
+
+
+
+Definition at line 82 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a0f9200eb3ef3d09764dc39b137dc9f45}\label{rbe2001_8ino_a0f9200eb3ef3d09764dc39b137dc9f45}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!arm@{arm}}
+\index{arm@{arm}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{arm}{arm}}
+{\footnotesize\ttfamily \hyperlink{class_arm}{Arm}$\ast$ arm}
+
+
+
+Definition at line 76 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_ab36eee53161180375c1855b5917ec0f9}\label{rbe2001_8ino_ab36eee53161180375c1855b5917ec0f9}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!bno055@{bno055}}
+\index{bno055@{bno055}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{bno055}{bno055}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+B\+N\+O055$\ast$ bno055}
+
+
+
+Definition at line 80 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_ae2ff51c6b65a5b568253ca01270200bc}\label{rbe2001_8ino_ae2ff51c6b65a5b568253ca01270200bc}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!bt\+\_\+cli@{bt\+\_\+cli}}
+\index{bt\+\_\+cli@{bt\+\_\+cli}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{bt\+\_\+cli}{bt\_cli}}
+{\footnotesize\ttfamily \hyperlink{class_bluetooth_client}{Bluetooth\+Client}$\ast$ bt\+\_\+cli}
+
+
+
+Definition at line 70 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}\label{rbe2001_8ino_a4f1a93864d6efcbbe55f30028655e7ad}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!drive@{drive}}
+\index{drive@{drive}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{drive}{drive}}
+{\footnotesize\ttfamily \hyperlink{class_drive_train}{Drive\+Train}$\ast$ drive}
+
+
+
+Definition at line 75 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a8b50650397dca0a575b97ce4cbf21e34}\label{rbe2001_8ino_a8b50650397dca0a575b97ce4cbf21e34}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!gyro@{gyro}}
+\index{gyro@{gyro}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{gyro}{gyro}}
+{\footnotesize\ttfamily \hyperlink{class_gyroscope}{Gyroscope}$\ast$ gyro}
+
+
+
+Definition at line 81 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a90bb1c48eba85e2acf136982fcfd628e}\label{rbe2001_8ino_a90bb1c48eba85e2acf136982fcfd628e}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!horiz\+\_\+line@{horiz\+\_\+line}}
+\index{horiz\+\_\+line@{horiz\+\_\+line}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{horiz\+\_\+line}{horiz\_line}}
+{\footnotesize\ttfamily bool horiz\+\_\+line = false}
+
+
+
+If the main code detected a horizontal line. 
+
+
+
+Definition at line 89 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_ab0ec7e650c93e5f5c9b4d6490cf9328a}\label{rbe2001_8ino_ab0ec7e650c93e5f5c9b4d6490cf9328a}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!intake@{intake}}
+\index{intake@{intake}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{intake}{intake}}
+{\footnotesize\ttfamily \hyperlink{class_intake}{Intake}$\ast$ intake}
+
+
+
+Definition at line 77 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_aa06e377d25b7ca134c27aea3e6c46235}\label{rbe2001_8ino_aa06e377d25b7ca134c27aea3e6c46235}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!last\+\_\+micros@{last\+\_\+micros}}
+\index{last\+\_\+micros@{last\+\_\+micros}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{last\+\_\+micros}{last\_micros}}
+{\footnotesize\ttfamily unsigned long int last\+\_\+micros = 0}
+
+
+
+Definition at line 96 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_afa841889ef06f65dcaf6465eb3df75a1}\label{rbe2001_8ino_afa841889ef06f65dcaf6465eb3df75a1}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!lcd\+\_\+timer@{lcd\+\_\+timer}}
+\index{lcd\+\_\+timer@{lcd\+\_\+timer}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{lcd\+\_\+timer}{lcd\_timer}}
+{\footnotesize\ttfamily unsigned long int lcd\+\_\+timer = 0}
+
+
+
+Definition at line 93 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}\label{rbe2001_8ino_a48342badc24a04d2310ca16ff4a3711b}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!messenger@{messenger}}
+\index{messenger@{messenger}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{messenger}{messenger}}
+{\footnotesize\ttfamily \hyperlink{class_messenger}{Messenger}$\ast$ messenger}
+
+
+
+Definition at line 71 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a2150bcc72eebb9bb31ae6556b4361ebf}\label{rbe2001_8ino_a2150bcc72eebb9bb31ae6556b4361ebf}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!qtra\+\_\+cache@{qtra\+\_\+cache}}
+\index{qtra\+\_\+cache@{qtra\+\_\+cache}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{qtra\+\_\+cache}{qtra\_cache}}
+{\footnotesize\ttfamily unsigned int qtra\+\_\+cache\mbox{[}8\mbox{]}}
+
+
+
+Definition at line 88 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a5b4fcadc7c7d5da32f396d144180a048}\label{rbe2001_8ino_a5b4fcadc7c7d5da32f396d144180a048}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!qtra\+\_\+pins@{qtra\+\_\+pins}}
+\index{qtra\+\_\+pins@{qtra\+\_\+pins}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{qtra\+\_\+pins}{qtra\_pins}}
+{\footnotesize\ttfamily unsigned char qtra\+\_\+pins\mbox{[}$\,$\mbox{]} = \{\hyperlink{config_8h_a78fa539ebb20148cbfcad00742561cf6}{Q\+T\+R\+\_\+1},\hyperlink{config_8h_a49fbc5f0ba729444355eb9ce3588aa40}{Q\+T\+R\+\_\+2},\hyperlink{config_8h_ae5dcb2e48b67f90a48eddc8d7f1b44ea}{Q\+T\+R\+\_\+3},\hyperlink{config_8h_a1e52ef437d8700013af2088d388a1cf3}{Q\+T\+R\+\_\+4},\hyperlink{config_8h_ad90df5df0b2368d826186652cfbe236a}{Q\+T\+R\+\_\+5},\hyperlink{config_8h_ab683ec86911bbd120c0623b121046420}{Q\+T\+R\+\_\+6},\hyperlink{config_8h_a5b8ce3aa53de77253e04c5d0eecf97db}{Q\+T\+R\+\_\+7},\hyperlink{config_8h_a6eef11bb690916992e7933e0ae8e2047}{Q\+T\+R\+\_\+8}\}}
+
+
+
+Definition at line 87 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}\label{rbe2001_8ino_aec14d311939d778664c04e32ca91a864}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!rsensor@{rsensor}}
+\index{rsensor@{rsensor}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{rsensor}{rsensor}}
+{\footnotesize\ttfamily \hyperlink{class_reflectance_sensor}{Reflectance\+Sensor}$\ast$ rsensor}
+
+
+
+Definition at line 86 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a89f234133d3efe315836311cbf21c64b}\label{rbe2001_8ino_a89f234133d3efe315836311cbf21c64b}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!state@{state}}
+\index{state@{state}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily int state = -\/1}
+
+
+
+Definition at line 299 of file rbe2001.\+ino.
+
+\mbox{\Hypertarget{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}\label{rbe2001_8ino_a5356aea93c7a0c5118c1294971a0c68d}} 
+\index{rbe2001.\+ino@{rbe2001.\+ino}!t\+\_\+robot@{t\+\_\+robot}}
+\index{t\+\_\+robot@{t\+\_\+robot}!rbe2001.\+ino@{rbe2001.\+ino}}
+\subsubsection{\texorpdfstring{t\+\_\+robot}{t\_robot}}
+{\footnotesize\ttfamily \hyperlink{class_threaded_robot}{Threaded\+Robot}$\ast$ t\+\_\+robot}
+
+
+
+Definition at line 72 of file rbe2001.\+ino.
+

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['read',['read',['../dc/d60/class_analog_sensor.html#a4672ca490072cb436dfa37fe1e6c6a0a',1,'AnalogSensor::read()'],['../d0/d9f/class_digital_sensor.html#a0b182fe8c229aaa0ea850889193f28f9',1,'DigitalSensor::read()']]],
-  ['read_5fraw',['read_raw',['../d0/d9f/class_digital_sensor.html#a8cbcce6b1e7929c24ddf5992ec2c7537',1,'DigitalSensor']]]
+  ['lcd',['lcd',['../de/d03/rbe2001_8ino.html#a4cbb289153633c01a1584b3aa0d9a0a2',1,'rbe2001.ino']]],
+  ['logvalues',['logValues',['../d4/d5e/class_reflectance_sensor.html#a637d9833bd917e331908917fc777ac19',1,'ReflectanceSensor']]],
+  ['loop',['loop',['../de/d03/rbe2001_8ino.html#afe461d27b9c48d5921c00d521181f12f',1,'rbe2001.ino']]]
 ];

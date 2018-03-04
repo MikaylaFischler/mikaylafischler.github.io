@@ -2,249 +2,1377 @@
 \label{class_drive_train}\index{Drive\+Train@{Drive\+Train}}
 
 
-{\ttfamily \#include $<$Drive\+Train.\+h$>$}
+{\ttfamily \#include $<$Drive\+Train.\+hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_drive_train_a7c4f19e864e8be8bce01466ee876ad83}{Drive\+Train} (int port\+\_\+left, int port\+\_\+right)
+\hyperlink{class_drive_train_a90af56eee49c93d5b7d77065b42f660b}{Drive\+Train} ()
 \item 
 \hyperlink{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}{$\sim$\+Drive\+Train} ()
 \item 
-int $\ast$ \hyperlink{class_drive_train_a79742e748af105aa28332142fdc529f7}{get\+\_\+ports} ()
+void \hyperlink{class_drive_train_aef0af224da3ee7170ac177f0fb9d54b6}{init\+Encoders} (int left\+\_\+a, int left\+\_\+b, int right\+\_\+a, int right\+\_\+b)
+\begin{DoxyCompactList}\small\item\em Initialize the drive train encoders. \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{class_drive_train_a1fc42308d8fe67dd412303946296e43f}{get\+Positions} (bool inches=true)
+\begin{DoxyCompactList}\small\item\em Get a pointer to a 2 element array containing the left and right drive positions. \end{DoxyCompactList}\item 
+double \hyperlink{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}{get\+Left\+Position} (bool inches=true) const
+\begin{DoxyCompactList}\small\item\em Get the left encoder position. \end{DoxyCompactList}\item 
+double \hyperlink{class_drive_train_aa52a34fcdfad88883c78b81336661137}{get\+Right\+Position} (bool inches=true) const
+\begin{DoxyCompactList}\small\item\em Get the right encoder position. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a8cd4f236ac30b716df23971dad5d1a0a}{home\+Encoders} (void)
+\begin{DoxyCompactList}\small\item\em Home both encoders. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a1ef100b1637bdefca2634ff8b28b41d7}{home\+Left} (void)
+\begin{DoxyCompactList}\small\item\em Home the left encoder. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_ad4a50d49f7bf22ea5b35c7d63b6e7736}{home\+Right} (void)
+\begin{DoxyCompactList}\small\item\em Home the right encoder. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a2a0d74ee4c5e489de11bb51e6cebf767}{init\+P\+Ds} (void)
+\begin{DoxyCompactList}\small\item\em Initialize all PD loops for the drive system. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a8355f8e214ceb1ecf1bce299ba692b22}{run\+PD} (void)
+\begin{DoxyCompactList}\small\item\em Run the main drive PD. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a42bf43e9e989feeead853a71afe8bbb0}{run\+Line\+PD} (void)
 \item 
-int $\ast$ \hyperlink{class_drive_train_a50bf393e1ecd61225c78b43e6ffd5fc3}{get\+\_\+speeds} ()
-\item 
-void \hyperlink{class_drive_train_aaaa020990153f43209fe1114296cc9d5}{tank\+\_\+drive} (\hyperlink{class_controller}{Controller} $\ast$controller)
-\item 
-void \hyperlink{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}{tank\+\_\+drive} (int \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}, int \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right})
-\item 
-\hyperlink{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}{$\sim$\+Drive\+Train} ()
-\item 
-\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_drive_train_aee8c9a065107209a264b93a7254ca3ee}{get\+\_\+left\+\_\+motor} (int index)
-\item 
-\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_drive_train_a8e2201be0bd64a6ad6215ceed213bcbc}{get\+\_\+right\+\_\+motor} (int index)
-\item 
-\hyperlink{class_motor_group}{Motor\+Group} \& \hyperlink{class_drive_train_aebe8b0afce2b9b929d90dfbb9f19e311}{get\+\_\+left} ()
-\item 
-\hyperlink{class_motor_group}{Motor\+Group} \& \hyperlink{class_drive_train_ae07aafb05b73ef4db6952c16f58436ea}{get\+\_\+right} ()
-\item 
-void \hyperlink{class_drive_train_aaaa020990153f43209fe1114296cc9d5}{tank\+\_\+drive} (\hyperlink{class_controller}{Controller} $\ast$controller)
-\item 
-void \hyperlink{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}{tank\+\_\+drive} (int \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}, int \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right})
-\end{DoxyCompactItemize}
-\subsection*{Protected Member Functions}
+void \hyperlink{class_drive_train_abbd159972d9f4dd6fa0dd0f398a498dc}{run\+Turn\+PD} (void)
+\begin{DoxyCompactList}\small\item\em Run the gyro PD. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a597c70f11ab197d71360664981e1a2a8}{stop\+PD} (void)
+\begin{DoxyCompactList}\small\item\em Stop the main PD controller and set its output to 0. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a17dc5a1823a710f555ea34f0a1ad57ff}{stop\+Line\+PD} (void)
+\begin{DoxyCompactList}\small\item\em Stop the line PD controller and set its output to 0. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a74a6ee807665e54f51a1fc88284a5f04}{stop\+Turn\+PD} (void)
+\begin{DoxyCompactList}\small\item\em Stop the turn PD controller and set its output to 0. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{set\+Setpoints} (double sp\+\_\+l, double sp\+\_\+r)
+\begin{DoxyCompactList}\small\item\em Set the setpoints for the encoder-\/based drive PD controllers in inches. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_abaf93133223369df521ba2c8bcfea09d}{set\+Turn\+Setpoint} (double angle)
+\begin{DoxyCompactList}\small\item\em Set the setpoint for the gyroscope-\/based drive PD controller in degrees. \end{DoxyCompactList}\item 
+double $\ast$ \hyperlink{class_drive_train_a70eeb8cff983fd609f29734bde4751f2}{get\+Setpoints} (void)
+\begin{DoxyCompactList}\small\item\em Get the main drive setpoints. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a0d74765628d030fdd1ef0877a3750e03}{attach\+Reflectance\+Sensor} (\hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} $\ast$sensor)
+\begin{DoxyCompactList}\small\item\em Set a pointer to the reflectance sensor for line following. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a088f6c9f4d7aafb1e5848a3d15d3e9c5}{attach\+Gyroscope} (\hyperlink{class_gyroscope}{Gyroscope} $\ast$\hyperlink{class_drive_train_a7fca76321e3bf08c0bcdc645b9e70b1d}{gyro})
+\begin{DoxyCompactList}\small\item\em Set a pointer to the gyroscope for turning/alignment. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a874a58662b26684892d2efbce8fde36f}{attach\+Left} (\hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$motor)
+\begin{DoxyCompactList}\small\item\em Set the left motor for the device. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_aae42a38cca31408dc00a10b45b667da6}{attach\+Right} (\hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$motor)
+\begin{DoxyCompactList}\small\item\em Set the right motor for the device. \end{DoxyCompactList}\item 
+\hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$ \hyperlink{class_drive_train_acc0d2f2280bfacea903df5d77ee1c5e0}{get\+Left} (void) const
+\begin{DoxyCompactList}\small\item\em Get the left motor. \end{DoxyCompactList}\item 
+\hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$ \hyperlink{class_drive_train_a9f2a7ed0d2d2b91319a09083a37d236a}{get\+Right} (void) const
+\begin{DoxyCompactList}\small\item\em Get the right motor. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a18d4c7b82118a1da8910d09a31f88a38}{stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop the drive train (stops P\+Ds and sets outputs to 0) \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tank\+Drive} (double left, double right)
+\begin{DoxyCompactList}\small\item\em Tank drive (left motor and right motor directly controlled). \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_a53087c84c085d1f06b06d2e191e34882}{drive} (void)
+\begin{DoxyCompactList}\small\item\em Run drive PD. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_af7e515735f07964fdf42e79bf822e3d1}{drive\+Turn} (void)
+\begin{DoxyCompactList}\small\item\em Run gyro PD. \end{DoxyCompactList}\item 
+void \hyperlink{class_drive_train_ace3dfd00c11b3d001179370c2aa79be4}{drive\+Line\+Guided} (void)
+\begin{DoxyCompactList}\small\item\em Run drive PD with line follower PD for guidance. \end{DoxyCompactList}\item 
+bool \hyperlink{class_drive_train_a3817b51633041e331de658be05396ec9}{near\+Setpoints} (double tolerance\+\_\+l, double tolerance\+\_\+r)
+\begin{DoxyCompactList}\small\item\em Check if the drivetrain is near its encoder-\/based setpoints within a given tolerance (in inches). \end{DoxyCompactList}\item 
+bool \hyperlink{class_drive_train_ab3b73991a0be9e840d3e4903d41dadec}{turned} (void)
+\begin{DoxyCompactList}\small\item\em Check if the gyroscope is within a degree of the gyro-\/based PD setpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_drive_train_a82ca6f487a43e353aea5ee1ff49952da}{Drive\+Train} (\hyperlink{class_motor_group}{Motor\+Group} $\ast$\hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}, \hyperlink{class_motor_group}{Motor\+Group} $\ast$\hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right})
-\end{DoxyCompactItemize}
-\subsection*{Protected Attributes}
-\begin{DoxyCompactItemize}
+const double \hyperlink{class_drive_train_a6e48dfe233b2b5fb280032d4a68893c6}{Kp\+\_\+left} = 4.\+205
+\begin{DoxyCompactList}\small\item\em PD configurations. \end{DoxyCompactList}\item 
+const double \hyperlink{class_drive_train_a1126ee729fbc3418eaa7663013650770}{Kd\+\_\+left} = 0.\+02
 \item 
-\hyperlink{class_motor_group}{Motor\+Group} $\ast$ \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}
+const double \hyperlink{class_drive_train_a58317604093fb4fd0a29cce1d7a6c1b4}{Kp\+\_\+right} = 4.\+0
 \item 
-\hyperlink{class_motor_group}{Motor\+Group} $\ast$ \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right}
-\end{DoxyCompactItemize}
+const double \hyperlink{class_drive_train_a81fc87add62f4d2baa8627bf20949c75}{Kd\+\_\+right} = 0.\+0225
+\item 
+const double \hyperlink{class_drive_train_a6edead09e2ecef2ce23bf6b45bcceebb}{Kp\+\_\+line} = 0.\+80
+\item 
+const double \hyperlink{class_drive_train_a7c21032f1cbaafbd53fc035d7e67ccdf}{Kd\+\_\+line} = 0.\+0500
+\item 
+const double \hyperlink{class_drive_train_a3500e2bb26c144a245f39d78b3fb5a8d}{Kp\+\_\+turn} = 0.\+0875
+\item 
+const double \hyperlink{class_drive_train_a07091d96f4ee4616c24af8f666dd2887}{Kd\+\_\+turn} = 0.\+0035
+\item 
+P\+ID $\ast$ \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\+\_\+left}
+\begin{DoxyCompactList}\small\item\em Left PD controller. \end{DoxyCompactList}\item 
+P\+ID $\ast$ \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\+\_\+right}
+\begin{DoxyCompactList}\small\item\em Right PD controller. \end{DoxyCompactList}\item 
+P\+ID $\ast$ \hyperlink{class_drive_train_ae33321a75190a321ce50d884ae6e2393}{pd\+\_\+line}
+\begin{DoxyCompactList}\small\item\em Line following PD controller. \end{DoxyCompactList}\item 
+P\+ID $\ast$ \hyperlink{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}{pd\+\_\+turn}
+\begin{DoxyCompactList}\small\item\em Gyro PD controller. \end{DoxyCompactList}\item 
+double \hyperlink{class_drive_train_a5fbf7b883990fe8bf69f6a81c317438f}{pd\+\_\+input\+\_\+l}
+\item 
+double \hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\+\_\+output\+\_\+l}
+\item 
+double \hyperlink{class_drive_train_a44be549ca050bf41e9b2474a2640200b}{pd\+\_\+setpoint\+\_\+l}
+\item 
+double \hyperlink{class_drive_train_a663ad534480bcd9ca2010a23dc506997}{pd\+\_\+input\+\_\+r}
+\item 
+double \hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\+\_\+output\+\_\+r}
+\item 
+double \hyperlink{class_drive_train_a57e389649151326bf84ab4bd13b6b61c}{pd\+\_\+setpoint\+\_\+r}
+\begin{DoxyCompactList}\small\item\em for drive PD controller operation \end{DoxyCompactList}\item 
+double \hyperlink{class_drive_train_a90fc51b379f9660ecef4f5a00275e63c}{pd\+\_\+input\+\_\+line}
+\item 
+double \hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\+\_\+output\+\_\+line}
+\item 
+double \hyperlink{class_drive_train_ad7872c04206945d3a2e04dcd167ea6a8}{pd\+\_\+setpoint\+\_\+line}
+\begin{DoxyCompactList}\small\item\em for line PD controller operation \end{DoxyCompactList}\item 
+double \hyperlink{class_drive_train_ad7822ae718d02c94e1baed9b3c13bb67}{pd\+\_\+input\+\_\+turn}
+\item 
+double \hyperlink{class_drive_train_a65aa0053b0648cf1fea8d0f0fc21c04e}{pd\+\_\+output\+\_\+turn}
+\item 
+double \hyperlink{class_drive_train_a2a1e6c6c70405144799a329bcfd0a969}{pd\+\_\+setpoint\+\_\+turn}
+\begin{DoxyCompactList}\small\item\em for gyro PD controller operation \end{DoxyCompactList}\item 
+bool \hyperlink{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}{pd\+\_\+running}
+\begin{DoxyCompactList}\small\item\em if the drive PD loop is running \end{DoxyCompactList}\item 
+bool \hyperlink{class_drive_train_aaf576007439966ed66f0d91a2121a332}{pd\+\_\+line\+\_\+running}
+\begin{DoxyCompactList}\small\item\em if the line PD loop is running \end{DoxyCompactList}\item 
+bool \hyperlink{class_drive_train_afc2305d5c7646a92d9875973ff2f7e67}{pd\+\_\+turn\+\_\+running}
+\begin{DoxyCompactList}\small\item\em if the gyro PD loop is running \end{DoxyCompactList}\item 
+const double \hyperlink{class_drive_train_adc3896c625d516e91add67eedb525440}{inches\+\_\+per\+\_\+tick} = 0.\+001439896632895
+\begin{DoxyCompactList}\small\item\em more accurate value = 0.\+001439896632895321900962044884 \end{DoxyCompactList}\item 
+Encoder $\ast$ \hyperlink{class_drive_train_ab0a54aaa4484970b6890a7c8ebaadf3b}{enc\+\_\+left}
+\begin{DoxyCompactList}\small\item\em Left encoder. \end{DoxyCompactList}\item 
+Encoder $\ast$ \hyperlink{class_drive_train_aea08b3ba330e27f19b5658446e7cf51a}{enc\+\_\+right}
+\begin{DoxyCompactList}\small\item\em Right encoder. \end{DoxyCompactList}\item 
+\hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} $\ast$ \hyperlink{class_drive_train_a90f1f3d3f42a0ac4082df8e37541b71f}{rsensor}
+\begin{DoxyCompactList}\small\item\em pololu reflectance sensor object \end{DoxyCompactList}\item 
+\hyperlink{class_gyroscope}{Gyroscope} $\ast$ \hyperlink{class_drive_train_a7fca76321e3bf08c0bcdc645b9e70b1d}{gyro}
+\begin{DoxyCompactList}\small\item\em pointer to gyro object \end{DoxyCompactList}\item 
+\hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$ \hyperlink{class_drive_train_a9532e0208bfc16c308dafe08ba0e1087}{left\+\_\+motor}
+\begin{DoxyCompactList}\small\item\em left motor object \end{DoxyCompactList}\item 
+\hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$ \hyperlink{class_drive_train_a499c068ddd578679ac5d654e2077fbc4}{right\+\_\+motor}
+\begin{DoxyCompactList}\small\item\em right motor object \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{_drive_train_8h}{Drive\+Train.\+h} -\/ Drive Train Header File Holds two motors and controls them together as a single body. Written by Mikayla Fischler
 
-Drive\+Train.\+hpp -\/ Drive Train Class Header File Contains general code for tank drive to run on motor groups Written by Mikayla Fischler 
 
-Definition at line 14 of file Drive\+Train.\+h.
+Definition at line 19 of file Drive\+Train.\+hpp.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_drive_train_a7c4f19e864e8be8bce01466ee876ad83}\label{class_drive_train_a7c4f19e864e8be8bce01466ee876ad83}} 
+\mbox{\Hypertarget{class_drive_train_a90af56eee49c93d5b7d77065b42f660b}\label{class_drive_train_a90af56eee49c93d5b7d77065b42f660b}} 
 \index{Drive\+Train@{Drive\+Train}!Drive\+Train@{Drive\+Train}}
 \index{Drive\+Train@{Drive\+Train}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{Drive\+Train()}{DriveTrain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Drive\+Train\+::\+Drive\+Train (\begin{DoxyParamCaption}\item[{int}]{port\+\_\+left,  }\item[{int}]{port\+\_\+right }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}\label{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}} 
-\index{Drive\+Train@{Drive\+Train}!````~Drive\+Train@{$\sim$\+Drive\+Train}}
-\index{````~Drive\+Train@{$\sim$\+Drive\+Train}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{$\sim$\+Drive\+Train()}{~DriveTrain()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily Drive\+Train\+::$\sim$\+Drive\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{Drive\+Train()}{DriveTrain()}}
+{\footnotesize\ttfamily Drive\+Train\+::\+Drive\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 20 of file Drive\+Train.\+cpp.
+Definition at line 55 of file Drive\+Train.\+hpp.
 
 
 \begin{DoxyCode}
-20 \{\}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_drive_train_a82ca6f487a43e353aea5ee1ff49952da}\label{class_drive_train_a82ca6f487a43e353aea5ee1ff49952da}} 
-\index{Drive\+Train@{Drive\+Train}!Drive\+Train@{Drive\+Train}}
-\index{Drive\+Train@{Drive\+Train}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{Drive\+Train()}{DriveTrain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Drive\+Train\+::\+Drive\+Train (\begin{DoxyParamCaption}\item[{\hyperlink{class_motor_group}{Motor\+Group} $\ast$}]{left,  }\item[{\hyperlink{class_motor_group}{Motor\+Group} $\ast$}]{right }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
-
-Drive\+Train.\+cpp -\/ Drive Train Class Source Code Written by Mikayla Fischler 
-
-Definition at line 11 of file Drive\+Train.\+cpp.
-
-
-\begin{DoxyCode}
-11                                                           \{
-12     \textcolor{comment}{// create motor groups}
-13     this->left = \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left};
-14     this->right = \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right};
-15 \}
+55 : \hyperlink{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}{pd\_running}(\textcolor{keyword}{false}), \hyperlink{class_drive_train_aaf576007439966ed66f0d91a2121a332}{pd\_line\_running}(\textcolor{keyword}{false}),  
+      \hyperlink{class_drive_train_afc2305d5c7646a92d9875973ff2f7e67}{pd\_turn\_running}(\textcolor{keyword}{false}) \{\};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}\label{class_drive_train_a5dd1c80e30d87655b22974431b16afdf}} 
 \index{Drive\+Train@{Drive\+Train}!````~Drive\+Train@{$\sim$\+Drive\+Train}}
 \index{````~Drive\+Train@{$\sim$\+Drive\+Train}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{$\sim$\+Drive\+Train()}{~DriveTrain()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Drive\+Train\+::$\sim$\+Drive\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{$\sim$\+Drive\+Train()}{~DriveTrain()}}
+{\footnotesize\ttfamily Drive\+Train\+::$\sim$\+Drive\+Train (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line 56 of file Drive\+Train.\+hpp.
+
+
+\begin{DoxyCode}
+56 \{\};
+\end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_drive_train_aebe8b0afce2b9b929d90dfbb9f19e311}\label{class_drive_train_aebe8b0afce2b9b929d90dfbb9f19e311}} 
-\index{Drive\+Train@{Drive\+Train}!get\+\_\+left@{get\+\_\+left}}
-\index{get\+\_\+left@{get\+\_\+left}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{get\+\_\+left()}{get\_left()}}
-{\footnotesize\ttfamily \hyperlink{class_motor_group}{Motor\+Group} $\ast$ Drive\+Train\+::get\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_drive_train_a088f6c9f4d7aafb1e5848a3d15d3e9c5}\label{class_drive_train_a088f6c9f4d7aafb1e5848a3d15d3e9c5}} 
+\index{Drive\+Train@{Drive\+Train}!attach\+Gyroscope@{attach\+Gyroscope}}
+\index{attach\+Gyroscope@{attach\+Gyroscope}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{attach\+Gyroscope()}{attachGyroscope()}}
+{\footnotesize\ttfamily void Drive\+Train\+::attach\+Gyroscope (\begin{DoxyParamCaption}\item[{\hyperlink{class_gyroscope}{Gyroscope} $\ast$}]{sensor }\end{DoxyParamCaption})}
 
 
 
-Definition at line 29 of file Drive\+Train.\+cpp.
+Set a pointer to the gyroscope for turning/alignment. 
 
 
-\begin{DoxyCode}
-29 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}; \}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_drive_train_aee8c9a065107209a264b93a7254ca3ee}\label{class_drive_train_aee8c9a065107209a264b93a7254ca3ee}} 
-\index{Drive\+Train@{Drive\+Train}!get\+\_\+left\+\_\+motor@{get\+\_\+left\+\_\+motor}}
-\index{get\+\_\+left\+\_\+motor@{get\+\_\+left\+\_\+motor}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{get\+\_\+left\+\_\+motor()}{get\_left\_motor()}}
-{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ Drive\+Train\+::get\+\_\+left\+\_\+motor (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sensor} & Pointer to a \hyperlink{class_gyroscope}{Gyroscope} object \\
+\hline
+\end{DoxyParams}
 
 
-
-Definition at line 23 of file Drive\+Train.\+cpp.
+Definition at line 198 of file Drive\+Train.\+cpp.
 
 
 \begin{DoxyCode}
-23 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}->\hyperlink{class_motor_group_a5bb7e87231ada3770df40783a2c6afda}{get}(index); \}
+198 \{ \hyperlink{class_drive_train_a7fca76321e3bf08c0bcdc645b9e70b1d}{gyro} = sensor; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_drive_train_a79742e748af105aa28332142fdc529f7}\label{class_drive_train_a79742e748af105aa28332142fdc529f7}} 
-\index{Drive\+Train@{Drive\+Train}!get\+\_\+ports@{get\+\_\+ports}}
-\index{get\+\_\+ports@{get\+\_\+ports}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{get\+\_\+ports()}{get\_ports()}}
-{\footnotesize\ttfamily int$\ast$ Drive\+Train\+::get\+\_\+ports (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_drive_train_ae07aafb05b73ef4db6952c16f58436ea}\label{class_drive_train_ae07aafb05b73ef4db6952c16f58436ea}} 
-\index{Drive\+Train@{Drive\+Train}!get\+\_\+right@{get\+\_\+right}}
-\index{get\+\_\+right@{get\+\_\+right}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{get\+\_\+right()}{get\_right()}}
-{\footnotesize\ttfamily \hyperlink{class_motor_group}{Motor\+Group} $\ast$ Drive\+Train\+::get\+\_\+right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_drive_train_a874a58662b26684892d2efbce8fde36f}\label{class_drive_train_a874a58662b26684892d2efbce8fde36f}} 
+\index{Drive\+Train@{Drive\+Train}!attach\+Left@{attach\+Left}}
+\index{attach\+Left@{attach\+Left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{attach\+Left()}{attachLeft()}}
+{\footnotesize\ttfamily void Drive\+Train\+::attach\+Left (\begin{DoxyParamCaption}\item[{\hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$}]{motor }\end{DoxyParamCaption})}
 
 
 
-Definition at line 32 of file Drive\+Train.\+cpp.
+Set the left motor for the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em motor} & a pointer to the motor to use for the left drive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 204 of file Drive\+Train.\+cpp.
 
 
 \begin{DoxyCode}
-32 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right}; \}
+204 \{ \hyperlink{class_drive_train_a9532e0208bfc16c308dafe08ba0e1087}{left\_motor} = motor; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_drive_train_a8e2201be0bd64a6ad6215ceed213bcbc}\label{class_drive_train_a8e2201be0bd64a6ad6215ceed213bcbc}} 
-\index{Drive\+Train@{Drive\+Train}!get\+\_\+right\+\_\+motor@{get\+\_\+right\+\_\+motor}}
-\index{get\+\_\+right\+\_\+motor@{get\+\_\+right\+\_\+motor}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{get\+\_\+right\+\_\+motor()}{get\_right\_motor()}}
-{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ Drive\+Train\+::get\+\_\+right\+\_\+motor (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_drive_train_a0d74765628d030fdd1ef0877a3750e03}\label{class_drive_train_a0d74765628d030fdd1ef0877a3750e03}} 
+\index{Drive\+Train@{Drive\+Train}!attach\+Reflectance\+Sensor@{attach\+Reflectance\+Sensor}}
+\index{attach\+Reflectance\+Sensor@{attach\+Reflectance\+Sensor}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{attach\+Reflectance\+Sensor()}{attachReflectanceSensor()}}
+{\footnotesize\ttfamily void Drive\+Train\+::attach\+Reflectance\+Sensor (\begin{DoxyParamCaption}\item[{\hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} $\ast$}]{sensor }\end{DoxyParamCaption})}
 
 
 
-Definition at line 26 of file Drive\+Train.\+cpp.
+Set a pointer to the reflectance sensor for line following. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sensor} & Pointer to a \hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 192 of file Drive\+Train.\+cpp.
 
 
 \begin{DoxyCode}
-26 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right}->\hyperlink{class_motor_group_a5bb7e87231ada3770df40783a2c6afda}{get}(index); \}
+192 \{ \hyperlink{class_drive_train_a90f1f3d3f42a0ac4082df8e37541b71f}{rsensor} = sensor; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_drive_train_a50bf393e1ecd61225c78b43e6ffd5fc3}\label{class_drive_train_a50bf393e1ecd61225c78b43e6ffd5fc3}} 
-\index{Drive\+Train@{Drive\+Train}!get\+\_\+speeds@{get\+\_\+speeds}}
-\index{get\+\_\+speeds@{get\+\_\+speeds}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{get\+\_\+speeds()}{get\_speeds()}}
-{\footnotesize\ttfamily int$\ast$ Drive\+Train\+::get\+\_\+speeds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{class_drive_train_aaaa020990153f43209fe1114296cc9d5}\label{class_drive_train_aaaa020990153f43209fe1114296cc9d5}} 
-\index{Drive\+Train@{Drive\+Train}!tank\+\_\+drive@{tank\+\_\+drive}}
-\index{tank\+\_\+drive@{tank\+\_\+drive}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{tank\+\_\+drive()}{tank\_drive()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
-{\footnotesize\ttfamily void Drive\+Train\+::tank\+\_\+drive (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_drive_train_aae42a38cca31408dc00a10b45b667da6}\label{class_drive_train_aae42a38cca31408dc00a10b45b667da6}} 
+\index{Drive\+Train@{Drive\+Train}!attach\+Right@{attach\+Right}}
+\index{attach\+Right@{attach\+Right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{attach\+Right()}{attachRight()}}
+{\footnotesize\ttfamily void Drive\+Train\+::attach\+Right (\begin{DoxyParamCaption}\item[{\hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$}]{motor }\end{DoxyParamCaption})}
 
 
 
-Definition at line 35 of file Drive\+Train.\+cpp.
+Set the right motor for the device. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em motor} & a pointer to the motor to use for the right drive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 210 of file Drive\+Train.\+cpp.
 
 
 \begin{DoxyCode}
-35                                                   \{
-36     this->\hyperlink{class_drive_train_aaaa020990153f43209fe1114296cc9d5}{tank\_drive}(controller->\hyperlink{class_controller_a2d21a10299aaacdcdb571b10f6436270}{joystick\_left}()[0], controller->
-      \hyperlink{class_controller_a1f02ff9e9853dd53232df37f6676b0dc}{joystick\_right}()[0]);
-37 \}
+210 \{ \hyperlink{class_drive_train_a499c068ddd578679ac5d654e2077fbc4}{right\_motor} = motor; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}\label{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}} 
-\index{Drive\+Train@{Drive\+Train}!tank\+\_\+drive@{tank\+\_\+drive}}
-\index{tank\+\_\+drive@{tank\+\_\+drive}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{tank\+\_\+drive()}{tank\_drive()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
-{\footnotesize\ttfamily void Drive\+Train\+::tank\+\_\+drive (\begin{DoxyParamCaption}\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_drive_train_a53087c84c085d1f06b06d2e191e34882}\label{class_drive_train_a53087c84c085d1f06b06d2e191e34882}} 
+\index{Drive\+Train@{Drive\+Train}!drive@{drive}}
+\index{drive@{drive}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{drive()}{drive()}}
+{\footnotesize\ttfamily void Drive\+Train\+::drive (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+Run drive PD. 
+
+
+
+Definition at line 248 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+248 \{ \hyperlink{class_drive_train_a8355f8e214ceb1ecf1bce299ba692b22}{runPD}(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_ace3dfd00c11b3d001179370c2aa79be4}\label{class_drive_train_ace3dfd00c11b3d001179370c2aa79be4}} 
+\index{Drive\+Train@{Drive\+Train}!drive\+Line\+Guided@{drive\+Line\+Guided}}
+\index{drive\+Line\+Guided@{drive\+Line\+Guided}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{drive\+Line\+Guided()}{driveLineGuided()}}
+{\footnotesize\ttfamily void Drive\+Train\+::drive\+Line\+Guided (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Run drive PD with line follower PD for guidance. 
+
+
+
+Definition at line 258 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+258                                      \{
+259     \textcolor{comment}{// start PD controllers}
+260     \textcolor{keywordflow}{if} (!\hyperlink{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}{pd\_running}) \{
+261         \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\_left}->SetMode(AUTOMATIC);
+262         \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\_right}->SetMode(AUTOMATIC);
+263         \hyperlink{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}{pd\_running} = \textcolor{keyword}{true};
+264     \}
+265 
+266     \textcolor{keywordflow}{if} (!\hyperlink{class_drive_train_aaf576007439966ed66f0d91a2121a332}{pd\_line\_running}) \{
+267         \hyperlink{class_drive_train_ae33321a75190a321ce50d884ae6e2393}{pd\_line}->SetMode(AUTOMATIC);
+268         \hyperlink{class_drive_train_aaf576007439966ed66f0d91a2121a332}{pd\_line\_running} = \textcolor{keyword}{true};
+269     \}
+270 
+271     \textcolor{comment}{// set input positions}
+272     \hyperlink{class_drive_train_a5fbf7b883990fe8bf69f6a81c317438f}{pd\_input\_l} = \hyperlink{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}{getLeftPosition}();
+273     \hyperlink{class_drive_train_a663ad534480bcd9ca2010a23dc506997}{pd\_input\_r} = \hyperlink{class_drive_train_aa52a34fcdfad88883c78b81336661137}{getRightPosition}();
+274     \hyperlink{class_drive_train_a90fc51b379f9660ecef4f5a00275e63c}{pd\_input\_line} = \hyperlink{class_drive_train_a90f1f3d3f42a0ac4082df8e37541b71f}{rsensor}->\hyperlink{class_reflectance_sensor_a1e361d2a9a18b4c9da19bdc4b061a3c7}{getBias}();
+275 
+276     \textcolor{comment}{// calculate PD outputs}
+277     \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\_left}->Compute();
+278     \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\_right}->Compute();
+279     \hyperlink{class_drive_train_ae33321a75190a321ce50d884ae6e2393}{pd\_line}->Compute();
+280 
+281     \textcolor{comment}{// write PD outputs}
+282     \textcolor{comment}{// this is drive straight so just check one side}
+283     \textcolor{keywordflow}{if} (\hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l} > 0) \{
+284         \textcolor{keywordflow}{if} (\hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line} > 0) \{
+285             \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(\hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l}, \hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\_output\_r} + 
+      \hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line});
+286         \} \textcolor{keywordflow}{else} \{
+287             \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(\hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l} - \hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line}, 
+      \hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\_output\_r});
+288         \}
+289     \} \textcolor{keywordflow}{else} \{
+290         \textcolor{keywordflow}{if} (\hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line} > 0) \{
+291             \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(\hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l}, \hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\_output\_r} - 
+      \hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line});
+292         \} \textcolor{keywordflow}{else} \{
+293             \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(\hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l} + \hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line}, 
+      \hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\_output\_r});
+294         \}
+295     \}
+296 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_af7e515735f07964fdf42e79bf822e3d1}\label{class_drive_train_af7e515735f07964fdf42e79bf822e3d1}} 
+\index{Drive\+Train@{Drive\+Train}!drive\+Turn@{drive\+Turn}}
+\index{drive\+Turn@{drive\+Turn}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{drive\+Turn()}{driveTurn()}}
+{\footnotesize\ttfamily void Drive\+Train\+::drive\+Turn (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Run gyro PD. 
+
+
+
+Definition at line 253 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+253 \{ \hyperlink{class_drive_train_abbd159972d9f4dd6fa0dd0f398a498dc}{runTurnPD}(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_acc0d2f2280bfacea903df5d77ee1c5e0}\label{class_drive_train_acc0d2f2280bfacea903df5d77ee1c5e0}} 
+\index{Drive\+Train@{Drive\+Train}!get\+Left@{get\+Left}}
+\index{get\+Left@{get\+Left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+Left()}{getLeft()}}
+{\footnotesize\ttfamily \hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$ Drive\+Train\+::get\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the left motor. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the left \hyperlink{class_pololu_motor}{Pololu\+Motor} 
+\end{DoxyReturn}
+
+
+Definition at line 216 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+216 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a9532e0208bfc16c308dafe08ba0e1087}{left\_motor}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}\label{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}} 
+\index{Drive\+Train@{Drive\+Train}!get\+Left\+Position@{get\+Left\+Position}}
+\index{get\+Left\+Position@{get\+Left\+Position}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+Left\+Position()}{getLeftPosition()}}
+{\footnotesize\ttfamily double Drive\+Train\+::get\+Left\+Position (\begin{DoxyParamCaption}\item[{bool}]{inches = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+
+
+Get the left encoder position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em inches} & Whether to use inches or just ticks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+signed distance traveled since last homed 
+\end{DoxyReturn}
 
 
 Definition at line 40 of file Drive\+Train.\+cpp.
 
 
 \begin{DoxyCode}
-40                                                \{
-41     this->\hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left}->\hyperlink{class_motor_group_a0c2302784f8226542ded59b6812720ac}{drive}(\hyperlink{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}{left});
-42     this->\hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right}->\hyperlink{class_motor_group_a0c2302784f8226542ded59b6812720ac}{drive}(\hyperlink{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}{right});
-43 \}
+40                                                     \{
+41     \textcolor{keywordflow}{return} inches ? (\hyperlink{class_drive_train_ab0a54aaa4484970b6890a7c8ebaadf3b}{enc\_left}->read() * \hyperlink{class_drive_train_adc3896c625d516e91add67eedb525440}{inches\_per\_tick}) : 
+      \hyperlink{class_drive_train_ab0a54aaa4484970b6890a7c8ebaadf3b}{enc\_left}->read();
+42 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_drive_train_aaaa020990153f43209fe1114296cc9d5}\label{class_drive_train_aaaa020990153f43209fe1114296cc9d5}} 
-\index{Drive\+Train@{Drive\+Train}!tank\+\_\+drive@{tank\+\_\+drive}}
-\index{tank\+\_\+drive@{tank\+\_\+drive}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{tank\+\_\+drive()}{tank\_drive()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
-{\footnotesize\ttfamily void Drive\+Train\+::tank\+\_\+drive (\begin{DoxyParamCaption}\item[{\hyperlink{class_controller}{Controller} $\ast$}]{controller }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_drive_train_a1fc42308d8fe67dd412303946296e43f}\label{class_drive_train_a1fc42308d8fe67dd412303946296e43f}} 
+\index{Drive\+Train@{Drive\+Train}!get\+Positions@{get\+Positions}}
+\index{get\+Positions@{get\+Positions}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+Positions()}{getPositions()}}
+{\footnotesize\ttfamily double $\ast$ Drive\+Train\+::get\+Positions (\begin{DoxyParamCaption}\item[{bool}]{inches = {\ttfamily true} }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}\label{class_drive_train_a21236fdee1a5a90a41b81ced6548aeb9}} 
-\index{Drive\+Train@{Drive\+Train}!tank\+\_\+drive@{tank\+\_\+drive}}
-\index{tank\+\_\+drive@{tank\+\_\+drive}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{tank\+\_\+drive()}{tank\_drive()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
-{\footnotesize\ttfamily void Drive\+Train\+::tank\+\_\+drive (\begin{DoxyParamCaption}\item[{int}]{left,  }\item[{int}]{right }\end{DoxyParamCaption})}
 
+
+Get a pointer to a 2 element array containing the left and right drive positions. 
+
+0th index is left, 1st index is right 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em inches} & Whether to use inches or just ticks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to a static double array 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+28                                             \{
+29     \textcolor{keyword}{static} \textcolor{keywordtype}{double} positions[2];
+30     positions[0] = \hyperlink{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}{getLeftPosition}(inches);
+31     positions[1] = \hyperlink{class_drive_train_aa52a34fcdfad88883c78b81336661137}{getRightPosition}(inches);
+32     \textcolor{keywordflow}{return} positions;
+33 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a9f2a7ed0d2d2b91319a09083a37d236a}\label{class_drive_train_a9f2a7ed0d2d2b91319a09083a37d236a}} 
+\index{Drive\+Train@{Drive\+Train}!get\+Right@{get\+Right}}
+\index{get\+Right@{get\+Right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+Right()}{getRight()}}
+{\footnotesize\ttfamily \hyperlink{class_pololu_motor}{Pololu\+Motor} $\ast$ Drive\+Train\+::get\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the right motor. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to the right \hyperlink{class_pololu_motor}{Pololu\+Motor} 
+\end{DoxyReturn}
+
+
+Definition at line 222 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+222 \{ \textcolor{keywordflow}{return} \hyperlink{class_drive_train_a499c068ddd578679ac5d654e2077fbc4}{right\_motor}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_aa52a34fcdfad88883c78b81336661137}\label{class_drive_train_aa52a34fcdfad88883c78b81336661137}} 
+\index{Drive\+Train@{Drive\+Train}!get\+Right\+Position@{get\+Right\+Position}}
+\index{get\+Right\+Position@{get\+Right\+Position}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+Right\+Position()}{getRightPosition()}}
+{\footnotesize\ttfamily double Drive\+Train\+::get\+Right\+Position (\begin{DoxyParamCaption}\item[{bool}]{inches = {\ttfamily true} }\end{DoxyParamCaption}) const}
+
+
+
+Get the right encoder position. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em inches} & Whether to use inches or just ticks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+signed distance traveled since last homed 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+49                                                      \{
+50     \textcolor{keywordflow}{return} inches ? (\hyperlink{class_drive_train_aea08b3ba330e27f19b5658446e7cf51a}{enc\_right}->read() * \hyperlink{class_drive_train_adc3896c625d516e91add67eedb525440}{inches\_per\_tick}) : 
+      \hyperlink{class_drive_train_aea08b3ba330e27f19b5658446e7cf51a}{enc\_right}->read();
+51 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a70eeb8cff983fd609f29734bde4751f2}\label{class_drive_train_a70eeb8cff983fd609f29734bde4751f2}} 
+\index{Drive\+Train@{Drive\+Train}!get\+Setpoints@{get\+Setpoints}}
+\index{get\+Setpoints@{get\+Setpoints}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{get\+Setpoints()}{getSetpoints()}}
+{\footnotesize\ttfamily double $\ast$ Drive\+Train\+::get\+Setpoints (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the main drive setpoints. 
+
+\begin{DoxyReturn}{Returns}
+pointer to static array of doubles with left,right 
+\end{DoxyReturn}
+
+
+Definition at line 181 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+181                                      \{
+182     \textcolor{keyword}{static} \textcolor{keywordtype}{double} setpoints[2];
+183     setpoints[0] = \hyperlink{class_drive_train_a44be549ca050bf41e9b2474a2640200b}{pd\_setpoint\_l};
+184     setpoints[1] = \hyperlink{class_drive_train_a57e389649151326bf84ab4bd13b6b61c}{pd\_setpoint\_r};
+185     \textcolor{keywordflow}{return} setpoints;
+186 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a8cd4f236ac30b716df23971dad5d1a0a}\label{class_drive_train_a8cd4f236ac30b716df23971dad5d1a0a}} 
+\index{Drive\+Train@{Drive\+Train}!home\+Encoders@{home\+Encoders}}
+\index{home\+Encoders@{home\+Encoders}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{home\+Encoders()}{homeEncoders()}}
+{\footnotesize\ttfamily void Drive\+Train\+::home\+Encoders (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Home both encoders. 
+
+
+
+Definition at line 56 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+56                                   \{
+57     \hyperlink{class_drive_train_a1ef100b1637bdefca2634ff8b28b41d7}{homeLeft}();
+58     \hyperlink{class_drive_train_ad4a50d49f7bf22ea5b35c7d63b6e7736}{homeRight}();
+59 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a1ef100b1637bdefca2634ff8b28b41d7}\label{class_drive_train_a1ef100b1637bdefca2634ff8b28b41d7}} 
+\index{Drive\+Train@{Drive\+Train}!home\+Left@{home\+Left}}
+\index{home\+Left@{home\+Left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{home\+Left()}{homeLeft()}}
+{\footnotesize\ttfamily void Drive\+Train\+::home\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Home the left encoder. 
+
+
+
+Definition at line 64 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+64 \{ \hyperlink{class_drive_train_ab0a54aaa4484970b6890a7c8ebaadf3b}{enc\_left}->write(0); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_ad4a50d49f7bf22ea5b35c7d63b6e7736}\label{class_drive_train_ad4a50d49f7bf22ea5b35c7d63b6e7736}} 
+\index{Drive\+Train@{Drive\+Train}!home\+Right@{home\+Right}}
+\index{home\+Right@{home\+Right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{home\+Right()}{homeRight()}}
+{\footnotesize\ttfamily void Drive\+Train\+::home\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Home the right encoder. 
+
+
+
+Definition at line 69 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+69 \{ \hyperlink{class_drive_train_aea08b3ba330e27f19b5658446e7cf51a}{enc\_right}->write(0); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_aef0af224da3ee7170ac177f0fb9d54b6}\label{class_drive_train_aef0af224da3ee7170ac177f0fb9d54b6}} 
+\index{Drive\+Train@{Drive\+Train}!init\+Encoders@{init\+Encoders}}
+\index{init\+Encoders@{init\+Encoders}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{init\+Encoders()}{initEncoders()}}
+{\footnotesize\ttfamily void Drive\+Train\+::init\+Encoders (\begin{DoxyParamCaption}\item[{int}]{left\+\_\+a,  }\item[{int}]{left\+\_\+b,  }\item[{int}]{right\+\_\+a,  }\item[{int}]{right\+\_\+b }\end{DoxyParamCaption})}
+
+
+
+Initialize the drive train encoders. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em left\+\_\+a} & interrupt-\/capable digital port of Left Encoder A signal \\
+\hline
+\mbox{\tt in}  & {\em left\+\_\+b} & interrupt-\/capable digital port of Left Encoder A signal \\
+\hline
+\mbox{\tt in}  & {\em right\+\_\+a} & interrupt-\/capable digital port of Right Encoder B signal \\
+\hline
+\mbox{\tt in}  & {\em right\+\_\+b} & interrupt-\/capable digital port of Right Encoder B signal \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+17                                                                               \{
+18     \hyperlink{class_drive_train_ab0a54aaa4484970b6890a7c8ebaadf3b}{enc\_left} = \textcolor{keyword}{new} Encoder(left\_a, left\_b);
+19     \hyperlink{class_drive_train_aea08b3ba330e27f19b5658446e7cf51a}{enc\_right} = \textcolor{keyword}{new} Encoder(right\_a, right\_b);
+20 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a2a0d74ee4c5e489de11bb51e6cebf767}\label{class_drive_train_a2a0d74ee4c5e489de11bb51e6cebf767}} 
+\index{Drive\+Train@{Drive\+Train}!init\+P\+Ds@{init\+P\+Ds}}
+\index{init\+P\+Ds@{init\+P\+Ds}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{init\+P\+Ds()}{initPDs()}}
+{\footnotesize\ttfamily void Drive\+Train\+::init\+P\+Ds (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialize all PD loops for the drive system. 
+
+Initializes left drive PD, right drive PD, line following PD, and gyroscope PD 
+
+Definition at line 75 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+75                              \{
+76     \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\_left} = \textcolor{keyword}{new} PID(&\hyperlink{class_drive_train_a5fbf7b883990fe8bf69f6a81c317438f}{pd\_input\_l}, &\hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l}, &
+      \hyperlink{class_drive_train_a44be549ca050bf41e9b2474a2640200b}{pd\_setpoint\_l}, \hyperlink{class_drive_train_a6e48dfe233b2b5fb280032d4a68893c6}{Kp\_left}, 0, \hyperlink{class_drive_train_a1126ee729fbc3418eaa7663013650770}{Kd\_left}, DIRECT);
+77     \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\_right} = \textcolor{keyword}{new} PID(&\hyperlink{class_drive_train_a663ad534480bcd9ca2010a23dc506997}{pd\_input\_r}, &\hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\_output\_r}, &
+      \hyperlink{class_drive_train_a57e389649151326bf84ab4bd13b6b61c}{pd\_setpoint\_r}, \hyperlink{class_drive_train_a58317604093fb4fd0a29cce1d7a6c1b4}{Kp\_right}, 0, \hyperlink{class_drive_train_a81fc87add62f4d2baa8627bf20949c75}{Kd\_right}, DIRECT);
+78     \hyperlink{class_drive_train_ae33321a75190a321ce50d884ae6e2393}{pd\_line} = \textcolor{keyword}{new} PID(&\hyperlink{class_drive_train_a90fc51b379f9660ecef4f5a00275e63c}{pd\_input\_line}, &\hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line}, &
+      \hyperlink{class_drive_train_ad7872c04206945d3a2e04dcd167ea6a8}{pd\_setpoint\_line}, \hyperlink{class_drive_train_a6edead09e2ecef2ce23bf6b45bcceebb}{Kp\_line}, 0, \hyperlink{class_drive_train_a7c21032f1cbaafbd53fc035d7e67ccdf}{Kd\_line}, DIRECT);
+79     \hyperlink{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}{pd\_turn} = \textcolor{keyword}{new} PID(&\hyperlink{class_drive_train_ad7822ae718d02c94e1baed9b3c13bb67}{pd\_input\_turn}, &\hyperlink{class_drive_train_a65aa0053b0648cf1fea8d0f0fc21c04e}{pd\_output\_turn}, &
+      \hyperlink{class_drive_train_a2a1e6c6c70405144799a329bcfd0a969}{pd\_setpoint\_turn}, \hyperlink{class_drive_train_a3500e2bb26c144a245f39d78b3fb5a8d}{Kp\_turn}, 0, \hyperlink{class_drive_train_a07091d96f4ee4616c24af8f666dd2887}{Kd\_turn}, DIRECT);
+80 
+81     \textcolor{comment}{// sample @ 20ms}
+82     \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\_left}->SetSampleTime(20);
+83     \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\_right}->SetSampleTime(20);
+84     \hyperlink{class_drive_train_ae33321a75190a321ce50d884ae6e2393}{pd\_line}->SetSampleTime(20);
+85     \hyperlink{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}{pd\_turn}->SetSampleTime(20);
+86 
+87     \textcolor{comment}{// set output limits as for the different PD loops to be combinable and not too fast}
+88     \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\_left}->SetOutputLimits(-0.5, 0.5);
+89     \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\_right}->SetOutputLimits(-0.5, 0.5);
+90     \hyperlink{class_drive_train_ae33321a75190a321ce50d884ae6e2393}{pd\_line}->SetOutputLimits(-0.6, 0.6);
+91     \hyperlink{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}{pd\_turn}->SetOutputLimits(-1.0, 1.0);
+92 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a3817b51633041e331de658be05396ec9}\label{class_drive_train_a3817b51633041e331de658be05396ec9}} 
+\index{Drive\+Train@{Drive\+Train}!near\+Setpoints@{near\+Setpoints}}
+\index{near\+Setpoints@{near\+Setpoints}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{near\+Setpoints()}{nearSetpoints()}}
+{\footnotesize\ttfamily bool Drive\+Train\+::near\+Setpoints (\begin{DoxyParamCaption}\item[{double}]{tolerance\+\_\+l,  }\item[{double}]{tolerance\+\_\+r }\end{DoxyParamCaption})}
+
+
+
+Check if the drivetrain is near its encoder-\/based setpoints within a given tolerance (in inches). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tolerance\+\_\+l} & Left tolerance in inches \\
+\hline
+\mbox{\tt in}  & {\em tolerance\+\_\+r} & Right tolerance in inches \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if both within the tolerance, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 304 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+304                                                                      \{
+305     \textcolor{keywordtype}{bool} leftNear, rightNear;
+306 
+307     leftNear = (\hyperlink{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}{getLeftPosition}() <= \hyperlink{class_drive_train_a44be549ca050bf41e9b2474a2640200b}{pd\_setpoint\_l} + tolerance\_l) && (
+      \hyperlink{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}{getLeftPosition}() >= \hyperlink{class_drive_train_a44be549ca050bf41e9b2474a2640200b}{pd\_setpoint\_l} - tolerance\_l);
+308     rightNear = (\hyperlink{class_drive_train_aa52a34fcdfad88883c78b81336661137}{getRightPosition}() <= \hyperlink{class_drive_train_a57e389649151326bf84ab4bd13b6b61c}{pd\_setpoint\_r} + tolerance\_r) && (
+      \hyperlink{class_drive_train_aa52a34fcdfad88883c78b81336661137}{getRightPosition}() >= \hyperlink{class_drive_train_a57e389649151326bf84ab4bd13b6b61c}{pd\_setpoint\_r} - tolerance\_r);
+309 
+310     \textcolor{keywordflow}{return} leftNear && rightNear;
+311 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a42bf43e9e989feeead853a71afe8bbb0}\label{class_drive_train_a42bf43e9e989feeead853a71afe8bbb0}} 
+\index{Drive\+Train@{Drive\+Train}!run\+Line\+PD@{run\+Line\+PD}}
+\index{run\+Line\+PD@{run\+Line\+PD}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{run\+Line\+P\+D()}{runLinePD()}}
+{\footnotesize\ttfamily void Drive\+Train\+::run\+Line\+PD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_drive_train_a8355f8e214ceb1ecf1bce299ba692b22}\label{class_drive_train_a8355f8e214ceb1ecf1bce299ba692b22}} 
+\index{Drive\+Train@{Drive\+Train}!run\+PD@{run\+PD}}
+\index{run\+PD@{run\+PD}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{run\+P\+D()}{runPD()}}
+{\footnotesize\ttfamily void Drive\+Train\+::run\+PD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Run the main drive PD. 
+
+Computes outputs and sets them straight to the tank drive output (will override any previous output). 
+
+Definition at line 98 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+98                            \{
+99     \textcolor{keywordflow}{if} (!\hyperlink{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}{pd\_running}) \{
+100         \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\_left}->SetMode(AUTOMATIC);
+101         \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\_right}->SetMode(AUTOMATIC);
+102         \hyperlink{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}{pd\_running} = \textcolor{keyword}{true};
+103     \}
+104 
+105     \hyperlink{class_drive_train_a5fbf7b883990fe8bf69f6a81c317438f}{pd\_input\_l} = \hyperlink{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}{getLeftPosition}();
+106     \hyperlink{class_drive_train_a663ad534480bcd9ca2010a23dc506997}{pd\_input\_r} = \hyperlink{class_drive_train_aa52a34fcdfad88883c78b81336661137}{getRightPosition}();
+107 
+108     \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\_left}->Compute();
+109     \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\_right}->Compute();
+110 
+111     \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(\hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l}, \hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\_output\_r});
+112 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_abbd159972d9f4dd6fa0dd0f398a498dc}\label{class_drive_train_abbd159972d9f4dd6fa0dd0f398a498dc}} 
+\index{Drive\+Train@{Drive\+Train}!run\+Turn\+PD@{run\+Turn\+PD}}
+\index{run\+Turn\+PD@{run\+Turn\+PD}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{run\+Turn\+P\+D()}{runTurnPD()}}
+{\footnotesize\ttfamily void Drive\+Train\+::run\+Turn\+PD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Run the gyro PD. 
+
+Computes outputs and sets them straight to the tank drive output (will override any previous output). 
+
+Definition at line 118 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+118                                \{
+119     \textcolor{keywordflow}{if} (!\hyperlink{class_drive_train_afc2305d5c7646a92d9875973ff2f7e67}{pd\_turn\_running}) \{
+120         \hyperlink{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}{pd\_turn}->SetMode(AUTOMATIC);
+121         \hyperlink{class_drive_train_afc2305d5c7646a92d9875973ff2f7e67}{pd\_turn\_running} = \textcolor{keyword}{true};
+122     \}
+123 
+124     \hyperlink{class_drive_train_ad7822ae718d02c94e1baed9b3c13bb67}{pd\_input\_turn} = \hyperlink{class_drive_train_a7fca76321e3bf08c0bcdc645b9e70b1d}{gyro}->\hyperlink{class_gyroscope_a019f1512ef009051ca2a899759321a9e}{getContinuousRotation}();
+125 
+126     \hyperlink{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}{pd\_turn}->Compute();
+127 
+128     \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(\hyperlink{class_drive_train_a65aa0053b0648cf1fea8d0f0fc21c04e}{pd\_output\_turn}, -\hyperlink{class_drive_train_a65aa0053b0648cf1fea8d0f0fc21c04e}{pd\_output\_turn});
+129 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}\label{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}} 
+\index{Drive\+Train@{Drive\+Train}!set\+Setpoints@{set\+Setpoints}}
+\index{set\+Setpoints@{set\+Setpoints}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{set\+Setpoints()}{setSetpoints()}}
+{\footnotesize\ttfamily void Drive\+Train\+::set\+Setpoints (\begin{DoxyParamCaption}\item[{double}]{sp\+\_\+l,  }\item[{double}]{sp\+\_\+r }\end{DoxyParamCaption})}
+
+
+
+Set the setpoints for the encoder-\/based drive PD controllers in inches. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sp\+\_\+l} & Left setpoint \\
+\hline
+\mbox{\tt in}  & {\em sp\+\_\+r} & right setpoint \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+166                                                       \{
+167     \hyperlink{class_drive_train_a44be549ca050bf41e9b2474a2640200b}{pd\_setpoint\_l} = \hyperlink{class_drive_train_a9ec0f8309cf9670fec618e8b00f70390}{getLeftPosition}() + sp\_l;
+168     \hyperlink{class_drive_train_a57e389649151326bf84ab4bd13b6b61c}{pd\_setpoint\_r} = \hyperlink{class_drive_train_aa52a34fcdfad88883c78b81336661137}{getRightPosition}() + sp\_r;
+169 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_abaf93133223369df521ba2c8bcfea09d}\label{class_drive_train_abaf93133223369df521ba2c8bcfea09d}} 
+\index{Drive\+Train@{Drive\+Train}!set\+Turn\+Setpoint@{set\+Turn\+Setpoint}}
+\index{set\+Turn\+Setpoint@{set\+Turn\+Setpoint}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{set\+Turn\+Setpoint()}{setTurnSetpoint()}}
+{\footnotesize\ttfamily void Drive\+Train\+::set\+Turn\+Setpoint (\begin{DoxyParamCaption}\item[{double}]{angle }\end{DoxyParamCaption})}
+
+
+
+Set the setpoint for the gyroscope-\/based drive PD controller in degrees. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em angle} & Angle to turn in degrees \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 175 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+175 \{ \hyperlink{class_drive_train_a2a1e6c6c70405144799a329bcfd0a969}{pd\_setpoint\_turn} = \hyperlink{class_drive_train_a7fca76321e3bf08c0bcdc645b9e70b1d}{gyro}->\hyperlink{class_gyroscope_a019f1512ef009051ca2a899759321a9e}{getContinuousRotation}() + angle; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a18d4c7b82118a1da8910d09a31f88a38}\label{class_drive_train_a18d4c7b82118a1da8910d09a31f88a38}} 
+\index{Drive\+Train@{Drive\+Train}!stop@{stop}}
+\index{stop@{stop}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Drive\+Train\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the drive train (stops P\+Ds and sets outputs to 0) 
+
+
+
+Definition at line 227 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+227                           \{
+228     \hyperlink{class_drive_train_a597c70f11ab197d71360664981e1a2a8}{stopPD}();
+229     \hyperlink{class_drive_train_a17dc5a1823a710f555ea34f0a1ad57ff}{stopLinePD}();
+230     \hyperlink{class_drive_train_a74a6ee807665e54f51a1fc88284a5f04}{stopTurnPD}();
+231     \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(0, 0);
+232     \hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l} = \hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\_output\_r} = \hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line} = 
+      \hyperlink{class_drive_train_a65aa0053b0648cf1fea8d0f0fc21c04e}{pd\_output\_turn} = 0;
+233 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a17dc5a1823a710f555ea34f0a1ad57ff}\label{class_drive_train_a17dc5a1823a710f555ea34f0a1ad57ff}} 
+\index{Drive\+Train@{Drive\+Train}!stop\+Line\+PD@{stop\+Line\+PD}}
+\index{stop\+Line\+PD@{stop\+Line\+PD}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{stop\+Line\+P\+D()}{stopLinePD()}}
+{\footnotesize\ttfamily void Drive\+Train\+::stop\+Line\+PD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the line PD controller and set its output to 0. 
+
+
+
+Definition at line 145 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+145                                 \{
+146     \hyperlink{class_drive_train_ae33321a75190a321ce50d884ae6e2393}{pd\_line}->SetMode(MANUAL);
+147     \hyperlink{class_drive_train_aaf576007439966ed66f0d91a2121a332}{pd\_line\_running} = \textcolor{keyword}{false};
+148     \hyperlink{class_drive_train_a02595614747de0602048d8d5e9643750}{pd\_output\_line} = 0;
+149 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a597c70f11ab197d71360664981e1a2a8}\label{class_drive_train_a597c70f11ab197d71360664981e1a2a8}} 
+\index{Drive\+Train@{Drive\+Train}!stop\+PD@{stop\+PD}}
+\index{stop\+PD@{stop\+PD}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{stop\+P\+D()}{stopPD()}}
+{\footnotesize\ttfamily void Drive\+Train\+::stop\+PD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the main PD controller and set its output to 0. 
+
+
+
+Definition at line 134 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+134                             \{
+135     \hyperlink{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}{pd\_left}->SetMode(MANUAL);
+136     \hyperlink{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}{pd\_right}->SetMode(MANUAL);
+137     \hyperlink{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}{pd\_running} = \textcolor{keyword}{false};
+138     \hyperlink{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}{pd\_output\_l} = \hyperlink{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}{pd\_output\_r} = 0;
+139     \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(0, 0);
+140 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a74a6ee807665e54f51a1fc88284a5f04}\label{class_drive_train_a74a6ee807665e54f51a1fc88284a5f04}} 
+\index{Drive\+Train@{Drive\+Train}!stop\+Turn\+PD@{stop\+Turn\+PD}}
+\index{stop\+Turn\+PD@{stop\+Turn\+PD}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{stop\+Turn\+P\+D()}{stopTurnPD()}}
+{\footnotesize\ttfamily void Drive\+Train\+::stop\+Turn\+PD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the turn PD controller and set its output to 0. 
+
+
+
+Definition at line 154 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+154                                 \{
+155     \hyperlink{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}{pd\_turn}->SetMode(MANUAL);
+156     \hyperlink{class_drive_train_afc2305d5c7646a92d9875973ff2f7e67}{pd\_turn\_running} = \textcolor{keyword}{false};
+157     \hyperlink{class_drive_train_a65aa0053b0648cf1fea8d0f0fc21c04e}{pd\_output\_turn} = 0;
+158     \hyperlink{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}{tankDrive}(0, 0);
+159 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}\label{class_drive_train_a60ef155b4f149532a2ae872edc0e2cc2}} 
+\index{Drive\+Train@{Drive\+Train}!tank\+Drive@{tank\+Drive}}
+\index{tank\+Drive@{tank\+Drive}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{tank\+Drive()}{tankDrive()}}
+{\footnotesize\ttfamily void Drive\+Train\+::tank\+Drive (\begin{DoxyParamCaption}\item[{double}]{left,  }\item[{double}]{right }\end{DoxyParamCaption})}
+
+
+
+Tank drive (left motor and right motor directly controlled). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em left} & Left drive speed (-\/1.\+0 to 1.\+0, 0 is stop) \\
+\hline
+\mbox{\tt in}  & {\em right} & Right drive speed (-\/1.\+0 to 1.\+0, 0 is stop) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+240                                                     \{
+241     \hyperlink{class_drive_train_a9532e0208bfc16c308dafe08ba0e1087}{left\_motor}->\hyperlink{class_pololu_motor_abcece838332aaf501b6ae63fa371422e}{drive}(left);
+242     \hyperlink{class_drive_train_a499c068ddd578679ac5d654e2077fbc4}{right\_motor}->\hyperlink{class_pololu_motor_abcece838332aaf501b6ae63fa371422e}{drive}(right);
+243 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_drive_train_ab3b73991a0be9e840d3e4903d41dadec}\label{class_drive_train_ab3b73991a0be9e840d3e4903d41dadec}} 
+\index{Drive\+Train@{Drive\+Train}!turned@{turned}}
+\index{turned@{turned}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{turned()}{turned()}}
+{\footnotesize\ttfamily bool Drive\+Train\+::turned (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if the gyroscope is within a degree of the gyro-\/based PD setpoint. 
+
+\begin{DoxyReturn}{Returns}
+true if error is less than or equal to 1.\+0 degrees, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 317 of file Drive\+Train.\+cpp.
+
+
+\begin{DoxyCode}
+317 \{ \textcolor{keywordflow}{return} abs(\hyperlink{class_drive_train_ad7822ae718d02c94e1baed9b3c13bb67}{pd\_input\_turn} - \hyperlink{class_drive_train_a2a1e6c6c70405144799a329bcfd0a969}{pd\_setpoint\_turn}) <= 1.0; \}
+\end{DoxyCode}
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}\label{class_drive_train_a8343c1e4fad9e5c7e68e627f592e52ea}} 
-\index{Drive\+Train@{Drive\+Train}!left@{left}}
-\index{left@{left}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{left}{left}}
-{\footnotesize\ttfamily \hyperlink{class_motor_group}{Motor\+Group}$\ast$ Drive\+Train\+::left\hspace{0.3cm}{\ttfamily [protected]}}
+\mbox{\Hypertarget{class_drive_train_ab0a54aaa4484970b6890a7c8ebaadf3b}\label{class_drive_train_ab0a54aaa4484970b6890a7c8ebaadf3b}} 
+\index{Drive\+Train@{Drive\+Train}!enc\+\_\+left@{enc\+\_\+left}}
+\index{enc\+\_\+left@{enc\+\_\+left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{enc\+\_\+left}{enc\_left}}
+{\footnotesize\ttfamily Encoder$\ast$ Drive\+Train\+::enc\+\_\+left\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line 20 of file Drive\+Train.\+hpp.
-
-\mbox{\Hypertarget{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}\label{class_drive_train_a1fe3a54242798b1b88eb437c7c7cf9ad}} 
-\index{Drive\+Train@{Drive\+Train}!right@{right}}
-\index{right@{right}!Drive\+Train@{Drive\+Train}}
-\subsubsection{\texorpdfstring{right}{right}}
-{\footnotesize\ttfamily \hyperlink{class_motor_group}{Motor\+Group}$\ast$ Drive\+Train\+::right\hspace{0.3cm}{\ttfamily [protected]}}
+Left encoder. 
 
 
 
-Definition at line 21 of file Drive\+Train.\+hpp.
+Definition at line 46 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_aea08b3ba330e27f19b5658446e7cf51a}\label{class_drive_train_aea08b3ba330e27f19b5658446e7cf51a}} 
+\index{Drive\+Train@{Drive\+Train}!enc\+\_\+right@{enc\+\_\+right}}
+\index{enc\+\_\+right@{enc\+\_\+right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{enc\+\_\+right}{enc\_right}}
+{\footnotesize\ttfamily Encoder$\ast$ Drive\+Train\+::enc\+\_\+right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Right encoder. 
+
+
+
+Definition at line 47 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a7fca76321e3bf08c0bcdc645b9e70b1d}\label{class_drive_train_a7fca76321e3bf08c0bcdc645b9e70b1d}} 
+\index{Drive\+Train@{Drive\+Train}!gyro@{gyro}}
+\index{gyro@{gyro}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{gyro}{gyro}}
+{\footnotesize\ttfamily \hyperlink{class_gyroscope}{Gyroscope}$\ast$ Drive\+Train\+::gyro\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to gyro object 
+
+
+
+Definition at line 50 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_adc3896c625d516e91add67eedb525440}\label{class_drive_train_adc3896c625d516e91add67eedb525440}} 
+\index{Drive\+Train@{Drive\+Train}!inches\+\_\+per\+\_\+tick@{inches\+\_\+per\+\_\+tick}}
+\index{inches\+\_\+per\+\_\+tick@{inches\+\_\+per\+\_\+tick}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{inches\+\_\+per\+\_\+tick}{inches\_per\_tick}}
+{\footnotesize\ttfamily const double Drive\+Train\+::inches\+\_\+per\+\_\+tick = 0.\+001439896632895\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+more accurate value = 0.\+001439896632895321900962044884 
+
+
+
+Definition at line 44 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a1126ee729fbc3418eaa7663013650770}\label{class_drive_train_a1126ee729fbc3418eaa7663013650770}} 
+\index{Drive\+Train@{Drive\+Train}!Kd\+\_\+left@{Kd\+\_\+left}}
+\index{Kd\+\_\+left@{Kd\+\_\+left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Kd\+\_\+left}{Kd\_left}}
+{\footnotesize\ttfamily const double Drive\+Train\+::\+Kd\+\_\+left = 0.\+02\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 23 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a7c21032f1cbaafbd53fc035d7e67ccdf}\label{class_drive_train_a7c21032f1cbaafbd53fc035d7e67ccdf}} 
+\index{Drive\+Train@{Drive\+Train}!Kd\+\_\+line@{Kd\+\_\+line}}
+\index{Kd\+\_\+line@{Kd\+\_\+line}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Kd\+\_\+line}{Kd\_line}}
+{\footnotesize\ttfamily const double Drive\+Train\+::\+Kd\+\_\+line = 0.\+0500\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 27 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a81fc87add62f4d2baa8627bf20949c75}\label{class_drive_train_a81fc87add62f4d2baa8627bf20949c75}} 
+\index{Drive\+Train@{Drive\+Train}!Kd\+\_\+right@{Kd\+\_\+right}}
+\index{Kd\+\_\+right@{Kd\+\_\+right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Kd\+\_\+right}{Kd\_right}}
+{\footnotesize\ttfamily const double Drive\+Train\+::\+Kd\+\_\+right = 0.\+0225\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 25 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a07091d96f4ee4616c24af8f666dd2887}\label{class_drive_train_a07091d96f4ee4616c24af8f666dd2887}} 
+\index{Drive\+Train@{Drive\+Train}!Kd\+\_\+turn@{Kd\+\_\+turn}}
+\index{Kd\+\_\+turn@{Kd\+\_\+turn}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Kd\+\_\+turn}{Kd\_turn}}
+{\footnotesize\ttfamily const double Drive\+Train\+::\+Kd\+\_\+turn = 0.\+0035\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a6e48dfe233b2b5fb280032d4a68893c6}\label{class_drive_train_a6e48dfe233b2b5fb280032d4a68893c6}} 
+\index{Drive\+Train@{Drive\+Train}!Kp\+\_\+left@{Kp\+\_\+left}}
+\index{Kp\+\_\+left@{Kp\+\_\+left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Kp\+\_\+left}{Kp\_left}}
+{\footnotesize\ttfamily const double Drive\+Train\+::\+Kp\+\_\+left = 4.\+205\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+PD configurations. 
+
+
+
+Definition at line 22 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a6edead09e2ecef2ce23bf6b45bcceebb}\label{class_drive_train_a6edead09e2ecef2ce23bf6b45bcceebb}} 
+\index{Drive\+Train@{Drive\+Train}!Kp\+\_\+line@{Kp\+\_\+line}}
+\index{Kp\+\_\+line@{Kp\+\_\+line}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Kp\+\_\+line}{Kp\_line}}
+{\footnotesize\ttfamily const double Drive\+Train\+::\+Kp\+\_\+line = 0.\+80\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 26 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a58317604093fb4fd0a29cce1d7a6c1b4}\label{class_drive_train_a58317604093fb4fd0a29cce1d7a6c1b4}} 
+\index{Drive\+Train@{Drive\+Train}!Kp\+\_\+right@{Kp\+\_\+right}}
+\index{Kp\+\_\+right@{Kp\+\_\+right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Kp\+\_\+right}{Kp\_right}}
+{\footnotesize\ttfamily const double Drive\+Train\+::\+Kp\+\_\+right = 4.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 24 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a3500e2bb26c144a245f39d78b3fb5a8d}\label{class_drive_train_a3500e2bb26c144a245f39d78b3fb5a8d}} 
+\index{Drive\+Train@{Drive\+Train}!Kp\+\_\+turn@{Kp\+\_\+turn}}
+\index{Kp\+\_\+turn@{Kp\+\_\+turn}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{Kp\+\_\+turn}{Kp\_turn}}
+{\footnotesize\ttfamily const double Drive\+Train\+::\+Kp\+\_\+turn = 0.\+0875\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 28 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a9532e0208bfc16c308dafe08ba0e1087}\label{class_drive_train_a9532e0208bfc16c308dafe08ba0e1087}} 
+\index{Drive\+Train@{Drive\+Train}!left\+\_\+motor@{left\+\_\+motor}}
+\index{left\+\_\+motor@{left\+\_\+motor}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{left\+\_\+motor}{left\_motor}}
+{\footnotesize\ttfamily \hyperlink{class_pololu_motor}{Pololu\+Motor}$\ast$ Drive\+Train\+::left\+\_\+motor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+left motor object 
+
+
+
+Definition at line 52 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a5fbf7b883990fe8bf69f6a81c317438f}\label{class_drive_train_a5fbf7b883990fe8bf69f6a81c317438f}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+input\+\_\+l@{pd\+\_\+input\+\_\+l}}
+\index{pd\+\_\+input\+\_\+l@{pd\+\_\+input\+\_\+l}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+input\+\_\+l}{pd\_input\_l}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+input\+\_\+l\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a90fc51b379f9660ecef4f5a00275e63c}\label{class_drive_train_a90fc51b379f9660ecef4f5a00275e63c}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+input\+\_\+line@{pd\+\_\+input\+\_\+line}}
+\index{pd\+\_\+input\+\_\+line@{pd\+\_\+input\+\_\+line}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+input\+\_\+line}{pd\_input\_line}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+input\+\_\+line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 37 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a663ad534480bcd9ca2010a23dc506997}\label{class_drive_train_a663ad534480bcd9ca2010a23dc506997}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+input\+\_\+r@{pd\+\_\+input\+\_\+r}}
+\index{pd\+\_\+input\+\_\+r@{pd\+\_\+input\+\_\+r}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+input\+\_\+r}{pd\_input\_r}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+input\+\_\+r\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_ad7822ae718d02c94e1baed9b3c13bb67}\label{class_drive_train_ad7822ae718d02c94e1baed9b3c13bb67}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+input\+\_\+turn@{pd\+\_\+input\+\_\+turn}}
+\index{pd\+\_\+input\+\_\+turn@{pd\+\_\+input\+\_\+turn}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+input\+\_\+turn}{pd\_input\_turn}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+input\+\_\+turn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}\label{class_drive_train_a89603458433a6b9beffc91e6fa73f32d}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+left@{pd\+\_\+left}}
+\index{pd\+\_\+left@{pd\+\_\+left}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+left}{pd\_left}}
+{\footnotesize\ttfamily P\+ID$\ast$ Drive\+Train\+::pd\+\_\+left\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Left PD controller. 
+
+
+
+Definition at line 31 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_ae33321a75190a321ce50d884ae6e2393}\label{class_drive_train_ae33321a75190a321ce50d884ae6e2393}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+line@{pd\+\_\+line}}
+\index{pd\+\_\+line@{pd\+\_\+line}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+line}{pd\_line}}
+{\footnotesize\ttfamily P\+ID$\ast$ Drive\+Train\+::pd\+\_\+line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Line following PD controller. 
+
+
+
+Definition at line 33 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_aaf576007439966ed66f0d91a2121a332}\label{class_drive_train_aaf576007439966ed66f0d91a2121a332}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+line\+\_\+running@{pd\+\_\+line\+\_\+running}}
+\index{pd\+\_\+line\+\_\+running@{pd\+\_\+line\+\_\+running}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+line\+\_\+running}{pd\_line\_running}}
+{\footnotesize\ttfamily bool Drive\+Train\+::pd\+\_\+line\+\_\+running\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+if the line PD loop is running 
+
+
+
+Definition at line 41 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}\label{class_drive_train_a53268d36c28c3ed0e70aaf69086d4953}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+output\+\_\+l@{pd\+\_\+output\+\_\+l}}
+\index{pd\+\_\+output\+\_\+l@{pd\+\_\+output\+\_\+l}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+output\+\_\+l}{pd\_output\_l}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+output\+\_\+l\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a02595614747de0602048d8d5e9643750}\label{class_drive_train_a02595614747de0602048d8d5e9643750}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+output\+\_\+line@{pd\+\_\+output\+\_\+line}}
+\index{pd\+\_\+output\+\_\+line@{pd\+\_\+output\+\_\+line}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+output\+\_\+line}{pd\_output\_line}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+output\+\_\+line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 37 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}\label{class_drive_train_a4c3242a549d04b72192e5cf9e590845e}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+output\+\_\+r@{pd\+\_\+output\+\_\+r}}
+\index{pd\+\_\+output\+\_\+r@{pd\+\_\+output\+\_\+r}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+output\+\_\+r}{pd\_output\_r}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+output\+\_\+r\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a65aa0053b0648cf1fea8d0f0fc21c04e}\label{class_drive_train_a65aa0053b0648cf1fea8d0f0fc21c04e}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+output\+\_\+turn@{pd\+\_\+output\+\_\+turn}}
+\index{pd\+\_\+output\+\_\+turn@{pd\+\_\+output\+\_\+turn}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+output\+\_\+turn}{pd\_output\_turn}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+output\+\_\+turn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}\label{class_drive_train_ab132e86e29dbc4e7d5613786658719f0}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+right@{pd\+\_\+right}}
+\index{pd\+\_\+right@{pd\+\_\+right}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+right}{pd\_right}}
+{\footnotesize\ttfamily P\+ID$\ast$ Drive\+Train\+::pd\+\_\+right\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Right PD controller. 
+
+
+
+Definition at line 32 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}\label{class_drive_train_a24c0d92ca340c9afda1544f6ab67ea11}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+running@{pd\+\_\+running}}
+\index{pd\+\_\+running@{pd\+\_\+running}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+running}{pd\_running}}
+{\footnotesize\ttfamily bool Drive\+Train\+::pd\+\_\+running\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+if the drive PD loop is running 
+
+
+
+Definition at line 40 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a44be549ca050bf41e9b2474a2640200b}\label{class_drive_train_a44be549ca050bf41e9b2474a2640200b}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+setpoint\+\_\+l@{pd\+\_\+setpoint\+\_\+l}}
+\index{pd\+\_\+setpoint\+\_\+l@{pd\+\_\+setpoint\+\_\+l}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+setpoint\+\_\+l}{pd\_setpoint\_l}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+setpoint\+\_\+l\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_ad7872c04206945d3a2e04dcd167ea6a8}\label{class_drive_train_ad7872c04206945d3a2e04dcd167ea6a8}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+setpoint\+\_\+line@{pd\+\_\+setpoint\+\_\+line}}
+\index{pd\+\_\+setpoint\+\_\+line@{pd\+\_\+setpoint\+\_\+line}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+setpoint\+\_\+line}{pd\_setpoint\_line}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+setpoint\+\_\+line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+for line PD controller operation 
+
+
+
+Definition at line 37 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a57e389649151326bf84ab4bd13b6b61c}\label{class_drive_train_a57e389649151326bf84ab4bd13b6b61c}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+setpoint\+\_\+r@{pd\+\_\+setpoint\+\_\+r}}
+\index{pd\+\_\+setpoint\+\_\+r@{pd\+\_\+setpoint\+\_\+r}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+setpoint\+\_\+r}{pd\_setpoint\_r}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+setpoint\+\_\+r\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+for drive PD controller operation 
+
+
+
+Definition at line 36 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a2a1e6c6c70405144799a329bcfd0a969}\label{class_drive_train_a2a1e6c6c70405144799a329bcfd0a969}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+setpoint\+\_\+turn@{pd\+\_\+setpoint\+\_\+turn}}
+\index{pd\+\_\+setpoint\+\_\+turn@{pd\+\_\+setpoint\+\_\+turn}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+setpoint\+\_\+turn}{pd\_setpoint\_turn}}
+{\footnotesize\ttfamily double Drive\+Train\+::pd\+\_\+setpoint\+\_\+turn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+for gyro PD controller operation 
+
+
+
+Definition at line 38 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}\label{class_drive_train_a709deffb7683fd3efe0f340580a8e5e0}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+turn@{pd\+\_\+turn}}
+\index{pd\+\_\+turn@{pd\+\_\+turn}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+turn}{pd\_turn}}
+{\footnotesize\ttfamily P\+ID$\ast$ Drive\+Train\+::pd\+\_\+turn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Gyro PD controller. 
+
+
+
+Definition at line 34 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_afc2305d5c7646a92d9875973ff2f7e67}\label{class_drive_train_afc2305d5c7646a92d9875973ff2f7e67}} 
+\index{Drive\+Train@{Drive\+Train}!pd\+\_\+turn\+\_\+running@{pd\+\_\+turn\+\_\+running}}
+\index{pd\+\_\+turn\+\_\+running@{pd\+\_\+turn\+\_\+running}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{pd\+\_\+turn\+\_\+running}{pd\_turn\_running}}
+{\footnotesize\ttfamily bool Drive\+Train\+::pd\+\_\+turn\+\_\+running\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+if the gyro PD loop is running 
+
+
+
+Definition at line 42 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a499c068ddd578679ac5d654e2077fbc4}\label{class_drive_train_a499c068ddd578679ac5d654e2077fbc4}} 
+\index{Drive\+Train@{Drive\+Train}!right\+\_\+motor@{right\+\_\+motor}}
+\index{right\+\_\+motor@{right\+\_\+motor}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{right\+\_\+motor}{right\_motor}}
+{\footnotesize\ttfamily \hyperlink{class_pololu_motor}{Pololu\+Motor}$\ast$ Drive\+Train\+::right\+\_\+motor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+right motor object 
+
+
+
+Definition at line 53 of file Drive\+Train.\+hpp.
+
+\mbox{\Hypertarget{class_drive_train_a90f1f3d3f42a0ac4082df8e37541b71f}\label{class_drive_train_a90f1f3d3f42a0ac4082df8e37541b71f}} 
+\index{Drive\+Train@{Drive\+Train}!rsensor@{rsensor}}
+\index{rsensor@{rsensor}!Drive\+Train@{Drive\+Train}}
+\subsubsection{\texorpdfstring{rsensor}{rsensor}}
+{\footnotesize\ttfamily \hyperlink{class_reflectance_sensor}{Reflectance\+Sensor}$\ast$ Drive\+Train\+::rsensor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pololu reflectance sensor object 
+
+
+
+Definition at line 49 of file Drive\+Train.\+hpp.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-rbe2001/devices/motor/\hyperlink{_drive_train_8h}{Drive\+Train.\+h}\item 
-rbe2001/devices/motor/\hyperlink{devices_2motor_2_drive_train_8hpp}{Drive\+Train.\+hpp}\item 
-rbe2001/devices/motor/\hyperlink{devices_2motor_2_drive_train_8cpp}{Drive\+Train.\+cpp}\end{DoxyCompactItemize}
+rbe2001/mechanisms/\hyperlink{_drive_train_8hpp}{Drive\+Train.\+hpp}\item 
+rbe2001/mechanisms/\hyperlink{_drive_train_8cpp}{Drive\+Train.\+cpp}\end{DoxyCompactItemize}

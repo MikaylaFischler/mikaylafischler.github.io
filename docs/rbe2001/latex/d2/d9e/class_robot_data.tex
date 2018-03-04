@@ -1,0 +1,349 @@
+\hypertarget{class_robot_data}{}\section{Robot\+Data Class Reference}
+\label{class_robot_data}\index{Robot\+Data@{Robot\+Data}}
+
+
+{\ttfamily \#include $<$Robot\+Data.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_robot_data_a0007f4b014a950d356d2d63156b572af}{Robot\+Data} ()
+\item 
+\hyperlink{class_robot_data_a1a285ab1dcfea6980f86536b5c2a3c0f}{$\sim$\+Robot\+Data} ()
+\item 
+void \hyperlink{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}{set\+Radiation\+Level} (uint8\+\_\+t level)
+\begin{DoxyCompactList}\small\item\em Set the radiation resulting from the robots actions (exposing a fuel rod). \end{DoxyCompactList}\item 
+void \hyperlink{class_robot_data_a72b1b729501cd7a0620e83c5d4d9a714}{set\+Motion\+Status} (uint8\+\_\+t status)
+\begin{DoxyCompactList}\small\item\em Set the robot\textquotesingle{}s motion status. \end{DoxyCompactList}\item 
+void \hyperlink{class_robot_data_aa115713d34966f38642357eba5543f16}{set\+Gripper\+Status} (uint8\+\_\+t status)
+\begin{DoxyCompactList}\small\item\em Set the robot\textquotesingle{}s gripper status. \end{DoxyCompactList}\item 
+void \hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{set\+Operation\+Status} (uint8\+\_\+t status)
+\begin{DoxyCompactList}\small\item\em Set the robot\textquotesingle{}s operation status. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_robot_data_a8bffbd345dfd74acedd44270133e0477}{get\+Radiation\+Level} (void) const
+\begin{DoxyCompactList}\small\item\em Get the radiation level. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_robot_data_a9e8a44387275e115f71713210c8b0841}{get\+Robot\+Status\+Bytes} (void) const
+\begin{DoxyCompactList}\small\item\em Get the full robot status bytes (3 bytes of data). \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_robot_data_a205c431df25f99c15f39e81fd6a58116}{get\+Motion\+Status} (void) const
+\begin{DoxyCompactList}\small\item\em Get the motion status of the robot. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_robot_data_a5438f77e1f7924adab982401225a2451}{get\+Gripper\+Status} (void) const
+\begin{DoxyCompactList}\small\item\em Get the gripper status of the robot. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_robot_data_a42b8405b817f03340f575f1ca97d2721}{get\+Operation\+Status} (void) const
+\begin{DoxyCompactList}\small\item\em Get the operation status of the robot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_robot_data_ad41288ab1056c14560356bf1a3e0a652}{rad\+\_\+level}
+\begin{DoxyCompactList}\small\item\em 0 for no radiation, 1 for low, 2 for high \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_robot_data_aaa03c73d21d0d28a8b1b3d384d777a1e}{robot\+\_\+motion}
+\begin{DoxyCompactList}\small\item\em the robot\textquotesingle{}s motion status to send \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_robot_data_a83aa1b34c8785aa24e1fc358e50dfc26}{robot\+\_\+gripper}
+\begin{DoxyCompactList}\small\item\em the robot\textquotesingle{}s gripper status to send \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_robot_data_aa8c48e89aac7db2af1db825a7f3c1f30}{robot\+\_\+op}
+\begin{DoxyCompactList}\small\item\em the robot\textquotesingle{}s operation status to send \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Robot\+Data.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_robot_data_a0007f4b014a950d356d2d63156b572af}\label{class_robot_data_a0007f4b014a950d356d2d63156b572af}} 
+\index{Robot\+Data@{Robot\+Data}!Robot\+Data@{Robot\+Data}}
+\index{Robot\+Data@{Robot\+Data}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{Robot\+Data()}{RobotData()}}
+{\footnotesize\ttfamily Robot\+Data\+::\+Robot\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file Robot\+Data.\+hpp.
+
+
+\begin{DoxyCode}
+19 : \hyperlink{class_robot_data_ad41288ab1056c14560356bf1a3e0a652}{rad\_level}(0), \hyperlink{class_robot_data_aaa03c73d21d0d28a8b1b3d384d777a1e}{robot\_motion}(0), \hyperlink{class_robot_data_a83aa1b34c8785aa24e1fc358e50dfc26}{robot\_gripper}(0), 
+      \hyperlink{class_robot_data_aa8c48e89aac7db2af1db825a7f3c1f30}{robot\_op}(0) \{\};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_a1a285ab1dcfea6980f86536b5c2a3c0f}\label{class_robot_data_a1a285ab1dcfea6980f86536b5c2a3c0f}} 
+\index{Robot\+Data@{Robot\+Data}!````~Robot\+Data@{$\sim$\+Robot\+Data}}
+\index{````~Robot\+Data@{$\sim$\+Robot\+Data}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{$\sim$\+Robot\+Data()}{~RobotData()}}
+{\footnotesize\ttfamily Robot\+Data\+::$\sim$\+Robot\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 20 of file Robot\+Data.\+hpp.
+
+
+\begin{DoxyCode}
+20 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_robot_data_a5438f77e1f7924adab982401225a2451}\label{class_robot_data_a5438f77e1f7924adab982401225a2451}} 
+\index{Robot\+Data@{Robot\+Data}!get\+Gripper\+Status@{get\+Gripper\+Status}}
+\index{get\+Gripper\+Status@{get\+Gripper\+Status}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{get\+Gripper\+Status()}{getGripperStatus()}}
+{\footnotesize\ttfamily uint8\+\_\+t Robot\+Data\+::get\+Gripper\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the gripper status of the robot. 
+
+\begin{DoxyReturn}{Returns}
+gripper data 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+58 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_robot_data_a83aa1b34c8785aa24e1fc358e50dfc26}{robot\_gripper}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_a205c431df25f99c15f39e81fd6a58116}\label{class_robot_data_a205c431df25f99c15f39e81fd6a58116}} 
+\index{Robot\+Data@{Robot\+Data}!get\+Motion\+Status@{get\+Motion\+Status}}
+\index{get\+Motion\+Status@{get\+Motion\+Status}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{get\+Motion\+Status()}{getMotionStatus()}}
+{\footnotesize\ttfamily uint8\+\_\+t Robot\+Data\+::get\+Motion\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the motion status of the robot. 
+
+\begin{DoxyReturn}{Returns}
+motion data 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+52 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_robot_data_aaa03c73d21d0d28a8b1b3d384d777a1e}{robot\_motion}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_a42b8405b817f03340f575f1ca97d2721}\label{class_robot_data_a42b8405b817f03340f575f1ca97d2721}} 
+\index{Robot\+Data@{Robot\+Data}!get\+Operation\+Status@{get\+Operation\+Status}}
+\index{get\+Operation\+Status@{get\+Operation\+Status}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{get\+Operation\+Status()}{getOperationStatus()}}
+{\footnotesize\ttfamily uint8\+\_\+t Robot\+Data\+::get\+Operation\+Status (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the operation status of the robot. 
+
+\begin{DoxyReturn}{Returns}
+operation data 
+\end{DoxyReturn}
+
+
+Definition at line 64 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+64 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_robot_data_aa8c48e89aac7db2af1db825a7f3c1f30}{robot\_op}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_a8bffbd345dfd74acedd44270133e0477}\label{class_robot_data_a8bffbd345dfd74acedd44270133e0477}} 
+\index{Robot\+Data@{Robot\+Data}!get\+Radiation\+Level@{get\+Radiation\+Level}}
+\index{get\+Radiation\+Level@{get\+Radiation\+Level}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{get\+Radiation\+Level()}{getRadiationLevel()}}
+{\footnotesize\ttfamily uint8\+\_\+t Robot\+Data\+::get\+Radiation\+Level (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the radiation level. 
+
+\begin{DoxyReturn}{Returns}
+radiation level 
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+38 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_robot_data_ad41288ab1056c14560356bf1a3e0a652}{rad\_level}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_a9e8a44387275e115f71713210c8b0841}\label{class_robot_data_a9e8a44387275e115f71713210c8b0841}} 
+\index{Robot\+Data@{Robot\+Data}!get\+Robot\+Status\+Bytes@{get\+Robot\+Status\+Bytes}}
+\index{get\+Robot\+Status\+Bytes@{get\+Robot\+Status\+Bytes}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{get\+Robot\+Status\+Bytes()}{getRobotStatusBytes()}}
+{\footnotesize\ttfamily uint32\+\_\+t Robot\+Data\+::get\+Robot\+Status\+Bytes (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the full robot status bytes (3 bytes of data). 
+
+\begin{DoxyReturn}{Returns}
+data bytes as a 32-\/bit unsigned integer 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+44                                                   \{
+45     \textcolor{keywordflow}{return} this->\hyperlink{class_robot_data_aaa03c73d21d0d28a8b1b3d384d777a1e}{robot\_motion} + (this->\hyperlink{class_robot_data_a83aa1b34c8785aa24e1fc358e50dfc26}{robot\_gripper} << 8) + (this->
+      \hyperlink{class_robot_data_aa8c48e89aac7db2af1db825a7f3c1f30}{robot\_op} << 16);
+46 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_aa115713d34966f38642357eba5543f16}\label{class_robot_data_aa115713d34966f38642357eba5543f16}} 
+\index{Robot\+Data@{Robot\+Data}!set\+Gripper\+Status@{set\+Gripper\+Status}}
+\index{set\+Gripper\+Status@{set\+Gripper\+Status}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{set\+Gripper\+Status()}{setGripperStatus()}}
+{\footnotesize\ttfamily void Robot\+Data\+::set\+Gripper\+Status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{status }\end{DoxyParamCaption})}
+
+
+
+Set the robot\textquotesingle{}s gripper status. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em status} & robot gripper status \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+26 \{ this->\hyperlink{class_robot_data_a83aa1b34c8785aa24e1fc358e50dfc26}{robot\_gripper} = status; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_a72b1b729501cd7a0620e83c5d4d9a714}\label{class_robot_data_a72b1b729501cd7a0620e83c5d4d9a714}} 
+\index{Robot\+Data@{Robot\+Data}!set\+Motion\+Status@{set\+Motion\+Status}}
+\index{set\+Motion\+Status@{set\+Motion\+Status}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{set\+Motion\+Status()}{setMotionStatus()}}
+{\footnotesize\ttfamily void Robot\+Data\+::set\+Motion\+Status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{status }\end{DoxyParamCaption})}
+
+
+
+Set the robot\textquotesingle{}s motion status. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em status} & robot motion status \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+20 \{ this->\hyperlink{class_robot_data_aaa03c73d21d0d28a8b1b3d384d777a1e}{robot\_motion} = status; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}\label{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}} 
+\index{Robot\+Data@{Robot\+Data}!set\+Operation\+Status@{set\+Operation\+Status}}
+\index{set\+Operation\+Status@{set\+Operation\+Status}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{set\+Operation\+Status()}{setOperationStatus()}}
+{\footnotesize\ttfamily void Robot\+Data\+::set\+Operation\+Status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{status }\end{DoxyParamCaption})}
+
+
+
+Set the robot\textquotesingle{}s operation status. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em status} & robot operation status \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+32 \{ this->\hyperlink{class_robot_data_aa8c48e89aac7db2af1db825a7f3c1f30}{robot\_op} = status; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}\label{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}} 
+\index{Robot\+Data@{Robot\+Data}!set\+Radiation\+Level@{set\+Radiation\+Level}}
+\index{set\+Radiation\+Level@{set\+Radiation\+Level}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{set\+Radiation\+Level()}{setRadiationLevel()}}
+{\footnotesize\ttfamily void Robot\+Data\+::set\+Radiation\+Level (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{level }\end{DoxyParamCaption})}
+
+
+
+Set the radiation resulting from the robots actions (exposing a fuel rod). 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em level} & the radiation level\+: 0 = none, 1 = low, 2 = high \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Robot\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+14 \{ this->\hyperlink{class_robot_data_ad41288ab1056c14560356bf1a3e0a652}{rad\_level} = level; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_robot_data_ad41288ab1056c14560356bf1a3e0a652}\label{class_robot_data_ad41288ab1056c14560356bf1a3e0a652}} 
+\index{Robot\+Data@{Robot\+Data}!rad\+\_\+level@{rad\+\_\+level}}
+\index{rad\+\_\+level@{rad\+\_\+level}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{rad\+\_\+level}{rad\_level}}
+{\footnotesize\ttfamily uint8\+\_\+t Robot\+Data\+::rad\+\_\+level\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+0 for no radiation, 1 for low, 2 for high 
+
+
+
+Definition at line 14 of file Robot\+Data.\+hpp.
+
+\mbox{\Hypertarget{class_robot_data_a83aa1b34c8785aa24e1fc358e50dfc26}\label{class_robot_data_a83aa1b34c8785aa24e1fc358e50dfc26}} 
+\index{Robot\+Data@{Robot\+Data}!robot\+\_\+gripper@{robot\+\_\+gripper}}
+\index{robot\+\_\+gripper@{robot\+\_\+gripper}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{robot\+\_\+gripper}{robot\_gripper}}
+{\footnotesize\ttfamily uint32\+\_\+t Robot\+Data\+::robot\+\_\+gripper\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the robot\textquotesingle{}s gripper status to send 
+
+
+
+Definition at line 16 of file Robot\+Data.\+hpp.
+
+\mbox{\Hypertarget{class_robot_data_aaa03c73d21d0d28a8b1b3d384d777a1e}\label{class_robot_data_aaa03c73d21d0d28a8b1b3d384d777a1e}} 
+\index{Robot\+Data@{Robot\+Data}!robot\+\_\+motion@{robot\+\_\+motion}}
+\index{robot\+\_\+motion@{robot\+\_\+motion}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{robot\+\_\+motion}{robot\_motion}}
+{\footnotesize\ttfamily uint32\+\_\+t Robot\+Data\+::robot\+\_\+motion\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the robot\textquotesingle{}s motion status to send 
+
+
+
+Definition at line 15 of file Robot\+Data.\+hpp.
+
+\mbox{\Hypertarget{class_robot_data_aa8c48e89aac7db2af1db825a7f3c1f30}\label{class_robot_data_aa8c48e89aac7db2af1db825a7f3c1f30}} 
+\index{Robot\+Data@{Robot\+Data}!robot\+\_\+op@{robot\+\_\+op}}
+\index{robot\+\_\+op@{robot\+\_\+op}!Robot\+Data@{Robot\+Data}}
+\subsubsection{\texorpdfstring{robot\+\_\+op}{robot\_op}}
+{\footnotesize\ttfamily uint32\+\_\+t Robot\+Data\+::robot\+\_\+op\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+the robot\textquotesingle{}s operation status to send 
+
+
+
+Definition at line 17 of file Robot\+Data.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/data/\hyperlink{_robot_data_8hpp}{Robot\+Data.\+hpp}\item 
+rbe2001/data/\hyperlink{_robot_data_8cpp}{Robot\+Data.\+cpp}\end{DoxyCompactItemize}

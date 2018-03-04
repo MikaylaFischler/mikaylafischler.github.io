@@ -2,96 +2,132 @@
 \label{class_analog_sensor}\index{Analog\+Sensor@{Analog\+Sensor}}
 
 
-{\ttfamily \#include $<$Analog\+Sensor.\+h$>$}
+{\ttfamily \#include $<$Analog\+Sensor.\+hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_analog_sensor_a7dddc72b8ea46fc16ade59286962dff0}{Analog\+Sensor} (int port)
-\item 
+\hyperlink{class_analog_sensor_a89c27a846f86896780cf1a9769f4c8b7}{Analog\+Sensor} (int p)
+\begin{DoxyCompactList}\small\item\em Initalize on the given port. \end{DoxyCompactList}\item 
 \hyperlink{class_analog_sensor_a4b88bf9ee03c180dedea7822e5d32997}{$\sim$\+Analog\+Sensor} ()
 \item 
-int \hyperlink{class_analog_sensor_ac1b3abc06cdff820a1c0e56ba064495e}{get\+\_\+port} ()
+int \hyperlink{class_analog_sensor_a21ce4f0e9917b0ab1a245c590b3ec7d7}{get\+Port} (void) const
+\begin{DoxyCompactList}\small\item\em Get port being used. \end{DoxyCompactList}\item 
+int \hyperlink{class_analog_sensor_ab3d8aa72dcadbdc023e6a55a49885eb8}{read} (void) const
+\begin{DoxyCompactList}\small\item\em Read value from analog port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-int \hyperlink{class_analog_sensor_a4672ca490072cb436dfa37fe1e6c6a0a}{read} ()
+int \hyperlink{class_analog_sensor_a4897b9d41db1368ecc600a43547580f7}{port}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{_analog_sensor_8h}{Analog\+Sensor.\+h} -\/ Wraps around analog read. Reads analog voltage from analog data pin. Written by Mikayla Fischler 
 
-Definition at line 12 of file Analog\+Sensor.\+h.
+
+Definition at line 12 of file Analog\+Sensor.\+hpp.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_analog_sensor_a7dddc72b8ea46fc16ade59286962dff0}\label{class_analog_sensor_a7dddc72b8ea46fc16ade59286962dff0}} 
+\mbox{\Hypertarget{class_analog_sensor_a89c27a846f86896780cf1a9769f4c8b7}\label{class_analog_sensor_a89c27a846f86896780cf1a9769f4c8b7}} 
 \index{Analog\+Sensor@{Analog\+Sensor}!Analog\+Sensor@{Analog\+Sensor}}
 \index{Analog\+Sensor@{Analog\+Sensor}!Analog\+Sensor@{Analog\+Sensor}}
 \subsubsection{\texorpdfstring{Analog\+Sensor()}{AnalogSensor()}}
-{\footnotesize\ttfamily Analog\+Sensor\+::\+Analog\+Sensor (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Analog\+Sensor\+::\+Analog\+Sensor (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hyperlink{_analog_sensor_8cpp}{Analog\+Sensor.\+cpp} -\/ Analog Sensor Source Code Written by Mikayla Fischler 
 
-Definition at line 11 of file Analog\+Sensor.\+cpp.
+
+Initalize on the given port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & Analog port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Analog\+Sensor.\+hpp.
 
 
 \begin{DoxyCode}
-11                                    \{
-12     pinMode(port, INPUT);
-13     this->port = port;
-14 \}
+20 : \hyperlink{class_analog_sensor_a4897b9d41db1368ecc600a43547580f7}{port}(p) \{\};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_analog_sensor_a4b88bf9ee03c180dedea7822e5d32997}\label{class_analog_sensor_a4b88bf9ee03c180dedea7822e5d32997}} 
 \index{Analog\+Sensor@{Analog\+Sensor}!````~Analog\+Sensor@{$\sim$\+Analog\+Sensor}}
 \index{````~Analog\+Sensor@{$\sim$\+Analog\+Sensor}!Analog\+Sensor@{Analog\+Sensor}}
 \subsubsection{\texorpdfstring{$\sim$\+Analog\+Sensor()}{~AnalogSensor()}}
-{\footnotesize\ttfamily Analog\+Sensor\+::$\sim$\+Analog\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Analog\+Sensor\+::$\sim$\+Analog\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 17 of file Analog\+Sensor.\+cpp.
+Definition at line 21 of file Analog\+Sensor.\+hpp.
 
 
 \begin{DoxyCode}
-17 \{\}
+21 \{\};
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_analog_sensor_ac1b3abc06cdff820a1c0e56ba064495e}\label{class_analog_sensor_ac1b3abc06cdff820a1c0e56ba064495e}} 
-\index{Analog\+Sensor@{Analog\+Sensor}!get\+\_\+port@{get\+\_\+port}}
-\index{get\+\_\+port@{get\+\_\+port}!Analog\+Sensor@{Analog\+Sensor}}
-\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
-{\footnotesize\ttfamily int Analog\+Sensor\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_analog_sensor_a21ce4f0e9917b0ab1a245c590b3ec7d7}\label{class_analog_sensor_a21ce4f0e9917b0ab1a245c590b3ec7d7}} 
+\index{Analog\+Sensor@{Analog\+Sensor}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!Analog\+Sensor@{Analog\+Sensor}}
+\subsubsection{\texorpdfstring{get\+Port()}{getPort()}}
+{\footnotesize\ttfamily int Analog\+Sensor\+::get\+Port (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
+
+
+Get port being used. 
+
+\begin{DoxyReturn}{Returns}
+Associated port 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file Analog\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+14 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_analog_sensor_a4897b9d41db1368ecc600a43547580f7}{port}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_analog_sensor_ab3d8aa72dcadbdc023e6a55a49885eb8}\label{class_analog_sensor_ab3d8aa72dcadbdc023e6a55a49885eb8}} 
+\index{Analog\+Sensor@{Analog\+Sensor}!read@{read}}
+\index{read@{read}!Analog\+Sensor@{Analog\+Sensor}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily int Analog\+Sensor\+::read (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Read value from analog port. 
+
+\begin{DoxyReturn}{Returns}
+Value read from port 
+\end{DoxyReturn}
 
 
 Definition at line 20 of file Analog\+Sensor.\+cpp.
 
 
 \begin{DoxyCode}
-20 \{ \textcolor{keywordflow}{return} this->port; \}
+20 \{ \textcolor{keywordflow}{return} analogRead(this->\hyperlink{class_analog_sensor_a4897b9d41db1368ecc600a43547580f7}{port}); \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_analog_sensor_a4672ca490072cb436dfa37fe1e6c6a0a}\label{class_analog_sensor_a4672ca490072cb436dfa37fe1e6c6a0a}} 
-\index{Analog\+Sensor@{Analog\+Sensor}!read@{read}}
-\index{read@{read}!Analog\+Sensor@{Analog\+Sensor}}
-\subsubsection{\texorpdfstring{read()}{read()}}
-{\footnotesize\ttfamily int Analog\+Sensor\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_analog_sensor_a4897b9d41db1368ecc600a43547580f7}\label{class_analog_sensor_a4897b9d41db1368ecc600a43547580f7}} 
+\index{Analog\+Sensor@{Analog\+Sensor}!port@{port}}
+\index{port@{port}!Analog\+Sensor@{Analog\+Sensor}}
+\subsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily int Analog\+Sensor\+::port\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line 23 of file Analog\+Sensor.\+cpp.
+Definition at line 14 of file Analog\+Sensor.\+hpp.
 
-
-\begin{DoxyCode}
-23                        \{
-24     \textcolor{keywordflow}{return} analogRead(this->port);
-25 \}
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-rbe2001/devices/io/\hyperlink{_analog_sensor_8h}{Analog\+Sensor.\+h}\item 
+rbe2001/devices/io/\hyperlink{_analog_sensor_8hpp}{Analog\+Sensor.\+hpp}\item 
 rbe2001/devices/io/\hyperlink{_analog_sensor_8cpp}{Analog\+Sensor.\+cpp}\end{DoxyCompactItemize}

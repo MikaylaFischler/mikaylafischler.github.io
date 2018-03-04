@@ -1,0 +1,413 @@
+\hypertarget{class_arm}{}\section{Arm Class Reference}
+\label{class_arm}\index{Arm@{Arm}}
+
+
+{\ttfamily \#include $<$Arm.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_arm_a907bca91f60b7f75b13e76cb4cea0577}{Arm} (int motor\+\_\+port, int pot\+\_\+analog\+\_\+port)
+\begin{DoxyCompactList}\small\item\em Create the arm object. \end{DoxyCompactList}\item 
+\hyperlink{class_arm_ae1bcf12831b42e93d431efe3b7910b5e}{$\sim$\+Arm} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_arm}{Arm} destroctor; de-\/allocates the motor used. \end{DoxyCompactList}\item 
+void \hyperlink{class_arm_a4a2070a27aecb7129cb89f4c9231278a}{stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop arm motion. \end{DoxyCompactList}\item 
+void \hyperlink{class_arm_a50abf82c871d15bbbfd669b4f33a0d60}{drive} (int speed)
+\begin{DoxyCompactList}\small\item\em Drive the arm at the given speed. \end{DoxyCompactList}\item 
+void \hyperlink{class_arm_a331502c3508a7d8137d9405f050ecbbf}{set\+Setpoint} (double setpoint)
+\begin{DoxyCompactList}\small\item\em Set the PD controller\textquotesingle{}s setpoint. \end{DoxyCompactList}\item 
+void \hyperlink{class_arm_a8cd24cca4215a944bd47df13e252e8a0}{run\+To\+Setpoint} (void)
+\begin{DoxyCompactList}\small\item\em Run the PD controller, update it at its update rate. \end{DoxyCompactList}\item 
+void \hyperlink{class_arm_a387289c28547f8e7eccdb085afddb43a}{stop\+P\+D\+Controller} (void)
+\begin{DoxyCompactList}\small\item\em Stop the PD controller. \end{DoxyCompactList}\item 
+bool \hyperlink{class_arm_a392a83624fdebcb6269695c3600e6c90}{near\+Setpoint} (double tolerance)
+\begin{DoxyCompactList}\small\item\em Check if the arm is within the tolerance given of the setpoint. \end{DoxyCompactList}\item 
+int \hyperlink{class_arm_a2688295ef2029461e65723d1563f7a28}{position} (void) const
+\begin{DoxyCompactList}\small\item\em Get the position of the arm in respect to the homed position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{class_arm_a75af15c369c67a1563f198e029bae1e4}{pd\+\_\+output}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const double \hyperlink{class_arm_ac220c9bad0a0ee0b068f11b1abf7759a}{Kp} = 2.\+0
+\item 
+const double \hyperlink{class_arm_a5ba9221bf0f78fea4fb2d231551e3bb9}{Kd} = 0.\+0105
+\item 
+P\+ID $\ast$ \hyperlink{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}{pd\+\_\+controller}
+\begin{DoxyCompactList}\small\item\em PD only P\+ID controller. \end{DoxyCompactList}\item 
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_arm_aa2ef91b2548b256c65dc92166867ba49}{motor}
+\begin{DoxyCompactList}\small\item\em Pointer to arm motor. \end{DoxyCompactList}\item 
+int \hyperlink{class_arm_a6e384005fe53340f168ad5708302231a}{pot\+\_\+port}
+\begin{DoxyCompactList}\small\item\em Analog port of the arm potentiometer. \end{DoxyCompactList}\item 
+double \hyperlink{class_arm_aa8cb716ce90ab9d02f8e4ab3735904cb}{pd\+\_\+input}
+\begin{DoxyCompactList}\small\item\em P\+ID input param. \end{DoxyCompactList}\item 
+double \hyperlink{class_arm_a1f4bd75360f1fa61330494569b08f4aa}{pd\+\_\+setpoint}
+\begin{DoxyCompactList}\small\item\em P\+ID setpoint param. \end{DoxyCompactList}\item 
+bool \hyperlink{class_arm_a44b074fd8db815261bc634f914c1e0f8}{pd\+\_\+enabled}
+\begin{DoxyCompactList}\small\item\em PD controller enabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file Arm.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_arm_a907bca91f60b7f75b13e76cb4cea0577}\label{class_arm_a907bca91f60b7f75b13e76cb4cea0577}} 
+\index{Arm@{Arm}!Arm@{Arm}}
+\index{Arm@{Arm}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{Arm()}{Arm()}}
+{\footnotesize\ttfamily Arm\+::\+Arm (\begin{DoxyParamCaption}\item[{int}]{motor\+\_\+port,  }\item[{int}]{pot\+\_\+analog\+\_\+port }\end{DoxyParamCaption})}
+
+
+
+Create the arm object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em motor\+\_\+port} & port of the \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} attached \\
+\hline
+\mbox{\tt in}  & {\em pot\+\_\+analog\+\_\+port} & the analog port of the potentiometer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+15                                             : \hyperlink{class_arm_a6e384005fe53340f168ad5708302231a}{pot\_port}(pot\_analog\_port) \{
+16     \textcolor{comment}{// create the motor}
+17     \hyperlink{class_arm_aa2ef91b2548b256c65dc92166867ba49}{motor} = \textcolor{keyword}{new} \hyperlink{class_v_e_x_motor}{VEXMotor}(motor\_port, \textcolor{keyword}{true});
+18 
+19     \textcolor{comment}{// create PD controller}
+20     \hyperlink{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}{pd\_controller} = \textcolor{keyword}{new} PID(&\hyperlink{class_arm_aa8cb716ce90ab9d02f8e4ab3735904cb}{pd\_input}, &\hyperlink{class_arm_a75af15c369c67a1563f198e029bae1e4}{pd\_output}, &
+      \hyperlink{class_arm_a1f4bd75360f1fa61330494569b08f4aa}{pd\_setpoint}, \hyperlink{class_arm_ac220c9bad0a0ee0b068f11b1abf7759a}{Kp}, 0, \hyperlink{class_arm_a5ba9221bf0f78fea4fb2d231551e3bb9}{Kd}, DIRECT);
+21     \hyperlink{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}{pd\_controller}->SetSampleTime(20); \textcolor{comment}{// sample @ 20ms}
+22     \hyperlink{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}{pd\_controller}->SetOutputLimits(-90.0, 90.0);
+23     \hyperlink{class_arm_a44b074fd8db815261bc634f914c1e0f8}{pd\_enabled} = \textcolor{keyword}{false};
+24 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arm_ae1bcf12831b42e93d431efe3b7910b5e}\label{class_arm_ae1bcf12831b42e93d431efe3b7910b5e}} 
+\index{Arm@{Arm}!````~Arm@{$\sim$\+Arm}}
+\index{````~Arm@{$\sim$\+Arm}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{$\sim$\+Arm()}{~Arm()}}
+{\footnotesize\ttfamily Arm\+::$\sim$\+Arm (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_arm}{Arm} destroctor; de-\/allocates the motor used. 
+
+
+
+Definition at line 29 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+29           \{
+30     \textcolor{keyword}{delete} \hyperlink{class_arm_aa2ef91b2548b256c65dc92166867ba49}{motor};
+31     \textcolor{keyword}{delete} \hyperlink{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}{pd\_controller};
+32 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_arm_a50abf82c871d15bbbfd669b4f33a0d60}\label{class_arm_a50abf82c871d15bbbfd669b4f33a0d60}} 
+\index{Arm@{Arm}!drive@{drive}}
+\index{drive@{drive}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{drive()}{drive()}}
+{\footnotesize\ttfamily void Arm\+::drive (\begin{DoxyParamCaption}\item[{int}]{speed }\end{DoxyParamCaption})}
+
+
+
+Drive the arm at the given speed. 
+
+Range is -\/90 to 90, 0 being stopped. Range checks against limits. 
+
+Definition at line 47 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+47                          \{
+48     \textcolor{keywordflow}{if} ((\hyperlink{class_arm_a2688295ef2029461e65723d1563f7a28}{position}() < \hyperlink{config_8h_aed2f537d00440893023ce716a04e42fe}{ARM\_UP\_LIMIT}) && speed < 0) \{
+49         \textcolor{comment}{// don't let it go reverse past limit}
+50         speed = 0;
+51     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((\hyperlink{class_arm_a2688295ef2029461e65723d1563f7a28}{position}() > \hyperlink{config_8h_aedb68998871fdab10325beeb9dfce002}{ARM\_DOWN\_LIMIT}) && speed > 0) \{
+52         \textcolor{comment}{// don't let it go forward past limit}
+53         speed = 0;
+54     \}
+55 
+56     \hyperlink{class_arm_aa2ef91b2548b256c65dc92166867ba49}{motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(speed);
+57 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arm_a392a83624fdebcb6269695c3600e6c90}\label{class_arm_a392a83624fdebcb6269695c3600e6c90}} 
+\index{Arm@{Arm}!near\+Setpoint@{near\+Setpoint}}
+\index{near\+Setpoint@{near\+Setpoint}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{near\+Setpoint()}{nearSetpoint()}}
+{\footnotesize\ttfamily bool Arm\+::near\+Setpoint (\begin{DoxyParamCaption}\item[{double}]{tolerance }\end{DoxyParamCaption})}
+
+
+
+Check if the arm is within the tolerance given of the setpoint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em tolerance} & The tolerance in ticks \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if in range, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+93                                        \{
+94     \textcolor{keywordflow}{return} ((\textcolor{keywordtype}{double}) \hyperlink{class_arm_a2688295ef2029461e65723d1563f7a28}{position}() >= \hyperlink{class_arm_a1f4bd75360f1fa61330494569b08f4aa}{pd\_setpoint} - tolerance) && ((double) 
+      \hyperlink{class_arm_a2688295ef2029461e65723d1563f7a28}{position}() <= \hyperlink{class_arm_a1f4bd75360f1fa61330494569b08f4aa}{pd\_setpoint} + tolerance);
+95 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arm_a2688295ef2029461e65723d1563f7a28}\label{class_arm_a2688295ef2029461e65723d1563f7a28}} 
+\index{Arm@{Arm}!position@{position}}
+\index{position@{position}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{position()}{position()}}
+{\footnotesize\ttfamily int Arm\+::position (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the position of the arm in respect to the homed position. 
+
+\begin{DoxyReturn}{Returns}
+signed int position 
+\end{DoxyReturn}
+
+
+Definition at line 101 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+101 \{ \textcolor{keywordflow}{return} analogRead(\hyperlink{class_arm_a6e384005fe53340f168ad5708302231a}{pot\_port}); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arm_a8cd24cca4215a944bd47df13e252e8a0}\label{class_arm_a8cd24cca4215a944bd47df13e252e8a0}} 
+\index{Arm@{Arm}!run\+To\+Setpoint@{run\+To\+Setpoint}}
+\index{run\+To\+Setpoint@{run\+To\+Setpoint}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{run\+To\+Setpoint()}{runToSetpoint()}}
+{\footnotesize\ttfamily void Arm\+::run\+To\+Setpoint (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Run the PD controller, update it at its update rate. 
+
+This must be run constantly to update the PD output. 
+
+Definition at line 69 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+69                             \{
+70     \textcolor{keywordflow}{if} (!\hyperlink{class_arm_a44b074fd8db815261bc634f914c1e0f8}{pd\_enabled}) \{
+71         \hyperlink{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}{pd\_controller}->SetMode(AUTOMATIC);
+72         \hyperlink{class_arm_a44b074fd8db815261bc634f914c1e0f8}{pd\_enabled} = \textcolor{keyword}{true};
+73     \}
+74 
+75     \hyperlink{class_arm_aa8cb716ce90ab9d02f8e4ab3735904cb}{pd\_input} = \hyperlink{class_arm_a2688295ef2029461e65723d1563f7a28}{position}();
+76     \hyperlink{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}{pd\_controller}->Compute();
+77     \hyperlink{class_arm_a50abf82c871d15bbbfd669b4f33a0d60}{drive}(\hyperlink{class_arm_a75af15c369c67a1563f198e029bae1e4}{pd\_output});
+78 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arm_a331502c3508a7d8137d9405f050ecbbf}\label{class_arm_a331502c3508a7d8137d9405f050ecbbf}} 
+\index{Arm@{Arm}!set\+Setpoint@{set\+Setpoint}}
+\index{set\+Setpoint@{set\+Setpoint}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{set\+Setpoint()}{setSetpoint()}}
+{\footnotesize\ttfamily void Arm\+::set\+Setpoint (\begin{DoxyParamCaption}\item[{double}]{setpoint }\end{DoxyParamCaption})}
+
+
+
+Set the PD controller\textquotesingle{}s setpoint. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em setpoint} & set-\/point for controller \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+63 \{ \hyperlink{class_arm_a1f4bd75360f1fa61330494569b08f4aa}{pd\_setpoint} = setpoint; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arm_a4a2070a27aecb7129cb89f4c9231278a}\label{class_arm_a4a2070a27aecb7129cb89f4c9231278a}} 
+\index{Arm@{Arm}!stop@{stop}}
+\index{stop@{stop}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Arm\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop arm motion. 
+
+Sets drive to 0 and stops the PD controller. 
+
+Definition at line 38 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+38                    \{
+39     \hyperlink{class_arm_aa2ef91b2548b256c65dc92166867ba49}{motor}->\hyperlink{class_v_e_x_motor_aed9dadedda6a075093f076921958e7ed}{stop}();
+40     \hyperlink{class_arm_a387289c28547f8e7eccdb085afddb43a}{stopPDController}();
+41 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_arm_a387289c28547f8e7eccdb085afddb43a}\label{class_arm_a387289c28547f8e7eccdb085afddb43a}} 
+\index{Arm@{Arm}!stop\+P\+D\+Controller@{stop\+P\+D\+Controller}}
+\index{stop\+P\+D\+Controller@{stop\+P\+D\+Controller}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{stop\+P\+D\+Controller()}{stopPDController()}}
+{\footnotesize\ttfamily void Arm\+::stop\+P\+D\+Controller (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop the PD controller. 
+
+
+
+Definition at line 83 of file Arm.\+cpp.
+
+
+\begin{DoxyCode}
+83                                \{
+84     \hyperlink{class_arm_a44b074fd8db815261bc634f914c1e0f8}{pd\_enabled} = \textcolor{keyword}{false};
+85     \hyperlink{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}{pd\_controller}->SetMode(MANUAL);
+86 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_arm_a5ba9221bf0f78fea4fb2d231551e3bb9}\label{class_arm_a5ba9221bf0f78fea4fb2d231551e3bb9}} 
+\index{Arm@{Arm}!Kd@{Kd}}
+\index{Kd@{Kd}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{Kd}{Kd}}
+{\footnotesize\ttfamily const double Arm\+::\+Kd = 0.\+0105\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file Arm.\+hpp.
+
+\mbox{\Hypertarget{class_arm_ac220c9bad0a0ee0b068f11b1abf7759a}\label{class_arm_ac220c9bad0a0ee0b068f11b1abf7759a}} 
+\index{Arm@{Arm}!Kp@{Kp}}
+\index{Kp@{Kp}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{Kp}{Kp}}
+{\footnotesize\ttfamily const double Arm\+::\+Kp = 2.\+0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file Arm.\+hpp.
+
+\mbox{\Hypertarget{class_arm_aa2ef91b2548b256c65dc92166867ba49}\label{class_arm_aa2ef91b2548b256c65dc92166867ba49}} 
+\index{Arm@{Arm}!motor@{motor}}
+\index{motor@{motor}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{motor}{motor}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor}$\ast$ Arm\+::motor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to arm motor. 
+
+
+
+Definition at line 23 of file Arm.\+hpp.
+
+\mbox{\Hypertarget{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}\label{class_arm_a6a6a8ec7d6f383efd1672c1760a32887}} 
+\index{Arm@{Arm}!pd\+\_\+controller@{pd\+\_\+controller}}
+\index{pd\+\_\+controller@{pd\+\_\+controller}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{pd\+\_\+controller}{pd\_controller}}
+{\footnotesize\ttfamily P\+ID$\ast$ Arm\+::pd\+\_\+controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+PD only P\+ID controller. 
+
+
+
+Definition at line 21 of file Arm.\+hpp.
+
+\mbox{\Hypertarget{class_arm_a44b074fd8db815261bc634f914c1e0f8}\label{class_arm_a44b074fd8db815261bc634f914c1e0f8}} 
+\index{Arm@{Arm}!pd\+\_\+enabled@{pd\+\_\+enabled}}
+\index{pd\+\_\+enabled@{pd\+\_\+enabled}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{pd\+\_\+enabled}{pd\_enabled}}
+{\footnotesize\ttfamily bool Arm\+::pd\+\_\+enabled\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+PD controller enabled. 
+
+
+
+Definition at line 28 of file Arm.\+hpp.
+
+\mbox{\Hypertarget{class_arm_aa8cb716ce90ab9d02f8e4ab3735904cb}\label{class_arm_aa8cb716ce90ab9d02f8e4ab3735904cb}} 
+\index{Arm@{Arm}!pd\+\_\+input@{pd\+\_\+input}}
+\index{pd\+\_\+input@{pd\+\_\+input}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{pd\+\_\+input}{pd\_input}}
+{\footnotesize\ttfamily double Arm\+::pd\+\_\+input\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+P\+ID input param. 
+
+
+
+Definition at line 26 of file Arm.\+hpp.
+
+\mbox{\Hypertarget{class_arm_a75af15c369c67a1563f198e029bae1e4}\label{class_arm_a75af15c369c67a1563f198e029bae1e4}} 
+\index{Arm@{Arm}!pd\+\_\+output@{pd\+\_\+output}}
+\index{pd\+\_\+output@{pd\+\_\+output}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{pd\+\_\+output}{pd\_output}}
+{\footnotesize\ttfamily double Arm\+::pd\+\_\+output}
+
+
+
+Definition at line 42 of file Arm.\+hpp.
+
+\mbox{\Hypertarget{class_arm_a1f4bd75360f1fa61330494569b08f4aa}\label{class_arm_a1f4bd75360f1fa61330494569b08f4aa}} 
+\index{Arm@{Arm}!pd\+\_\+setpoint@{pd\+\_\+setpoint}}
+\index{pd\+\_\+setpoint@{pd\+\_\+setpoint}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{pd\+\_\+setpoint}{pd\_setpoint}}
+{\footnotesize\ttfamily double Arm\+::pd\+\_\+setpoint\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+P\+ID setpoint param. 
+
+
+
+Definition at line 27 of file Arm.\+hpp.
+
+\mbox{\Hypertarget{class_arm_a6e384005fe53340f168ad5708302231a}\label{class_arm_a6e384005fe53340f168ad5708302231a}} 
+\index{Arm@{Arm}!pot\+\_\+port@{pot\+\_\+port}}
+\index{pot\+\_\+port@{pot\+\_\+port}!Arm@{Arm}}
+\subsubsection{\texorpdfstring{pot\+\_\+port}{pot\_port}}
+{\footnotesize\ttfamily int Arm\+::pot\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Analog port of the arm potentiometer. 
+
+
+
+Definition at line 24 of file Arm.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/mechanisms/\hyperlink{_arm_8hpp}{Arm.\+hpp}\item 
+rbe2001/mechanisms/\hyperlink{_arm_8cpp}{Arm.\+cpp}\end{DoxyCompactItemize}

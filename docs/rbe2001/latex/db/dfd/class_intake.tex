@@ -1,0 +1,271 @@
+\hypertarget{class_intake}{}\section{Intake Class Reference}
+\label{class_intake}\index{Intake@{Intake}}
+
+
+{\ttfamily \#include $<$Intake.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_intake_a2e46d55447100225183045b3ba9677a1}{Intake} (int motor\+\_\+port, int limit\+\_\+switch\+\_\+port)
+\begin{DoxyCompactList}\small\item\em Create the intake object. \end{DoxyCompactList}\item 
+\hyperlink{class_intake_a0bd65acd1cb4ad03c9fc0286f3b57b9b}{$\sim$\+Intake} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_intake}{Intake} destroctor; de-\/allocates the motor used. \end{DoxyCompactList}\item 
+void \hyperlink{class_intake_a3780c5eb8a67c524cc793aaa631ce62e}{stop} (void)
+\begin{DoxyCompactList}\small\item\em Stop intake. \end{DoxyCompactList}\item 
+void \hyperlink{class_intake_a582133b5ce9d5bba8d84b6135a16deb7}{drive} (int speed)
+\begin{DoxyCompactList}\small\item\em Drive the intake at the given speed. \end{DoxyCompactList}\item 
+void \hyperlink{class_intake_a8582bcb135b9700923940a7b44d233ef}{full\+In} (void)
+\begin{DoxyCompactList}\small\item\em Drive the intake full in until hitting switch. \end{DoxyCompactList}\item 
+void \hyperlink{class_intake_a4c1e0e346839bb294065ae5da7117df0}{slow\+In} (void)
+\begin{DoxyCompactList}\small\item\em Drive the intake slowly in until hitting switch. \end{DoxyCompactList}\item 
+void \hyperlink{class_intake_abd14de5ccd68929ea2627ca11aec9688}{full\+Out} (void)
+\begin{DoxyCompactList}\small\item\em Drive the intake full out. \end{DoxyCompactList}\item 
+void \hyperlink{class_intake_a1b3dccca0c1805d7930d7289a5636c09}{slow\+Out} (void)
+\begin{DoxyCompactList}\small\item\em Drive the intake slowly out. \end{DoxyCompactList}\item 
+bool \hyperlink{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}{switch\+Hit} (void) const
+\begin{DoxyCompactList}\small\item\em Check if the limit switch is pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}
+\begin{DoxyCompactList}\small\item\em Pointer to a \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} for the intake motor. \end{DoxyCompactList}\item 
+int \hyperlink{class_intake_aa42c4826bb88549c29ff88a355765787}{switch\+\_\+port}
+\begin{DoxyCompactList}\small\item\em Digital port of the limit switch (will be pulled-\/up) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file Intake.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_intake_a2e46d55447100225183045b3ba9677a1}\label{class_intake_a2e46d55447100225183045b3ba9677a1}} 
+\index{Intake@{Intake}!Intake@{Intake}}
+\index{Intake@{Intake}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{Intake()}{Intake()}}
+{\footnotesize\ttfamily Intake\+::\+Intake (\begin{DoxyParamCaption}\item[{int}]{motor\+\_\+port,  }\item[{int}]{limit\+\_\+switch\+\_\+port }\end{DoxyParamCaption})}
+
+
+
+Create the intake object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em motor\+\_\+port} & port of the \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} attached \\
+\hline
+\mbox{\tt in}  & {\em limit\+\_\+switch\+\_\+port} & the digital port of the limit switch \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+15                                                     : \hyperlink{class_intake_aa42c4826bb88549c29ff88a355765787}{switch\_port}(limit\_switch\_port) \{
+16     pinMode(limit\_switch\_port, INPUT\_PULLUP);
+17     \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor} = \textcolor{keyword}{new} \hyperlink{class_v_e_x_motor}{VEXMotor}(motor\_port, \textcolor{keyword}{true}); \textcolor{comment}{// create inverted motor}
+18 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_intake_a0bd65acd1cb4ad03c9fc0286f3b57b9b}\label{class_intake_a0bd65acd1cb4ad03c9fc0286f3b57b9b}} 
+\index{Intake@{Intake}!````~Intake@{$\sim$\+Intake}}
+\index{````~Intake@{$\sim$\+Intake}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{$\sim$\+Intake()}{~Intake()}}
+{\footnotesize\ttfamily Intake\+::$\sim$\+Intake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{class_intake}{Intake} destroctor; de-\/allocates the motor used. 
+
+
+
+Definition at line 23 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+23 \{ \textcolor{keyword}{delete} \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}; \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_intake_a582133b5ce9d5bba8d84b6135a16deb7}\label{class_intake_a582133b5ce9d5bba8d84b6135a16deb7}} 
+\index{Intake@{Intake}!drive@{drive}}
+\index{drive@{drive}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{drive()}{drive()}}
+{\footnotesize\ttfamily void Intake\+::drive (\begin{DoxyParamCaption}\item[{int}]{speed }\end{DoxyParamCaption})}
+
+
+
+Drive the intake at the given speed. 
+
+Range is -\/90 to 90, 0 being stopped. 
+
+Definition at line 34 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+34 \{ \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(speed); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_intake_a8582bcb135b9700923940a7b44d233ef}\label{class_intake_a8582bcb135b9700923940a7b44d233ef}} 
+\index{Intake@{Intake}!full\+In@{full\+In}}
+\index{full\+In@{full\+In}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{full\+In()}{fullIn()}}
+{\footnotesize\ttfamily void Intake\+::full\+In (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Drive the intake full in until hitting switch. 
+
+
+
+Definition at line 39 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+39                         \{
+40     \textcolor{keywordflow}{if} (!\hyperlink{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}{switchHit}()) \{
+41         \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(\hyperlink{_intake_8hpp_a1deaa236a445e37471a0ba4490e1f9ed}{INTAKE\_FULL\_IN});
+42     \} \textcolor{keywordflow}{else} \{
+43         \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}->\hyperlink{class_v_e_x_motor_aed9dadedda6a075093f076921958e7ed}{stop}();
+44     \}
+45 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_intake_abd14de5ccd68929ea2627ca11aec9688}\label{class_intake_abd14de5ccd68929ea2627ca11aec9688}} 
+\index{Intake@{Intake}!full\+Out@{full\+Out}}
+\index{full\+Out@{full\+Out}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{full\+Out()}{fullOut()}}
+{\footnotesize\ttfamily void Intake\+::full\+Out (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Drive the intake full out. 
+
+
+
+Definition at line 61 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+61 \{ \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(\hyperlink{_intake_8hpp_a9b5084e3c227f32c6ecefa2ca8d7fd84}{INTAKE\_FULL\_OUT}); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_intake_a4c1e0e346839bb294065ae5da7117df0}\label{class_intake_a4c1e0e346839bb294065ae5da7117df0}} 
+\index{Intake@{Intake}!slow\+In@{slow\+In}}
+\index{slow\+In@{slow\+In}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{slow\+In()}{slowIn()}}
+{\footnotesize\ttfamily void Intake\+::slow\+In (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Drive the intake slowly in until hitting switch. 
+
+
+
+Definition at line 50 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+50                         \{
+51     \textcolor{keywordflow}{if} (!\hyperlink{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}{switchHit}()) \{
+52         \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(\hyperlink{_intake_8hpp_a216de4996c0f877df3af487015b7e14a}{INTAKE\_SLOW\_IN});
+53     \} \textcolor{keywordflow}{else} \{
+54         \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}->\hyperlink{class_v_e_x_motor_aed9dadedda6a075093f076921958e7ed}{stop}();
+55     \}
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_intake_a1b3dccca0c1805d7930d7289a5636c09}\label{class_intake_a1b3dccca0c1805d7930d7289a5636c09}} 
+\index{Intake@{Intake}!slow\+Out@{slow\+Out}}
+\index{slow\+Out@{slow\+Out}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{slow\+Out()}{slowOut()}}
+{\footnotesize\ttfamily void Intake\+::slow\+Out (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Drive the intake slowly out. 
+
+
+
+Definition at line 66 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+66 \{ \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(\hyperlink{_intake_8hpp_a4d64b806b8e8a356c3e015add0485d01}{INTAKE\_SLOW\_OUT}); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_intake_a3780c5eb8a67c524cc793aaa631ce62e}\label{class_intake_a3780c5eb8a67c524cc793aaa631ce62e}} 
+\index{Intake@{Intake}!stop@{stop}}
+\index{stop@{stop}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Intake\+::stop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Stop intake. 
+
+
+
+Definition at line 28 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+28 \{ \hyperlink{class_intake_abfffad571bacf945d6a2a121f59869fd}{motor}->\hyperlink{class_v_e_x_motor_aed9dadedda6a075093f076921958e7ed}{stop}(); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}\label{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}} 
+\index{Intake@{Intake}!switch\+Hit@{switch\+Hit}}
+\index{switch\+Hit@{switch\+Hit}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{switch\+Hit()}{switchHit()}}
+{\footnotesize\ttfamily bool Intake\+::switch\+Hit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the limit switch is pressed. 
+
+\begin{DoxyReturn}{Returns}
+true (1) if pressed, false (0) if not 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file Intake.\+cpp.
+
+
+\begin{DoxyCode}
+72 \{ \textcolor{keywordflow}{return} !digitalRead(\hyperlink{class_intake_aa42c4826bb88549c29ff88a355765787}{switch\_port}); \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_intake_abfffad571bacf945d6a2a121f59869fd}\label{class_intake_abfffad571bacf945d6a2a121f59869fd}} 
+\index{Intake@{Intake}!motor@{motor}}
+\index{motor@{motor}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{motor}{motor}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor}$\ast$ Intake\+::motor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to a \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} for the intake motor. 
+
+
+
+Definition at line 20 of file Intake.\+hpp.
+
+\mbox{\Hypertarget{class_intake_aa42c4826bb88549c29ff88a355765787}\label{class_intake_aa42c4826bb88549c29ff88a355765787}} 
+\index{Intake@{Intake}!switch\+\_\+port@{switch\+\_\+port}}
+\index{switch\+\_\+port@{switch\+\_\+port}!Intake@{Intake}}
+\subsubsection{\texorpdfstring{switch\+\_\+port}{switch\_port}}
+{\footnotesize\ttfamily int Intake\+::switch\+\_\+port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Digital port of the limit switch (will be pulled-\/up) 
+
+
+
+Definition at line 21 of file Intake.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/mechanisms/\hyperlink{_intake_8hpp}{Intake.\+hpp}\item 
+rbe2001/mechanisms/\hyperlink{_intake_8cpp}{Intake.\+cpp}\end{DoxyCompactItemize}

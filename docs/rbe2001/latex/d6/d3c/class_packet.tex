@@ -1,0 +1,403 @@
+\hypertarget{class_packet}{}\section{Packet Class Reference}
+\label{class_packet}\index{Packet@{Packet}}
+
+
+{\ttfamily \#include $<$Packet.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_packet_aa1a4657a9d8d09e70c186e03c3901251}{Packet} (uint8\+\_\+t \+\_\+t, uint8\+\_\+t \+\_\+s, uint8\+\_\+t \+\_\+d)
+\begin{DoxyCompactList}\small\item\em Basic No Data \hyperlink{class_packet}{Packet} constructor, calculates the length and checksum. \end{DoxyCompactList}\item 
+\hyperlink{class_packet_a87e10ec869f6708d43fa808f098926d9}{Packet} (uint8\+\_\+t \+\_\+t, uint8\+\_\+t \+\_\+s, uint8\+\_\+t \+\_\+d, uint32\+\_\+t \+\_\+data)
+\begin{DoxyCompactList}\small\item\em Basic \hyperlink{class_packet}{Packet} constructor, calculates the length and checksum. \end{DoxyCompactList}\item 
+\hyperlink{class_packet_a21fe118d2899a0f4109eeb10f4da0f72}{Packet} (uint8\+\_\+t \+\_\+l, uint8\+\_\+t \+\_\+t, uint8\+\_\+t \+\_\+s, uint8\+\_\+t \+\_\+d, uint32\+\_\+t \+\_\+data, uint8\+\_\+t \+\_\+c)
+\begin{DoxyCompactList}\small\item\em Recieved \hyperlink{class_packet}{Packet} constructor, expects length and checksum. \end{DoxyCompactList}\item 
+\hyperlink{class_packet_a48938391fb7e07460bb0e01198ae5ede}{$\sim$\+Packet} ()
+\item 
+uint8\+\_\+t \hyperlink{class_packet_ac267547cf152cec25d0db301e5286aa7}{get\+Length} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the length of the packet. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_packet_affb425d99c0ff69cd5aa42cc0e22de2b}{get\+Type} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the type of the packet. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_packet_a89ecf51f7edbf2677df7a5961f080b78}{get\+Src} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the src of the packet. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_packet_ad60638eee5913cc40ac737d1bdeb216b}{get\+Dest} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the dest of the packet. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}{get\+Data} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the data of the packet. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_packet_aa529856197fdd79e6ca8cc86966cec10}{get\+Checksum} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the checksum of the packet. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length}
+\begin{DoxyCompactList}\small\item\em length of packet in bytes \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type}
+\begin{DoxyCompactList}\small\item\em type of packet \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_packet_a7dc8f5be9690e925a11839c3e7869eef}{src}
+\begin{DoxyCompactList}\small\item\em packet source \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_packet_a0a6e83b74c425ade443382233ccfc865}{dest}
+\begin{DoxyCompactList}\small\item\em packet destination \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_packet_a3db8a3abfccbe7a2c2b8f63b4b9fb31e}{data}
+\begin{DoxyCompactList}\small\item\em packet data (max 3 bytes) \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_packet_a900989fb6f663e8c66faeadb3dc7a318}{checksum}
+\begin{DoxyCompactList}\small\item\em packet checksum \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Packet.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_packet_aa1a4657a9d8d09e70c186e03c3901251}\label{class_packet_aa1a4657a9d8d09e70c186e03c3901251}} 
+\index{Packet@{Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{Packet()}{Packet()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Packet\+::\+Packet (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{\+\_\+t,  }\item[{uint8\+\_\+t}]{\+\_\+s,  }\item[{uint8\+\_\+t}]{\+\_\+d }\end{DoxyParamCaption})}
+
+
+
+Basic No Data \hyperlink{class_packet}{Packet} constructor, calculates the length and checksum. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+t} & The packet type \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+s} & The packet source \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+d} & The packet destination \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 17 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+17                                                  :
+18     \hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type}(\_t), \hyperlink{class_packet_a7dc8f5be9690e925a11839c3e7869eef}{src}(\_s), \hyperlink{class_packet_a0a6e83b74c425ade443382233ccfc865}{dest}(\_d), \hyperlink{class_packet_a3db8a3abfccbe7a2c2b8f63b4b9fb31e}{data}(0) \{
+19     \textcolor{comment}{// determine length}
+20     this->\hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length} = 5; \textcolor{comment}{// normal 5 + 0 data for stop/resume and heartbeat}
+21 
+22     \textcolor{comment}{// calculate checksum}
+23     \hyperlink{class_packet_a900989fb6f663e8c66faeadb3dc7a318}{checksum} = 0xFF - (this->\hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length} + this->\hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type} + this->\hyperlink{class_packet_a7dc8f5be9690e925a11839c3e7869eef}{src} + this->
+      \hyperlink{class_packet_a0a6e83b74c425ade443382233ccfc865}{dest});
+24 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_packet_a87e10ec869f6708d43fa808f098926d9}\label{class_packet_a87e10ec869f6708d43fa808f098926d9}} 
+\index{Packet@{Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{Packet()}{Packet()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Packet\+::\+Packet (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{\+\_\+t,  }\item[{uint8\+\_\+t}]{\+\_\+s,  }\item[{uint8\+\_\+t}]{\+\_\+d,  }\item[{uint32\+\_\+t}]{\+\_\+data }\end{DoxyParamCaption})}
+
+
+
+Basic \hyperlink{class_packet}{Packet} constructor, calculates the length and checksum. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+t} & The packet type \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+s} & The packet source \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+d} & The packet destination \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+data} & The packet data \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+33                                                                  :
+34     \hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type}(\_t), \hyperlink{class_packet_a7dc8f5be9690e925a11839c3e7869eef}{src}(\_s), \hyperlink{class_packet_a0a6e83b74c425ade443382233ccfc865}{dest}(\_d), \hyperlink{class_packet_a3db8a3abfccbe7a2c2b8f63b4b9fb31e}{data}(\_data) \{
+35     \textcolor{comment}{// determine length}
+36     \textcolor{keywordflow}{if} (this->\hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type} == 0x06) \{
+37         this->\hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length} = 8; \textcolor{comment}{// normal 5 + 3 data for robot status}
+38     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (this->\hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type} == 0x04 || this->\hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type} == 0x05 || this->\hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type} == 0x07)\{
+39         this->\hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length} = 5; \textcolor{comment}{// normal 5 + 0 data for stop/resume and heartbeat}
+40     \} \textcolor{keywordflow}{else} \{
+41         this->\hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length} = 6; \textcolor{comment}{// normal 5 + 1 data for standard data size}
+42     \}
+43 
+44     \textcolor{comment}{// calculate checksum}
+45     \hyperlink{class_packet_a900989fb6f663e8c66faeadb3dc7a318}{checksum} = 0xFF - (this->\hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length} + this->\hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type} + this->\hyperlink{class_packet_a7dc8f5be9690e925a11839c3e7869eef}{src} + this->
+      \hyperlink{class_packet_a0a6e83b74c425ade443382233ccfc865}{dest} + this->\hyperlink{class_packet_a3db8a3abfccbe7a2c2b8f63b4b9fb31e}{data});
+46 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_packet_a21fe118d2899a0f4109eeb10f4da0f72}\label{class_packet_a21fe118d2899a0f4109eeb10f4da0f72}} 
+\index{Packet@{Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{Packet()}{Packet()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Packet\+::\+Packet (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{\+\_\+l,  }\item[{uint8\+\_\+t}]{\+\_\+t,  }\item[{uint8\+\_\+t}]{\+\_\+s,  }\item[{uint8\+\_\+t}]{\+\_\+d,  }\item[{uint32\+\_\+t}]{\+\_\+data,  }\item[{uint8\+\_\+t}]{\+\_\+c }\end{DoxyParamCaption})}
+
+
+
+Recieved \hyperlink{class_packet}{Packet} constructor, expects length and checksum. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em \+\_\+l} & The packet type \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+t} & The packet type \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+s} & The packet source \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+d} & The packet destination \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+data} & The packet data \\
+\hline
+\mbox{\tt in}  & {\em \+\_\+c} & The checksum \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 57 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+57                                                                                          :
+58     \hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length}(\_l), \hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type}(\_t), \hyperlink{class_packet_a7dc8f5be9690e925a11839c3e7869eef}{src}(\_s), \hyperlink{class_packet_a0a6e83b74c425ade443382233ccfc865}{dest}(\_d), \hyperlink{class_packet_a3db8a3abfccbe7a2c2b8f63b4b9fb31e}{data}(\_data), 
+      \hyperlink{class_packet_a900989fb6f663e8c66faeadb3dc7a318}{checksum}(\_c) \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_packet_a48938391fb7e07460bb0e01198ae5ede}\label{class_packet_a48938391fb7e07460bb0e01198ae5ede}} 
+\index{Packet@{Packet}!````~Packet@{$\sim$\+Packet}}
+\index{````~Packet@{$\sim$\+Packet}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{$\sim$\+Packet()}{~Packet()}}
+{\footnotesize\ttfamily Packet\+::$\sim$\+Packet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 25 of file Packet.\+hpp.
+
+
+\begin{DoxyCode}
+25 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_packet_aa529856197fdd79e6ca8cc86966cec10}\label{class_packet_aa529856197fdd79e6ca8cc86966cec10}} 
+\index{Packet@{Packet}!get\+Checksum@{get\+Checksum}}
+\index{get\+Checksum@{get\+Checksum}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{get\+Checksum()}{getChecksum()}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::get\+Checksum (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the checksum of the packet. 
+
+Function is const; does not modify class data. \begin{DoxyReturn}{Returns}
+8-\/bit packet checksum 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+100 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_packet_a900989fb6f663e8c66faeadb3dc7a318}{checksum}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}\label{class_packet_a510ff2d5d2d28f275c26a90a7ae311d1}} 
+\index{Packet@{Packet}!get\+Data@{get\+Data}}
+\index{get\+Data@{get\+Data}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{get\+Data()}{getData()}}
+{\footnotesize\ttfamily uint32\+\_\+t Packet\+::get\+Data (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the data of the packet. 
+
+Function is const; does not modify class data. \begin{DoxyReturn}{Returns}
+32-\/bit packet data 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+93 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_packet_a3db8a3abfccbe7a2c2b8f63b4b9fb31e}{data}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_packet_ad60638eee5913cc40ac737d1bdeb216b}\label{class_packet_ad60638eee5913cc40ac737d1bdeb216b}} 
+\index{Packet@{Packet}!get\+Dest@{get\+Dest}}
+\index{get\+Dest@{get\+Dest}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{get\+Dest()}{getDest()}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::get\+Dest (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the dest of the packet. 
+
+Function is const; does not modify class data. \begin{DoxyReturn}{Returns}
+8-\/bit packet dest 
+\end{DoxyReturn}
+
+
+Definition at line 86 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+86 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_packet_a0a6e83b74c425ade443382233ccfc865}{dest}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_packet_ac267547cf152cec25d0db301e5286aa7}\label{class_packet_ac267547cf152cec25d0db301e5286aa7}} 
+\index{Packet@{Packet}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{get\+Length()}{getLength()}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::get\+Length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the length of the packet. 
+
+Function is const; does not modify class data. \begin{DoxyReturn}{Returns}
+8-\/bit packet length 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+65 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_packet_adf5f5bae43f927d2977833232f4b9562}{length}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_packet_a89ecf51f7edbf2677df7a5961f080b78}\label{class_packet_a89ecf51f7edbf2677df7a5961f080b78}} 
+\index{Packet@{Packet}!get\+Src@{get\+Src}}
+\index{get\+Src@{get\+Src}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{get\+Src()}{getSrc()}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::get\+Src (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the src of the packet. 
+
+Function is const; does not modify class data. \begin{DoxyReturn}{Returns}
+8-\/bit packet src 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+79 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_packet_a7dc8f5be9690e925a11839c3e7869eef}{src}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_packet_affb425d99c0ff69cd5aa42cc0e22de2b}\label{class_packet_affb425d99c0ff69cd5aa42cc0e22de2b}} 
+\index{Packet@{Packet}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::get\+Type (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns the type of the packet. 
+
+Function is const; does not modify class data. \begin{DoxyReturn}{Returns}
+8-\/bit packet type 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file Packet.\+cpp.
+
+
+\begin{DoxyCode}
+72 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_packet_a496cc4e5c913eefa002539663d147cfb}{type}; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_packet_a900989fb6f663e8c66faeadb3dc7a318}\label{class_packet_a900989fb6f663e8c66faeadb3dc7a318}} 
+\index{Packet@{Packet}!checksum@{checksum}}
+\index{checksum@{checksum}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{checksum}{checksum}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::checksum\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+packet checksum 
+
+
+
+Definition at line 20 of file Packet.\+hpp.
+
+\mbox{\Hypertarget{class_packet_a3db8a3abfccbe7a2c2b8f63b4b9fb31e}\label{class_packet_a3db8a3abfccbe7a2c2b8f63b4b9fb31e}} 
+\index{Packet@{Packet}!data@{data}}
+\index{data@{data}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily uint32\+\_\+t Packet\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+packet data (max 3 bytes) 
+
+
+
+Definition at line 19 of file Packet.\+hpp.
+
+\mbox{\Hypertarget{class_packet_a0a6e83b74c425ade443382233ccfc865}\label{class_packet_a0a6e83b74c425ade443382233ccfc865}} 
+\index{Packet@{Packet}!dest@{dest}}
+\index{dest@{dest}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{dest}{dest}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::dest\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+packet destination 
+
+
+
+Definition at line 18 of file Packet.\+hpp.
+
+\mbox{\Hypertarget{class_packet_adf5f5bae43f927d2977833232f4b9562}\label{class_packet_adf5f5bae43f927d2977833232f4b9562}} 
+\index{Packet@{Packet}!length@{length}}
+\index{length@{length}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{length}{length}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::length\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+length of packet in bytes 
+
+
+
+Definition at line 15 of file Packet.\+hpp.
+
+\mbox{\Hypertarget{class_packet_a7dc8f5be9690e925a11839c3e7869eef}\label{class_packet_a7dc8f5be9690e925a11839c3e7869eef}} 
+\index{Packet@{Packet}!src@{src}}
+\index{src@{src}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{src}{src}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::src\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+packet source 
+
+
+
+Definition at line 17 of file Packet.\+hpp.
+
+\mbox{\Hypertarget{class_packet_a496cc4e5c913eefa002539663d147cfb}\label{class_packet_a496cc4e5c913eefa002539663d147cfb}} 
+\index{Packet@{Packet}!type@{type}}
+\index{type@{type}!Packet@{Packet}}
+\subsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily uint8\+\_\+t Packet\+::type\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+type of packet 
+
+
+
+Definition at line 16 of file Packet.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/data/\hyperlink{_packet_8hpp}{Packet.\+hpp}\item 
+rbe2001/data/\hyperlink{_packet_8cpp}{Packet.\+cpp}\end{DoxyCompactItemize}

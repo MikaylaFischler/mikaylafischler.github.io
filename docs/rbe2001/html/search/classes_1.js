@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['controller',['Controller',['../d8/d87/class_controller.html',1,'']]]
+  ['bluetoothclient',['BluetoothClient',['../dd/d2e/class_bluetooth_client.html',1,'']]]
 ];

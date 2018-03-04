@@ -82,49 +82,73 @@ $(document).ready(function(){initNavTree('dc/d60/class_analog_sensor.html','../.
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d4/de5/class_analog_sensor-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">AnalogSensor Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="../../de/d49/_analog_sensor_8h_source.html">AnalogSensor.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html">AnalogSensor.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7dddc72b8ea46fc16ade59286962dff0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d60/class_analog_sensor.html#a7dddc72b8ea46fc16ade59286962dff0">AnalogSensor</a> (int port)</td></tr>
-<tr class="separator:a7dddc72b8ea46fc16ade59286962dff0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89c27a846f86896780cf1a9769f4c8b7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d60/class_analog_sensor.html#a89c27a846f86896780cf1a9769f4c8b7">AnalogSensor</a> (int p)</td></tr>
+<tr class="memdesc:a89c27a846f86896780cf1a9769f4c8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initalize on the given port.  <a href="#a89c27a846f86896780cf1a9769f4c8b7">More...</a><br /></td></tr>
+<tr class="separator:a89c27a846f86896780cf1a9769f4c8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4b88bf9ee03c180dedea7822e5d32997"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d60/class_analog_sensor.html#a4b88bf9ee03c180dedea7822e5d32997">~AnalogSensor</a> ()</td></tr>
 <tr class="separator:a4b88bf9ee03c180dedea7822e5d32997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1b3abc06cdff820a1c0e56ba064495e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d60/class_analog_sensor.html#ac1b3abc06cdff820a1c0e56ba064495e">get_port</a> ()</td></tr>
-<tr class="separator:ac1b3abc06cdff820a1c0e56ba064495e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4672ca490072cb436dfa37fe1e6c6a0a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d60/class_analog_sensor.html#a4672ca490072cb436dfa37fe1e6c6a0a">read</a> ()</td></tr>
-<tr class="separator:a4672ca490072cb436dfa37fe1e6c6a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21ce4f0e9917b0ab1a245c590b3ec7d7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d60/class_analog_sensor.html#a21ce4f0e9917b0ab1a245c590b3ec7d7">getPort</a> (void) const</td></tr>
+<tr class="memdesc:a21ce4f0e9917b0ab1a245c590b3ec7d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get port being used.  <a href="#a21ce4f0e9917b0ab1a245c590b3ec7d7">More...</a><br /></td></tr>
+<tr class="separator:a21ce4f0e9917b0ab1a245c590b3ec7d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3d8aa72dcadbdc023e6a55a49885eb8"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d60/class_analog_sensor.html#ab3d8aa72dcadbdc023e6a55a49885eb8">read</a> (void) const</td></tr>
+<tr class="memdesc:ab3d8aa72dcadbdc023e6a55a49885eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read value from analog port.  <a href="#ab3d8aa72dcadbdc023e6a55a49885eb8">More...</a><br /></td></tr>
+<tr class="separator:ab3d8aa72dcadbdc023e6a55a49885eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4897b9d41db1368ecc600a43547580f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d60/class_analog_sensor.html#a4897b9d41db1368ecc600a43547580f7">port</a></td></tr>
+<tr class="separator:a4897b9d41db1368ecc600a43547580f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="../../de/d49/_analog_sensor_8h.html">AnalogSensor.h</a> - Wraps around analog read. Reads analog voltage from analog data pin. Written by Mikayla Fischler </p>
-
-<p class="definition">Definition at line <a class="el" href="../../de/d49/_analog_sensor_8h_source.html#l00012">12</a> of file <a class="el" href="../../de/d49/_analog_sensor_8h_source.html">AnalogSensor.h</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html#l00012">12</a> of file <a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html">AnalogSensor.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7dddc72b8ea46fc16ade59286962dff0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dddc72b8ea46fc16ade59286962dff0">&#9670;&nbsp;</a></span>AnalogSensor()</h2>
+<a id="a89c27a846f86896780cf1a9769f4c8b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89c27a846f86896780cf1a9769f4c8b7">&#9670;&nbsp;</a></span>AnalogSensor()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">AnalogSensor::AnalogSensor </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>port</em></td><td>)</td>
+          <td class="paramname"><em>p</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p><a class="el" href="../../d8/dbb/_analog_sensor_8cpp.html">AnalogSensor.cpp</a> - Analog Sensor Source Code Written by Mikayla Fischler </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html#l00011">11</a> of file <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html">AnalogSensor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                                   {</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    pinMode(port, INPUT);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    this-&gt;port = port;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div></div><!-- fragment -->
+<p>Initalize on the given port. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">p</td><td>Analog port </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html#l00020">20</a> of file <a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html">AnalogSensor.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;: <a class="code" href="../../dc/d60/class_analog_sensor.html#a4897b9d41db1368ecc600a43547580f7">port</a>(p) {};</div><div class="ttc" id="class_analog_sensor_html_a4897b9d41db1368ecc600a43547580f7"><div class="ttname"><a href="../../dc/d60/class_analog_sensor.html#a4897b9d41db1368ecc600a43547580f7">AnalogSensor::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="../../de/deb/_analog_sensor_8hpp_source.html#l00014">AnalogSensor.hpp:14</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4b88bf9ee03c180dedea7822e5d32997"></a>
@@ -132,6 +156,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">AnalogSensor::~AnalogSensor </td>
@@ -140,34 +167,44 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html#l00017">17</a> of file <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html">AnalogSensor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{}</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html">AnalogSensor.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{};</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac1b3abc06cdff820a1c0e56ba064495e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1b3abc06cdff820a1c0e56ba064495e">&#9670;&nbsp;</a></span>get_port()</h2>
+<a id="a21ce4f0e9917b0ab1a245c590b3ec7d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21ce4f0e9917b0ab1a245c590b3ec7d7">&#9670;&nbsp;</a></span>getPort()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int AnalogSensor::get_port </td>
+          <td class="memname">int AnalogSensor::getPort </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html#l00020">20</a> of file <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html">AnalogSensor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ <span class="keywordflow">return</span> this-&gt;port; }</div></div><!-- fragment -->
+<p>Get port being used. </p>
+<dl class="section return"><dt>Returns</dt><dd>Associated port </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html">AnalogSensor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../dc/d60/class_analog_sensor.html#a4897b9d41db1368ecc600a43547580f7">port</a>; }</div><div class="ttc" id="class_analog_sensor_html_a4897b9d41db1368ecc600a43547580f7"><div class="ttname"><a href="../../dc/d60/class_analog_sensor.html#a4897b9d41db1368ecc600a43547580f7">AnalogSensor::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="../../de/deb/_analog_sensor_8hpp_source.html#l00014">AnalogSensor.hpp:14</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a4672ca490072cb436dfa37fe1e6c6a0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4672ca490072cb436dfa37fe1e6c6a0a">&#9670;&nbsp;</a></span>read()</h2>
+<a id="ab3d8aa72dcadbdc023e6a55a49885eb8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3d8aa72dcadbdc023e6a55a49885eb8">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,18 +212,48 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">int AnalogSensor::read </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html#l00023">23</a> of file <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html">AnalogSensor.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                       {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> analogRead(this-&gt;port);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div></div><!-- fragment -->
+<p>Read value from analog port. </p>
+<dl class="section return"><dt>Returns</dt><dd>Value read from port </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html#l00020">20</a> of file <a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html">AnalogSensor.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{ <span class="keywordflow">return</span> analogRead(this-&gt;<a class="code" href="../../dc/d60/class_analog_sensor.html#a4897b9d41db1368ecc600a43547580f7">port</a>); }</div><div class="ttc" id="class_analog_sensor_html_a4897b9d41db1368ecc600a43547580f7"><div class="ttname"><a href="../../dc/d60/class_analog_sensor.html#a4897b9d41db1368ecc600a43547580f7">AnalogSensor::port</a></div><div class="ttdeci">int port</div><div class="ttdef"><b>Definition:</b> <a href="../../de/deb/_analog_sensor_8hpp_source.html#l00014">AnalogSensor.hpp:14</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4897b9d41db1368ecc600a43547580f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4897b9d41db1368ecc600a43547580f7">&#9670;&nbsp;</a></span>port</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int AnalogSensor::port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html">AnalogSensor.hpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>rbe2001/devices/io/<a class="el" href="../../de/d49/_analog_sensor_8h_source.html">AnalogSensor.h</a></li>
+<li>rbe2001/devices/io/<a class="el" href="../../de/deb/_analog_sensor_8hpp_source.html">AnalogSensor.hpp</a></li>
 <li>rbe2001/devices/io/<a class="el" href="../../d8/dbb/_analog_sensor_8cpp_source.html">AnalogSensor.cpp</a></li>
 </ul>
 </div><!-- contents -->

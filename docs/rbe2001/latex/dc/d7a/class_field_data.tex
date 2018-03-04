@@ -1,0 +1,272 @@
+\hypertarget{class_field_data}{}\section{Field\+Data Class Reference}
+\label{class_field_data}\index{Field\+Data@{Field\+Data}}
+
+
+{\ttfamily \#include $<$Field\+Data.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_field_data_a53bb54569b22ffac4bce51a72e949d3d}{Field\+Data} ()
+\item 
+\hyperlink{class_field_data_a1dc5aaecde15432e78ec3c6fbd640c24}{$\sim$\+Field\+Data} ()
+\item 
+void \hyperlink{class_field_data_a04b6872f909539d5667adfb584b659ed}{set\+Movement\+Disabled} (uint8\+\_\+t disable)
+\begin{DoxyCompactList}\small\item\em Set if the field stopped/resumed robot movement. \end{DoxyCompactList}\item 
+void \hyperlink{class_field_data_a00f9ea01f43a5d261962df7d87da7a74}{set\+Storage\+Tubes} (uint8\+\_\+t status)
+\begin{DoxyCompactList}\small\item\em Update the status of the storage tubes. \end{DoxyCompactList}\item 
+void \hyperlink{class_field_data_a4dcddb152c65524e6c51ec74737f0c66}{set\+Supply\+Tubes} (uint8\+\_\+t status)
+\begin{DoxyCompactList}\small\item\em Update the status of the supply tubes. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_field_data_ab43f0866e57dbdb05d56550a6ab1e8e0}{check\+Movement\+Disabled} (void) const
+\begin{DoxyCompactList}\small\item\em Check if the field is allowing movement. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_field_data_aace8d0ab4c931b35ab85b71710079459}{check\+Storage\+Tube} (uint8\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Check if the storage tube with given index is available. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_field_data_a645f5d698b0048e4aa718327a5e1550a}{check\+Supply\+Tube} (uint8\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Check if the supply tube with given index is available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_field_data_a82ed3c6771df262aae42cb332ccc7d0c}{mov\+\_\+disable}
+\begin{DoxyCompactList}\small\item\em 1 if disabling robot motion \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_field_data_a215428022f049a8f0b6702783291b636}{storage\+\_\+tubes}
+\begin{DoxyCompactList}\small\item\em bitmask of available tubes \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_field_data_a2ac91dcec791870370d578c276993690}{supply\+\_\+tubes}
+\begin{DoxyCompactList}\small\item\em bitmask of available tubes \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file Field\+Data.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_field_data_a53bb54569b22ffac4bce51a72e949d3d}\label{class_field_data_a53bb54569b22ffac4bce51a72e949d3d}} 
+\index{Field\+Data@{Field\+Data}!Field\+Data@{Field\+Data}}
+\index{Field\+Data@{Field\+Data}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{Field\+Data()}{FieldData()}}
+{\footnotesize\ttfamily Field\+Data\+::\+Field\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file Field\+Data.\+hpp.
+
+
+\begin{DoxyCode}
+18 : \hyperlink{class_field_data_a82ed3c6771df262aae42cb332ccc7d0c}{mov\_disable}(0), \hyperlink{class_field_data_a215428022f049a8f0b6702783291b636}{storage\_tubes}(0), \hyperlink{class_field_data_a2ac91dcec791870370d578c276993690}{supply\_tubes}(0) \{\};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_field_data_a1dc5aaecde15432e78ec3c6fbd640c24}\label{class_field_data_a1dc5aaecde15432e78ec3c6fbd640c24}} 
+\index{Field\+Data@{Field\+Data}!````~Field\+Data@{$\sim$\+Field\+Data}}
+\index{````~Field\+Data@{$\sim$\+Field\+Data}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{$\sim$\+Field\+Data()}{~FieldData()}}
+{\footnotesize\ttfamily Field\+Data\+::$\sim$\+Field\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 19 of file Field\+Data.\+hpp.
+
+
+\begin{DoxyCode}
+19 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_field_data_ab43f0866e57dbdb05d56550a6ab1e8e0}\label{class_field_data_ab43f0866e57dbdb05d56550a6ab1e8e0}} 
+\index{Field\+Data@{Field\+Data}!check\+Movement\+Disabled@{check\+Movement\+Disabled}}
+\index{check\+Movement\+Disabled@{check\+Movement\+Disabled}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{check\+Movement\+Disabled()}{checkMovementDisabled()}}
+{\footnotesize\ttfamily uint8\+\_\+t Field\+Data\+::check\+Movement\+Disabled (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if the field is allowing movement. 
+
+\begin{DoxyReturn}{Returns}
+1 if stopped, 0 otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Field\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_field_data_a82ed3c6771df262aae42cb332ccc7d0c}{mov\_disable}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_field_data_aace8d0ab4c931b35ab85b71710079459}\label{class_field_data_aace8d0ab4c931b35ab85b71710079459}} 
+\index{Field\+Data@{Field\+Data}!check\+Storage\+Tube@{check\+Storage\+Tube}}
+\index{check\+Storage\+Tube@{check\+Storage\+Tube}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{check\+Storage\+Tube()}{checkStorageTube()}}
+{\footnotesize\ttfamily uint8\+\_\+t Field\+Data\+::check\+Storage\+Tube (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Check if the storage tube with given index is available. 
+
+\begin{DoxyRemark}{Remarks}
+Function checks range 
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+1 if occupied, 0 if empty or out of range 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file Field\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+40                                                        \{
+41     \textcolor{comment}{// we don't need to check if its less than 0 since its unsigned}
+42     \textcolor{keywordflow}{if} (index < 4) \{ \textcolor{keywordflow}{return} this->\hyperlink{class_field_data_a215428022f049a8f0b6702783291b636}{storage\_tubes} & (0x1 << index); \}
+43     \textcolor{keywordflow}{return} 0;
+44 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_field_data_a645f5d698b0048e4aa718327a5e1550a}\label{class_field_data_a645f5d698b0048e4aa718327a5e1550a}} 
+\index{Field\+Data@{Field\+Data}!check\+Supply\+Tube@{check\+Supply\+Tube}}
+\index{check\+Supply\+Tube@{check\+Supply\+Tube}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{check\+Supply\+Tube()}{checkSupplyTube()}}
+{\footnotesize\ttfamily uint8\+\_\+t Field\+Data\+::check\+Supply\+Tube (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Check if the supply tube with given index is available. 
+
+\begin{DoxyRemark}{Remarks}
+Function checks range 
+\end{DoxyRemark}
+\begin{DoxyReturn}{Returns}
+1 if occupied, 0 if empty or out of range 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file Field\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+51                                                       \{
+52     \textcolor{comment}{// we don't need to check if its less than 0 since its unsigned}
+53     \textcolor{keywordflow}{if} (index < 4) \{ \textcolor{keywordflow}{return} this->\hyperlink{class_field_data_a2ac91dcec791870370d578c276993690}{supply\_tubes} & (0x1 << index); \}
+54     \textcolor{keywordflow}{return} 0;
+55 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_field_data_a04b6872f909539d5667adfb584b659ed}\label{class_field_data_a04b6872f909539d5667adfb584b659ed}} 
+\index{Field\+Data@{Field\+Data}!set\+Movement\+Disabled@{set\+Movement\+Disabled}}
+\index{set\+Movement\+Disabled@{set\+Movement\+Disabled}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{set\+Movement\+Disabled()}{setMovementDisabled()}}
+{\footnotesize\ttfamily void Field\+Data\+::set\+Movement\+Disabled (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{disable }\end{DoxyParamCaption})}
+
+
+
+Set if the field stopped/resumed robot movement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em disable} & The boolean integer value (1 or 0) to disable movement \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Field\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+15 \{ this->\hyperlink{class_field_data_a82ed3c6771df262aae42cb332ccc7d0c}{mov\_disable} = disable; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_field_data_a00f9ea01f43a5d261962df7d87da7a74}\label{class_field_data_a00f9ea01f43a5d261962df7d87da7a74}} 
+\index{Field\+Data@{Field\+Data}!set\+Storage\+Tubes@{set\+Storage\+Tubes}}
+\index{set\+Storage\+Tubes@{set\+Storage\+Tubes}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{set\+Storage\+Tubes()}{setStorageTubes()}}
+{\footnotesize\ttfamily void Field\+Data\+::set\+Storage\+Tubes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{status }\end{DoxyParamCaption})}
+
+
+
+Update the status of the storage tubes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em status} & The bitmask of the tubes available/not available \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file Field\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{ this->\hyperlink{class_field_data_a215428022f049a8f0b6702783291b636}{storage\_tubes} = status; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_field_data_a4dcddb152c65524e6c51ec74737f0c66}\label{class_field_data_a4dcddb152c65524e6c51ec74737f0c66}} 
+\index{Field\+Data@{Field\+Data}!set\+Supply\+Tubes@{set\+Supply\+Tubes}}
+\index{set\+Supply\+Tubes@{set\+Supply\+Tubes}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{set\+Supply\+Tubes()}{setSupplyTubes()}}
+{\footnotesize\ttfamily void Field\+Data\+::set\+Supply\+Tubes (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{status }\end{DoxyParamCaption})}
+
+
+
+Update the status of the supply tubes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em status} & The bitmask of the tubes available/not available \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Field\+Data.\+cpp.
+
+
+\begin{DoxyCode}
+27 \{ this->\hyperlink{class_field_data_a2ac91dcec791870370d578c276993690}{supply\_tubes} = status; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_field_data_a82ed3c6771df262aae42cb332ccc7d0c}\label{class_field_data_a82ed3c6771df262aae42cb332ccc7d0c}} 
+\index{Field\+Data@{Field\+Data}!mov\+\_\+disable@{mov\+\_\+disable}}
+\index{mov\+\_\+disable@{mov\+\_\+disable}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{mov\+\_\+disable}{mov\_disable}}
+{\footnotesize\ttfamily uint8\+\_\+t Field\+Data\+::mov\+\_\+disable\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+1 if disabling robot motion 
+
+
+
+Definition at line 14 of file Field\+Data.\+hpp.
+
+\mbox{\Hypertarget{class_field_data_a215428022f049a8f0b6702783291b636}\label{class_field_data_a215428022f049a8f0b6702783291b636}} 
+\index{Field\+Data@{Field\+Data}!storage\+\_\+tubes@{storage\+\_\+tubes}}
+\index{storage\+\_\+tubes@{storage\+\_\+tubes}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{storage\+\_\+tubes}{storage\_tubes}}
+{\footnotesize\ttfamily uint8\+\_\+t Field\+Data\+::storage\+\_\+tubes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+bitmask of available tubes 
+
+
+
+Definition at line 15 of file Field\+Data.\+hpp.
+
+\mbox{\Hypertarget{class_field_data_a2ac91dcec791870370d578c276993690}\label{class_field_data_a2ac91dcec791870370d578c276993690}} 
+\index{Field\+Data@{Field\+Data}!supply\+\_\+tubes@{supply\+\_\+tubes}}
+\index{supply\+\_\+tubes@{supply\+\_\+tubes}!Field\+Data@{Field\+Data}}
+\subsubsection{\texorpdfstring{supply\+\_\+tubes}{supply\_tubes}}
+{\footnotesize\ttfamily uint8\+\_\+t Field\+Data\+::supply\+\_\+tubes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+bitmask of available tubes 
+
+
+
+Definition at line 16 of file Field\+Data.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/data/\hyperlink{_field_data_8hpp}{Field\+Data.\+hpp}\item 
+rbe2001/data/\hyperlink{_field_data_8cpp}{Field\+Data.\+cpp}\end{DoxyCompactItemize}

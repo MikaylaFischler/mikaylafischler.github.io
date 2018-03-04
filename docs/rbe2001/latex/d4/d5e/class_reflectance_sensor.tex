@@ -1,0 +1,338 @@
+\hypertarget{class_reflectance_sensor}{}\section{Reflectance\+Sensor Class Reference}
+\label{class_reflectance_sensor}\index{Reflectance\+Sensor@{Reflectance\+Sensor}}
+
+
+{\ttfamily \#include $<$Reflectance\+Sensor.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_reflectance_sensor_a0460515b96ac26e3fcf0cfb74a6dd324}{Reflectance\+Sensor} ()
+\begin{DoxyCompactList}\small\item\em Initialize the reflectance sensor object. \end{DoxyCompactList}\item 
+\hyperlink{class_reflectance_sensor_a139165396ee1a7d67b3a1a83a62de85f}{$\sim$\+Reflectance\+Sensor} ()
+\begin{DoxyCompactList}\small\item\em Clean up the reflectance sensor object. \end{DoxyCompactList}\item 
+void \hyperlink{class_reflectance_sensor_a09c734de7ea4c4f3e7279d1d4c020b5d}{attach\+Q\+T\+RA} (Q\+T\+R\+Sensors\+Analog $\ast$sensor)
+\begin{DoxyCompactList}\small\item\em Set the pointer to the Q\+T\+R\+Sensors\+Analog object. \end{DoxyCompactList}\item 
+Q\+T\+R\+Sensors\+Analog $\ast$ \hyperlink{class_reflectance_sensor_a57665677450add1160b8fadb3699b3f6}{get\+Q\+T\+RA} (void)
+\begin{DoxyCompactList}\small\item\em Return the attached Q\+T\+RA object. \end{DoxyCompactList}\item 
+void \hyperlink{class_reflectance_sensor_a49851d00301cadc84ac53e747e49971b}{set\+Detection\+Cutoff} (unsigned int \hyperlink{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}{cutoff})
+\begin{DoxyCompactList}\small\item\em Assign the detection cutoff, used for detecting if we are on a horizontal line. \end{DoxyCompactList}\item 
+bool \hyperlink{class_reflectance_sensor_a30b767c95bec679ff638765050c770e2}{on\+Horizontal\+Line} (void)
+\begin{DoxyCompactList}\small\item\em Detect if the robot is over a horizontal line. \end{DoxyCompactList}\item 
+bool \hyperlink{class_reflectance_sensor_af24236e10ded862847bb6a626c5cf336}{centered} (void)
+\begin{DoxyCompactList}\small\item\em Check if the robot is centered over the line (with a tolerance). \end{DoxyCompactList}\item 
+int \hyperlink{class_reflectance_sensor_a1e361d2a9a18b4c9da19bdc4b061a3c7}{get\+Bias} (void)
+\begin{DoxyCompactList}\small\item\em Check the bias of the line sensor. \end{DoxyCompactList}\item 
+void \hyperlink{class_reflectance_sensor_a065644d5cf3d71d81ea4f91787c2915d}{print\+Map} (Liquid\+Crystal $\ast$\hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd})
+\begin{DoxyCompactList}\small\item\em Debugging function to print out a map of sensor status based on cutoffs on a given L\+CD screen. \end{DoxyCompactList}\item 
+void \hyperlink{class_reflectance_sensor_a637d9833bd917e331908917fc777ac19}{log\+Values} (void)
+\begin{DoxyCompactList}\small\item\em Logs values of Q\+T\+RA sensors to U\+SB Serial. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Q\+T\+R\+Sensors\+Analog $\ast$ \hyperlink{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}{qtra}
+\begin{DoxyCompactList}\small\item\em Pointer to the Q\+T\+RA object in use. \end{DoxyCompactList}\item 
+unsigned int $\ast$ \hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\+\_\+cache}
+\begin{DoxyCompactList}\small\item\em Cache of last Q\+T\+RA values. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}{cutoff}
+\begin{DoxyCompactList}\small\item\em Cutoff to consider line detected (used for \hyperlink{class_reflectance_sensor_a30b767c95bec679ff638765050c770e2}{on\+Horizontal\+Line()}) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Reflectance\+Sensor.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_reflectance_sensor_a0460515b96ac26e3fcf0cfb74a6dd324}\label{class_reflectance_sensor_a0460515b96ac26e3fcf0cfb74a6dd324}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{Reflectance\+Sensor()}{ReflectanceSensor()}}
+{\footnotesize\ttfamily Reflectance\+Sensor\+::\+Reflectance\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the reflectance sensor object. 
+
+Allocates memory for the sensor data cache. 
+
+Definition at line 14 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+14 \{ \hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache} = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}*) malloc(\textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}) * 8); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reflectance_sensor_a139165396ee1a7d67b3a1a83a62de85f}\label{class_reflectance_sensor_a139165396ee1a7d67b3a1a83a62de85f}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!````~Reflectance\+Sensor@{$\sim$\+Reflectance\+Sensor}}
+\index{````~Reflectance\+Sensor@{$\sim$\+Reflectance\+Sensor}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{$\sim$\+Reflectance\+Sensor()}{~ReflectanceSensor()}}
+{\footnotesize\ttfamily Reflectance\+Sensor\+::$\sim$\+Reflectance\+Sensor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clean up the reflectance sensor object. 
+
+Frees memory for the sensor data cache. 
+
+Definition at line 20 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+20 \{ free(\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache}); \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_reflectance_sensor_a09c734de7ea4c4f3e7279d1d4c020b5d}\label{class_reflectance_sensor_a09c734de7ea4c4f3e7279d1d4c020b5d}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!attach\+Q\+T\+RA@{attach\+Q\+T\+RA}}
+\index{attach\+Q\+T\+RA@{attach\+Q\+T\+RA}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{attach\+Q\+T\+R\+A()}{attachQTRA()}}
+{\footnotesize\ttfamily void Reflectance\+Sensor\+::attach\+Q\+T\+RA (\begin{DoxyParamCaption}\item[{Q\+T\+R\+Sensors\+Analog $\ast$}]{sensor }\end{DoxyParamCaption})}
+
+
+
+Set the pointer to the Q\+T\+R\+Sensors\+Analog object. 
+
+Allows for use of the specified sensor. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sensor} & Pointer to sensor object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+27 \{ \hyperlink{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}{qtra} = sensor; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reflectance_sensor_af24236e10ded862847bb6a626c5cf336}\label{class_reflectance_sensor_af24236e10ded862847bb6a626c5cf336}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!centered@{centered}}
+\index{centered@{centered}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{centered()}{centered()}}
+{\footnotesize\ttfamily bool Reflectance\+Sensor\+::centered (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check if the robot is centered over the line (with a tolerance). 
+
+\begin{DoxyReturn}{Returns}
+true if centered, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 54 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+54                                      \{
+55     \textcolor{keywordtype}{int} offset = \hyperlink{class_reflectance_sensor_a1e361d2a9a18b4c9da19bdc4b061a3c7}{getBias}();
+56     \textcolor{keywordflow}{return} (offset >= -\hyperlink{config_8h_a3c9f857ec5d932611594dc0cfb366bf5}{REFLECTANCE\_CENTERED\_TOLERANCE}) && (offset <= 
+      \hyperlink{config_8h_a3c9f857ec5d932611594dc0cfb366bf5}{REFLECTANCE\_CENTERED\_TOLERANCE});
+57 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reflectance_sensor_a1e361d2a9a18b4c9da19bdc4b061a3c7}\label{class_reflectance_sensor_a1e361d2a9a18b4c9da19bdc4b061a3c7}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!get\+Bias@{get\+Bias}}
+\index{get\+Bias@{get\+Bias}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{get\+Bias()}{getBias()}}
+{\footnotesize\ttfamily int Reflectance\+Sensor\+::get\+Bias (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Check the bias of the line sensor. 
+
+Positive bias means line is at the right of the middle of the sensor, negative means it is to the left, and near 0 means it is near centered. \begin{DoxyReturn}{Returns}
+signed integer bias value 
+\end{DoxyReturn}
+
+
+Definition at line 65 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+65                                    \{
+66     \textcolor{keywordflow}{return} \hyperlink{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}{qtra}->readLine(\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache}) - 3500 + 
+      \hyperlink{config_8h_ac92cae42245af84c084405baa8a8f2b4}{REFLECTANCE\_CENTERED\_SYSTEM\_BIAS};
+67 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reflectance_sensor_a57665677450add1160b8fadb3699b3f6}\label{class_reflectance_sensor_a57665677450add1160b8fadb3699b3f6}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!get\+Q\+T\+RA@{get\+Q\+T\+RA}}
+\index{get\+Q\+T\+RA@{get\+Q\+T\+RA}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{get\+Q\+T\+R\+A()}{getQTRA()}}
+{\footnotesize\ttfamily Q\+T\+R\+Sensors\+Analog $\ast$ Reflectance\+Sensor\+::get\+Q\+T\+RA (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return the attached Q\+T\+RA object. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to the attached Q\+T\+RA object 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{ \textcolor{keywordflow}{return} \hyperlink{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}{qtra}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reflectance_sensor_a637d9833bd917e331908917fc777ac19}\label{class_reflectance_sensor_a637d9833bd917e331908917fc777ac19}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!log\+Values@{log\+Values}}
+\index{log\+Values@{log\+Values}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{log\+Values()}{logValues()}}
+{\footnotesize\ttfamily void Reflectance\+Sensor\+::log\+Values (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Logs values of Q\+T\+RA sensors to U\+SB Serial. 
+
+
+
+Definition at line 87 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+87                                       \{
+88     \textcolor{comment}{// print the sensor values as numbers from 0 to 1000, where 0 means maximum reflectance and}
+89     \textcolor{comment}{// 1000 means minimum reflectance, followed by the line position}
+90     \hyperlink{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}{qtra}->read(\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache});
+91     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} i = 0; i < 8; i++) \{
+92         Serial.print(\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache}[i]);
+93         Serial.print(\textcolor{charliteral}{'\(\backslash\)t'});
+94     \}
+95     Serial.print(\textcolor{charliteral}{'\(\backslash\)n'});
+96 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reflectance_sensor_a30b767c95bec679ff638765050c770e2}\label{class_reflectance_sensor_a30b767c95bec679ff638765050c770e2}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!on\+Horizontal\+Line@{on\+Horizontal\+Line}}
+\index{on\+Horizontal\+Line@{on\+Horizontal\+Line}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{on\+Horizontal\+Line()}{onHorizontalLine()}}
+{\footnotesize\ttfamily bool Reflectance\+Sensor\+::on\+Horizontal\+Line (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Detect if the robot is over a horizontal line. 
+
+\begin{DoxyReturn}{Returns}
+true if over horizontal line, false otherwise 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+45                                              \{
+46     \hyperlink{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}{qtra}->read(\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache});
+47     \textcolor{keywordflow}{return} (\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache}[0] > \hyperlink{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}{cutoff}) && (\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache}[7] > 
+      \hyperlink{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}{cutoff});
+48 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reflectance_sensor_a065644d5cf3d71d81ea4f91787c2915d}\label{class_reflectance_sensor_a065644d5cf3d71d81ea4f91787c2915d}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!print\+Map@{print\+Map}}
+\index{print\+Map@{print\+Map}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{print\+Map()}{printMap()}}
+{\footnotesize\ttfamily void Reflectance\+Sensor\+::print\+Map (\begin{DoxyParamCaption}\item[{Liquid\+Crystal $\ast$}]{lcd }\end{DoxyParamCaption})}
+
+
+
+Debugging function to print out a map of sensor status based on cutoffs on a given L\+CD screen. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em lcd} & Pointer to an L\+CD object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 73 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+73                                                    \{
+74     \hyperlink{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}{qtra}->read(\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache});
+75     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < 8; i++) \{
+76         \textcolor{keywordflow}{if} (\hyperlink{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}{qtra\_cache}[i] > \hyperlink{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}{cutoff}) \{
+77             \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}->print(\textcolor{stringliteral}{"+"});
+78         \} \textcolor{keywordflow}{else} \{
+79             \hyperlink{rbe2001_8ino_a4cbb289153633c01a1584b3aa0d9a0a2}{lcd}->print(\textcolor{stringliteral}{"-"});
+80         \}
+81     \}
+82 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_reflectance_sensor_a49851d00301cadc84ac53e747e49971b}\label{class_reflectance_sensor_a49851d00301cadc84ac53e747e49971b}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!set\+Detection\+Cutoff@{set\+Detection\+Cutoff}}
+\index{set\+Detection\+Cutoff@{set\+Detection\+Cutoff}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{set\+Detection\+Cutoff()}{setDetectionCutoff()}}
+{\footnotesize\ttfamily void Reflectance\+Sensor\+::set\+Detection\+Cutoff (\begin{DoxyParamCaption}\item[{unsigned int}]{cutoff }\end{DoxyParamCaption})}
+
+
+
+Assign the detection cutoff, used for detecting if we are on a horizontal line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em cutoff} & A value in range of the Q\+T\+RA raw values that should be considered the minimum detection cutoff \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Reflectance\+Sensor.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{ this->\hyperlink{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}{cutoff} = \hyperlink{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}{cutoff}; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}\label{class_reflectance_sensor_ab690b7c2e5b1ba69c0068841fe916dbd}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!cutoff@{cutoff}}
+\index{cutoff@{cutoff}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{cutoff}{cutoff}}
+{\footnotesize\ttfamily unsigned int Reflectance\+Sensor\+::cutoff\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cutoff to consider line detected (used for \hyperlink{class_reflectance_sensor_a30b767c95bec679ff638765050c770e2}{on\+Horizontal\+Line()}) 
+
+
+
+Definition at line 18 of file Reflectance\+Sensor.\+hpp.
+
+\mbox{\Hypertarget{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}\label{class_reflectance_sensor_a1eb0a090b619705b0234cea224400829}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!qtra@{qtra}}
+\index{qtra@{qtra}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{qtra}{qtra}}
+{\footnotesize\ttfamily Q\+T\+R\+Sensors\+Analog$\ast$ Reflectance\+Sensor\+::qtra\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to the Q\+T\+RA object in use. 
+
+
+
+Definition at line 15 of file Reflectance\+Sensor.\+hpp.
+
+\mbox{\Hypertarget{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}\label{class_reflectance_sensor_ab4b708129419215a57eec3b0af611542}} 
+\index{Reflectance\+Sensor@{Reflectance\+Sensor}!qtra\+\_\+cache@{qtra\+\_\+cache}}
+\index{qtra\+\_\+cache@{qtra\+\_\+cache}!Reflectance\+Sensor@{Reflectance\+Sensor}}
+\subsubsection{\texorpdfstring{qtra\+\_\+cache}{qtra\_cache}}
+{\footnotesize\ttfamily unsigned int$\ast$ Reflectance\+Sensor\+::qtra\+\_\+cache\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cache of last Q\+T\+RA values. 
+
+
+
+Definition at line 16 of file Reflectance\+Sensor.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/devices/io/\hyperlink{_reflectance_sensor_8hpp}{Reflectance\+Sensor.\+hpp}\item 
+rbe2001/devices/io/\hyperlink{_reflectance_sensor_8cpp}{Reflectance\+Sensor.\+cpp}\end{DoxyCompactItemize}

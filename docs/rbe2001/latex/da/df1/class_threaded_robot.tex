@@ -1,0 +1,1226 @@
+\hypertarget{class_threaded_robot}{}\section{Threaded\+Robot Class Reference}
+\label{class_threaded_robot}\index{Threaded\+Robot@{Threaded\+Robot}}
+
+
+{\ttfamily \#include $<$Threaded\+Robot.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_threaded_robot_a4516decdf3303ded4e77fcb2b61b0c5a}{Threaded\+Robot} ()
+\item 
+\hyperlink{class_threaded_robot_a67fb3fb389da8a81de483045806684e5}{$\sim$\+Threaded\+Robot} ()
+\item 
+void \hyperlink{class_threaded_robot_afc27bf260266c249fc7ce2895a20882f}{attach\+Messenger} (\hyperlink{class_messenger}{Messenger} $\ast$msngr)
+\begin{DoxyCompactList}\small\item\em Attach a \hyperlink{class_messenger}{Messenger} to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to recieve bluetooth data and use it for calculations. \end{DoxyCompactList}\item 
+void \hyperlink{class_threaded_robot_a86ab3f2f83958858e47c50004702bba7}{attach\+Drive} (\hyperlink{class_drive_train}{Drive\+Train} $\ast$\hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive})
+\begin{DoxyCompactList}\small\item\em Attach a \hyperlink{class_drive_train}{Drive\+Train} to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to control the robot drive train. \end{DoxyCompactList}\item 
+void \hyperlink{class_threaded_robot_ab6b42cc3e28dad7823f35afea5ceb4cc}{attach\+Arm} (\hyperlink{class_arm}{Arm} $\ast$\hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm})
+\begin{DoxyCompactList}\small\item\em Attach an \hyperlink{class_arm}{Arm} to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to control the robot arm. \end{DoxyCompactList}\item 
+void \hyperlink{class_threaded_robot_a391a0e982563eaea9dbf60b9d63b72da}{attach\+Intake} (\hyperlink{class_intake}{Intake} $\ast$\hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake})
+\begin{DoxyCompactList}\small\item\em Attach an \hyperlink{class_intake}{Intake} to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to control the robot intake. \end{DoxyCompactList}\item 
+void \hyperlink{class_threaded_robot_a51cbd0787fa757506942c0f36780983e}{attach\+Reflectance\+Sensor} (\hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} $\ast$\hyperlink{class_threaded_robot_a6dcf388032425561c387f153ea141c79}{rsensor})
+\begin{DoxyCompactList}\small\item\em Attach a \hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} sensor to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to detect lines. \end{DoxyCompactList}\item 
+void \hyperlink{class_threaded_robot_a5c9752f8b7d97689f8b5f1c4bf87ad2d}{attach\+Accelerometer} (\hyperlink{class_accelerometer}{Accelerometer} $\ast$a)
+\begin{DoxyCompactList}\small\item\em Attach an \hyperlink{class_accelerometer}{Accelerometer} sensor to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to detect robot motion. \end{DoxyCompactList}\item 
+void \hyperlink{class_threaded_robot_ae5545fb683a84aec9bda34a2c9bba228}{step\+Virtual\+Threads} (uint64\+\_\+t micros\+\_\+elapsed)
+\begin{DoxyCompactList}\small\item\em Step through each component of the robot, giving a pseudo-\/multithreaded functionality. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_threaded_robot_ac4f1dd23e0b7ec167c9b80875d06d4c6}{step\+\_\+drive\+\_\+loop} (void)
+\begin{DoxyCompactList}\small\item\em Step through the drive control logic. \end{DoxyCompactList}\item 
+void \hyperlink{class_threaded_robot_a2224a8a7536e9ffb7d7a35c57280bddb}{step\+\_\+arm\+\_\+loop} (void)
+\begin{DoxyCompactList}\small\item\em Step through the arm control logic. \end{DoxyCompactList}\item 
+void \hyperlink{class_threaded_robot_ab1a8d6c3cc3e2df57701adfa23e1273d}{step\+\_\+intake\+\_\+loop} (void)
+\begin{DoxyCompactList}\small\item\em Step through the intake control logic. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_messenger}{Messenger} $\ast$ \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}
+\begin{DoxyCompactList}\small\item\em Pointer to instantiated and configured \hyperlink{class_messenger}{Messenger}. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status}
+\begin{DoxyCompactList}\small\item\em Robot status flags. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Status of the drive subsystem. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Status of the four-\/bar arm subsystem. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Status of the intake subsystem. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a4a4a3eab10c962150bc5194f22d10496}{drive\+\_\+state\+\_\+prev}
+\begin{DoxyCompactList}\small\item\em Previous status of the drive subsystem. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a77a621d5f607ff296ceac51c831a3258}{arm\+\_\+state\+\_\+prev}
+\begin{DoxyCompactList}\small\item\em Previous status of the four-\/bar arm subsystem. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a6ee4298a994be3756ea1821125ab9d57}{intake\+\_\+state\+\_\+prev}
+\begin{DoxyCompactList}\small\item\em Previous status of the intake subsystem. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\+\_\+state}
+\begin{DoxyCompactList}\small\item\em Global state machine state. \end{DoxyCompactList}\item 
+\hyperlink{class_drive_train}{Drive\+Train} $\ast$ \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}
+\begin{DoxyCompactList}\small\item\em Drivetrain control object. \end{DoxyCompactList}\item 
+\hyperlink{class_arm}{Arm} $\ast$ \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_arm}{Arm} control object. \end{DoxyCompactList}\item 
+\hyperlink{class_intake}{Intake} $\ast$ \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_intake}{Intake} control object. \end{DoxyCompactList}\item 
+\hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} $\ast$ \hyperlink{class_threaded_robot_a6dcf388032425561c387f153ea141c79}{rsensor}
+\begin{DoxyCompactList}\small\item\em Pololu reflectance sensor object. \end{DoxyCompactList}\item 
+\hyperlink{class_accelerometer}{Accelerometer} $\ast$ \hyperlink{class_threaded_robot_ae12c29cb9719f6562f27402f487321e6}{accel}
+\begin{DoxyCompactList}\small\item\em Adafruit accelerometer. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_threaded_robot_a638cd7916d1c1c8a83d15c47a8fe6ef0}{stopped\+\_\+cnt}
+\begin{DoxyCompactList}\small\item\em Count how many times the accelerometer thinks we stopped as to avoid error. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_threaded_robot_a314047099d4d38a60d54cc8b81012c7c}{tick\+\_\+wait}
+\begin{DoxyCompactList}\small\item\em Count this up until it reaches a value to wait that many ticks. \end{DoxyCompactList}\item 
+uint32\+\_\+t \hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\+\_\+counter}
+\begin{DoxyCompactList}\small\item\em Used to run the radiation L\+ED alternation. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a506989a00617c30a8a1930773a0b7d41}{got\+\_\+data}
+\begin{DoxyCompactList}\small\item\em If we have necessary bluetooth data. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\+\_\+tube}
+\begin{DoxyCompactList}\small\item\em Keep track of the current tube. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\+\_\+reactor}
+\begin{DoxyCompactList}\small\item\em Keep track of the current reactor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}{was\+\_\+on\+\_\+line}
+\begin{DoxyCompactList}\small\item\em If we have been on a line already. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\+\_\+to\+\_\+skip}
+\begin{DoxyCompactList}\small\item\em How many lines left to skip. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_threaded_robot_aa895dd29f7418754d4dfb8555572ae31}{supply\+\_\+dir}
+\begin{DoxyCompactList}\small\item\em Direction we turned for supply rod (0 = left, 1 = right) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 71 of file Threaded\+Robot.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_threaded_robot_a4516decdf3303ded4e77fcb2b61b0c5a}\label{class_threaded_robot_a4516decdf3303ded4e77fcb2b61b0c5a}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!Threaded\+Robot@{Threaded\+Robot}}
+\index{Threaded\+Robot@{Threaded\+Robot}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{Threaded\+Robot()}{ThreadedRobot()}}
+{\footnotesize\ttfamily Threaded\+Robot\+::\+Threaded\+Robot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 118 of file Threaded\+Robot.\+hpp.
+
+
+\begin{DoxyCode}
+118                     : \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status}(\hyperlink{_threaded_robot_8hpp_a9ba1d31706f568992789685278b59c6b}{STATUS\_INITIAL}), \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state}(
+      \hyperlink{_threaded_robot_8hpp_ad8059005f360a46de99b00ca40801fec}{SM\_DRIVE\_REACTOR}),
+119         \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state}(\hyperlink{_threaded_robot_8hpp_ab81e7b2b3227c0de1b76dcfdddb78f75}{SM\_ARM\_UP}), \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state}(
+      \hyperlink{_threaded_robot_8hpp_a1ccedfbf469636f5afc2c68499f826a9}{SM\_INTAKE\_IDLE}), \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state}(\hyperlink{_threaded_robot_8hpp_a388ca9e0532aeb38988df56f8226b6f9}{STEP\_\_TO\_REACTOR}),
+120         \hyperlink{class_threaded_robot_a638cd7916d1c1c8a83d15c47a8fe6ef0}{stopped\_cnt}(0), \hyperlink{class_threaded_robot_a314047099d4d38a60d54cc8b81012c7c}{tick\_wait}(0), \hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter}(0), 
+      \hyperlink{class_threaded_robot_a506989a00617c30a8a1930773a0b7d41}{got\_data}(0), \hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube}(0), \hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor}(1),
+121         \hyperlink{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}{was\_on\_line}(0), \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip}(0) \{\};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_a67fb3fb389da8a81de483045806684e5}\label{class_threaded_robot_a67fb3fb389da8a81de483045806684e5}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!````~Threaded\+Robot@{$\sim$\+Threaded\+Robot}}
+\index{````~Threaded\+Robot@{$\sim$\+Threaded\+Robot}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{$\sim$\+Threaded\+Robot()}{~ThreadedRobot()}}
+{\footnotesize\ttfamily Threaded\+Robot\+::$\sim$\+Threaded\+Robot (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 123 of file Threaded\+Robot.\+hpp.
+
+
+\begin{DoxyCode}
+123 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_threaded_robot_a5c9752f8b7d97689f8b5f1c4bf87ad2d}\label{class_threaded_robot_a5c9752f8b7d97689f8b5f1c4bf87ad2d}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!attach\+Accelerometer@{attach\+Accelerometer}}
+\index{attach\+Accelerometer@{attach\+Accelerometer}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{attach\+Accelerometer()}{attachAccelerometer()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::attach\+Accelerometer (\begin{DoxyParamCaption}\item[{\hyperlink{class_accelerometer}{Accelerometer} $\ast$}]{a }\end{DoxyParamCaption})}
+
+
+
+Attach an \hyperlink{class_accelerometer}{Accelerometer} sensor to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to detect robot motion. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a} & Pointer to an instantiated \hyperlink{class_accelerometer}{Accelerometer} object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 45 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+45 \{ this->\hyperlink{class_threaded_robot_ae12c29cb9719f6562f27402f487321e6}{accel} = a; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_ab6b42cc3e28dad7823f35afea5ceb4cc}\label{class_threaded_robot_ab6b42cc3e28dad7823f35afea5ceb4cc}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!attach\+Arm@{attach\+Arm}}
+\index{attach\+Arm@{attach\+Arm}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{attach\+Arm()}{attachArm()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::attach\+Arm (\begin{DoxyParamCaption}\item[{\hyperlink{class_arm}{Arm} $\ast$}]{arm }\end{DoxyParamCaption})}
+
+
+
+Attach an \hyperlink{class_arm}{Arm} to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to control the robot arm. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em arm} & A pointer to an instantiated \hyperlink{class_arm}{Arm} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+27 \{ this->arm = \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_a86ab3f2f83958858e47c50004702bba7}\label{class_threaded_robot_a86ab3f2f83958858e47c50004702bba7}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!attach\+Drive@{attach\+Drive}}
+\index{attach\+Drive@{attach\+Drive}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{attach\+Drive()}{attachDrive()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::attach\+Drive (\begin{DoxyParamCaption}\item[{\hyperlink{class_drive_train}{Drive\+Train} $\ast$}]{drive }\end{DoxyParamCaption})}
+
+
+
+Attach a \hyperlink{class_drive_train}{Drive\+Train} to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to control the robot drive train. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em drive} & A pointer to an instantiated \hyperlink{class_drive_train}{Drive\+Train} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+21 \{ this->drive = \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_a391a0e982563eaea9dbf60b9d63b72da}\label{class_threaded_robot_a391a0e982563eaea9dbf60b9d63b72da}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!attach\+Intake@{attach\+Intake}}
+\index{attach\+Intake@{attach\+Intake}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{attach\+Intake()}{attachIntake()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::attach\+Intake (\begin{DoxyParamCaption}\item[{\hyperlink{class_intake}{Intake} $\ast$}]{intake }\end{DoxyParamCaption})}
+
+
+
+Attach an \hyperlink{class_intake}{Intake} to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to control the robot intake. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em intake} & A pointer to an instantiated \hyperlink{class_intake}{Intake} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 33 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+33 \{ this->intake = \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_afc27bf260266c249fc7ce2895a20882f}\label{class_threaded_robot_afc27bf260266c249fc7ce2895a20882f}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!attach\+Messenger@{attach\+Messenger}}
+\index{attach\+Messenger@{attach\+Messenger}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{attach\+Messenger()}{attachMessenger()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::attach\+Messenger (\begin{DoxyParamCaption}\item[{\hyperlink{class_messenger}{Messenger} $\ast$}]{msngr }\end{DoxyParamCaption})}
+
+
+
+Attach a \hyperlink{class_messenger}{Messenger} to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to recieve bluetooth data and use it for calculations. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em msngr} & A pointer to an instantiated \hyperlink{class_messenger}{Messenger} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+15 \{ this->\hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger} = msngr; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_a51cbd0787fa757506942c0f36780983e}\label{class_threaded_robot_a51cbd0787fa757506942c0f36780983e}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!attach\+Reflectance\+Sensor@{attach\+Reflectance\+Sensor}}
+\index{attach\+Reflectance\+Sensor@{attach\+Reflectance\+Sensor}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{attach\+Reflectance\+Sensor()}{attachReflectanceSensor()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::attach\+Reflectance\+Sensor (\begin{DoxyParamCaption}\item[{\hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} $\ast$}]{rsensor }\end{DoxyParamCaption})}
+
+
+
+Attach a \hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} sensor to the \hyperlink{class_threaded_robot}{Threaded\+Robot} to allow it to detect lines. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em rsensor} & Pointer to an instantiated \hyperlink{class_reflectance_sensor}{Reflectance\+Sensor} object. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 39 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+39 \{ this->rsensor = \hyperlink{class_threaded_robot_a6dcf388032425561c387f153ea141c79}{rsensor}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_a2224a8a7536e9ffb7d7a35c57280bddb}\label{class_threaded_robot_a2224a8a7536e9ffb7d7a35c57280bddb}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!step\+\_\+arm\+\_\+loop@{step\+\_\+arm\+\_\+loop}}
+\index{step\+\_\+arm\+\_\+loop@{step\+\_\+arm\+\_\+loop}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{step\+\_\+arm\+\_\+loop()}{step\_arm\_loop()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::step\+\_\+arm\+\_\+loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Step through the arm control logic. 
+
+This loop manages the behavior of the arm based on situational assumptions from information in the status byte.~\newline
+ Coorinates often with the intake subsystem state machine. 
+
+Definition at line 421 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+421                                       \{
+422     \textcolor{comment}{// check if there was an external state change}
+423     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} != \hyperlink{class_threaded_robot_a77a621d5f607ff296ceac51c831a3258}{arm\_state\_prev}) \{
+424         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} |= \hyperlink{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}{STATUS\_ARM\_FC}; \textcolor{comment}{// set first call flag bit to 1}
+425     \}
+426 
+427     \textcolor{comment}{// behavior based on arm state and global state}
+428     \textcolor{keywordflow}{switch} (\hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state}) \{
+429         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a96fec3d4c162b9ffe5c1c5847c58f1d9}{SM\_ARM\_IDLE}:
+430             \textcolor{comment}{// do nothing}
+431             \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a4a2070a27aecb7129cb89f4c9231278a}{stop}();
+432             \textcolor{keywordflow}{break};
+433         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a17eb65c231c0816f2929a40e1af28a8a}{SM\_ARM\_HOLD}:
+434             \textcolor{comment}{// hold the setpoint}
+435             \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a8cd24cca4215a944bd47df13e252e8a0}{runToSetpoint}();
+436             \textcolor{keywordflow}{break};
+437         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_ab81e7b2b3227c0de1b76dcfdddb78f75}{SM\_ARM\_UP}:
+438             \textcolor{comment}{// check if first call, if so, set setpoint}
+439             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & \hyperlink{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}{STATUS\_ARM\_FC}) \{ \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a331502c3508a7d8137d9405f050ecbbf}{setSetpoint}(
+      \hyperlink{config_8h_a5802759eadaedbee1fad0989f746e940}{ARM\_UP}); \}
+440 
+441             \textcolor{comment}{// go to the setpoint}
+442             \textcolor{comment}{// "you raise me upppp" https://www.youtube.com/watch?v=meAT7-82e\_g}
+443             \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a8cd24cca4215a944bd47df13e252e8a0}{runToSetpoint}();
+444 
+445             \textcolor{comment}{// if done, hold}
+446             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a392a83624fdebcb6269695c3600e6c90}{nearSetpoint}(1.0)) \{ \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} = 
+      \hyperlink{_threaded_robot_8hpp_a17eb65c231c0816f2929a40e1af28a8a}{SM\_ARM\_HOLD}; \}
+447             \textcolor{keywordflow}{break};
+448         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a696681018aa36726b057d6b82573d620}{SM\_ARM\_DOWN}:
+449             \textcolor{comment}{// check if first call, if so, set setpoint}
+450             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_ARM\_FC) \{
+451                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}{STEP\_\_TO\_REACTOR\_RETURN}) \{
+452                     \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a331502c3508a7d8137d9405f050ecbbf}{setSetpoint}(\hyperlink{config_8h_a02a32dc793fb0f35a9e3042d1c2811d8}{ARM\_DOWN\_DELIVER});
+453                 \} \textcolor{keywordflow}{else} \{ \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a331502c3508a7d8137d9405f050ecbbf}{setSetpoint}(\hyperlink{config_8h_a324de4e71a26bebce744eab8027af4d6}{ARM\_DOWN\_FULL}); \}
+454             \}
+455 
+456             \textcolor{comment}{// go to the setpoint}
+457             \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a8cd24cca4215a944bd47df13e252e8a0}{runToSetpoint}();
+458 
+459             \textcolor{comment}{// if done, hold}
+460             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a392a83624fdebcb6269695c3600e6c90}{nearSetpoint}(1.0)) \{
+461                 \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} = \hyperlink{_threaded_robot_8hpp_a17eb65c231c0816f2929a40e1af28a8a}{SM\_ARM\_HOLD};
+462 
+463                 \textcolor{comment}{// eject rod if refueling reactor}
+464                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_aa746f89a7ab4e61cfe763ca6ad8a2e22}{STEP\_\_INSERT\_ROUTINE}) \{ 
+      \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} = \hyperlink{_threaded_robot_8hpp_aee99598bb6301112885aebf03222896f}{SM\_INTAKE\_EJECT}; \}
+465             \}
+466             \textcolor{keywordflow}{break};
+467     \}
+468 
+469     \textcolor{comment}{// if we just ran a first call}
+470     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_ARM\_FC) \{
+471         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} &= !\hyperlink{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}{STATUS\_ARM\_FC}; \textcolor{comment}{// set first call flag bit to 0}
+472     \}
+473 
+474     \textcolor{comment}{// check if we manually changed states in THIS loop}
+475     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a77a621d5f607ff296ceac51c831a3258}{arm\_state\_prev} != \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state}) \{
+476         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} |= \hyperlink{_threaded_robot_8hpp_af64a9cac77953e37e9facd5f39a41ea6}{STATUS\_ARM\_FC}; \textcolor{comment}{// set first call flag bit to 1}
+477     \}
+478 
+479     \hyperlink{class_threaded_robot_a77a621d5f607ff296ceac51c831a3258}{arm\_state\_prev} = \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state};
+480 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_ac4f1dd23e0b7ec167c9b80875d06d4c6}\label{class_threaded_robot_ac4f1dd23e0b7ec167c9b80875d06d4c6}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!step\+\_\+drive\+\_\+loop@{step\+\_\+drive\+\_\+loop}}
+\index{step\+\_\+drive\+\_\+loop@{step\+\_\+drive\+\_\+loop}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{step\+\_\+drive\+\_\+loop()}{step\_drive\_loop()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::step\+\_\+drive\+\_\+loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Step through the drive control logic. 
+
+This code manages the behavior of the drive train and contains the drive state machine. 
+
+Definition at line 105 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+105                                         \{
+106     \textcolor{comment}{// check if there was an EXTERNAL state change}
+107     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} != \hyperlink{class_threaded_robot_a4a4a3eab10c962150bc5194f22d10496}{drive\_state\_prev}) \{
+108         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} |= \hyperlink{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}{STATUS\_DRIVE\_FC}; \textcolor{comment}{// set first call flag bit to 1}
+109         \hyperlink{class_threaded_robot_a4a4a3eab10c962150bc5194f22d10496}{drive\_state\_prev} = \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state}; \textcolor{comment}{// update prev state so we can detect
+       local change}
+110     \}
+111 
+112     \textcolor{keywordflow}{switch} (\hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state}) \{
+113         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}{SM\_DRIVE\_STOP}:
+114             \textcolor{comment}{// make robot stop}
+115             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a18d4c7b82118a1da8910d09a31f88a38}{stop}();
+116             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & \hyperlink{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}{STATUS\_DRIVE\_FC}) \{ \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->
+      \hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a72b1b729501cd7a0620e83c5d4d9a714}{setMotionStatus}(\hyperlink{config_8h_a819fd042d57965904b3cc073fd216d7f}{MSG\_ROBOT\_MOVEMENT\_STOPPED}); \}
+117             \textcolor{keywordflow}{break};
+118         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_ad8059005f360a46de99b00ca40801fec}{SM\_DRIVE\_REACTOR}:
+119             \textcolor{comment}{// set setpoints}
+120             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{
+121                 \hyperlink{class_threaded_robot_a638cd7916d1c1c8a83d15c47a8fe6ef0}{stopped\_cnt} = 0;
+122                 \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a72b1b729501cd7a0620e83c5d4d9a714}{setMotionStatus}(
+      \hyperlink{config_8h_a12bcb79900d7ce0678284ea659f55f87}{MSG\_ROBOT\_MOVEMENT\_AUTO});
+123                 \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_a07b36fc0265003a9ba81111a770f1ce9}{MSG\_ROBOT\_OP\_DRV\_TO\_ROD});
+124                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a388ca9e0532aeb38988df56f8226b6f9}{STEP\_\_TO\_REACTOR}) \{
+125                     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor} == 1) \{
+126                         \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{setSetpoints}(
+      \hyperlink{config_8h_a5c741381c7f5ad8ab6bfc68b314d9544}{DRIVE\_SP\_\_TO\_REACTOR\_1}, \hyperlink{config_8h_a5c741381c7f5ad8ab6bfc68b314d9544}{DRIVE\_SP\_\_TO\_REACTOR\_1});
+127                     \} \textcolor{keywordflow}{else} \{
+128                         \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{setSetpoints}(
+      \hyperlink{config_8h_aa4b73094139c22971d37a0b1609b791a}{DRIVE\_SP\_\_REALLY\_FAR\_FORWARD}, 
+      \hyperlink{config_8h_aa4b73094139c22971d37a0b1609b791a}{DRIVE\_SP\_\_REALLY\_FAR\_FORWARD});
+129                     \}
+130                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}{STEP\_\_TO\_REACTOR\_RETURN}) \{
+131                     \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{setSetpoints}(
+      \hyperlink{config_8h_aa4b73094139c22971d37a0b1609b791a}{DRIVE\_SP\_\_REALLY\_FAR\_FORWARD}, 
+      \hyperlink{config_8h_aa4b73094139c22971d37a0b1609b791a}{DRIVE\_SP\_\_REALLY\_FAR\_FORWARD});
+132                 \}
+133             \}
+134 
+135             \textcolor{comment}{// see if we are almost completly stopped}
+136             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_ae12c29cb9719f6562f27402f487321e6}{accel}->\hyperlink{class_accelerometer_a88b653a985a23ebbed8916ef5a2cf0af}{stopped}()) \{ \hyperlink{class_threaded_robot_a638cd7916d1c1c8a83d15c47a8fe6ef0}{stopped\_cnt}++; \}
+137 
+138             \textcolor{comment}{// check if we hit the reactor}
+139             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a638cd7916d1c1c8a83d15c47a8fe6ef0}{stopped\_cnt} > 70) \{
+140                 \textcolor{comment}{// robot stopped}
+141                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a388ca9e0532aeb38988df56f8226b6f9}{STEP\_\_TO\_REACTOR}) \{
+142                     \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_a303b885262b38d61b183b975a31fa9f5}{STEP\_\_EXTRACT\_ROUTINE};
+143                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}{SM\_DRIVE\_STOP};
+144                     \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} = \hyperlink{_threaded_robot_8hpp_a696681018aa36726b057d6b82573d620}{SM\_ARM\_DOWN};
+145                     \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} = \hyperlink{_threaded_robot_8hpp_a8e869bc75311ab5b24a7dcd53163d9f5}{SM\_INTAKE\_IN};
+146                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_aa54e5b55d86637a2f4b6112f73badfc8}{MSG\_ROBOT\_OP\_ATTEMPT\_GRP});
+147                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}{STEP\_\_TO\_REACTOR\_RETURN}) && 
+      (\hyperlink{class_threaded_robot_a638cd7916d1c1c8a83d15c47a8fe6ef0}{stopped\_cnt} > 120)) \{
+148                     \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_aa746f89a7ab4e61cfe763ca6ad8a2e22}{STEP\_\_INSERT\_ROUTINE};
+149                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}{SM\_DRIVE\_STOP};
+150                     \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} = \hyperlink{_threaded_robot_8hpp_a696681018aa36726b057d6b82573d620}{SM\_ARM\_DOWN};
+151                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_ad674f3d1488156b64c1c2ef0826df9af}{MSG\_ROBOT\_OP\_RELEASE\_GRP});
+152                 \}
+153             \} \textcolor{keywordflow}{else} \{
+154                 \textcolor{comment}{// not stopped}
+155                 \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ace3dfd00c11b3d001179370c2aa79be4}{driveLineGuided}();
+156             \}
+157             \textcolor{keywordflow}{break};
+158         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a4f6a6e6b703f8b80f5d02968d9595267}{SM\_DRIVE\_FUEL\_STORAGE}:
+159             \textcolor{comment}{// set state up}
+160             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{
+161                 \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{setSetpoints}(
+      \hyperlink{config_8h_aa4b73094139c22971d37a0b1609b791a}{DRIVE\_SP\_\_REALLY\_FAR\_FORWARD}, 
+      \hyperlink{config_8h_aa4b73094139c22971d37a0b1609b791a}{DRIVE\_SP\_\_REALLY\_FAR\_FORWARD});
+162                 \hyperlink{class_threaded_robot_a506989a00617c30a8a1930773a0b7d41}{got\_data} = 0;
+163             \}
+164 
+165             \textcolor{comment}{// get field information}
+166             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a506989a00617c30a8a1930773a0b7d41}{got\_data} == 0) \{
+167                 \hyperlink{class_threaded_robot_a506989a00617c30a8a1930773a0b7d41}{got\_data} = 1;
+168                 \textcolor{comment}{// determine closest storage tube}
+169                 \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->\hyperlink{class_field_data_aace8d0ab4c931b35ab85b71710079459}{checkStorageTube}(3)) \{
+170                     \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} = (\hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor} == 1) ? 0 : 3;
+171                     \hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube} = 3;
+172                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->\hyperlink{class_field_data_aace8d0ab4c931b35ab85b71710079459}{checkStorageTube}(2)) \{
+173                     \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} = (\hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor} == 1) ? 1 : 2;
+174                     \hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube} = 2;
+175                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->\hyperlink{class_field_data_aace8d0ab4c931b35ab85b71710079459}{checkStorageTube}(1)) \{
+176                     \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} = (\hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor} == 1) ? 2 : 1;
+177                     \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} = 2;
+178                     \hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube} = 1;
+179                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->\hyperlink{class_field_data_aace8d0ab4c931b35ab85b71710079459}{checkStorageTube}(0)) \{
+180                     \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} = (\hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor} == 1) ? 3 : 0;
+181                     \hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube} = 0;
+182                 \} \textcolor{keywordflow}{else} \{ \hyperlink{class_threaded_robot_a506989a00617c30a8a1930773a0b7d41}{got\_data} = 0; \}
+183             \}
+184 
+185             \textcolor{comment}{// run PD loop}
+186             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ace3dfd00c11b3d001179370c2aa79be4}{driveLineGuided}();
+187 
+188             \textcolor{comment}{// check if reached closest storage tube}
+189             \textcolor{keywordflow}{if} (\hyperlink{rbe2001_8ino_a90bb1c48eba85e2acf136982fcfd628e}{horiz\_line}) \{
+190                 \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}{was\_on\_line}) \{
+191                     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} == 0) \{
+192                         \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a18d4c7b82118a1da8910d09a31f88a38}{stop}();
+193                         \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = (\hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor} == 1) ? 
+      \hyperlink{_threaded_robot_8hpp_a0dfd6ccb0681319880cf03a62262aa43}{SM\_DRIVE\_TURN\_LEFT} : \hyperlink{_threaded_robot_8hpp_a065168c9946205caff716032d3f26d1b}{SM\_DRIVE\_TURN\_RIGHT};
+194                     \} \textcolor{keywordflow}{else} \{
+195                         \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip}--;
+196                     \}
+197                     \hyperlink{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}{was\_on\_line} = \textcolor{keyword}{true};
+198                 \}
+199             \} \textcolor{keywordflow}{else} \{
+200                 \hyperlink{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}{was\_on\_line} = \textcolor{keyword}{false};
+201             \}
+202             \textcolor{keywordflow}{break};
+203         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a736b22dbab4c41abd3670d0613e9b7b2}{SM\_DRIVE\_FUEL\_SUPPLY}:
+204             \textcolor{comment}{// set state up}
+205             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{ \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{setSetpoints}(
+      \hyperlink{config_8h_aa4b73094139c22971d37a0b1609b791a}{DRIVE\_SP\_\_REALLY\_FAR\_FORWARD}, 
+      \hyperlink{config_8h_aa4b73094139c22971d37a0b1609b791a}{DRIVE\_SP\_\_REALLY\_FAR\_FORWARD}); \}
+206 
+207             \textcolor{comment}{// run PD loop}
+208             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ace3dfd00c11b3d001179370c2aa79be4}{driveLineGuided}();
+209 
+210             \textcolor{comment}{// check if reached closest supply tube}
+211             \textcolor{keywordflow}{if} (\hyperlink{rbe2001_8ino_a90bb1c48eba85e2acf136982fcfd628e}{horiz\_line}) \{
+212                 \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}{was\_on\_line}) \{
+213                     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} == 0) \{
+214                         \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a18d4c7b82118a1da8910d09a31f88a38}{stop}();
+215                         \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = (\hyperlink{class_threaded_robot_aa895dd29f7418754d4dfb8555572ae31}{supply\_dir} == 0) ? 
+      \hyperlink{_threaded_robot_8hpp_a0dfd6ccb0681319880cf03a62262aa43}{SM\_DRIVE\_TURN\_LEFT} : \hyperlink{_threaded_robot_8hpp_a065168c9946205caff716032d3f26d1b}{SM\_DRIVE\_TURN\_RIGHT};
+216                         \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}{STEP\_\_TO\_SUPPLY};
+217                     \} \textcolor{keywordflow}{else} \{
+218                         \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip}--;
+219                     \}
+220                     \hyperlink{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}{was\_on\_line} = \textcolor{keyword}{true};
+221                 \}
+222             \} \textcolor{keywordflow}{else} \{
+223                 \hyperlink{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}{was\_on\_line} = \textcolor{keyword}{false};
+224             \}
+225             \textcolor{keywordflow}{break};
+226         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}{SM\_DRIVE\_FUEL\_DEPOSIT\_RETRIEVE}:
+227             \textcolor{comment}{// set state up}
+228             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{ \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{setSetpoints}(
+      \hyperlink{config_8h_a0f83a1b66087ca5c101726ba5ee04c6b}{DRIVE\_SP\_\_CENTER\_TO\_WALLS}, \hyperlink{config_8h_a0f83a1b66087ca5c101726ba5ee04c6b}{DRIVE\_SP\_\_CENTER\_TO\_WALLS}); \}
+229 
+230             \textcolor{comment}{// drive!}
+231             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ace3dfd00c11b3d001179370c2aa79be4}{driveLineGuided}();
+232 
+233             \textcolor{comment}{// check if we hit the wall}
+234             \textcolor{keywordflow}{if} (!digitalRead(\hyperlink{config_8h_a7ef7bc399facc7d13a89e760d2c22449}{GUIDE\_SWITCH})) \{
+235                 \textcolor{comment}{// "I hit a wall" -Rihanna (https://www.youtube.com/watch?v=BXhIT4MpRis)}
+236                 \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}{SM\_DRIVE\_STOP};
+237                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}{STEP\_\_TO\_STORAGE}) \{
+238                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_ad674f3d1488156b64c1c2ef0826df9af}{MSG\_ROBOT\_OP\_RELEASE\_GRP});
+239                     \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} = \hyperlink{_threaded_robot_8hpp_aee99598bb6301112885aebf03222896f}{SM\_INTAKE\_EJECT};
+240                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}{STEP\_\_TO\_SUPPLY}) \{
+241                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_aa54e5b55d86637a2f4b6112f73badfc8}{MSG\_ROBOT\_OP\_ATTEMPT\_GRP});
+242                     \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} = \hyperlink{_threaded_robot_8hpp_a8e869bc75311ab5b24a7dcd53163d9f5}{SM\_INTAKE\_IN};
+243                 \}
+244             \}
+245             \textcolor{keywordflow}{break};
+246         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_aabc19201dab2e84504bcafcbb24015ab}{SM\_DRIVE\_WALL\_RETREAT}:
+247             \textcolor{comment}{// set state up}
+248             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{ \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{setSetpoints}(
+      \hyperlink{config_8h_ab454d72cc697391771c5024a1da12f9f}{DRIVE\_SP\_\_RETREAT\_FROM\_WALLS}, 
+      \hyperlink{config_8h_ab454d72cc697391771c5024a1da12f9f}{DRIVE\_SP\_\_RETREAT\_FROM\_WALLS}); \}
+249 
+250             \textcolor{comment}{// drive!}
+251             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ace3dfd00c11b3d001179370c2aa79be4}{driveLineGuided}();
+252 
+253             \textcolor{comment}{// check if we are where we need to be then turn around}
+254             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a3817b51633041e331de658be05396ec9}{nearSetpoints}(0.5, 0.5)) \{
+255                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}{STEP\_\_TO\_STORAGE}) \{
+256                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}{setRadiationLevel}(0);
+257                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_a1123cbadb4fa69b79c47a7b9fb75c172}{MSG\_ROBOT\_OP\_DRV\_TO\_SUPL});
+258 
+259                     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->\hyperlink{class_field_data_a645f5d698b0048e4aa718327a5e1550a}{checkSupplyTube}(
+      \hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube})) \{
+260                         \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_aac0c6c5f2a3a9106b067d6964c467a1e}{SM\_DRIVE\_TURN\_180};
+261                         \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_a26c2a122486872fb524e51b3040a6dc5}{STEP\_\_TO\_SUPPLY\_NAV};
+262                     \} \textcolor{keywordflow}{else} \{
+263                         \textcolor{comment}{// check supply tubes, nearest to farthest away}
+264                         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < 4; i++) \{
+265                             \textcolor{keywordflow}{if} ((\hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube} - i >= 0) && \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->
+      \hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->\hyperlink{class_field_data_a645f5d698b0048e4aa718327a5e1550a}{checkSupplyTube}(\hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube} - i)) \{
+266                                 \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a0dfd6ccb0681319880cf03a62262aa43}{SM\_DRIVE\_TURN\_LEFT};
+267                                 \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_a26c2a122486872fb524e51b3040a6dc5}{STEP\_\_TO\_SUPPLY\_NAV};
+268                                 \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} = i - 1;
+269                                 \hyperlink{class_threaded_robot_aa895dd29f7418754d4dfb8555572ae31}{supply\_dir} = 0;
+270                                 \textcolor{keywordflow}{break};
+271                             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((\hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube} + i >= 0) && \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->
+      \hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->\hyperlink{class_field_data_a645f5d698b0048e4aa718327a5e1550a}{checkSupplyTube}(\hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube} + i)) \{
+272                                 \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a065168c9946205caff716032d3f26d1b}{SM\_DRIVE\_TURN\_RIGHT};
+273                                 \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_a26c2a122486872fb524e51b3040a6dc5}{STEP\_\_TO\_SUPPLY\_NAV};
+274                                 \hyperlink{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}{lines\_to\_skip} = i - 1;
+275                                 \hyperlink{class_threaded_robot_aa895dd29f7418754d4dfb8555572ae31}{supply\_dir} = 1;
+276                                 \textcolor{keywordflow}{break};
+277                             \}
+278                         \}
+279                     \}
+280                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}{STEP\_\_TO\_SUPPLY}) \{
+281                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_a07b36fc0265003a9ba81111a770f1ce9}{MSG\_ROBOT\_OP\_DRV\_TO\_ROD});
+282                     \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}{STEP\_\_TO\_REACTOR\_RETURN};
+283                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = (\hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor} == 1) ? 
+      \hyperlink{_threaded_robot_8hpp_a065168c9946205caff716032d3f26d1b}{SM\_DRIVE\_TURN\_RIGHT} : \hyperlink{_threaded_robot_8hpp_a0dfd6ccb0681319880cf03a62262aa43}{SM\_DRIVE\_TURN\_LEFT};
+284                 \}
+285             \}
+286             \textcolor{keywordflow}{break};
+287         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a59b73e9a00ed2ca9fbfc22a25281ab9f}{SM\_DRIVE\_REACTOR\_LOAD\_RETREAT}:
+288             \textcolor{comment}{// set state up}
+289             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{
+290                 \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a824147fd2c57fe25c0f64a80218ca39e}{setSetpoints}(
+      \hyperlink{config_8h_a3972e338f33c1f5ec5e89feac6d90ff0}{DRIVE\_SP\_\_REACTOR\_RETREAT\_WITH\_FUEL}, 
+      \hyperlink{config_8h_a3972e338f33c1f5ec5e89feac6d90ff0}{DRIVE\_SP\_\_REACTOR\_RETREAT\_WITH\_FUEL});
+291                 \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} = \hyperlink{_threaded_robot_8hpp_ab81e7b2b3227c0de1b76dcfdddb78f75}{SM\_ARM\_UP};
+292             \}
+293 
+294             \textcolor{comment}{// run the PD loop}
+295             \textcolor{comment}{// drive->driveLineGuided();}
+296             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a53087c84c085d1f06b06d2e191e34882}{drive}();
+297 
+298             \textcolor{comment}{// check if we are where we need to be then turn around}
+299             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a3817b51633041e331de658be05396ec9}{nearSetpoints}(0.5, 0.5)) \{
+300                 \textcolor{comment}{// turn 180 degrees to get to storage}
+301 
+302                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_aa746f89a7ab4e61cfe763ca6ad8a2e22}{STEP\_\_INSERT\_ROUTINE}) \{
+303                     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor} > 2) \{
+304                         \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}{SM\_DRIVE\_STOP};
+305                         \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} = \hyperlink{_threaded_robot_8hpp_a96fec3d4c162b9ffe5c1c5847c58f1d9}{SM\_ARM\_IDLE};
+306                         \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} = \hyperlink{_threaded_robot_8hpp_a1ccedfbf469636f5afc2c68499f826a9}{SM\_INTAKE\_IDLE};
+307                     \} \textcolor{keywordflow}{else} \{
+308                         \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_a388ca9e0532aeb38988df56f8226b6f9}{STEP\_\_TO\_REACTOR};
+309                         \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_adac605b3f05fb0b3166eddf6bffeaae2}{SM\_DRIVE\_TURN\_FROM\_REACTOR};
+310                     \}
+311                 \} \textcolor{keywordflow}{else} \{
+312                     \hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} = \hyperlink{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}{STEP\_\_TO\_STORAGE};
+313                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_adac605b3f05fb0b3166eddf6bffeaae2}{SM\_DRIVE\_TURN\_FROM\_REACTOR};
+314                 \}
+315             \}
+316             \textcolor{keywordflow}{break};
+317         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_adac605b3f05fb0b3166eddf6bffeaae2}{SM\_DRIVE\_TURN\_FROM\_REACTOR}:
+318             \textcolor{comment}{// set the turn}
+319             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{ \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_abaf93133223369df521ba2c8bcfea09d}{setTurnSetpoint}(160); \}
+320 
+321             \textcolor{comment}{// run the PD loop with line following correction}
+322             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_af7e515735f07964fdf42e79bf822e3d1}{driveTurn}();
+323 
+324             \textcolor{comment}{// if done, move on to next step}
+325             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ab3b73991a0be9e840d3e4903d41dadec}{turned}()) \{
+326                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}{STEP\_\_TO\_STORAGE}) \{
+327                     \textcolor{comment}{// we need to drive to the proper storage}
+328                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a4f6a6e6b703f8b80f5d02968d9595267}{SM\_DRIVE\_FUEL\_STORAGE};
+329                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a388ca9e0532aeb38988df56f8226b6f9}{STEP\_\_TO\_REACTOR}) \{
+330                     \textcolor{comment}{// drive to reactor}
+331                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_ad8059005f360a46de99b00ca40801fec}{SM\_DRIVE\_REACTOR};
+332                 \}
+333             \}
+334             \textcolor{keywordflow}{break};
+335         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a0dfd6ccb0681319880cf03a62262aa43}{SM\_DRIVE\_TURN\_LEFT}:
+336             \textcolor{comment}{// set the turned}
+337             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{ \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_abaf93133223369df521ba2c8bcfea09d}{setTurnSetpoint}(-90); \}
+338 
+339             \textcolor{comment}{// run the PD loop with line following correction}
+340             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_af7e515735f07964fdf42e79bf822e3d1}{driveTurn}();
+341 
+342             \textcolor{comment}{// if done, move on to next step}
+343             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ab3b73991a0be9e840d3e4903d41dadec}{turned}()) \{
+344                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}{STEP\_\_TO\_STORAGE}) \{
+345                     \textcolor{comment}{// we need to drive to the proper storage}
+346                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}{SM\_DRIVE\_FUEL\_DEPOSIT\_RETRIEVE};
+347                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a26c2a122486872fb524e51b3040a6dc5}{STEP\_\_TO\_SUPPLY\_NAV}) \{
+348                     \textcolor{comment}{// drive to supply}
+349                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a736b22dbab4c41abd3670d0613e9b7b2}{SM\_DRIVE\_FUEL\_SUPPLY};
+350                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}{STEP\_\_TO\_SUPPLY}) \{
+351                     \textcolor{comment}{// drive to supply}
+352                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}{SM\_DRIVE\_FUEL\_DEPOSIT\_RETRIEVE};
+353                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}{STEP\_\_TO\_REACTOR\_RETURN}) \{
+354                     \textcolor{comment}{// drive back to the reactor}
+355                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_ad8059005f360a46de99b00ca40801fec}{SM\_DRIVE\_REACTOR};
+356                 \}
+357             \}
+358             \textcolor{keywordflow}{break};
+359         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a065168c9946205caff716032d3f26d1b}{SM\_DRIVE\_TURN\_RIGHT}:
+360             \textcolor{comment}{// set the turned}
+361             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{ \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_abaf93133223369df521ba2c8bcfea09d}{setTurnSetpoint}(90); \}
+362 
+363             \textcolor{comment}{// run the PD loop with line following correction}
+364             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_af7e515735f07964fdf42e79bf822e3d1}{driveTurn}();
+365 
+366             \textcolor{comment}{// if done, move on to next step}
+367             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ab3b73991a0be9e840d3e4903d41dadec}{turned}()) \{
+368                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}{STEP\_\_TO\_STORAGE}) \{
+369                     \textcolor{comment}{// we need to drive to the proper storage}
+370                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}{SM\_DRIVE\_FUEL\_DEPOSIT\_RETRIEVE};
+371                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a26c2a122486872fb524e51b3040a6dc5}{STEP\_\_TO\_SUPPLY\_NAV}) \{
+372                     \textcolor{comment}{// drive to supply}
+373                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a736b22dbab4c41abd3670d0613e9b7b2}{SM\_DRIVE\_FUEL\_SUPPLY};
+374                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}{STEP\_\_TO\_SUPPLY}) \{
+375                     \textcolor{comment}{// drive to supply}
+376                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}{SM\_DRIVE\_FUEL\_DEPOSIT\_RETRIEVE};
+377                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a4fc7e302c22b562e209b43ca06b8965d}{STEP\_\_TO\_REACTOR\_RETURN}) \{
+378                     \textcolor{comment}{// drive back to the reactor}
+379                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_ad8059005f360a46de99b00ca40801fec}{SM\_DRIVE\_REACTOR};
+380                 \}
+381             \}
+382             \textcolor{keywordflow}{break};
+383         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_aac0c6c5f2a3a9106b067d6964c467a1e}{SM\_DRIVE\_TURN\_180}:
+384             \textcolor{comment}{// set the turned}
+385             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{ \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_abaf93133223369df521ba2c8bcfea09d}{setTurnSetpoint}(180); \}
+386 
+387             \textcolor{comment}{// run the PD loop with line following correction}
+388             \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_af7e515735f07964fdf42e79bf822e3d1}{driveTurn}();
+389 
+390             \textcolor{comment}{// if done, move on to next step}
+391             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_ab3b73991a0be9e840d3e4903d41dadec}{turned}()) \{
+392                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}{STEP\_\_TO\_SUPPLY}) \{
+393                     \textcolor{comment}{// we need to drive to the proper storage}
+394                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a15a3a8b9bc4c8d83aea6b4f8d9fe78a9}{SM\_DRIVE\_FUEL\_DEPOSIT\_RETRIEVE};
+395                 \}
+396             \}
+397             \textcolor{keywordflow}{break};
+398         \textcolor{keywordflow}{default}:
+399             \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a660f930e51755e1c2e76220fc1952a82}{SM\_DRIVE\_STOP};
+400             \textcolor{keywordflow}{break};
+401     \}
+402 
+403     \textcolor{comment}{// if we just ran a first call}
+404     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_DRIVE\_FC) \{
+405         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} &= !\hyperlink{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}{STATUS\_DRIVE\_FC}; \textcolor{comment}{// set first call flag bit to 0}
+406     \}
+407 
+408     \textcolor{comment}{// check if we manually changed states in THIS loop}
+409     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a4a4a3eab10c962150bc5194f22d10496}{drive\_state\_prev} != \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state}) \{
+410         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} |= \hyperlink{_threaded_robot_8hpp_a0bd5b2755ddab25dc7c7f0fd9f907e92}{STATUS\_DRIVE\_FC}; \textcolor{comment}{// set first call flag bit to 1}
+411     \}
+412 
+413     \hyperlink{class_threaded_robot_a4a4a3eab10c962150bc5194f22d10496}{drive\_state\_prev} = \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state};
+414 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_ab1a8d6c3cc3e2df57701adfa23e1273d}\label{class_threaded_robot_ab1a8d6c3cc3e2df57701adfa23e1273d}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!step\+\_\+intake\+\_\+loop@{step\+\_\+intake\+\_\+loop}}
+\index{step\+\_\+intake\+\_\+loop@{step\+\_\+intake\+\_\+loop}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{step\+\_\+intake\+\_\+loop()}{step\_intake\_loop()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::step\+\_\+intake\+\_\+loop (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Step through the intake control logic. 
+
+This loop manages the behavior of the intake based on situational assumptions from information in the status byte.~\newline
+ Coorinates often with the arm and drive subsystem state machines. 
+
+Definition at line 487 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+487                                          \{
+488     \textcolor{comment}{// check if there was an external state change}
+489     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} != \hyperlink{class_threaded_robot_a6ee4298a994be3756ea1821125ab9d57}{intake\_state\_prev}) \{
+490         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} |= \hyperlink{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}{STATUS\_INTAKE\_FC}; \textcolor{comment}{// set first call flag bit to 1}
+491     \}
+492 
+493     \textcolor{keywordflow}{switch} (\hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state}) \{
+494         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a1ccedfbf469636f5afc2c68499f826a9}{SM\_INTAKE\_IDLE}:
+495             \textcolor{comment}{// do nothing}
+496             \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_a3780c5eb8a67c524cc793aaa631ce62e}{stop}();
+497             \textcolor{keywordflow}{break};
+498         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_afbbce27f2ad74e23a17117134f66f94f}{SM\_INTAKE\_HOLD}:
+499             \textcolor{comment}{// hold the rod in, if it slips out, pull it back in}
+500             \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}{switchHit}()) \{ \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_a4c1e0e346839bb294065ae5da7117df0}{slowIn}(); \} \textcolor{keywordflow}{else} \{ 
+      \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_a3780c5eb8a67c524cc793aaa631ce62e}{stop}(); \}
+501             \textcolor{keywordflow}{break};
+502         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a8e869bc75311ab5b24a7dcd53163d9f5}{SM\_INTAKE\_IN}:
+503             \textcolor{comment}{// pull in the rod}
+504             \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_a8582bcb135b9700923940a7b44d233ef}{fullIn}();
+505             \textcolor{comment}{// hold if got it}
+506             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}{switchHit}()) \{
+507                 \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} = \hyperlink{_threaded_robot_8hpp_afbbce27f2ad74e23a17117134f66f94f}{SM\_INTAKE\_HOLD};
+508                 \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_aa115713d34966f38642357eba5543f16}{setGripperStatus}(
+      \hyperlink{config_8h_a5bc0e4abb054ebb8d2a4dbc39b1fa4e2}{MSG\_ROBOT\_GRIPPER\_ROD});
+509 
+510                 \textcolor{comment}{// check if we just extracted from reactor, if so, back away and lift arm}
+511                 \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a303b885262b38d61b183b975a31fa9f5}{STEP\_\_EXTRACT\_ROUTINE}) \{
+512                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}{setRadiationLevel}(1);
+513                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_a48248df01840ec515c1288dfbc0323ed}{MSG\_ROBOT\_OP\_DRV\_TO\_STOR});
+514                     \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} = \hyperlink{_threaded_robot_8hpp_ab81e7b2b3227c0de1b76dcfdddb78f75}{SM\_ARM\_UP};
+515                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a59b73e9a00ed2ca9fbfc22a25281ab9f}{SM\_DRIVE\_REACTOR\_LOAD\_RETREAT};
+516                 \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_a037aff3c57462898ffb71a1a0f8096a1}{STEP\_\_TO\_SUPPLY}) \{
+517                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}{setRadiationLevel}(2);
+518                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_a48248df01840ec515c1288dfbc0323ed}{MSG\_ROBOT\_OP\_DRV\_TO\_STOR});
+519                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_aabc19201dab2e84504bcafcbb24015ab}{SM\_DRIVE\_WALL\_RETREAT};
+520                 \}
+521             \}
+522             \textcolor{keywordflow}{break};
+523         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_a533e726e2969b8474ca1cf9b697cb0b8}{SM\_INTAKE\_SLOW\_IN}:
+524             \textcolor{comment}{// slowly move the roller to be able to approach the reactor in a controlled fashion}
+525             \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_a4c1e0e346839bb294065ae5da7117df0}{slowIn}();
+526             \textcolor{keywordflow}{break};
+527         \textcolor{keywordflow}{case} \hyperlink{_threaded_robot_8hpp_aee99598bb6301112885aebf03222896f}{SM\_INTAKE\_EJECT}:
+528             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & \hyperlink{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}{STATUS\_INTAKE\_FC}) \{ \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->
+      \hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(\hyperlink{config_8h_ad674f3d1488156b64c1c2ef0826df9af}{MSG\_ROBOT\_OP\_RELEASE\_GRP}); \}
+529 
+530             \textcolor{comment}{// eject the rod}
+531             \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_abd14de5ccd68929ea2627ca11aec9688}{fullOut}();
+532 
+533             \textcolor{comment}{// see if its out}
+534             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_ac43f0de8273a3d7db6116817ea05b953}{STEP\_\_TO\_STORAGE}) \{
+535                 \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}{switchHit}() && \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->
+      \hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->\hyperlink{class_field_data_aace8d0ab4c931b35ab85b71710079459}{checkStorageTube}(\hyperlink{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}{cur\_tube})) \{
+536                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}{setRadiationLevel}(0);
+537                     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_a1123cbadb4fa69b79c47a7b9fb75c172}{MSG\_ROBOT\_OP\_DRV\_TO\_SUPL});
+538                     \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_aabc19201dab2e84504bcafcbb24015ab}{SM\_DRIVE\_WALL\_RETREAT};
+539                     \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} = \hyperlink{_threaded_robot_8hpp_a1ccedfbf469636f5afc2c68499f826a9}{SM\_INTAKE\_IDLE};
+540                 \}
+541             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}{global\_state} == \hyperlink{_threaded_robot_8hpp_aa746f89a7ab4e61cfe763ca6ad8a2e22}{STEP\_\_INSERT\_ROUTINE}) \{
+542                 \textcolor{keywordflow}{if} (!\hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_ae9bf8ae8ebed0f1ba36443373eb0ae63}{switchHit}()) \{
+543                     \hyperlink{class_threaded_robot_a314047099d4d38a60d54cc8b81012c7c}{tick\_wait}++;
+544                     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a314047099d4d38a60d54cc8b81012c7c}{tick\_wait} > 500) \{
+545                         \hyperlink{class_threaded_robot_a314047099d4d38a60d54cc8b81012c7c}{tick\_wait} = 0;
+546 
+547                         \textcolor{comment}{// set radiation low}
+548                         \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a330b0e4fa0303df4a16b8c07e917c622}{setRadiationLevel}(0);
+549                         \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a2676bf89bd178c2a9a38236d936a49c0}{setOperationStatus}(
+      \hyperlink{config_8h_a07b36fc0265003a9ba81111a770f1ce9}{MSG\_ROBOT\_OP\_DRV\_TO\_ROD});
+550 
+551                         \textcolor{comment}{// move the arm back up and continue with states}
+552                         \hyperlink{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}{arm\_state} = \hyperlink{_threaded_robot_8hpp_ab81e7b2b3227c0de1b76dcfdddb78f75}{SM\_ARM\_UP};
+553                         \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state} = \hyperlink{_threaded_robot_8hpp_a1ccedfbf469636f5afc2c68499f826a9}{SM\_INTAKE\_IDLE};
+554                         \hyperlink{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}{drive\_state} = \hyperlink{_threaded_robot_8hpp_a59b73e9a00ed2ca9fbfc22a25281ab9f}{SM\_DRIVE\_REACTOR\_LOAD\_RETREAT}
+      ;
+555                         \hyperlink{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}{cur\_reactor}++;
+556                     \}
+557                 \}
+558             \}
+559             \textcolor{keywordflow}{break};
+560     \}
+561 
+562     \textcolor{comment}{// if we just ran a first call}
+563     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} & STATUS\_INTAKE\_FC) \{
+564         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} &= !\hyperlink{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}{STATUS\_INTAKE\_FC}; \textcolor{comment}{// set first call flag bit to 0}
+565     \}
+566 
+567     \textcolor{comment}{// check if we manually changed states in THIS loop}
+568     \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a6ee4298a994be3756ea1821125ab9d57}{intake\_state\_prev} != \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state}) \{
+569         \hyperlink{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}{status} |= \hyperlink{_threaded_robot_8hpp_a11f08cf179cbed14133b5202e4b3d08d}{STATUS\_INTAKE\_FC}; \textcolor{comment}{// set first call flag bit to 1}
+570     \}
+571 
+572     \hyperlink{class_threaded_robot_a6ee4298a994be3756ea1821125ab9d57}{intake\_state\_prev} = \hyperlink{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}{intake\_state};
+573 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_threaded_robot_ae5545fb683a84aec9bda34a2c9bba228}\label{class_threaded_robot_ae5545fb683a84aec9bda34a2c9bba228}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!step\+Virtual\+Threads@{step\+Virtual\+Threads}}
+\index{step\+Virtual\+Threads@{step\+Virtual\+Threads}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{step\+Virtual\+Threads()}{stepVirtualThreads()}}
+{\footnotesize\ttfamily void Threaded\+Robot\+::step\+Virtual\+Threads (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{micros\+\_\+elapsed }\end{DoxyParamCaption})}
+
+
+
+Step through each component of the robot, giving a pseudo-\/multithreaded functionality. 
+
+Begins by recieving data from bluetooth if available then updates drive, arm, then gripper. 
+
+Definition at line 51 of file Threaded\+Robot.\+cpp.
+
+
+\begin{DoxyCode}
+51                                                               \{
+52     \textcolor{comment}{// step recieving data from the field}
+53     \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_abdf16b0ba616983f4c4b1895ed937eb2}{step\_recv}();
+54 
+55     \textcolor{comment}{// update radiation LEDs}
+56     \textcolor{keywordflow}{switch} (\hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_aa07992df20b2aee6d2c4defd8d6b110c}{robot}()->\hyperlink{class_robot_data_a8bffbd345dfd74acedd44270133e0477}{getRadiationLevel}()) \{
+57         \textcolor{keywordflow}{case} 0:
+58             \textcolor{comment}{// no radiation}
+59             digitalWrite(\hyperlink{config_8h_ae7a4f981c8c2fee871cca8ce6de40436}{RAD\_LED\_0}, HIGH);
+60             digitalWrite(\hyperlink{config_8h_a4fdb8eb7f018736d83447712b34a6438}{RAD\_LED\_1}, HIGH);
+61         \textcolor{keywordflow}{break};
+62         \textcolor{keywordflow}{case} 1:
+63             \textcolor{comment}{// low radiation}
+64             \hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter} += micros\_elapsed;
+65             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter} < 50000) \{
+66                 digitalWrite(\hyperlink{config_8h_ae7a4f981c8c2fee871cca8ce6de40436}{RAD\_LED\_0}, HIGH);
+67                 digitalWrite(\hyperlink{config_8h_a4fdb8eb7f018736d83447712b34a6438}{RAD\_LED\_1}, HIGH);
+68             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter} < 100000) \{
+69                 digitalWrite(\hyperlink{config_8h_ae7a4f981c8c2fee871cca8ce6de40436}{RAD\_LED\_0}, LOW);
+70                 digitalWrite(\hyperlink{config_8h_a4fdb8eb7f018736d83447712b34a6438}{RAD\_LED\_1}, LOW);
+71             \} \textcolor{keywordflow}{else} \{ \hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter} = 0; \}
+72         \textcolor{keywordflow}{break};
+73         \textcolor{keywordflow}{case} 2:
+74             \textcolor{comment}{// high radiation}
+75             \hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter} += micros\_elapsed;
+76             \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter} < 25000) \{
+77                 digitalWrite(\hyperlink{config_8h_ae7a4f981c8c2fee871cca8ce6de40436}{RAD\_LED\_0}, HIGH);
+78                 digitalWrite(\hyperlink{config_8h_a4fdb8eb7f018736d83447712b34a6438}{RAD\_LED\_1}, HIGH);
+79             \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter} < 50000) \{
+80                 digitalWrite(\hyperlink{config_8h_ae7a4f981c8c2fee871cca8ce6de40436}{RAD\_LED\_0}, LOW);
+81                 digitalWrite(\hyperlink{config_8h_a4fdb8eb7f018736d83447712b34a6438}{RAD\_LED\_1}, LOW);
+82             \} \textcolor{keywordflow}{else} \{ \hyperlink{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}{led\_counter} = 0; \}
+83         \textcolor{keywordflow}{break};
+84     \}
+85 
+86     \textcolor{comment}{// step subsystems if robot is enabled}
+87     \hyperlink{_threaded_robot_8hpp_a0710cfb77cd7024b3c712061f1349443}{robot\_disabled} = (bool) \hyperlink{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}{messenger}->\hyperlink{class_messenger_a2d8c23fd3eada41d734620a600ceca57}{field}()->
+      \hyperlink{class_field_data_ab43f0866e57dbdb05d56550a6ab1e8e0}{checkMovementDisabled}();
+88     \textcolor{keywordflow}{if} (!\hyperlink{_threaded_robot_8hpp_a0710cfb77cd7024b3c712061f1349443}{robot\_disabled}) \{
+89         \hyperlink{class_threaded_robot_ac4f1dd23e0b7ec167c9b80875d06d4c6}{step\_drive\_loop}();
+90         \hyperlink{class_threaded_robot_a2224a8a7536e9ffb7d7a35c57280bddb}{step\_arm\_loop}();
+91         \hyperlink{class_threaded_robot_ab1a8d6c3cc3e2df57701adfa23e1273d}{step\_intake\_loop}();
+92     \} \textcolor{keywordflow}{else} \{
+93         \hyperlink{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}{drive}->\hyperlink{class_drive_train_a18d4c7b82118a1da8910d09a31f88a38}{stop}();
+94         \hyperlink{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}{arm}->\hyperlink{class_arm_a4a2070a27aecb7129cb89f4c9231278a}{stop}();
+95         \hyperlink{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}{intake}->\hyperlink{class_intake_a3780c5eb8a67c524cc793aaa631ce62e}{stop}();
+96     \}
+97 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_threaded_robot_ae12c29cb9719f6562f27402f487321e6}\label{class_threaded_robot_ae12c29cb9719f6562f27402f487321e6}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!accel@{accel}}
+\index{accel@{accel}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{accel}{accel}}
+{\footnotesize\ttfamily \hyperlink{class_accelerometer}{Accelerometer}$\ast$ Threaded\+Robot\+::accel\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Adafruit accelerometer. 
+
+
+
+Definition at line 100 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}\label{class_threaded_robot_afc4445eed32ecc9c375e17ccf4f37241}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!arm@{arm}}
+\index{arm@{arm}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{arm}{arm}}
+{\footnotesize\ttfamily \hyperlink{class_arm}{Arm}$\ast$ Threaded\+Robot\+::arm\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{class_arm}{Arm} control object. 
+
+
+
+Definition at line 97 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}\label{class_threaded_robot_a19026abe96d44213f7e8b3983be2d968}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!arm\+\_\+state@{arm\+\_\+state}}
+\index{arm\+\_\+state@{arm\+\_\+state}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{arm\+\_\+state}{arm\_state}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::arm\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Status of the four-\/bar arm subsystem. 
+
+
+
+Definition at line 89 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a77a621d5f607ff296ceac51c831a3258}\label{class_threaded_robot_a77a621d5f607ff296ceac51c831a3258}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!arm\+\_\+state\+\_\+prev@{arm\+\_\+state\+\_\+prev}}
+\index{arm\+\_\+state\+\_\+prev@{arm\+\_\+state\+\_\+prev}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{arm\+\_\+state\+\_\+prev}{arm\_state\_prev}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::arm\+\_\+state\+\_\+prev\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Previous status of the four-\/bar arm subsystem. 
+
+
+
+Definition at line 92 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}\label{class_threaded_robot_a3c2f2358f32ba58846b13e95b3c55527}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!cur\+\_\+reactor@{cur\+\_\+reactor}}
+\index{cur\+\_\+reactor@{cur\+\_\+reactor}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{cur\+\_\+reactor}{cur\_reactor}}
+{\footnotesize\ttfamily int8\+\_\+t Threaded\+Robot\+::cur\+\_\+reactor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Keep track of the current reactor. 
+
+
+
+Definition at line 108 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}\label{class_threaded_robot_ac68916b337d845b298d7e66f2f9261d7}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!cur\+\_\+tube@{cur\+\_\+tube}}
+\index{cur\+\_\+tube@{cur\+\_\+tube}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{cur\+\_\+tube}{cur\_tube}}
+{\footnotesize\ttfamily int8\+\_\+t Threaded\+Robot\+::cur\+\_\+tube\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Keep track of the current tube. 
+
+
+
+Definition at line 107 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}\label{class_threaded_robot_ad666af7d773c8096210f6b5c4d060086}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!drive@{drive}}
+\index{drive@{drive}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{drive}{drive}}
+{\footnotesize\ttfamily \hyperlink{class_drive_train}{Drive\+Train}$\ast$ Threaded\+Robot\+::drive\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Drivetrain control object. 
+
+
+
+Definition at line 96 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}\label{class_threaded_robot_a8cc4fc4f00ff6566604f9499d427698a}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!drive\+\_\+state@{drive\+\_\+state}}
+\index{drive\+\_\+state@{drive\+\_\+state}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{drive\+\_\+state}{drive\_state}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::drive\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Status of the drive subsystem. 
+
+
+
+Definition at line 88 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a4a4a3eab10c962150bc5194f22d10496}\label{class_threaded_robot_a4a4a3eab10c962150bc5194f22d10496}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!drive\+\_\+state\+\_\+prev@{drive\+\_\+state\+\_\+prev}}
+\index{drive\+\_\+state\+\_\+prev@{drive\+\_\+state\+\_\+prev}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{drive\+\_\+state\+\_\+prev}{drive\_state\_prev}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::drive\+\_\+state\+\_\+prev\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Previous status of the drive subsystem. 
+
+
+
+Definition at line 91 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}\label{class_threaded_robot_a92782be4dc437d7e84b04d20a39a5de3}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!global\+\_\+state@{global\+\_\+state}}
+\index{global\+\_\+state@{global\+\_\+state}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{global\+\_\+state}{global\_state}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::global\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Global state machine state. 
+
+
+
+Definition at line 94 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a506989a00617c30a8a1930773a0b7d41}\label{class_threaded_robot_a506989a00617c30a8a1930773a0b7d41}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!got\+\_\+data@{got\+\_\+data}}
+\index{got\+\_\+data@{got\+\_\+data}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{got\+\_\+data}{got\_data}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::got\+\_\+data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If we have necessary bluetooth data. 
+
+
+
+Definition at line 106 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}\label{class_threaded_robot_ac4e32d1373e0d8a887c29378c002783f}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!intake@{intake}}
+\index{intake@{intake}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{intake}{intake}}
+{\footnotesize\ttfamily \hyperlink{class_intake}{Intake}$\ast$ Threaded\+Robot\+::intake\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\hyperlink{class_intake}{Intake} control object. 
+
+
+
+Definition at line 98 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}\label{class_threaded_robot_a832f25be64f45ff3297d3da9609a9391}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!intake\+\_\+state@{intake\+\_\+state}}
+\index{intake\+\_\+state@{intake\+\_\+state}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{intake\+\_\+state}{intake\_state}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::intake\+\_\+state\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Status of the intake subsystem. 
+
+
+
+Definition at line 90 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a6ee4298a994be3756ea1821125ab9d57}\label{class_threaded_robot_a6ee4298a994be3756ea1821125ab9d57}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!intake\+\_\+state\+\_\+prev@{intake\+\_\+state\+\_\+prev}}
+\index{intake\+\_\+state\+\_\+prev@{intake\+\_\+state\+\_\+prev}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{intake\+\_\+state\+\_\+prev}{intake\_state\_prev}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::intake\+\_\+state\+\_\+prev\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Previous status of the intake subsystem. 
+
+
+
+Definition at line 93 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}\label{class_threaded_robot_a857a1c5a3488176bd5a4bafc1b6d1d89}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!led\+\_\+counter@{led\+\_\+counter}}
+\index{led\+\_\+counter@{led\+\_\+counter}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{led\+\_\+counter}{led\_counter}}
+{\footnotesize\ttfamily uint32\+\_\+t Threaded\+Robot\+::led\+\_\+counter\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Used to run the radiation L\+ED alternation. 
+
+
+
+Definition at line 104 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}\label{class_threaded_robot_aacd340e703b54f0d3568c6c2bed974bf}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!lines\+\_\+to\+\_\+skip@{lines\+\_\+to\+\_\+skip}}
+\index{lines\+\_\+to\+\_\+skip@{lines\+\_\+to\+\_\+skip}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{lines\+\_\+to\+\_\+skip}{lines\_to\_skip}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::lines\+\_\+to\+\_\+skip\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+How many lines left to skip. 
+
+
+
+Definition at line 110 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}\label{class_threaded_robot_a7ff65f6f18c5d3a9d5823e0a00b46c9f}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!messenger@{messenger}}
+\index{messenger@{messenger}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{messenger}{messenger}}
+{\footnotesize\ttfamily \hyperlink{class_messenger}{Messenger}$\ast$ Threaded\+Robot\+::messenger\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pointer to instantiated and configured \hyperlink{class_messenger}{Messenger}. 
+
+
+
+Definition at line 73 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a6dcf388032425561c387f153ea141c79}\label{class_threaded_robot_a6dcf388032425561c387f153ea141c79}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!rsensor@{rsensor}}
+\index{rsensor@{rsensor}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{rsensor}{rsensor}}
+{\footnotesize\ttfamily \hyperlink{class_reflectance_sensor}{Reflectance\+Sensor}$\ast$ Threaded\+Robot\+::rsensor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Pololu reflectance sensor object. 
+
+
+
+Definition at line 99 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}\label{class_threaded_robot_a10f3a9d1b27ca8e7a1ada75323c75879}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!status@{status}}
+\index{status@{status}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{status}{status}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Robot status flags. 
+
+bit\mbox{[}0\mbox{]} =$>$ 1 = have old fuel~\newline
+ bit\mbox{[}1\mbox{]} =$>$ 1 = have new fuel~\newline
+ bit\mbox{[}2\mbox{]} =$>$ 1 = returning new fuel~\newline
+ bit\mbox{[}3\mbox{]} =$>$ 1 = getting new fuel~\newline
+ bit\mbox{[}4\mbox{]} =$>$ 1 = first call of current drive state (state changed), 0 = state unchanged~\newline
+ bit\mbox{[}5\mbox{]} =$>$ 1 = first call of current arm state (state changed), 0 = state unchanged~\newline
+ bit\mbox{[}6\mbox{]} =$>$ 1 = first call of current gripper state (state changed), 0 = state unchanged~\newline
+ bit\mbox{[}7\mbox{]} =$>$ (reserved bit)The status byte of the system, \& with the status bitmasks to use 
+
+Definition at line 86 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a638cd7916d1c1c8a83d15c47a8fe6ef0}\label{class_threaded_robot_a638cd7916d1c1c8a83d15c47a8fe6ef0}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!stopped\+\_\+cnt@{stopped\+\_\+cnt}}
+\index{stopped\+\_\+cnt@{stopped\+\_\+cnt}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{stopped\+\_\+cnt}{stopped\_cnt}}
+{\footnotesize\ttfamily uint32\+\_\+t Threaded\+Robot\+::stopped\+\_\+cnt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Count how many times the accelerometer thinks we stopped as to avoid error. 
+
+
+
+Definition at line 102 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_aa895dd29f7418754d4dfb8555572ae31}\label{class_threaded_robot_aa895dd29f7418754d4dfb8555572ae31}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!supply\+\_\+dir@{supply\+\_\+dir}}
+\index{supply\+\_\+dir@{supply\+\_\+dir}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{supply\+\_\+dir}{supply\_dir}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::supply\+\_\+dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Direction we turned for supply rod (0 = left, 1 = right) 
+
+
+
+Definition at line 111 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a314047099d4d38a60d54cc8b81012c7c}\label{class_threaded_robot_a314047099d4d38a60d54cc8b81012c7c}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!tick\+\_\+wait@{tick\+\_\+wait}}
+\index{tick\+\_\+wait@{tick\+\_\+wait}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{tick\+\_\+wait}{tick\_wait}}
+{\footnotesize\ttfamily uint32\+\_\+t Threaded\+Robot\+::tick\+\_\+wait\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Count this up until it reaches a value to wait that many ticks. 
+
+
+
+Definition at line 103 of file Threaded\+Robot.\+hpp.
+
+\mbox{\Hypertarget{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}\label{class_threaded_robot_a8d78ef13e34e29ab23aafedcdddc4ae4}} 
+\index{Threaded\+Robot@{Threaded\+Robot}!was\+\_\+on\+\_\+line@{was\+\_\+on\+\_\+line}}
+\index{was\+\_\+on\+\_\+line@{was\+\_\+on\+\_\+line}!Threaded\+Robot@{Threaded\+Robot}}
+\subsubsection{\texorpdfstring{was\+\_\+on\+\_\+line}{was\_on\_line}}
+{\footnotesize\ttfamily uint8\+\_\+t Threaded\+Robot\+::was\+\_\+on\+\_\+line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+If we have been on a line already. 
+
+
+
+Definition at line 109 of file Threaded\+Robot.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/subsystems/\hyperlink{_threaded_robot_8hpp}{Threaded\+Robot.\+hpp}\item 
+rbe2001/subsystems/\hyperlink{_threaded_robot_8cpp}{Threaded\+Robot.\+cpp}\end{DoxyCompactItemize}

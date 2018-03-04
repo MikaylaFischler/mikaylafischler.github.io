@@ -2,96 +2,134 @@
 \label{class_digital_output}\index{Digital\+Output@{Digital\+Output}}
 
 
-{\ttfamily \#include $<$Digital\+Output.\+h$>$}
+{\ttfamily \#include $<$Digital\+Output.\+hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_digital_output_a5be5029deda67b7ce1142512bab1901a}{Digital\+Output} (int port)
-\item 
+\hyperlink{class_digital_output_a3be20f0faddd50d8f88ed0c620845dba}{Digital\+Output} (int p)
+\begin{DoxyCompactList}\small\item\em Initalize on the given port. \end{DoxyCompactList}\item 
 \hyperlink{class_digital_output_a442e379ebfbd2939d568809dad9c0ba2}{$\sim$\+Digital\+Output} ()
 \item 
-int \hyperlink{class_digital_output_a6b05ec0083899a814df78b376e1ab8cd}{get\+\_\+port} ()
+int \hyperlink{class_digital_output_a36f4869bb51da9476cf22babc07d1e40}{get\+Port} (void) const
+\begin{DoxyCompactList}\small\item\em Get port being used. \end{DoxyCompactList}\item 
+void \hyperlink{class_digital_output_a755a7a71484e600e45e70b61e41041b7}{write} (int val) const
+\begin{DoxyCompactList}\small\item\em Write digital value to output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_digital_output_a6c2f1937df48d1ccb7f74f5e92a60943}{write} (int val)
+int \hyperlink{class_digital_output_a01596de4b8252bd9033507e6feea1cb9}{port}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{_digital_output_8h}{Digital\+Output.\+h} -\/ Wraps around digital write. Written by Mikayla Fischler 
 
-Definition at line 11 of file Digital\+Output.\+h.
+
+Definition at line 12 of file Digital\+Output.\+hpp.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_digital_output_a5be5029deda67b7ce1142512bab1901a}\label{class_digital_output_a5be5029deda67b7ce1142512bab1901a}} 
+\mbox{\Hypertarget{class_digital_output_a3be20f0faddd50d8f88ed0c620845dba}\label{class_digital_output_a3be20f0faddd50d8f88ed0c620845dba}} 
 \index{Digital\+Output@{Digital\+Output}!Digital\+Output@{Digital\+Output}}
 \index{Digital\+Output@{Digital\+Output}!Digital\+Output@{Digital\+Output}}
 \subsubsection{\texorpdfstring{Digital\+Output()}{DigitalOutput()}}
-{\footnotesize\ttfamily Digital\+Output\+::\+Digital\+Output (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Digital\+Output\+::\+Digital\+Output (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hyperlink{_digital_output_8cpp}{Digital\+Output.\+cpp} -\/ Digtal Output Source Code Written by Mikayla Fischler 
 
-Definition at line 11 of file Digital\+Output.\+cpp.
+
+Initalize on the given port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & Digital port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Digital\+Output.\+hpp.
 
 
 \begin{DoxyCode}
-11                                      \{
-12     pinMode(port, OUTPUT);
-13     this->port = port;
-14 \}
+20 : \hyperlink{class_digital_output_a01596de4b8252bd9033507e6feea1cb9}{port}(p) \{\};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_digital_output_a442e379ebfbd2939d568809dad9c0ba2}\label{class_digital_output_a442e379ebfbd2939d568809dad9c0ba2}} 
 \index{Digital\+Output@{Digital\+Output}!````~Digital\+Output@{$\sim$\+Digital\+Output}}
 \index{````~Digital\+Output@{$\sim$\+Digital\+Output}!Digital\+Output@{Digital\+Output}}
 \subsubsection{\texorpdfstring{$\sim$\+Digital\+Output()}{~DigitalOutput()}}
-{\footnotesize\ttfamily Digital\+Output\+::$\sim$\+Digital\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Digital\+Output\+::$\sim$\+Digital\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 17 of file Digital\+Output.\+cpp.
+Definition at line 21 of file Digital\+Output.\+hpp.
 
 
 \begin{DoxyCode}
-17 \{\}
+21 \{\};
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_digital_output_a6b05ec0083899a814df78b376e1ab8cd}\label{class_digital_output_a6b05ec0083899a814df78b376e1ab8cd}} 
-\index{Digital\+Output@{Digital\+Output}!get\+\_\+port@{get\+\_\+port}}
-\index{get\+\_\+port@{get\+\_\+port}!Digital\+Output@{Digital\+Output}}
-\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
-{\footnotesize\ttfamily int Digital\+Output\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_digital_output_a36f4869bb51da9476cf22babc07d1e40}\label{class_digital_output_a36f4869bb51da9476cf22babc07d1e40}} 
+\index{Digital\+Output@{Digital\+Output}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!Digital\+Output@{Digital\+Output}}
+\subsubsection{\texorpdfstring{get\+Port()}{getPort()}}
+{\footnotesize\ttfamily int Digital\+Output\+::get\+Port (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
+
+
+Get port being used. 
+
+\begin{DoxyReturn}{Returns}
+Associated port 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file Digital\+Output.\+cpp.
+
+
+\begin{DoxyCode}
+14 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_digital_output_a01596de4b8252bd9033507e6feea1cb9}{port}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_digital_output_a755a7a71484e600e45e70b61e41041b7}\label{class_digital_output_a755a7a71484e600e45e70b61e41041b7}} 
+\index{Digital\+Output@{Digital\+Output}!write@{write}}
+\index{write@{write}!Digital\+Output@{Digital\+Output}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void Digital\+Output\+::write (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption}) const}
+
+
+
+Write digital value to output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em val} & The value to output \\
+\hline
+\end{DoxyParams}
 
 
 Definition at line 20 of file Digital\+Output.\+cpp.
 
 
 \begin{DoxyCode}
-20 \{ \textcolor{keywordflow}{return} this->port; \}
+20 \{ digitalWrite(this->\hyperlink{class_digital_output_a01596de4b8252bd9033507e6feea1cb9}{port}, val); \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_digital_output_a6c2f1937df48d1ccb7f74f5e92a60943}\label{class_digital_output_a6c2f1937df48d1ccb7f74f5e92a60943}} 
-\index{Digital\+Output@{Digital\+Output}!write@{write}}
-\index{write@{write}!Digital\+Output@{Digital\+Output}}
-\subsubsection{\texorpdfstring{write()}{write()}}
-{\footnotesize\ttfamily void Digital\+Output\+::write (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_digital_output_a01596de4b8252bd9033507e6feea1cb9}\label{class_digital_output_a01596de4b8252bd9033507e6feea1cb9}} 
+\index{Digital\+Output@{Digital\+Output}!port@{port}}
+\index{port@{port}!Digital\+Output@{Digital\+Output}}
+\subsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily int Digital\+Output\+::port\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Definition at line 23 of file Digital\+Output.\+cpp.
+Definition at line 14 of file Digital\+Output.\+hpp.
 
-
-\begin{DoxyCode}
-23                                  \{
-24     digitalWrite(this->port, val);
-25 \}
-\end{DoxyCode}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-rbe2001/devices/io/\hyperlink{_digital_output_8h}{Digital\+Output.\+h}\item 
+rbe2001/devices/io/\hyperlink{_digital_output_8hpp}{Digital\+Output.\+hpp}\item 
 rbe2001/devices/io/\hyperlink{_digital_output_8cpp}{Digital\+Output.\+cpp}\end{DoxyCompactItemize}

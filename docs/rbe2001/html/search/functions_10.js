@@ -1,12 +1,15 @@
 var searchData=
 [
-  ['_7eanalogoutput',['~AnalogOutput',['../df/de2/class_analog_output.html#a7848a6b7b7c15bba5c75f0f82f3c1d53',1,'AnalogOutput']]],
-  ['_7eanalogsensor',['~AnalogSensor',['../dc/d60/class_analog_sensor.html#a4b88bf9ee03c180dedea7822e5d32997',1,'AnalogSensor']]],
-  ['_7econtroller',['~Controller',['../d8/d87/class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5',1,'Controller']]],
-  ['_7edigitaloutput',['~DigitalOutput',['../dd/da6/class_digital_output.html#a442e379ebfbd2939d568809dad9c0ba2',1,'DigitalOutput']]],
-  ['_7edigitalsensor',['~DigitalSensor',['../d0/d9f/class_digital_sensor.html#ab74d9e7e77b4ea505cd42a364017ded0',1,'DigitalSensor']]],
-  ['_7edrivetrain',['~DriveTrain',['../d9/db0/class_drive_train.html#a5dd1c80e30d87655b22974431b16afdf',1,'DriveTrain::~DriveTrain()'],['../d9/db0/class_drive_train.html#a5dd1c80e30d87655b22974431b16afdf',1,'DriveTrain::~DriveTrain()']]],
-  ['_7emotorgroup',['~MotorGroup',['../de/d21/class_motor_group.html#aff77909a09cada0bf7742de4c91ba630',1,'MotorGroup']]],
-  ['_7evexmotor',['~VEXMotor',['../de/dd9/class_v_e_x_motor.html#a1f0c73e1feb9f1bbe6bcc1216e8de430',1,'VEXMotor']]],
-  ['_7evexservo',['~VEXServo',['../d0/d47/class_v_e_x_servo.html#a9a25c4d4400daadf45b19b1fa47710ab',1,'VEXServo']]]
+  ['recv',['recv',['../dd/d2e/class_bluetooth_client.html#a938b0f547b483ff7d0ac5e64260a9c37',1,'BluetoothClient']]],
+  ['reflectancesensor',['ReflectanceSensor',['../d4/d5e/class_reflectance_sensor.html#a0460515b96ac26e3fcf0cfb74a6dd324',1,'ReflectanceSensor']]],
+  ['refreshrobotdata',['refreshRobotData',['../d6/dc9/class_messenger.html#ad5df7d4bf31502b3aad9f04b5e830e2c',1,'Messenger']]],
+  ['register_5fbt_5fclient',['register_bt_client',['../d6/dc9/class_messenger.html#a8412ddd8931fa6b49a2ad3a2f52cad31',1,'Messenger']]],
+  ['register_5ffield_5fdata',['register_field_data',['../d6/dc9/class_messenger.html#a1416b79fce99fd7b1aa13d07113546a7',1,'Messenger']]],
+  ['register_5frobot_5fdata',['register_robot_data',['../d6/dc9/class_messenger.html#ade23d550433aaa39bd08b4dd092bceeb',1,'Messenger']]],
+  ['robot',['robot',['../d6/dc9/class_messenger.html#aa07992df20b2aee6d2c4defd8d6b110c',1,'Messenger']]],
+  ['robotdata',['RobotData',['../d2/d9e/class_robot_data.html#a0007f4b014a950d356d2d63156b572af',1,'RobotData']]],
+  ['runlinepd',['runLinePD',['../d9/db0/class_drive_train.html#a42bf43e9e989feeead853a71afe8bbb0',1,'DriveTrain']]],
+  ['runpd',['runPD',['../d9/db0/class_drive_train.html#a8355f8e214ceb1ecf1bce299ba692b22',1,'DriveTrain']]],
+  ['runtosetpoint',['runToSetpoint',['../d4/d47/class_arm.html#a8cd24cca4215a944bd47df13e252e8a0',1,'Arm']]],
+  ['runturnpd',['runTurnPD',['../d9/db0/class_drive_train.html#abbd159972d9f4dd6fa0dd0f398a498dc',1,'DriveTrain']]]
 ];

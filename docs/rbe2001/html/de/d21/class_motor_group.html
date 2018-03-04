@@ -82,6 +82,7 @@ $(document).ready(function(){initNavTree('de/d21/class_motor_group.html','../../
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../d3/d6c/class_motor_group-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">MotorGroup Class Reference</div>  </div>
@@ -97,24 +98,39 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aff77909a09cada0bf7742de4c91ba630"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#aff77909a09cada0bf7742de4c91ba630">~MotorGroup</a> ()</td></tr>
 <tr class="separator:aff77909a09cada0bf7742de4c91ba630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addfa8105bc2fe799db770b7777a7ee4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#addfa8105bc2fe799db770b7777a7ee4f">add</a> (<a class="el" href="../../de/dd9/class_v_e_x_motor.html">VEXMotor</a> *motor)</td></tr>
+<tr class="memdesc:addfa8105bc2fe799db770b7777a7ee4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append a motor to the group.  <a href="#addfa8105bc2fe799db770b7777a7ee4f">More...</a><br /></td></tr>
 <tr class="separator:addfa8105bc2fe799db770b7777a7ee4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5bb7e87231ada3770df40783a2c6afda"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dd9/class_v_e_x_motor.html">VEXMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#a5bb7e87231ada3770df40783a2c6afda">get</a> (int index)</td></tr>
+<tr class="memdesc:a5bb7e87231ada3770df40783a2c6afda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a motor from the group.  <a href="#a5bb7e87231ada3770df40783a2c6afda">More...</a><br /></td></tr>
 <tr class="separator:a5bb7e87231ada3770df40783a2c6afda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c2302784f8226542ded59b6812720ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#a0c2302784f8226542ded59b6812720ac">drive</a> (int speed)</td></tr>
+<tr class="memitem:a0c2302784f8226542ded59b6812720ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#a0c2302784f8226542ded59b6812720ac">drive</a> (int <a class="el" href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">speed</a>)</td></tr>
+<tr class="memdesc:a0c2302784f8226542ded59b6812720ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set all the motors to drive at the given speed.  <a href="#a0c2302784f8226542ded59b6812720ac">More...</a><br /></td></tr>
 <tr class="separator:a0c2302784f8226542ded59b6812720ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f1a21bc3192613adecf364c839b2fed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#a3f1a21bc3192613adecf364c839b2fed">get_speed</a> ()</td></tr>
-<tr class="separator:a3f1a21bc3192613adecf364c839b2fed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a163e2176272a1a65ddddcb81eb2bd132"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#a163e2176272a1a65ddddcb81eb2bd132">getSpeed</a> (void) const</td></tr>
+<tr class="memdesc:a163e2176272a1a65ddddcb81eb2bd132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check the last speed set to the motor group.  <a href="#a163e2176272a1a65ddddcb81eb2bd132">More...</a><br /></td></tr>
+<tr class="separator:a163e2176272a1a65ddddcb81eb2bd132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8f2d6b4622a775ee0c5e95aafb83a1bb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../de/dd9/class_v_e_x_motor.html">VEXMotor</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#a8f2d6b4622a775ee0c5e95aafb83a1bb">motors</a> [<a class="el" href="../../dc/d23/_motor_group_8hpp.html#a40dfd7fdfce455ce507bf3fed368c2ed">MAX_MOTORS</a>]</td></tr>
+<tr class="separator:a8f2d6b4622a775ee0c5e95aafb83a1bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93ffa3ad9fc210e6d2ed29b50dbf7292"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#a93ffa3ad9fc210e6d2ed29b50dbf7292">num_motors</a></td></tr>
+<tr class="separator:a93ffa3ad9fc210e6d2ed29b50dbf7292"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79ddfc90443f2f919d88f66e51494d97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">speed</a></td></tr>
+<tr class="separator:a79ddfc90443f2f919d88f66e51494d97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="../../dc/d23/_motor_group_8hpp.html">MotorGroup.hpp</a> - Motor Group Header File Allows grouping motors together and controlling them as one. Written by Mikayla Fischler </p>
-
-<p class="definition">Definition at line <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html#l00014">14</a> of file <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a>.</p>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abb8e3e077cdc061d321162f846647aeb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abb8e3e077cdc061d321162f846647aeb">&#9670;&nbsp;</a></span>MotorGroup()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">MotorGroup::MotorGroup </td>
@@ -123,11 +139,17 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
-<p><a class="el" href="../../d3/d3d/_motor_group_8cpp.html">MotorGroup.cpp</a> - Motor Group Source Code Allows grouping motors together and controlling them as one. Written by Mikayla Fischler </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00012">12</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                       {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    num_motors = 0;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    speed = 0;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html#l00024">24</a> of file <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;: <a class="code" href="../../de/d21/class_motor_group.html#a93ffa3ad9fc210e6d2ed29b50dbf7292">num_motors</a>(0), <a class="code" href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">speed</a>(0) {};</div><div class="ttc" id="class_motor_group_html_a93ffa3ad9fc210e6d2ed29b50dbf7292"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a93ffa3ad9fc210e6d2ed29b50dbf7292">MotorGroup::num_motors</a></div><div class="ttdeci">int num_motors</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00021">MotorGroup.hpp:21</a></div></div>
+<div class="ttc" id="class_motor_group_html_a79ddfc90443f2f919d88f66e51494d97"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">MotorGroup::speed</a></div><div class="ttdeci">int speed</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00022">MotorGroup.hpp:22</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aff77909a09cada0bf7742de4c91ba630"></a>
@@ -135,6 +157,9 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">MotorGroup::~MotorGroup </td>
@@ -143,10 +168,15 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00018">18</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{}</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html#l00025">25</a> of file <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{};</div></div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -166,8 +196,19 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00021">21</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                                    {</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// if this can hold more motors, add given motor</span></div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">if</span> (num_motors &lt; MAX_MOTORS) {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        this-&gt;motors[num_motors++] = motor;</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div></div><!-- fragment -->
+<p>Append a motor to the group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">motor</td><td>Pointer to <a class="el" href="../../de/dd9/class_v_e_x_motor.html">VEXMotor</a> object </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00014">14</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                    {</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">// if this can hold more motors, add given motor</span></div><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="../../de/d21/class_motor_group.html#a93ffa3ad9fc210e6d2ed29b50dbf7292">num_motors</a> &lt; <a class="code" href="../../dc/d23/_motor_group_8hpp.html#a40dfd7fdfce455ce507bf3fed368c2ed">MAX_MOTORS</a>) { this-&gt;<a class="code" href="../../de/d21/class_motor_group.html#a8f2d6b4622a775ee0c5e95aafb83a1bb">motors</a>[<a class="code" href="../../de/d21/class_motor_group.html#a93ffa3ad9fc210e6d2ed29b50dbf7292">num_motors</a>++] = motor; }</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div><div class="ttc" id="class_motor_group_html_a93ffa3ad9fc210e6d2ed29b50dbf7292"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a93ffa3ad9fc210e6d2ed29b50dbf7292">MotorGroup::num_motors</a></div><div class="ttdeci">int num_motors</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00021">MotorGroup.hpp:21</a></div></div>
+<div class="ttc" id="class_motor_group_html_a8f2d6b4622a775ee0c5e95aafb83a1bb"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a8f2d6b4622a775ee0c5e95aafb83a1bb">MotorGroup::motors</a></div><div class="ttdeci">VEXMotor * motors[MAX_MOTORS]</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00019">MotorGroup.hpp:19</a></div></div>
+<div class="ttc" id="_motor_group_8hpp_html_a40dfd7fdfce455ce507bf3fed368c2ed"><div class="ttname"><a href="../../dc/d23/_motor_group_8hpp.html#a40dfd7fdfce455ce507bf3fed368c2ed">MAX_MOTORS</a></div><div class="ttdeci">#define MAX_MOTORS</div><div class="ttdoc">config (arduino mega 2560 has up to 48 servos) </div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00009">MotorGroup.hpp:9</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a0c2302784f8226542ded59b6812720ac"></a>
@@ -186,8 +227,14 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00032">32</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                                {</div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    this-&gt;speed = speed;</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// set all motors to drive at given speed</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_motors; i++) {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        this-&gt;motors[i]-&gt;<a class="code" href="../../de/dd9/class_v_e_x_motor.html#ac8ab5c30e4be4a9e3ed290e7827bcf1a">drive</a>(speed);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    }</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div><div class="ttc" id="class_v_e_x_motor_html_ac8ab5c30e4be4a9e3ed290e7827bcf1a"><div class="ttname"><a href="../../de/dd9/class_v_e_x_motor.html#ac8ab5c30e4be4a9e3ed290e7827bcf1a">VEXMotor::drive</a></div><div class="ttdeci">void drive(int val)</div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dae/_v_e_x_motor_8cpp_source.html#l00049">VEXMotor.cpp:49</a></div></div>
+<p>Set all the motors to drive at the given speed. </p>
+<p>Range of -90 to 90 where 0 is stop. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                                {</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    this-&gt;<a class="code" href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">speed</a> = <a class="code" href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">speed</a>;</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">// set all motors to drive at given speed</span></div><div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="../../de/d21/class_motor_group.html#a93ffa3ad9fc210e6d2ed29b50dbf7292">num_motors</a>; i++) {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        this-&gt;<a class="code" href="../../de/d21/class_motor_group.html#a8f2d6b4622a775ee0c5e95aafb83a1bb">motors</a>[i]-&gt;<a class="code" href="../../de/dd9/class_v_e_x_motor.html#ac8ab5c30e4be4a9e3ed290e7827bcf1a">drive</a>(<a class="code" href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">speed</a>);</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div><div class="ttc" id="class_motor_group_html_a93ffa3ad9fc210e6d2ed29b50dbf7292"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a93ffa3ad9fc210e6d2ed29b50dbf7292">MotorGroup::num_motors</a></div><div class="ttdeci">int num_motors</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00021">MotorGroup.hpp:21</a></div></div>
+<div class="ttc" id="class_motor_group_html_a8f2d6b4622a775ee0c5e95aafb83a1bb"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a8f2d6b4622a775ee0c5e95aafb83a1bb">MotorGroup::motors</a></div><div class="ttdeci">VEXMotor * motors[MAX_MOTORS]</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00019">MotorGroup.hpp:19</a></div></div>
+<div class="ttc" id="class_v_e_x_motor_html_ac8ab5c30e4be4a9e3ed290e7827bcf1a"><div class="ttname"><a href="../../de/dd9/class_v_e_x_motor.html#ac8ab5c30e4be4a9e3ed290e7827bcf1a">VEXMotor::drive</a></div><div class="ttdeci">void drive(int val)</div><div class="ttdoc">Set the motor speed and drive the motor. </div><div class="ttdef"><b>Definition:</b> <a href="../../d7/dae/_v_e_x_motor_8cpp_source.html#l00054">VEXMotor.cpp:54</a></div></div>
+<div class="ttc" id="class_motor_group_html_a79ddfc90443f2f919d88f66e51494d97"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">MotorGroup::speed</a></div><div class="ttdeci">int speed</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00022">MotorGroup.hpp:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -207,32 +254,114 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00029">29</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{ <span class="keywordflow">return</span> this-&gt;motors[index]; }</div></div><!-- fragment -->
+<p>Get a motor from the group. </p>
+<dl class="section return"><dt>Returns</dt><dd>pointer to the <a class="el" href="../../de/dd9/class_v_e_x_motor.html">VEXMotor</a> object </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00023">23</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/d21/class_motor_group.html#a8f2d6b4622a775ee0c5e95aafb83a1bb">motors</a>[index]; }</div><div class="ttc" id="class_motor_group_html_a8f2d6b4622a775ee0c5e95aafb83a1bb"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a8f2d6b4622a775ee0c5e95aafb83a1bb">MotorGroup::motors</a></div><div class="ttdeci">VEXMotor * motors[MAX_MOTORS]</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00019">MotorGroup.hpp:19</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
-<a id="a3f1a21bc3192613adecf364c839b2fed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f1a21bc3192613adecf364c839b2fed">&#9670;&nbsp;</a></span>get_speed()</h2>
+<a id="a163e2176272a1a65ddddcb81eb2bd132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a163e2176272a1a65ddddcb81eb2bd132">&#9670;&nbsp;</a></span>getSpeed()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int MotorGroup::get_speed </td>
+          <td class="memname">int MotorGroup::getSpeed </td>
           <td>(</td>
+          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00042">42</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{ <span class="keywordflow">return</span> this-&gt;speed; }</div></div><!-- fragment -->
+<p>Check the last speed set to the motor group. </p>
+<p>Range of -90 to 90 where 0 is stop. </p><dl class="section return"><dt>Returns</dt><dd>integer motor speed. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html#l00043">43</a> of file <a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;{ <span class="keywordflow">return</span> this-&gt;<a class="code" href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">speed</a>; }</div><div class="ttc" id="class_motor_group_html_a79ddfc90443f2f919d88f66e51494d97"><div class="ttname"><a href="../../de/d21/class_motor_group.html#a79ddfc90443f2f919d88f66e51494d97">MotorGroup::speed</a></div><div class="ttdeci">int speed</div><div class="ttdef"><b>Definition:</b> <a href="../../dc/d23/_motor_group_8hpp_source.html#l00022">MotorGroup.hpp:22</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8f2d6b4622a775ee0c5e95aafb83a1bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f2d6b4622a775ee0c5e95aafb83a1bb">&#9670;&nbsp;</a></span>motors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../de/dd9/class_v_e_x_motor.html">VEXMotor</a>* MotorGroup::motors[<a class="el" href="../../dc/d23/_motor_group_8hpp.html#a40dfd7fdfce455ce507bf3fed368c2ed">MAX_MOTORS</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html#l00019">19</a> of file <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a93ffa3ad9fc210e6d2ed29b50dbf7292"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93ffa3ad9fc210e6d2ed29b50dbf7292">&#9670;&nbsp;</a></span>num_motors</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MotorGroup::num_motors</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html#l00021">21</a> of file <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a79ddfc90443f2f919d88f66e51494d97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a79ddfc90443f2f919d88f66e51494d97">&#9670;&nbsp;</a></span>speed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int MotorGroup::speed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html#l00022">22</a> of file <a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>rbe2001/devices/motor/<a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a></li>
-<li>rbe2001/devices/motor/<a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a></li>
+<li>rbe2001/devices/motion/<a class="el" href="../../dc/d23/_motor_group_8hpp_source.html">MotorGroup.hpp</a></li>
+<li>rbe2001/devices/motion/<a class="el" href="../../d3/d3d/_motor_group_8cpp_source.html">MotorGroup.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

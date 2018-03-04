@@ -2,47 +2,52 @@
 \label{class_controller}\index{Controller@{Controller}}
 
 
-{\ttfamily \#include $<$Controller.\+h$>$}
+{\ttfamily \#include $<$Controller.\+hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{class_controller_aab64b54728b3f5d68bd2320605bdc51d}{Controller} (int debugpin)
-\item 
+\begin{DoxyCompactList}\small\item\em Initialize the controller by instantiating a D\+FW object. \end{DoxyCompactList}\item 
 \hyperlink{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}{$\sim$\+Controller} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_controller}{Controller} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_a338cdce0f0f662c96fd2d76b7733736a}{begin} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the controller. \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_af52a1a5515bdf3be57bbab75b2b79e5a}{update} (void)
+\begin{DoxyCompactList}\small\item\em Update the status of the controller (used to update input). \end{DoxyCompactList}\item 
+void \hyperlink{class_controller_a7cdeade73d459b6a3279b9d0e2598117}{end} (void)
+\begin{DoxyCompactList}\small\item\em Close the controller and properly terminate. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{class_controller_a99b39f4782ef2164dc3d3d1b512330bd}{joystick\+Right} (void)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a static array containing joystick position data. \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{class_controller_a98b5d8b11463780ac75d90fed3bd627d}{joystick\+Left} (void)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to a static array containing joystick position data. \end{DoxyCompactList}\item 
+bool \hyperlink{class_controller_a16a17aa8cb91dc02c04648c04202b0bc}{joystick\+Btn\+Right} (void) const
+\begin{DoxyCompactList}\small\item\em Get if the joystick was pressed. \end{DoxyCompactList}\item 
+bool \hyperlink{class_controller_a64e858b7a8d6add4caf751887ea35a42}{joystick\+Btn\+Left} (void) const
+\begin{DoxyCompactList}\small\item\em Get if the joystick was pressed. \end{DoxyCompactList}\item 
+bool \hyperlink{class_controller_a79a29dd5d92150135f2abbfa01b082dc}{start\+Btn} (void) const
+\begin{DoxyCompactList}\small\item\em Get if the start button was pressed. \end{DoxyCompactList}\item 
+bool \hyperlink{class_controller_a366ce47c27b1a02e9e1b2ad5840e78df}{select\+Btn} (void) const
+\begin{DoxyCompactList}\small\item\em Get if the select button was pressed. \end{DoxyCompactList}\item 
+bool $\ast$ \hyperlink{class_controller_a8429931cf41ef4426057b153f4e4d08a}{get\+Num\+Pad} (void)
+\begin{DoxyCompactList}\small\item\em Gives a pointer to a static array of booleans indicating button status of the numpad. \end{DoxyCompactList}\item 
+bool $\ast$ \hyperlink{class_controller_a3f3c5959101f909d3ff951a6b9cf77ee}{get\+Arrow\+Pad} (void)
+\begin{DoxyCompactList}\small\item\em Gives a pointer to a static array of booleans indicating button status of the arrow pad. \end{DoxyCompactList}\item 
+bool $\ast$ \hyperlink{class_controller_ab365e97c2d57559a84acda2794c46b01}{get\+Left\+Triggers} (void)
+\begin{DoxyCompactList}\small\item\em Get the status of the left triggers (pointer to static array) \end{DoxyCompactList}\item 
+bool $\ast$ \hyperlink{class_controller_afb7906afd8ea451e1f78e337bd22d95b}{get\+Right\+Triggers} (void)
+\begin{DoxyCompactList}\small\item\em Get the status of the right triggers (pointer to static array) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_controller_a1cc0b87ab9e07d21ab47d294aa5bf607}{begin} ()
-\item 
-void \hyperlink{class_controller_a7d04c17913f04f99429aa29fa8505484}{update} ()
-\item 
-void \hyperlink{class_controller_aaa374c56ef024a31888ab048baf0219c}{end} ()
-\item 
-int $\ast$ \hyperlink{class_controller_a1f02ff9e9853dd53232df37f6676b0dc}{joystick\+\_\+right} ()
-\item 
-int $\ast$ \hyperlink{class_controller_a2d21a10299aaacdcdb571b10f6436270}{joystick\+\_\+left} ()
-\item 
-bool \hyperlink{class_controller_a3710226224d7d95b1495bcac853abbe8}{joystick\+\_\+btn\+\_\+right} ()
-\item 
-bool \hyperlink{class_controller_a0bd70e25e112c655ba578f147af9ce11}{joystick\+\_\+btn\+\_\+left} ()
-\item 
-bool \hyperlink{class_controller_acde5cc2b40d1cc9e451a704ec1811b53}{start\+\_\+btn} ()
-\item 
-bool \hyperlink{class_controller_aa94980f9d72b8b3d61f05641e82710ba}{select\+\_\+btn} ()
-\item 
-bool $\ast$ \hyperlink{class_controller_a590216b5d6e1fc904c62e8ed213c2767}{get\+\_\+num\+\_\+pad} ()
-\item 
-bool $\ast$ \hyperlink{class_controller_a4162841dc8e34bffaff972c725f162cc}{get\+\_\+arrow\+\_\+pad} ()
-\item 
-bool $\ast$ \hyperlink{class_controller_abeab6704d15e871e16beaf2c82d8c1f2}{get\+\_\+left\+\_\+triggers} ()
-\item 
-bool $\ast$ \hyperlink{class_controller_a074d3c80ec11e8e64a7d5d0bb7ff06db}{get\+\_\+right\+\_\+triggers} ()
+D\+FW $\ast$ \hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{_controller_8h}{Controller.\+h} -\/ Wraps around the D\+FW library. Wraps the D\+FW controller. Written by Mikayla Fischler 
 
-Definition at line 13 of file Controller.\+h.
+
+Definition at line 13 of file Controller.\+hpp.
 
 
 
@@ -53,16 +58,25 @@ Definition at line 13 of file Controller.\+h.
 \subsubsection{\texorpdfstring{Controller()}{Controller()}}
 {\footnotesize\ttfamily Controller\+::\+Controller (\begin{DoxyParamCaption}\item[{int}]{debugpin }\end{DoxyParamCaption})}
 
-\hyperlink{_controller_8cpp}{Controller.\+cpp} -\/ Wrapper Class for D\+FW class Written by Mikayla Fischler 
 
-Definition at line 12 of file Controller.\+cpp.
+
+Initialize the controller by instantiating a D\+FW object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em debugpin} & The debug pin \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-12                                    \{
-13     \textcolor{comment}{// The debug pin will be set high if no communication is seen after 2 seconds}
-14     this->dfw = \textcolor{keyword}{new} DFW(debugpin);
-15 \}
+14                                    \{
+15     \textcolor{comment}{// the debug pin will be set high if no communication is seen after 2 seconds}
+16     this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw} = \textcolor{keyword}{new} DFW(debugpin);
+17 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}\label{class_controller_a0ab87934c4f7a266cfdb86e0f36bc1b5}} 
 \index{Controller@{Controller}!````~Controller@{$\sim$\+Controller}}
@@ -72,247 +86,343 @@ Definition at line 12 of file Controller.\+cpp.
 
 
 
-Definition at line 17 of file Controller.\+cpp.
+\hyperlink{class_controller}{Controller} destructor. 
+
+Properly ends dfw objects then deallocates instantiated object. 
+
+Definition at line 23 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-17                         \{
-18     \hyperlink{class_controller_aaa374c56ef024a31888ab048baf0219c}{end}();
-19     \textcolor{keyword}{delete} dfw;
-20 \}
+23                         \{
+24     \hyperlink{class_controller_a7cdeade73d459b6a3279b9d0e2598117}{end}();
+25     \textcolor{keyword}{delete} \hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw};
+26 \}
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_controller_a1cc0b87ab9e07d21ab47d294aa5bf607}\label{class_controller_a1cc0b87ab9e07d21ab47d294aa5bf607}} 
+\mbox{\Hypertarget{class_controller_a338cdce0f0f662c96fd2d76b7733736a}\label{class_controller_a338cdce0f0f662c96fd2d76b7733736a}} 
 \index{Controller@{Controller}!begin@{begin}}
 \index{begin@{begin}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{begin()}{begin()}}
-{\footnotesize\ttfamily void Controller\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Controller\+::begin (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 22 of file Controller.\+cpp.
+Initialize the controller. 
 
-
-\begin{DoxyCode}
-22                        \{
-23     \textcolor{comment}{// begin with 9600 baud and port 1}
-24     this->dfw->begin(9600, 1);
-25 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_controller_aaa374c56ef024a31888ab048baf0219c}\label{class_controller_aaa374c56ef024a31888ab048baf0219c}} 
-\index{Controller@{Controller}!end@{end}}
-\index{end@{end}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{end()}{end()}}
-{\footnotesize\ttfamily void Controller\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
+Begins dfw object with 9600 baud on port 1 
 
 Definition at line 32 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-32                      \{
-33     this->dfw->end();
-34 \}
+32 \{ this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->begin(9600, 1); \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_controller_a4162841dc8e34bffaff972c725f162cc}\label{class_controller_a4162841dc8e34bffaff972c725f162cc}} 
-\index{Controller@{Controller}!get\+\_\+arrow\+\_\+pad@{get\+\_\+arrow\+\_\+pad}}
-\index{get\+\_\+arrow\+\_\+pad@{get\+\_\+arrow\+\_\+pad}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{get\+\_\+arrow\+\_\+pad()}{get\_arrow\_pad()}}
-{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+\_\+arrow\+\_\+pad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_controller_a7cdeade73d459b6a3279b9d0e2598117}\label{class_controller_a7cdeade73d459b6a3279b9d0e2598117}} 
+\index{Controller@{Controller}!end@{end}}
+\index{end@{end}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily void Controller\+::end (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 74 of file Controller.\+cpp.
+Close the controller and properly terminate. 
+
+
+
+Definition at line 43 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-74                                 \{
-75     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[4];
-76     \textcolor{comment}{// go around the pad clockwise}
-77     data[0] = this->dfw->up() == 0;
-78     data[1] = this->dfw->right() == 0;
-79     data[2] = this->dfw->down() == 0;
-80     data[3] = this->dfw->left() == 0;
-81     \textcolor{keywordflow}{return} data;
-82 \}
+43 \{ this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->end(); \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_controller_abeab6704d15e871e16beaf2c82d8c1f2}\label{class_controller_abeab6704d15e871e16beaf2c82d8c1f2}} 
-\index{Controller@{Controller}!get\+\_\+left\+\_\+triggers@{get\+\_\+left\+\_\+triggers}}
-\index{get\+\_\+left\+\_\+triggers@{get\+\_\+left\+\_\+triggers}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{get\+\_\+left\+\_\+triggers()}{get\_left\_triggers()}}
-{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+\_\+left\+\_\+triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_controller_a3f3c5959101f909d3ff951a6b9cf77ee}\label{class_controller_a3f3c5959101f909d3ff951a6b9cf77ee}} 
+\index{Controller@{Controller}!get\+Arrow\+Pad@{get\+Arrow\+Pad}}
+\index{get\+Arrow\+Pad@{get\+Arrow\+Pad}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Arrow\+Pad()}{getArrowPad()}}
+{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+Arrow\+Pad (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 84 of file Controller.\+cpp.
+Gives a pointer to a static array of booleans indicating button status of the arrow pad. 
+
+index 0 is up, index 1, is right, index 2 is down, and index 3 is left \begin{DoxyReturn}{Returns}
+pointer to the aforementioned array where 0 is off and 1 is pressed 
+\end{DoxyReturn}
+
+
+Definition at line 115 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-84                                     \{
-85     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[2];
-86     data[0] = this->dfw->l1() == 0;
-87     data[1] = this->dfw->l2() == 0;
-88     \textcolor{keywordflow}{return} data;
-89 \}
+115                               \{
+116     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[4];
+117     \textcolor{comment}{// go around the pad clockwise}
+118     data[0] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->up() == 0;
+119     data[1] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->right() == 0;
+120     data[2] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->down() == 0;
+121     data[3] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->left() == 0;
+122     \textcolor{keywordflow}{return} data;
+123 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_controller_a590216b5d6e1fc904c62e8ed213c2767}\label{class_controller_a590216b5d6e1fc904c62e8ed213c2767}} 
-\index{Controller@{Controller}!get\+\_\+num\+\_\+pad@{get\+\_\+num\+\_\+pad}}
-\index{get\+\_\+num\+\_\+pad@{get\+\_\+num\+\_\+pad}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{get\+\_\+num\+\_\+pad()}{get\_num\_pad()}}
-{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+\_\+num\+\_\+pad (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_controller_ab365e97c2d57559a84acda2794c46b01}\label{class_controller_ab365e97c2d57559a84acda2794c46b01}} 
+\index{Controller@{Controller}!get\+Left\+Triggers@{get\+Left\+Triggers}}
+\index{get\+Left\+Triggers@{get\+Left\+Triggers}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Left\+Triggers()}{getLeftTriggers()}}
+{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+Left\+Triggers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
+
+
+Get the status of the left triggers (pointer to static array) 
+
+index 0 is trigger 1, index 1 is trigger 2 \begin{DoxyReturn}{Returns}
+pointer to static array of button status where 0 is off and 1 is pressed 
+\end{DoxyReturn}
+
+
+Definition at line 130 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+130                                   \{
+131     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[2];
+132     data[0] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->l1() == 0;
+133     data[1] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->l2() == 0;
+134     \textcolor{keywordflow}{return} data;
+135 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a8429931cf41ef4426057b153f4e4d08a}\label{class_controller_a8429931cf41ef4426057b153f4e4d08a}} 
+\index{Controller@{Controller}!get\+Num\+Pad@{get\+Num\+Pad}}
+\index{get\+Num\+Pad@{get\+Num\+Pad}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Num\+Pad()}{getNumPad()}}
+{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+Num\+Pad (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gives a pointer to a static array of booleans indicating button status of the numpad. 
+
+index 0 is button 1, index 1 is button 2, index 2 is button 3, and index 3 is button 4. \begin{DoxyReturn}{Returns}
+pointer to the aforementioned array where 0 is off and 1 is pressed 
+\end{DoxyReturn}
+
+
+Definition at line 100 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+100                                 \{
+101     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[4];
+102     \textcolor{comment}{// go around the pad clockwise}
+103     data[0] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->one() == 0;
+104     data[1] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->two() == 0;
+105     data[2] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->three() == 0;
+106     data[3] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->four() == 0;
+107     \textcolor{keywordflow}{return} data;
+108 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_afb7906afd8ea451e1f78e337bd22d95b}\label{class_controller_afb7906afd8ea451e1f78e337bd22d95b}} 
+\index{Controller@{Controller}!get\+Right\+Triggers@{get\+Right\+Triggers}}
+\index{get\+Right\+Triggers@{get\+Right\+Triggers}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{get\+Right\+Triggers()}{getRightTriggers()}}
+{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+Right\+Triggers (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Get the status of the right triggers (pointer to static array) 
+
+index 0 is trigger 1, index 1 is trigger 2 \begin{DoxyReturn}{Returns}
+pointer to static array of button status where 0 is off and 1 is pressed 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+142                                    \{
+143     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[2];
+144     data[0] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->r1() == 0;
+145     data[1] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->r2() == 0;
+146     \textcolor{keywordflow}{return} data;
+147 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a64e858b7a8d6add4caf751887ea35a42}\label{class_controller_a64e858b7a8d6add4caf751887ea35a42}} 
+\index{Controller@{Controller}!joystick\+Btn\+Left@{joystick\+Btn\+Left}}
+\index{joystick\+Btn\+Left@{joystick\+Btn\+Left}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{joystick\+Btn\+Left()}{joystickBtnLeft()}}
+{\footnotesize\ttfamily bool Controller\+::joystick\+Btn\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get if the joystick was pressed. 
+
+\begin{DoxyReturn}{Returns}
+1 if the joystick button was pressed, 0 if not 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+81 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->jl() == 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a16a17aa8cb91dc02c04648c04202b0bc}\label{class_controller_a16a17aa8cb91dc02c04648c04202b0bc}} 
+\index{Controller@{Controller}!joystick\+Btn\+Right@{joystick\+Btn\+Right}}
+\index{joystick\+Btn\+Right@{joystick\+Btn\+Right}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{joystick\+Btn\+Right()}{joystickBtnRight()}}
+{\footnotesize\ttfamily bool Controller\+::joystick\+Btn\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Get if the joystick was pressed. 
+
+\begin{DoxyReturn}{Returns}
+1 if the joystick button was pressed, 0 if not 
+\end{DoxyReturn}
+
+
+Definition at line 75 of file Controller.\+cpp.
+
+
+\begin{DoxyCode}
+75 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->jr() == 0; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_controller_a98b5d8b11463780ac75d90fed3bd627d}\label{class_controller_a98b5d8b11463780ac75d90fed3bd627d}} 
+\index{Controller@{Controller}!joystick\+Left@{joystick\+Left}}
+\index{joystick\+Left@{joystick\+Left}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{joystick\+Left()}{joystickLeft()}}
+{\footnotesize\ttfamily int $\ast$ Controller\+::joystick\+Left (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to a static array containing joystick position data. 
+
+Array index 0 contains vertical axis, array index 1 contains horizontal.~\newline
+ Ranges are -\/90 to 90 where 0 is center. \begin{DoxyReturn}{Returns}
+Pointer to static array of joystick positions 
+\end{DoxyReturn}
 
 
 Definition at line 64 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-64                               \{
-65     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[4];
-66     \textcolor{comment}{// go around the pad clockwise}
-67     data[0] = this->dfw->one() == 0;
-68     data[1] = this->dfw->two() == 0;
-69     data[2] = this->dfw->three() == 0;
-70     data[3] = this->dfw->four() == 0;
-71     \textcolor{keywordflow}{return} data;
-72 \}
+64                                   \{
+65     \textcolor{keyword}{static} \textcolor{keywordtype}{int} data[2];
+66     data[0] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->joysticklv() - 90;
+67     data[1] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->joysticklh() - 90;
+68     \textcolor{keywordflow}{return} data;
+69 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_controller_a074d3c80ec11e8e64a7d5d0bb7ff06db}\label{class_controller_a074d3c80ec11e8e64a7d5d0bb7ff06db}} 
-\index{Controller@{Controller}!get\+\_\+right\+\_\+triggers@{get\+\_\+right\+\_\+triggers}}
-\index{get\+\_\+right\+\_\+triggers@{get\+\_\+right\+\_\+triggers}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{get\+\_\+right\+\_\+triggers()}{get\_right\_triggers()}}
-{\footnotesize\ttfamily bool $\ast$ Controller\+::get\+\_\+right\+\_\+triggers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_controller_a99b39f4782ef2164dc3d3d1b512330bd}\label{class_controller_a99b39f4782ef2164dc3d3d1b512330bd}} 
+\index{Controller@{Controller}!joystick\+Right@{joystick\+Right}}
+\index{joystick\+Right@{joystick\+Right}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{joystick\+Right()}{joystickRight()}}
+{\footnotesize\ttfamily int $\ast$ Controller\+::joystick\+Right (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 91 of file Controller.\+cpp.
+Returns a pointer to a static array containing joystick position data. 
+
+Array index 0 contains vertical axis, array index 1 contains horizontal.~\newline
+ Ranges are -\/90 to 90 where 0 is center. \begin{DoxyReturn}{Returns}
+Pointer to static array of joystick positions 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-91                                      \{
-92     \textcolor{keyword}{static} \textcolor{keywordtype}{bool} data[2];
-93     data[0] = this->dfw->r1() == 0;
-94     data[1] = this->dfw->r2() == 0;
-95     \textcolor{keywordflow}{return} data;
-96 \}
+51                                    \{
+52     \textcolor{keyword}{static} \textcolor{keywordtype}{int} data[2];
+53     data[0] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->joystickrv() - 90;
+54     data[1] = this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->joystickrh() - 90;
+55     \textcolor{keywordflow}{return} data;
+56 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_controller_a0bd70e25e112c655ba578f147af9ce11}\label{class_controller_a0bd70e25e112c655ba578f147af9ce11}} 
-\index{Controller@{Controller}!joystick\+\_\+btn\+\_\+left@{joystick\+\_\+btn\+\_\+left}}
-\index{joystick\+\_\+btn\+\_\+left@{joystick\+\_\+btn\+\_\+left}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{joystick\+\_\+btn\+\_\+left()}{joystick\_btn\_left()}}
-{\footnotesize\ttfamily bool Controller\+::joystick\+\_\+btn\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_controller_a366ce47c27b1a02e9e1b2ad5840e78df}\label{class_controller_a366ce47c27b1a02e9e1b2ad5840e78df}} 
+\index{Controller@{Controller}!select\+Btn@{select\+Btn}}
+\index{select\+Btn@{select\+Btn}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{select\+Btn()}{selectBtn()}}
+{\footnotesize\ttfamily bool Controller\+::select\+Btn (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 57 of file Controller.\+cpp.
+Get if the select button was pressed. 
+
+\begin{DoxyReturn}{Returns}
+1 if the button was pressed, 0 if not 
+\end{DoxyReturn}
+
+
+Definition at line 93 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-57 \{ \textcolor{keywordflow}{return} this->dfw->jl() == 0; \}
+93 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->select() == 0; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_controller_a3710226224d7d95b1495bcac853abbe8}\label{class_controller_a3710226224d7d95b1495bcac853abbe8}} 
-\index{Controller@{Controller}!joystick\+\_\+btn\+\_\+right@{joystick\+\_\+btn\+\_\+right}}
-\index{joystick\+\_\+btn\+\_\+right@{joystick\+\_\+btn\+\_\+right}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{joystick\+\_\+btn\+\_\+right()}{joystick\_btn\_right()}}
-{\footnotesize\ttfamily bool Controller\+::joystick\+\_\+btn\+\_\+right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_controller_a79a29dd5d92150135f2abbfa01b082dc}\label{class_controller_a79a29dd5d92150135f2abbfa01b082dc}} 
+\index{Controller@{Controller}!start\+Btn@{start\+Btn}}
+\index{start\+Btn@{start\+Btn}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{start\+Btn()}{startBtn()}}
+{\footnotesize\ttfamily bool Controller\+::start\+Btn (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 56 of file Controller.\+cpp.
+Get if the start button was pressed. 
+
+\begin{DoxyReturn}{Returns}
+1 if the button was pressed, 0 if not 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-56 \{ \textcolor{keywordflow}{return} this->dfw->jr() == 0; \}
+87 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->start() == 0; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_controller_a2d21a10299aaacdcdb571b10f6436270}\label{class_controller_a2d21a10299aaacdcdb571b10f6436270}} 
-\index{Controller@{Controller}!joystick\+\_\+left@{joystick\+\_\+left}}
-\index{joystick\+\_\+left@{joystick\+\_\+left}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{joystick\+\_\+left()}{joystick\_left()}}
-{\footnotesize\ttfamily int $\ast$ Controller\+::joystick\+\_\+left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 47 of file Controller.\+cpp.
-
-
-\begin{DoxyCode}
-47                                \{
-48     \textcolor{keyword}{static} \textcolor{keywordtype}{int} data[2];
-49     data[0] = this->dfw->joysticklv() - 90;
-50     data[1] = this->dfw->joysticklh() - 90;
-51     \textcolor{keywordflow}{return} data;
-52 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_controller_a1f02ff9e9853dd53232df37f6676b0dc}\label{class_controller_a1f02ff9e9853dd53232df37f6676b0dc}} 
-\index{Controller@{Controller}!joystick\+\_\+right@{joystick\+\_\+right}}
-\index{joystick\+\_\+right@{joystick\+\_\+right}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{joystick\+\_\+right()}{joystick\_right()}}
-{\footnotesize\ttfamily int $\ast$ Controller\+::joystick\+\_\+right (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 39 of file Controller.\+cpp.
-
-
-\begin{DoxyCode}
-39                                 \{
-40     \textcolor{keyword}{static} \textcolor{keywordtype}{int} data[2];
-41     data[0] = this->dfw->joystickrv() - 90;
-42     data[1] = this->dfw->joystickrh() - 90;
-43     \textcolor{keywordflow}{return} data;
-44 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_controller_aa94980f9d72b8b3d61f05641e82710ba}\label{class_controller_aa94980f9d72b8b3d61f05641e82710ba}} 
-\index{Controller@{Controller}!select\+\_\+btn@{select\+\_\+btn}}
-\index{select\+\_\+btn@{select\+\_\+btn}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{select\+\_\+btn()}{select\_btn()}}
-{\footnotesize\ttfamily bool Controller\+::select\+\_\+btn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 62 of file Controller.\+cpp.
-
-
-\begin{DoxyCode}
-62 \{ \textcolor{keywordflow}{return} this->dfw->select() == 0; \}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_controller_acde5cc2b40d1cc9e451a704ec1811b53}\label{class_controller_acde5cc2b40d1cc9e451a704ec1811b53}} 
-\index{Controller@{Controller}!start\+\_\+btn@{start\+\_\+btn}}
-\index{start\+\_\+btn@{start\+\_\+btn}!Controller@{Controller}}
-\subsubsection{\texorpdfstring{start\+\_\+btn()}{start\_btn()}}
-{\footnotesize\ttfamily bool Controller\+::start\+\_\+btn (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 61 of file Controller.\+cpp.
-
-
-\begin{DoxyCode}
-61 \{ \textcolor{keywordflow}{return} this->dfw->start() == 0; \}
-\end{DoxyCode}
-\mbox{\Hypertarget{class_controller_a7d04c17913f04f99429aa29fa8505484}\label{class_controller_a7d04c17913f04f99429aa29fa8505484}} 
+\mbox{\Hypertarget{class_controller_af52a1a5515bdf3be57bbab75b2b79e5a}\label{class_controller_af52a1a5515bdf3be57bbab75b2b79e5a}} 
 \index{Controller@{Controller}!update@{update}}
 \index{update@{update}!Controller@{Controller}}
 \subsubsection{\texorpdfstring{update()}{update()}}
-{\footnotesize\ttfamily void Controller\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Controller\+::update (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 27 of file Controller.\+cpp.
+Update the status of the controller (used to update input). 
+
+\begin{DoxyWarning}{Warning}
+Do not call more often than once every 15 milliseconds 
+\end{DoxyWarning}
+
+
+Definition at line 38 of file Controller.\+cpp.
 
 
 \begin{DoxyCode}
-27                         \{
-28     \textcolor{comment}{// Called to update the controllers output. Do not call faster than every 15ms.}
-29     this->dfw->update();
-30 \}
+38 \{ this->\hyperlink{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}{dfw}->update(); \}
 \end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}\label{class_controller_af4793ccbf2ecdbfcdb9359bd32b6e8cf}} 
+\index{Controller@{Controller}!dfw@{dfw}}
+\index{dfw@{dfw}!Controller@{Controller}}
+\subsubsection{\texorpdfstring{dfw}{dfw}}
+{\footnotesize\ttfamily D\+FW$\ast$ Controller\+::dfw\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file Controller.\+hpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-rbe2001/devices/controller/\hyperlink{_controller_8h}{Controller.\+h}\item 
+rbe2001/devices/controller/\hyperlink{_controller_8hpp}{Controller.\+hpp}\item 
 rbe2001/devices/controller/\hyperlink{_controller_8cpp}{Controller.\+cpp}\end{DoxyCompactItemize}

@@ -2,95 +2,134 @@
 \label{class_analog_output}\index{Analog\+Output@{Analog\+Output}}
 
 
-{\ttfamily \#include $<$Analog\+Output.\+h$>$}
+{\ttfamily \#include $<$Analog\+Output.\+hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_analog_output_a5bbdf0548ba8a18d090071f1cb447238}{Analog\+Output} (int port)
-\item 
+\hyperlink{class_analog_output_ab92457661db417a929abe3ebff3e8e60}{Analog\+Output} (int p)
+\begin{DoxyCompactList}\small\item\em Initalize on the given port. \end{DoxyCompactList}\item 
 \hyperlink{class_analog_output_a7848a6b7b7c15bba5c75f0f82f3c1d53}{$\sim$\+Analog\+Output} ()
 \item 
-int \hyperlink{class_analog_output_a0a4146612660e06c9d2edfac9b51b6ef}{get\+\_\+port} ()
+int \hyperlink{class_analog_output_abc1f7308376f4b0f0cb7bb34802ce9e3}{get\+Port} (void) const
+\begin{DoxyCompactList}\small\item\em Get port being used. \end{DoxyCompactList}\item 
+void \hyperlink{class_analog_output_a16fc372acf8e7d7525d119804b374406}{write} (int val) const
+\begin{DoxyCompactList}\small\item\em Write pwm value to output. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_analog_output_aa67e2c25c9377517a72346fc9402afad}{write} (int val)
+int \hyperlink{class_analog_output_a52a084ec21b0e7f4cf9eb29af2fd103c}{port}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{_analog_output_8h}{Analog\+Output.\+h} -\/ Wraps around analog write. Writes analog data to data pin. Written by Mikayla Fischler 
 
-Definition at line 12 of file Analog\+Output.\+h.
+
+Definition at line 12 of file Analog\+Output.\+hpp.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_analog_output_a5bbdf0548ba8a18d090071f1cb447238}\label{class_analog_output_a5bbdf0548ba8a18d090071f1cb447238}} 
+\mbox{\Hypertarget{class_analog_output_ab92457661db417a929abe3ebff3e8e60}\label{class_analog_output_ab92457661db417a929abe3ebff3e8e60}} 
 \index{Analog\+Output@{Analog\+Output}!Analog\+Output@{Analog\+Output}}
 \index{Analog\+Output@{Analog\+Output}!Analog\+Output@{Analog\+Output}}
 \subsubsection{\texorpdfstring{Analog\+Output()}{AnalogOutput()}}
-{\footnotesize\ttfamily Analog\+Output\+::\+Analog\+Output (\begin{DoxyParamCaption}\item[{int}]{port }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Analog\+Output\+::\+Analog\+Output (\begin{DoxyParamCaption}\item[{int}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hyperlink{_analog_output_8cpp}{Analog\+Output.\+cpp} -\/ Analog Output Source Code Written by Mikayla Fischler 
 
-Definition at line 11 of file Analog\+Output.\+cpp.
+
+Initalize on the given port. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em p} & Digital pwm port \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Analog\+Output.\+hpp.
 
 
 \begin{DoxyCode}
-11                                    \{
-12     this->port = port;
-13 \}
+20 : \hyperlink{class_analog_output_a52a084ec21b0e7f4cf9eb29af2fd103c}{port}(p) \{\};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_analog_output_a7848a6b7b7c15bba5c75f0f82f3c1d53}\label{class_analog_output_a7848a6b7b7c15bba5c75f0f82f3c1d53}} 
 \index{Analog\+Output@{Analog\+Output}!````~Analog\+Output@{$\sim$\+Analog\+Output}}
 \index{````~Analog\+Output@{$\sim$\+Analog\+Output}!Analog\+Output@{Analog\+Output}}
 \subsubsection{\texorpdfstring{$\sim$\+Analog\+Output()}{~AnalogOutput()}}
-{\footnotesize\ttfamily Analog\+Output\+::$\sim$\+Analog\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Analog\+Output\+::$\sim$\+Analog\+Output (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 16 of file Analog\+Output.\+cpp.
+Definition at line 21 of file Analog\+Output.\+hpp.
 
 
 \begin{DoxyCode}
-16 \{\}
+21 \{\};
 \end{DoxyCode}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{class_analog_output_a0a4146612660e06c9d2edfac9b51b6ef}\label{class_analog_output_a0a4146612660e06c9d2edfac9b51b6ef}} 
-\index{Analog\+Output@{Analog\+Output}!get\+\_\+port@{get\+\_\+port}}
-\index{get\+\_\+port@{get\+\_\+port}!Analog\+Output@{Analog\+Output}}
-\subsubsection{\texorpdfstring{get\+\_\+port()}{get\_port()}}
-{\footnotesize\ttfamily int Analog\+Output\+::get\+\_\+port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_analog_output_abc1f7308376f4b0f0cb7bb34802ce9e3}\label{class_analog_output_abc1f7308376f4b0f0cb7bb34802ce9e3}} 
+\index{Analog\+Output@{Analog\+Output}!get\+Port@{get\+Port}}
+\index{get\+Port@{get\+Port}!Analog\+Output@{Analog\+Output}}
+\subsubsection{\texorpdfstring{get\+Port()}{getPort()}}
+{\footnotesize\ttfamily int Analog\+Output\+::get\+Port (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 19 of file Analog\+Output.\+cpp.
+Get port being used. 
+
+\begin{DoxyReturn}{Returns}
+Associated port 
+\end{DoxyReturn}
+
+
+Definition at line 14 of file Analog\+Output.\+cpp.
 
 
 \begin{DoxyCode}
-19 \{ \textcolor{keywordflow}{return} this->port; \}
+14 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_analog_output_a52a084ec21b0e7f4cf9eb29af2fd103c}{port}; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_analog_output_aa67e2c25c9377517a72346fc9402afad}\label{class_analog_output_aa67e2c25c9377517a72346fc9402afad}} 
+\mbox{\Hypertarget{class_analog_output_a16fc372acf8e7d7525d119804b374406}\label{class_analog_output_a16fc372acf8e7d7525d119804b374406}} 
 \index{Analog\+Output@{Analog\+Output}!write@{write}}
 \index{write@{write}!Analog\+Output@{Analog\+Output}}
 \subsubsection{\texorpdfstring{write()}{write()}}
-{\footnotesize\ttfamily void Analog\+Output\+::write (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Analog\+Output\+::write (\begin{DoxyParamCaption}\item[{int}]{val }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 22 of file Analog\+Output.\+cpp.
+Write pwm value to output. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em val} & The value to output \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file Analog\+Output.\+cpp.
 
 
 \begin{DoxyCode}
-22                                 \{
-23     analogWrite(this->port, val);
-24 \}
+20 \{ analogWrite(this->\hyperlink{class_analog_output_a52a084ec21b0e7f4cf9eb29af2fd103c}{port}, val); \}
 \end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_analog_output_a52a084ec21b0e7f4cf9eb29af2fd103c}\label{class_analog_output_a52a084ec21b0e7f4cf9eb29af2fd103c}} 
+\index{Analog\+Output@{Analog\+Output}!port@{port}}
+\index{port@{port}!Analog\+Output@{Analog\+Output}}
+\subsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily int Analog\+Output\+::port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 14 of file Analog\+Output.\+hpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-rbe2001/devices/io/\hyperlink{_analog_output_8h}{Analog\+Output.\+h}\item 
+rbe2001/devices/io/\hyperlink{_analog_output_8hpp}{Analog\+Output.\+hpp}\item 
 rbe2001/devices/io/\hyperlink{_analog_output_8cpp}{Analog\+Output.\+cpp}\end{DoxyCompactItemize}

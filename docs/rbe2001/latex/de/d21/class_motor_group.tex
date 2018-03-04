@@ -12,19 +12,28 @@
 \hyperlink{class_motor_group_aff77909a09cada0bf7742de4c91ba630}{$\sim$\+Motor\+Group} ()
 \item 
 void \hyperlink{class_motor_group_addfa8105bc2fe799db770b7777a7ee4f}{add} (\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$motor)
-\item 
+\begin{DoxyCompactList}\small\item\em Append a motor to the group. \end{DoxyCompactList}\item 
 \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_motor_group_a5bb7e87231ada3770df40783a2c6afda}{get} (int index)
+\begin{DoxyCompactList}\small\item\em Get a motor from the group. \end{DoxyCompactList}\item 
+void \hyperlink{class_motor_group_a0c2302784f8226542ded59b6812720ac}{drive} (int \hyperlink{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}{speed})
+\begin{DoxyCompactList}\small\item\em Set all the motors to drive at the given speed. \end{DoxyCompactList}\item 
+int \hyperlink{class_motor_group_a163e2176272a1a65ddddcb81eb2bd132}{get\+Speed} (void) const
+\begin{DoxyCompactList}\small\item\em Check the last speed set to the motor group. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
 \item 
-void \hyperlink{class_motor_group_a0c2302784f8226542ded59b6812720ac}{drive} (int speed)
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} $\ast$ \hyperlink{class_motor_group_a8f2d6b4622a775ee0c5e95aafb83a1bb}{motors} \mbox{[}\hyperlink{_motor_group_8hpp_a40dfd7fdfce455ce507bf3fed368c2ed}{M\+A\+X\+\_\+\+M\+O\+T\+O\+RS}\mbox{]}
 \item 
-int \hyperlink{class_motor_group_a3f1a21bc3192613adecf364c839b2fed}{get\+\_\+speed} ()
+int \hyperlink{class_motor_group_a93ffa3ad9fc210e6d2ed29b50dbf7292}{num\+\_\+motors}
+\item 
+int \hyperlink{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}{speed}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-\hyperlink{_motor_group_8hpp}{Motor\+Group.\+hpp} -\/ Motor Group Header File Allows grouping motors together and controlling them as one. Written by Mikayla Fischler 
 
-Definition at line 14 of file Motor\+Group.\+hpp.
+
+Definition at line 17 of file Motor\+Group.\+hpp.
 
 
 
@@ -33,32 +42,29 @@ Definition at line 14 of file Motor\+Group.\+hpp.
 \index{Motor\+Group@{Motor\+Group}!Motor\+Group@{Motor\+Group}}
 \index{Motor\+Group@{Motor\+Group}!Motor\+Group@{Motor\+Group}}
 \subsubsection{\texorpdfstring{Motor\+Group()}{MotorGroup()}}
-{\footnotesize\ttfamily Motor\+Group\+::\+Motor\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Motor\+Group\+::\+Motor\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\hyperlink{_motor_group_8cpp}{Motor\+Group.\+cpp} -\/ Motor Group Source Code Allows grouping motors together and controlling them as one. Written by Mikayla Fischler 
 
-Definition at line 12 of file Motor\+Group.\+cpp.
+
+Definition at line 24 of file Motor\+Group.\+hpp.
 
 
 \begin{DoxyCode}
-12                        \{
-13     num\_motors = 0;
-14     speed = 0;
-15 \}
+24 : \hyperlink{class_motor_group_a93ffa3ad9fc210e6d2ed29b50dbf7292}{num\_motors}(0), \hyperlink{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}{speed}(0) \{\};
 \end{DoxyCode}
 \mbox{\Hypertarget{class_motor_group_aff77909a09cada0bf7742de4c91ba630}\label{class_motor_group_aff77909a09cada0bf7742de4c91ba630}} 
 \index{Motor\+Group@{Motor\+Group}!````~Motor\+Group@{$\sim$\+Motor\+Group}}
 \index{````~Motor\+Group@{$\sim$\+Motor\+Group}!Motor\+Group@{Motor\+Group}}
 \subsubsection{\texorpdfstring{$\sim$\+Motor\+Group()}{~MotorGroup()}}
-{\footnotesize\ttfamily Motor\+Group\+::$\sim$\+Motor\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Motor\+Group\+::$\sim$\+Motor\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Definition at line 18 of file Motor\+Group.\+cpp.
+Definition at line 25 of file Motor\+Group.\+hpp.
 
 
 \begin{DoxyCode}
-18 \{\}
+25 \{\};
 \end{DoxyCode}
 
 
@@ -71,16 +77,24 @@ Definition at line 18 of file Motor\+Group.\+cpp.
 
 
 
-Definition at line 21 of file Motor\+Group.\+cpp.
+Append a motor to the group. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em motor} & Pointer to \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} object \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file Motor\+Group.\+cpp.
 
 
 \begin{DoxyCode}
-21                                     \{
-22     \textcolor{comment}{// if this can hold more motors, add given motor}
-23     \textcolor{keywordflow}{if} (num\_motors < MAX\_MOTORS) \{
-24         this->motors[num\_motors++] = motor;
-25     \}
-26 \}
+14                                     \{
+15     \textcolor{comment}{// if this can hold more motors, add given motor}
+16     \textcolor{keywordflow}{if} (\hyperlink{class_motor_group_a93ffa3ad9fc210e6d2ed29b50dbf7292}{num\_motors} < \hyperlink{_motor_group_8hpp_a40dfd7fdfce455ce507bf3fed368c2ed}{MAX\_MOTORS}) \{ this->\hyperlink{class_motor_group_a8f2d6b4622a775ee0c5e95aafb83a1bb}{motors}[
+      \hyperlink{class_motor_group_a93ffa3ad9fc210e6d2ed29b50dbf7292}{num\_motors}++] = motor; \}
+17 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_motor_group_a0c2302784f8226542ded59b6812720ac}\label{class_motor_group_a0c2302784f8226542ded59b6812720ac}} 
 \index{Motor\+Group@{Motor\+Group}!drive@{drive}}
@@ -90,18 +104,22 @@ Definition at line 21 of file Motor\+Group.\+cpp.
 
 
 
-Definition at line 32 of file Motor\+Group.\+cpp.
+Set all the motors to drive at the given speed. 
+
+Range of -\/90 to 90 where 0 is stop. 
+
+Definition at line 29 of file Motor\+Group.\+cpp.
 
 
 \begin{DoxyCode}
-32                                 \{
-33     this->speed = speed;
-34 
-35     \textcolor{comment}{// set all motors to drive at given speed}
-36     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < num\_motors; i++) \{
-37         this->motors[i]->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(speed);
-38     \}
-39 \}
+29                                 \{
+30     this->\hyperlink{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}{speed} = \hyperlink{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}{speed};
+31 
+32     \textcolor{comment}{// set all motors to drive at given speed}
+33     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_motor_group_a93ffa3ad9fc210e6d2ed29b50dbf7292}{num\_motors}; i++) \{
+34         this->\hyperlink{class_motor_group_a8f2d6b4622a775ee0c5e95aafb83a1bb}{motors}[i]->\hyperlink{class_v_e_x_motor_ac8ab5c30e4be4a9e3ed290e7827bcf1a}{drive}(\hyperlink{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}{speed});
+35     \}
+36 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{class_motor_group_a5bb7e87231ada3770df40783a2c6afda}\label{class_motor_group_a5bb7e87231ada3770df40783a2c6afda}} 
 \index{Motor\+Group@{Motor\+Group}!get@{get}}
@@ -111,29 +129,76 @@ Definition at line 32 of file Motor\+Group.\+cpp.
 
 
 
-Definition at line 29 of file Motor\+Group.\+cpp.
+Get a motor from the group. 
+
+\begin{DoxyReturn}{Returns}
+pointer to the \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} object 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file Motor\+Group.\+cpp.
 
 
 \begin{DoxyCode}
-29 \{ \textcolor{keywordflow}{return} this->motors[index]; \}
+23 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_motor_group_a8f2d6b4622a775ee0c5e95aafb83a1bb}{motors}[index]; \}
 \end{DoxyCode}
-\mbox{\Hypertarget{class_motor_group_a3f1a21bc3192613adecf364c839b2fed}\label{class_motor_group_a3f1a21bc3192613adecf364c839b2fed}} 
-\index{Motor\+Group@{Motor\+Group}!get\+\_\+speed@{get\+\_\+speed}}
-\index{get\+\_\+speed@{get\+\_\+speed}!Motor\+Group@{Motor\+Group}}
-\subsubsection{\texorpdfstring{get\+\_\+speed()}{get\_speed()}}
-{\footnotesize\ttfamily int Motor\+Group\+::get\+\_\+speed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{class_motor_group_a163e2176272a1a65ddddcb81eb2bd132}\label{class_motor_group_a163e2176272a1a65ddddcb81eb2bd132}} 
+\index{Motor\+Group@{Motor\+Group}!get\+Speed@{get\+Speed}}
+\index{get\+Speed@{get\+Speed}!Motor\+Group@{Motor\+Group}}
+\subsubsection{\texorpdfstring{get\+Speed()}{getSpeed()}}
+{\footnotesize\ttfamily int Motor\+Group\+::get\+Speed (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
 
 
 
-Definition at line 42 of file Motor\+Group.\+cpp.
+Check the last speed set to the motor group. 
+
+Range of -\/90 to 90 where 0 is stop. \begin{DoxyReturn}{Returns}
+integer motor speed. 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file Motor\+Group.\+cpp.
 
 
 \begin{DoxyCode}
-42 \{ \textcolor{keywordflow}{return} this->speed; \}
+43 \{ \textcolor{keywordflow}{return} this->\hyperlink{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}{speed}; \}
 \end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_motor_group_a8f2d6b4622a775ee0c5e95aafb83a1bb}\label{class_motor_group_a8f2d6b4622a775ee0c5e95aafb83a1bb}} 
+\index{Motor\+Group@{Motor\+Group}!motors@{motors}}
+\index{motors@{motors}!Motor\+Group@{Motor\+Group}}
+\subsubsection{\texorpdfstring{motors}{motors}}
+{\footnotesize\ttfamily \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor}$\ast$ Motor\+Group\+::motors\mbox{[}\hyperlink{_motor_group_8hpp_a40dfd7fdfce455ce507bf3fed368c2ed}{M\+A\+X\+\_\+\+M\+O\+T\+O\+RS}\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file Motor\+Group.\+hpp.
+
+\mbox{\Hypertarget{class_motor_group_a93ffa3ad9fc210e6d2ed29b50dbf7292}\label{class_motor_group_a93ffa3ad9fc210e6d2ed29b50dbf7292}} 
+\index{Motor\+Group@{Motor\+Group}!num\+\_\+motors@{num\+\_\+motors}}
+\index{num\+\_\+motors@{num\+\_\+motors}!Motor\+Group@{Motor\+Group}}
+\subsubsection{\texorpdfstring{num\+\_\+motors}{num\_motors}}
+{\footnotesize\ttfamily int Motor\+Group\+::num\+\_\+motors\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file Motor\+Group.\+hpp.
+
+\mbox{\Hypertarget{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}\label{class_motor_group_a79ddfc90443f2f919d88f66e51494d97}} 
+\index{Motor\+Group@{Motor\+Group}!speed@{speed}}
+\index{speed@{speed}!Motor\+Group@{Motor\+Group}}
+\subsubsection{\texorpdfstring{speed}{speed}}
+{\footnotesize\ttfamily int Motor\+Group\+::speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file Motor\+Group.\+hpp.
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-rbe2001/devices/motor/\hyperlink{_motor_group_8hpp}{Motor\+Group.\+hpp}\item 
-rbe2001/devices/motor/\hyperlink{_motor_group_8cpp}{Motor\+Group.\+cpp}\end{DoxyCompactItemize}
+rbe2001/devices/motion/\hyperlink{_motor_group_8hpp}{Motor\+Group.\+hpp}\item 
+rbe2001/devices/motion/\hyperlink{_motor_group_8cpp}{Motor\+Group.\+cpp}\end{DoxyCompactItemize}

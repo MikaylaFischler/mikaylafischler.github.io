@@ -1,5 +1,10 @@
-\hypertarget{_v_e_x_motor_8hpp}{}\section{rbe2001/devices/motor/\+V\+E\+X\+Motor.hpp File Reference}
-\label{_v_e_x_motor_8hpp}\index{rbe2001/devices/motor/\+V\+E\+X\+Motor.\+hpp@{rbe2001/devices/motor/\+V\+E\+X\+Motor.\+hpp}}
+\hypertarget{_v_e_x_motor_8hpp}{}\section{rbe2001/devices/motion/\+V\+E\+X\+Motor.hpp File Reference}
+\label{_v_e_x_motor_8hpp}\index{rbe2001/devices/motion/\+V\+E\+X\+Motor.\+hpp@{rbe2001/devices/motion/\+V\+E\+X\+Motor.\+hpp}}
+
+
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} Header.  
+
+
 {\ttfamily \#include $<$Arduino.\+h$>$}\newline
 {\ttfamily \#include $<$Servo.\+h$>$}\newline
 \subsection*{Classes}
@@ -7,3 +12,48 @@
 \item 
 class \hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor}
 \end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_v_e_x_motor_8hpp_aa9feeec64ccb5213d77b52847c8d0107}{R\+B\+E\+\_\+\+M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}~1000
+\begin{DoxyCompactList}\small\item\em the minimum pulse width (full reverse) to control the motor \end{DoxyCompactList}\item 
+\#define \hyperlink{_v_e_x_motor_8hpp_a87b3200bbaecc17e872da87d4ff827b8}{R\+B\+E\+\_\+\+M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}~2000
+\begin{DoxyCompactList}\small\item\em the maximum pulse width (full forward) to control the motor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} Header. 
+
+\hyperlink{class_v_e_x_motor}{V\+E\+X\+Motor} Class
+
+Wraps around the Servo object for better control. 
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_v_e_x_motor_8hpp_a87b3200bbaecc17e872da87d4ff827b8}\label{_v_e_x_motor_8hpp_a87b3200bbaecc17e872da87d4ff827b8}} 
+\index{V\+E\+X\+Motor.\+hpp@{V\+E\+X\+Motor.\+hpp}!R\+B\+E\+\_\+\+M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH@{R\+B\+E\+\_\+\+M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}}
+\index{R\+B\+E\+\_\+\+M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH@{R\+B\+E\+\_\+\+M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}!V\+E\+X\+Motor.\+hpp@{V\+E\+X\+Motor.\+hpp}}
+\subsubsection{\texorpdfstring{R\+B\+E\+\_\+\+M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}{RBE\_MAX\_PULSE\_WIDTH}}
+{\footnotesize\ttfamily \#define R\+B\+E\+\_\+\+M\+A\+X\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH~2000}
+
+
+
+the maximum pulse width (full forward) to control the motor 
+
+
+
+Definition at line 8 of file V\+E\+X\+Motor.\+hpp.
+
+\mbox{\Hypertarget{_v_e_x_motor_8hpp_aa9feeec64ccb5213d77b52847c8d0107}\label{_v_e_x_motor_8hpp_aa9feeec64ccb5213d77b52847c8d0107}} 
+\index{V\+E\+X\+Motor.\+hpp@{V\+E\+X\+Motor.\+hpp}!R\+B\+E\+\_\+\+M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH@{R\+B\+E\+\_\+\+M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}}
+\index{R\+B\+E\+\_\+\+M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH@{R\+B\+E\+\_\+\+M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}!V\+E\+X\+Motor.\+hpp@{V\+E\+X\+Motor.\+hpp}}
+\subsubsection{\texorpdfstring{R\+B\+E\+\_\+\+M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH}{RBE\_MIN\_PULSE\_WIDTH}}
+{\footnotesize\ttfamily \#define R\+B\+E\+\_\+\+M\+I\+N\+\_\+\+P\+U\+L\+S\+E\+\_\+\+W\+I\+D\+TH~1000}
+
+
+
+the minimum pulse width (full reverse) to control the motor 
+
+
+
+Definition at line 7 of file V\+E\+X\+Motor.\+hpp.
+

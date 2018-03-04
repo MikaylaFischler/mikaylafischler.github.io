@@ -1,0 +1,265 @@
+\hypertarget{class_accelerometer}{}\section{Accelerometer Class Reference}
+\label{class_accelerometer}\index{Accelerometer@{Accelerometer}}
+
+
+{\ttfamily \#include $<$Accelerometer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_accelerometer_abf2355ca82838b64d7e4f00b0c23e65e}{Accelerometer} (Adafruit\+\_\+\+B\+N\+O055 $\ast$s)
+\begin{DoxyCompactList}\small\item\em Construct the accelerometer object based off an adafruit sensor object. \end{DoxyCompactList}\item 
+\hyperlink{class_accelerometer_acb6a7d9c61f2084ec4aec4a8ff35d622}{$\sim$\+Accelerometer} ()
+\item 
+double \hyperlink{class_accelerometer_a0570e1dd30592d3d4acc796fc4e67351}{getX} (void)
+\begin{DoxyCompactList}\small\item\em Return the X value of the accelerometer. \end{DoxyCompactList}\item 
+double \hyperlink{class_accelerometer_aba32b3d5b8a7c7f4e257f53551813b32}{getY} (void)
+\begin{DoxyCompactList}\small\item\em Return the Y value of the accelerometer. \end{DoxyCompactList}\item 
+double \hyperlink{class_accelerometer_a3d363ae0b29b5f17aff4b72f7a2b6a0d}{getZ} (void)
+\begin{DoxyCompactList}\small\item\em Return the Z value of the accelerometer. \end{DoxyCompactList}\item 
+bool \hyperlink{class_accelerometer_a88b653a985a23ebbed8916ef5a2cf0af}{stopped} (void)
+\begin{DoxyCompactList}\small\item\em Determine if the robot has \char`\"{}stopped\char`\"{} based on the X and Y accelerometer readings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_accelerometer_a0a5be85959063e5bc2092668b59b9b97}{\+\_\+get\+\_\+event} (void)
+\begin{DoxyCompactList}\small\item\em Update the internally recored last event. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+imu\+::\+Vector$<$ 3 $>$ \hyperlink{class_accelerometer_a179b04d61746127f9264ce87ba6e20ce}{event\+\_\+cache}
+\begin{DoxyCompactList}\small\item\em Cache of last recieved event data. \end{DoxyCompactList}\item 
+long unsigned int \hyperlink{class_accelerometer_a9cf8cf4caf6e866bc2b3e473155f6731}{last\+\_\+event\+\_\+recorded}
+\begin{DoxyCompactList}\small\item\em Time of last event recording. \end{DoxyCompactList}\item 
+Adafruit\+\_\+\+B\+N\+O055 $\ast$ \hyperlink{class_accelerometer_a0dbf3aed48d0d0d9a16511c628ed2cba}{sensor}
+\begin{DoxyCompactList}\small\item\em pointer to the B\+N\+O055 sensor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file Accelerometer.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_accelerometer_abf2355ca82838b64d7e4f00b0c23e65e}\label{class_accelerometer_abf2355ca82838b64d7e4f00b0c23e65e}} 
+\index{Accelerometer@{Accelerometer}!Accelerometer@{Accelerometer}}
+\index{Accelerometer@{Accelerometer}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{Accelerometer()}{Accelerometer()}}
+{\footnotesize\ttfamily Accelerometer\+::\+Accelerometer (\begin{DoxyParamCaption}\item[{Adafruit\+\_\+\+B\+N\+O055 $\ast$}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct the accelerometer object based off an adafruit sensor object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em s} & Pointer to an instantiated sensor object of type Adafruit\+\_\+\+B\+N\+O055 \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 32 of file Accelerometer.\+hpp.
+
+
+\begin{DoxyCode}
+32 : \hyperlink{class_accelerometer_a9cf8cf4caf6e866bc2b3e473155f6731}{last\_event\_recorded}(0), \hyperlink{class_accelerometer_a0dbf3aed48d0d0d9a16511c628ed2cba}{sensor}(s) \{\};
+\end{DoxyCode}
+\mbox{\Hypertarget{class_accelerometer_acb6a7d9c61f2084ec4aec4a8ff35d622}\label{class_accelerometer_acb6a7d9c61f2084ec4aec4a8ff35d622}} 
+\index{Accelerometer@{Accelerometer}!````~Accelerometer@{$\sim$\+Accelerometer}}
+\index{````~Accelerometer@{$\sim$\+Accelerometer}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{$\sim$\+Accelerometer()}{~Accelerometer()}}
+{\footnotesize\ttfamily Accelerometer\+::$\sim$\+Accelerometer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 33 of file Accelerometer.\+hpp.
+
+
+\begin{DoxyCode}
+33 \{\};
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_accelerometer_a0a5be85959063e5bc2092668b59b9b97}\label{class_accelerometer_a0a5be85959063e5bc2092668b59b9b97}} 
+\index{Accelerometer@{Accelerometer}!\+\_\+get\+\_\+event@{\+\_\+get\+\_\+event}}
+\index{\+\_\+get\+\_\+event@{\+\_\+get\+\_\+event}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{\+\_\+get\+\_\+event()}{\_get\_event()}}
+{\footnotesize\ttfamily void Accelerometer\+::\+\_\+get\+\_\+event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Update the internally recored last event. 
+
+We only want to poll every 20ms 
+
+Definition at line 51 of file Accelerometer.\+cpp.
+
+
+\begin{DoxyCode}
+51                                    \{
+52     \textcolor{comment}{// update every 20ms}
+53     \textcolor{keywordflow}{if} (\hyperlink{class_accelerometer_a9cf8cf4caf6e866bc2b3e473155f6731}{last\_event\_recorded} == 0 || (millis() - 
+      \hyperlink{class_accelerometer_a9cf8cf4caf6e866bc2b3e473155f6731}{last\_event\_recorded} >= 20)) \{
+54         \hyperlink{class_accelerometer_a9cf8cf4caf6e866bc2b3e473155f6731}{last\_event\_recorded} = millis();
+55 
+56         \textcolor{comment}{// Possible vector values can be:}
+57         \textcolor{comment}{// - VECTOR\_ACCELEROMETER - m/s^2}
+58         \textcolor{comment}{// - VECTOR\_MAGNETOMETER  - uT}
+59         \textcolor{comment}{// - VECTOR\_GYROSCOPE     - rad/s}
+60         \textcolor{comment}{// - VECTOR\_EULER         - degrees}
+61         \textcolor{comment}{// - VECTOR\_LINEARACCEL   - m/s^2}
+62         \textcolor{comment}{// - VECTOR\_GRAVITY       - m/s^2}
+63         \hyperlink{class_accelerometer_a179b04d61746127f9264ce87ba6e20ce}{event\_cache} = \hyperlink{class_accelerometer_a0dbf3aed48d0d0d9a16511c628ed2cba}{sensor}->getVector(Adafruit\_BNO055::VECTOR\_LINEARACCEL);
+64     \}
+65 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_accelerometer_a0570e1dd30592d3d4acc796fc4e67351}\label{class_accelerometer_a0570e1dd30592d3d4acc796fc4e67351}} 
+\index{Accelerometer@{Accelerometer}!getX@{getX}}
+\index{getX@{getX}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily double Accelerometer\+::getX (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return the X value of the accelerometer. 
+
+\begin{DoxyReturn}{Returns}
+X component of acceleration vector 
+\end{DoxyReturn}
+
+
+Definition at line 15 of file Accelerometer.\+cpp.
+
+
+\begin{DoxyCode}
+15                                \{
+16     \hyperlink{class_accelerometer_a0a5be85959063e5bc2092668b59b9b97}{\_get\_event}();
+17     \textcolor{keywordflow}{return} \hyperlink{class_accelerometer_a179b04d61746127f9264ce87ba6e20ce}{event\_cache}.x();
+18 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_accelerometer_aba32b3d5b8a7c7f4e257f53551813b32}\label{class_accelerometer_aba32b3d5b8a7c7f4e257f53551813b32}} 
+\index{Accelerometer@{Accelerometer}!getY@{getY}}
+\index{getY@{getY}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily double Accelerometer\+::getY (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return the Y value of the accelerometer. 
+
+\begin{DoxyReturn}{Returns}
+Y component of acceleration vector 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Accelerometer.\+cpp.
+
+
+\begin{DoxyCode}
+24                                \{
+25     \hyperlink{class_accelerometer_a0a5be85959063e5bc2092668b59b9b97}{\_get\_event}();
+26     \textcolor{keywordflow}{return} \hyperlink{class_accelerometer_a179b04d61746127f9264ce87ba6e20ce}{event\_cache}.y();
+27 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_accelerometer_a3d363ae0b29b5f17aff4b72f7a2b6a0d}\label{class_accelerometer_a3d363ae0b29b5f17aff4b72f7a2b6a0d}} 
+\index{Accelerometer@{Accelerometer}!getZ@{getZ}}
+\index{getZ@{getZ}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{get\+Z()}{getZ()}}
+{\footnotesize\ttfamily double Accelerometer\+::getZ (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Return the Z value of the accelerometer. 
+
+\begin{DoxyReturn}{Returns}
+Z component of acceleration vector 
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Accelerometer.\+cpp.
+
+
+\begin{DoxyCode}
+33                                \{
+34     \hyperlink{class_accelerometer_a0a5be85959063e5bc2092668b59b9b97}{\_get\_event}();
+35     \textcolor{keywordflow}{return} \hyperlink{class_accelerometer_a179b04d61746127f9264ce87ba6e20ce}{event\_cache}.z();
+36 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_accelerometer_a88b653a985a23ebbed8916ef5a2cf0af}\label{class_accelerometer_a88b653a985a23ebbed8916ef5a2cf0af}} 
+\index{Accelerometer@{Accelerometer}!stopped@{stopped}}
+\index{stopped@{stopped}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{stopped()}{stopped()}}
+{\footnotesize\ttfamily bool Accelerometer\+::stopped (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Determine if the robot has \char`\"{}stopped\char`\"{} based on the X and Y accelerometer readings. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if within config\textquotesingle{}d ranges, false if not 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file Accelerometer.\+cpp.
+
+
+\begin{DoxyCode}
+42                                 \{
+43     \textcolor{keywordflow}{return} ((abs(\hyperlink{class_accelerometer_a0570e1dd30592d3d4acc796fc4e67351}{getX}()) < \hyperlink{config_8h_ab38ef5d01a9fa64df5a2b664c96d2d2b}{ACCEL\_X\_STOPPED\_CUTOFF}) &&
+44             (abs(\hyperlink{class_accelerometer_aba32b3d5b8a7c7f4e257f53551813b32}{getY}()) < \hyperlink{config_8h_a32225bb09b7533b752f9a649ed0f937e}{ACCEL\_Y\_STOPPED\_CUTOFF}));
+45 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_accelerometer_a179b04d61746127f9264ce87ba6e20ce}\label{class_accelerometer_a179b04d61746127f9264ce87ba6e20ce}} 
+\index{Accelerometer@{Accelerometer}!event\+\_\+cache@{event\+\_\+cache}}
+\index{event\+\_\+cache@{event\+\_\+cache}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{event\+\_\+cache}{event\_cache}}
+{\footnotesize\ttfamily imu\+::\+Vector$<$3$>$ Accelerometer\+::event\+\_\+cache\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cache of last recieved event data. 
+
+
+
+Definition at line 21 of file Accelerometer.\+hpp.
+
+\mbox{\Hypertarget{class_accelerometer_a9cf8cf4caf6e866bc2b3e473155f6731}\label{class_accelerometer_a9cf8cf4caf6e866bc2b3e473155f6731}} 
+\index{Accelerometer@{Accelerometer}!last\+\_\+event\+\_\+recorded@{last\+\_\+event\+\_\+recorded}}
+\index{last\+\_\+event\+\_\+recorded@{last\+\_\+event\+\_\+recorded}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{last\+\_\+event\+\_\+recorded}{last\_event\_recorded}}
+{\footnotesize\ttfamily long unsigned int Accelerometer\+::last\+\_\+event\+\_\+recorded\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Time of last event recording. 
+
+
+
+Definition at line 22 of file Accelerometer.\+hpp.
+
+\mbox{\Hypertarget{class_accelerometer_a0dbf3aed48d0d0d9a16511c628ed2cba}\label{class_accelerometer_a0dbf3aed48d0d0d9a16511c628ed2cba}} 
+\index{Accelerometer@{Accelerometer}!sensor@{sensor}}
+\index{sensor@{sensor}!Accelerometer@{Accelerometer}}
+\subsubsection{\texorpdfstring{sensor}{sensor}}
+{\footnotesize\ttfamily Adafruit\+\_\+\+B\+N\+O055$\ast$ Accelerometer\+::sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+pointer to the B\+N\+O055 sensor 
+
+
+
+Definition at line 24 of file Accelerometer.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+rbe2001/devices/io/\hyperlink{_accelerometer_8hpp}{Accelerometer.\+hpp}\item 
+rbe2001/devices/io/\hyperlink{_accelerometer_8cpp}{Accelerometer.\+cpp}\end{DoxyCompactItemize}
